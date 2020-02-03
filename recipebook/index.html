@@ -51,7 +51,7 @@
           console.log(data[x]);
           
           var newElement = document.createElement('div');
-          newElement.id = data[x]; newElement.className = "card";
+          newElement.id = "card_"+x; newElement.className = "card";
           newElement.innerHTML = data[x];
           document.body.appendChild(newElement);
         }
