@@ -46,7 +46,12 @@
         document.getElementById("food").innerHTML = "<strong>Foods:</strong> " + [ data[0].first_name, data[1].first_name, data[2].first_name ].join(", ");
         console.log(data);
         console.log("Successfully processed " + data.length + " rows!");
+        
+        for (var x in data) {
+          console.log(x);
+        }
       }
+        
 
       document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");        
     </script>
