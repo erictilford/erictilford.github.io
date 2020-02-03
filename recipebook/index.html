@@ -13,17 +13,18 @@
       <hr>
     <p id="food"></p>
     
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="assets/berries.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div id="cardholder">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="assets/berries.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
       </div>
     </div>
-      
-      
-
+    <br>
+    
     <script type="text/javascript" src="../src/tabletop.js"></script>
     <script type="text/javascript">
       var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing';
@@ -41,6 +42,7 @@
         // alert("Successfully processed " + data.length + " rows!")
         document.getElementById("food").innerHTML = "<strong>Foods:</strong> " + [ data[0].first_name, data[1].first_name, data[2].first_name ].join(", ");
         console.log(data);
+        console.log("Successfully processed " + data.length + " rows!");
       }
 
       document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");        
