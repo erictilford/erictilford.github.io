@@ -60,7 +60,12 @@
           
           var newElement = document.createElement('div');
           newElement.id = "card_"+x; newElement.className = "card";
-          newElement.innerHTML = data[x].first_name + data[x].last_name;
+          
+          var cardImage = document.createElemtent('img');
+          cardImage.src = "assets/berries.jpg";
+          
+          newElement.appendChild(cardImage);
+          newElement.innerHTML = data[x].first_name +" "+ data[x].last_name;
           document.getElementById("cardholder").appendChild(newElement);
         }
       }
