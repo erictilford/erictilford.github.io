@@ -60,7 +60,7 @@
           
           var newElement = document.createElement('div');
           newElement.id = "card_"+x; newElement.className = "card";
-          newElement.innerHTML = "<img class="card-img-top" src="assets/berries.jpg" alt="Card image cap">";
+          newElement.innerHTML = data[x].first_name + data[x].last_name;
           document.getElementById("cardholder").appendChild(newElement);
         }
       }
