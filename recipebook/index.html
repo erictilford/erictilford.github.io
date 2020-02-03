@@ -63,8 +63,18 @@
           
           var cardImage = document.createElement('img');
           cardImage.src = "assets/berries.jpg"; cardImage.className = "card-img-top";
-          
           newElement.appendChild(cardImage);
+          
+          var cardBody = document.createElement('div'); cardBody.className = "card-body";
+          var cardTitle = document.createElement('h5'); cardTitle.className = "card-title";
+          cardTitle.innerHTML = data[x].first_name +" "+ data[x].last_name;
+          cardBody.appendChild(cardTitle);
+          var cardText = document.createElement('p'); cardText.className = "card-text";
+          cardText.innerHTML = data[x].role;
+          cardBody.appendChild(cardText);
+          newElement.appendChild(cardBody);
+          
+          
           //newElement.innerHTML = data[x].first_name +" "+ data[x].last_name;
           document.getElementById("cardholder").appendChild(newElement);
         }
