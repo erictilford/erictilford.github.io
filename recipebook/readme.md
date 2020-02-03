@@ -3,7 +3,7 @@
 ## to-do
 - [x] Create this project
 - [ ] Custom javascript
-- [ ] Bootstrap
+- [x] Bootstrap
 
 ## changelog
 ### 2.2.2020
