@@ -1,6 +1,7 @@
 # recipebook
 
 ## to-do
+- [ ] Set up IDE with git so you don't have to do that next time
 - [ ] Import changes back to github
 - [x] "Example Recipes"
 - [x] Pictures
