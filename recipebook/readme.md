@@ -1,7 +1,7 @@
 # recipebook
 
 ## to-do
-- [ ] Example Recipes
+- [ ] "Example Recipes"
 - [ ] Pictures
 - [x] CSS Folder
 - [x] Create this project
