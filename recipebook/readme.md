@@ -1,8 +1,11 @@
 # recipebook
 
 ## to-do
+- [ ] Example Recipes
+- [ ] Pictures
+- [x] CSS Folder
 - [x] Create this project
-- [ ] Custom javascript
+- [x] Custom javascript
 - [x] Bootstrap
 
 ## changelog
