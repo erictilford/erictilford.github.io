@@ -5,6 +5,11 @@
 
 ## changelog
 
+### 2.5.2020
+- Added ingredient popup
+- Added card hover effect
+- Git integration?
+
 ### 2.3.2020
 - Added custom images
 - Added sample recipes
