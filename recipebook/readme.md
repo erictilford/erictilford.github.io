@@ -1,7 +1,7 @@
 # recipebook
 
 ## to-do
-- [ ] Set up IDE with git!!!!
+- [x] Set up IDE with git!!!!
 
 ## changelog
 
