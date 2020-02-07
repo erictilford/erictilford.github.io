@@ -2,7 +2,10 @@
 
 ## to-do
 - [x] Set up IDE with git!!!!
-- [ ] Looks good on mobile
+- [x] Looks good on mobile
+- [ ] Fix popup behaviour
+  - [ ] looks good on mobile
+  - [ ] fixed to viewport
 
 ## changelog
 
