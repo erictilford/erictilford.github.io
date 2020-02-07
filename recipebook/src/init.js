@@ -1,6 +1,3 @@
-//global console
-//eslint no-console: "off"
-
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing';
 
 function init() {
@@ -12,8 +9,6 @@ function init() {
 window.addEventListener('DOMContentLoaded', init)
 
 function showInfo(data) {
-    // data comes through as a simple array since simpleSheet is turned on
-    // alert("Successfully processed " + data.length + " rows!")
 
     console.log(data);
     console.log("Successfully processed " + data.length + " rows!");
@@ -77,7 +72,6 @@ function showInfo(data) {
     document.getElementById("names").innerHTML = names;
 
     document.getElementsByClassName("x-button")[0].onclick = function() {
-        //console.log("X BUTTON!!!!!");
         document.getElementById("large-card").style.display = "none";
     }
 
