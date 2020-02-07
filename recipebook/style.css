@@ -56,3 +56,13 @@
 .ingredients {
     padding:20px 10px 0px;
 }
+a {
+    word-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width:100%;
+        margin: 0px 0px 15px;
+    }
+}

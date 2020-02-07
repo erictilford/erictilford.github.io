@@ -2,6 +2,7 @@
 
 ## to-do
 - [x] Set up IDE with git!!!!
+- [ ] Looks good on mobile
 
 ## changelog
 
