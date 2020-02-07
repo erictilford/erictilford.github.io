@@ -1,4 +1,5 @@
 # recipebook
+A recipe website by Eric Tilford.
 
 ## to-do
 - [x] Set up IDE with git!!!!
@@ -8,6 +9,9 @@
   - [ ] fixed to viewport
 
 ## changelog
+
+### 2.6.2020
+- Set up responsiveness, still need to fix popup behaviour
 
 ### 2.5.2020
 - Added ingredient popup
