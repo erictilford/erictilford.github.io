@@ -76,7 +76,6 @@ function showInfo(data) {
 
         document.getElementById("cardholder").appendChild(newElement);
 
-
     }
 
     //document.getElementById("names").innerHTML = names;
@@ -84,11 +83,6 @@ function showInfo(data) {
     document.getElementsByClassName("x-button")[0].onclick = function closeLargeCard(){
         document.getElementById("large-card").style.display = "none";
     }
-
-
-
-
 }
 
-
-document.write("<span class='wrapp'>The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a></span>");
+//document.write("<span class='wrapp'>The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a></span>");
