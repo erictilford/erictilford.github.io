@@ -36,6 +36,16 @@ function showInfo(data) {
                 ingredient.innerText = ingredientArray[y];
                 ingredientList.appendChild(ingredient);
             }
+
+            var directionList = document.getElementsByClassName("direction-list")[0];
+            directionList.innerHTML = "";
+            directionArray = this.getElementsByClassName("card-directions")[0].innerHTML.split("; ");
+
+            for (var y in directionArray) {
+                var direction = document.createElement('li');
+                direction.innerText = directionArray[y];
+                directionList.appendChild(direction);
+            }
         }
 
         var cardImage = document.createElement('img');
@@ -73,6 +83,13 @@ function showInfo(data) {
         cardIngredients.innerHTML = data[recipeNumber].ingredients; 
         cardIngredients.style.display = "none";
         newElement.appendChild(cardIngredients);
+
+        // adding hidden direction list
+        var cardDirections = document.createElement('div');
+        cardDirections.className = "card-directions";
+        cardDirections.innerHTML = data[recipeNumber].directions;
+        cardDirections.style.display = "none";
+        newElement.appendChild(cardDirections);
 
         document.getElementById("cardholder").appendChild(newElement);
 

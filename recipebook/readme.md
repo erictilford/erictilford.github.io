@@ -5,9 +5,9 @@ A recipe website by Eric Tilford.
 
 ## to-do
 - [ ] Add loading spinner
-- [ ] Add directions
+- [x] Add directions
   - [x] To spreadsheet
-  - [ ] To card
+  - [x] To card
 - [ ] Add Header, other info to popup
 - [ ] Close popup from clicking outside
 - [x] Change concatenation function to element creation
@@ -21,6 +21,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 2.8.2020
+- Added directions to large card
 - Added Sticky header
 - Added Badges to cards
 - Added tags to spreadsheet
