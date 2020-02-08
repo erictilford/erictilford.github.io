@@ -16,11 +16,12 @@ A recipe website by Eric Tilford.
   - [x] Tags
   - [ ] Buttons
     - [ ] Functions
-- [ ] Sticky header/ footer with github and google sheet icon
+- [x] Sticky header/ footer with github and google sheet icon
 
 ## changelog
 
 ### 2.8.2020
+- Added Sticky header
 - Added Badges to cards
 - Added tags to spreadsheet
 - Changed concatenation function to element creation
