@@ -13,12 +13,12 @@ function showInfo(data) {
     console.log(data);
     console.log("Successfully processed " + data.length + " rows!");
 
-    var names = "<b>Found in File:</b> ";
+    //var names = "<b>Found in File:</b> ";
 
     for (var recipeNumber in data) {
 
-        names += data[recipeNumber].recipe_name;
-        if (recipeNumber < data.length - 1) { names += ", "; }
+        //names += data[recipeNumber].recipe_name;
+        //if (recipeNumber < data.length - 1) { names += ", "; }
 
         var newElement = document.createElement('div');
         newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover";
@@ -56,8 +56,18 @@ function showInfo(data) {
         cardText.innerHTML = data[recipeNumber].summary;
         cardBody.appendChild(cardText);
 
+        var tags = data[recipeNumber].tags.split("; ");
+        for (var tag in tags){
+            console.log(tags[tag]);
+            var testBadge = document.createElement('span');
+            testBadge.className = 'badge badge-secondary';
+            testBadge.innerHTML = tags[tag];
+            cardBody.appendChild(testBadge);
+        }
+
         newElement.appendChild(cardBody);
 
+        // adding hidden ingredient list
         var cardIngredients = document.createElement('div'); 
         cardIngredients.className = "card-ingredients";
         cardIngredients.innerHTML = data[recipeNumber].ingredients; 
@@ -69,7 +79,7 @@ function showInfo(data) {
 
     }
 
-    document.getElementById("names").innerHTML = names;
+    //document.getElementById("names").innerHTML = names;
 
     document.getElementsByClassName("x-button")[0].onclick = function closeLargeCard(){
         document.getElementById("large-card").style.display = "none";

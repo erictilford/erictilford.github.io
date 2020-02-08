@@ -1,10 +1,9 @@
 # recipebook
 A recipe website by Eric Tilford.
 
+[Tabletop.js](https://github.com/jsoma/tabletop) is used to convert a [Google Sheet](https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit#gid=0) to JavaScript, the rest is my own work.
+
 ## to-do
-- [x] Fix popup behaviour
-  - [x] looks good on mobile
-  - [x] fixed to viewport
 - [ ] Add loading spinner
 - [ ] Add directions
   - [x] To spreadsheet
@@ -13,11 +12,17 @@ A recipe website by Eric Tilford.
 - [ ] Close popup from clicking outside
 - [x] Change concatenation function to element creation
 - [ ] Tag + badge system
+  - [x] Badges
+  - [x] Tags
+  - [ ] Buttons
+    - [ ] Functions
 - [ ] Sticky header/ footer with github and google sheet icon
 
 ## changelog
 
 ### 2.8.2020
+- Added Badges to cards
+- Added tags to spreadsheet
 - Changed concatenation function to element creation
 - Cleaned up code
 
