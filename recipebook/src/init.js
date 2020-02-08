@@ -15,13 +15,14 @@ function showInfo(data) {
 
     var names = "<b>Found in File:</b> ";
 
-    for (var x in data) {
+    for (var recipeNumber in data) {
 
-        names += data[x].recipe_name;
-        if (x < data.length - 1) { names += ", "; }
+        names += data[recipeNumber].recipe_name;
+        if (recipeNumber < data.length - 1) { names += ", "; }
 
         var newElement = document.createElement('div');
-        newElement.id = "card_"+x; newElement.className = "card blue-hover";
+        newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover";
+
         newElement.onclick = function largeCard()
         { 
             document.getElementById("large-card").style.display = "block";
@@ -39,7 +40,7 @@ function showInfo(data) {
         }
 
         var cardImage = document.createElement('img');
-        cardImage.src = "assets/recipes/"+data[x].image; 
+        cardImage.src = "assets/recipes/"+data[recipeNumber].image; 
         cardImage.className = "card-img-top";
         newElement.appendChild(cardImage);
 
@@ -48,19 +49,19 @@ function showInfo(data) {
 
         var cardTitle = document.createElement('h5'); 
         cardTitle.className = "card-title";
-        cardTitle.innerHTML = data[x].recipe_name;
+        cardTitle.innerHTML = data[recipeNumber].recipe_name;
         cardBody.appendChild(cardTitle);
 
         var cardText = document.createElement('p'); 
         cardText.className = "card-text";
-        cardText.innerHTML = data[x].summary;
+        cardText.innerHTML = data[recipeNumber].summary;
         cardBody.appendChild(cardText);
 
         newElement.appendChild(cardBody);
 
         var cardIngredients = document.createElement('div'); 
         cardIngredients.className = "card-ingredients";
-        cardIngredients.innerHTML = data[x].ingredients; 
+        cardIngredients.innerHTML = data[recipeNumber].ingredients; 
         cardIngredients.style.display = "none";
         newElement.appendChild(cardIngredients);
 
