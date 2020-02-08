@@ -4,10 +4,10 @@ A recipe website by Eric Tilford.
 ## to-do
 - [x] Set up IDE with git!!!!
 - [x] Looks good on mobile
-- [ ] Fix popup behaviour
-  - [ ] looks good on mobile
-  - [ ] fixed to viewport
-
+- [x] Fix popup behaviour
+  - [x] looks good on mobile
+  - [x] fixed to viewport
+- [ ] Add loading spinner
 ## changelog
 
 ### 2.6.2020

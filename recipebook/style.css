@@ -65,4 +65,11 @@
         width:100%;
         margin: 0px 0px 15px;
     }
+    .full-page {
+        position:fixed;
+        left:10px;
+        top:10px;
+        width:calc(100% - 20px);
+        height:calc(100% - 20px);
+    }
 }
