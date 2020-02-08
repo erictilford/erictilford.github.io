@@ -22,7 +22,7 @@ function showInfo(data) {
 
         var newElement = document.createElement('div');
         newElement.id = "card_"+x; newElement.className = "card blue-hover";
-        newElement.onclick = function() 
+        newElement.onclick = function largeCard()
         { 
             document.getElementById("large-card").style.display = "block";
             var s = "<h5>Ingredients:</h5><ul>";
@@ -30,7 +30,7 @@ function showInfo(data) {
             ingredientArray = this.getElementsByClassName("card-ingredients")[0].innerHTML.split(", ");
 
             for (var y in ingredientArray) {
-                console.log(ingredientArray[y]);
+                //console.log(ingredientArray[y]);
                 s += "<li>" + ingredientArray[y] + "</li>";
             }
             s += "</ul>"
@@ -71,7 +71,7 @@ function showInfo(data) {
 
     document.getElementById("names").innerHTML = names;
 
-    document.getElementsByClassName("x-button")[0].onclick = function() {
+    document.getElementsByClassName("x-button")[0].onclick = function closeLargeCard(){
         document.getElementById("large-card").style.display = "none";
     }
 

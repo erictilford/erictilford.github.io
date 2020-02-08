@@ -2,13 +2,19 @@
 A recipe website by Eric Tilford.
 
 ## to-do
-- [x] Set up IDE with git!!!!
-- [x] Looks good on mobile
 - [x] Fix popup behaviour
   - [x] looks good on mobile
   - [x] fixed to viewport
 - [ ] Add loading spinner
+- [ ] Add directions
+  - [ ] To spreadsheet
+  - [ ] To card
+- [ ] Add Header, other info
+
 ## changelog
+
+### 2.7.2020
+- Fixed popup on mobile
 
 ### 2.6.2020
 - Set up responsiveness, still need to fix popup behaviour
