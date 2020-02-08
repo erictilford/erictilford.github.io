@@ -8,9 +8,8 @@ A recipe website by Eric Tilford.
 - [x] Add directions
   - [x] To spreadsheet
   - [x] To card
-- [ ] Add Header, other info to popup
-- [ ] Close popup from clicking outside
-- [x] Change concatenation function to element creation
+- [ ] Add Title, other info to popup
+- [ ] Close popup by clicking outside
 - [ ] Tag + badge system
   - [x] Badges
   - [x] Tags
