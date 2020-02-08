@@ -12,6 +12,8 @@ A recipe website by Eric Tilford.
 - [ ] Add Header, other info to popup
 - [ ] Close popup from clicking outside
 - [x] Change concatenation function to element creation
+- [ ] Tag + badge system
+- [ ] Sticky header/ footer with github and google sheet icon
 
 ## changelog
 
