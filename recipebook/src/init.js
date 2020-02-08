@@ -26,17 +26,16 @@ function showInfo(data) {
         newElement.onclick = function largeCard()
         { 
             document.getElementById("large-card").style.display = "block";
-            var s = "<h5>Ingredients:</h5><ul>";
 
+            var ingredientList = document.getElementsByClassName("ingredient-list")[0];
+            ingredientList.innerHTML = "";
             ingredientArray = this.getElementsByClassName("card-ingredients")[0].innerHTML.split("; ");
 
             for (var y in ingredientArray) {
-                //console.log(ingredientArray[y]);
-                s += "<li>" + ingredientArray[y] + "</li>";
+                var ingredient = document.createElement('li');
+                ingredient.innerText = ingredientArray[y];
+                ingredientList.appendChild(ingredient);
             }
-            s += "</ul>"
-
-            document.getElementsByClassName("ingredients")[0].innerHTML = s;
         }
 
         var cardImage = document.createElement('img');

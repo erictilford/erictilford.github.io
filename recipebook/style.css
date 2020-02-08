@@ -4,31 +4,23 @@
     width: 18rem;
     transition: all 200ms ease-out;
 }
-
 .card-img-top {
     height:150px;
     object-fit:cover;
 }
-
 #large-card { 
     width:100%;
-    /*border:1px solid green;*/
     display:none;
 }
 .full-page {
-    padding:0px 10px;
-    /*border:1px solid red;*/
+    padding:20px 10px;
     height:600px;
-
     position:absolute;
     left:10%;
     top:55px;
-    /*width:90%;*/
     width:80%;
     z-index:1;
-
     box-shadow: 0 0 10px 0px rgba(0, 0, 0, .4);
-
 }
 .x-button {
     color:grey;
@@ -53,13 +45,9 @@
 .blue-hover:hover {
     box-shadow: 0 0 6px 0px rgba(35, 173, 255, 1);
 }
-.ingredients {
-    padding:20px 10px 0px;
-}
 .wrapp {
     word-wrap: break-word;
 }
-
 @media only screen and (max-width: 768px) {
     .card {
         width:100%;

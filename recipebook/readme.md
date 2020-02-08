@@ -11,8 +11,13 @@ A recipe website by Eric Tilford.
   - [ ] To card
 - [ ] Add Header, other info to popup
 - [ ] Close popup from clicking outside
+- [x] Change concatenation function to element creation
 
 ## changelog
+
+### 2.8.2020
+- Changed concatenation function to element creation
+- Cleaned up code
 
 ### 2.7.2020
 - Updated Spreadsheet with thumbnails
