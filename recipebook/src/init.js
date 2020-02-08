@@ -6,7 +6,7 @@ function init() {
                     simpleSheet: true } );
 }
 
-window.addEventListener('DOMContentLoaded', init)
+window.addEventListener('DOMContentLoaded', init);
 
 function showInfo(data) {
 
@@ -27,7 +27,7 @@ function showInfo(data) {
             document.getElementById("large-card").style.display = "block";
             var s = "<h5>Ingredients:</h5><ul>";
 
-            ingredientArray = this.getElementsByClassName("card-ingredients")[0].innerHTML.split(", ");
+            ingredientArray = this.getElementsByClassName("card-ingredients")[0].innerHTML.split("; ");
 
             for (var y in ingredientArray) {
                 //console.log(ingredientArray[y]);

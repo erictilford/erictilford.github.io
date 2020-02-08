@@ -7,13 +7,17 @@ A recipe website by Eric Tilford.
   - [x] fixed to viewport
 - [ ] Add loading spinner
 - [ ] Add directions
-  - [ ] To spreadsheet
+  - [x] To spreadsheet
   - [ ] To card
-- [ ] Add Header, other info
+- [ ] Add Header, other info to popup
+- [ ] Close popup from clicking outside
 
 ## changelog
 
 ### 2.7.2020
+- Updated Spreadsheet with thumbnails
+- Changed list delimiting to `"; "`
+- Added page title
 - Fixed popup on mobile
 
 ### 2.6.2020
