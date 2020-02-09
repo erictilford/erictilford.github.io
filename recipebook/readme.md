@@ -20,10 +20,12 @@ A recipe website by Eric Tilford.
     - [ ] Functions
 - [x] Sticky header/ footer with github and google sheet icon
 - [ ] Dark theme switch
+- [x] Color badges and buttons
 
 ## changelog
 
 ### 2.8.2020
+- Colored badges and buttons
 - Added click outside large card to close
 - Added buttons for each unique Tag
 - Added directions to large card

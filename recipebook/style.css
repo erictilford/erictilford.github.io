@@ -65,6 +65,8 @@
 }
 button {
     margin: 0px 4px 10px;
+    border: 0px !important;
+    border-radius: 0.4em !important;
 }
 @media only screen and (max-width: 768px) {
     .card {

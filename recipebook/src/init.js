@@ -15,6 +15,20 @@ function showInfo(data) {
 
     var tagButtonNames = [];
 
+    // Coloring Badges
+    var tagColors = {
+        "Vegetarian" : "#228B22",
+        "Italian" : "#8B0000",
+        "Meat" : "#bd2130",
+        "Japanese" : "#117a8b",
+        "Fish" : "#0062cc",
+        "Tex-Mex" : "#ca7c08",
+        "Fast Food" : "#495057",
+        "Chinese" : "#dc3545"
+    };
+    console.log(tagColors);
+    console.log(tagColors["Vegetarian"]);
+
     // ROW ITERATION
     for (var recipeNumber in data) {
 
@@ -73,12 +87,13 @@ function showInfo(data) {
         cardText.innerHTML = data[recipeNumber].summary;
         cardBody.appendChild(cardText);
 
-        var tags = data[recipeNumber].tags.split("; ");
-        for (var tag in tags){
-            //console.log(tags[tag]);
+        // BADGES
+        var badges = data[recipeNumber].tags.split("; ");
+        for (badge in badges){
             var testBadge = document.createElement('span');
             testBadge.className = 'badge badge-secondary';
-            testBadge.innerHTML = tags[tag];
+            testBadge.innerHTML = badges[badge];
+            testBadge.style.background = tagColors[badges[badge]];
             cardBody.appendChild(testBadge);
         }
 
@@ -108,6 +123,7 @@ function showInfo(data) {
         newButton.type = "button";
         newButton.className = "btn btn-secondary btn-sm";
         newButton.innerHTML = tagButtonNames[name];
+        newButton.style.background = tagColors[tagButtonNames[name]];
 
         document.getElementById("buttonholder").appendChild(newButton);
     }
@@ -124,6 +140,9 @@ function showInfo(data) {
         document.getElementById("large-card").style.display = "none";
     }
     document.body.appendChild(closeLargeCardLayer);
+
+
+
 }
 
 //document.write("<span class='wrapp'>The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a></span>");
