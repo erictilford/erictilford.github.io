@@ -13,13 +13,20 @@ function showInfo(data) {
     console.log(data);
     console.log("Successfully processed " + data.length + " rows!");
 
-    //var names = "<b>Found in File:</b> ";
+    var tagButtonNames = [];
 
     for (var recipeNumber in data) {
 
-        //names += data[recipeNumber].recipe_name;
-        //if (recipeNumber < data.length - 1) { names += ", "; }
+        // BUTTONS //
+        var tags = data[recipeNumber].tags.split("; ");
+        for (var tag in tags){
+            if (!tagButtonNames.includes(tags[tag])){
+                tagButtonNames.push(tags[tag]);
+            }
+        }
 
+
+        // CARDS //
         var newElement = document.createElement('div');
         newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover";
 
@@ -93,9 +100,20 @@ function showInfo(data) {
 
         document.getElementById("cardholder").appendChild(newElement);
 
+
+
     }
 
-    //document.getElementById("names").innerHTML = names;
+    for (var name in tagButtonNames) {
+        var newButton = document.createElement('button');
+        newButton.type = "button";
+        newButton.className = "btn btn-secondary btn-sm";
+        newButton.innerHTML = tagButtonNames[name];
+
+        document.getElementById("buttonholder").appendChild(newButton);
+    }
+
+    console.log(tagButtonNames);
 
     document.getElementsByClassName("x-button")[0].onclick = function closeLargeCard(){
         document.getElementById("large-card").style.display = "none";

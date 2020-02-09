@@ -51,6 +51,9 @@
 .badge {
     margin:0px 5px 0px 0px;
 }
+button {
+    margin: 0px 5px 15px;
+}
 @media only screen and (max-width: 768px) {
     .card {
         width:100%;

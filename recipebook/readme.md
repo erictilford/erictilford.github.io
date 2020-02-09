@@ -13,13 +13,14 @@ A recipe website by Eric Tilford.
 - [ ] Tag + badge system
   - [x] Badges
   - [x] Tags
-  - [ ] Buttons
+  - [x] Buttons
     - [ ] Functions
 - [x] Sticky header/ footer with github and google sheet icon
 
 ## changelog
 
 ### 2.8.2020
+- Added buttons for each unique Tag
 - Added directions to large card
 - Added Sticky header
 - Added Badges to cards
