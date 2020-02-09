@@ -8,9 +8,6 @@ A recipe website by Eric Tilford.
 
 ## to-do
 - [ ] Add loading spinner
-- [x] Add directions
-  - [x] To spreadsheet
-  - [x] To card
 - [ ] Add Title, other info to popup
 - [x] Close popup by clicking outside
 - [ ] Tag + badge system
