@@ -21,8 +21,12 @@ A recipe website by Eric Tilford.
 - [x] Sticky header/ footer with github and google sheet icon
 - [ ] Dark theme switch
 - [x] Color badges and buttons
+- [ ] Update Summaries
 
 ## changelog
+
+### 2.9.2020
+- Function creation / code cleanup
 
 ### 2.8.2020
 - Colored badges and buttons

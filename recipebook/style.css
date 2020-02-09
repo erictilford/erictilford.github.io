@@ -39,7 +39,7 @@
     position:absolute;
     top:5px;
     right:5px;
-    border:1px solid lightgray;
+    border:2px solid lightgray;
     border-radius:5px;
 }
 .unselectable {
@@ -48,14 +48,13 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
+/*
 .x-button:hover {
     cursor:default;
 }
+ */
 .blue-hover:hover {
     box-shadow: 0 0 6px 0px rgba(35, 173, 255, 1);
-}
-.wrapp {
-    word-wrap: break-word;
 }
 .badge {
     margin:0px 5px 0px 0px;

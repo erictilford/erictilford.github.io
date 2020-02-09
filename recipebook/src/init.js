@@ -26,8 +26,8 @@ function showInfo(data) {
         "Fast Food" : "#495057",
         "Chinese" : "#dc3545"
     };
-    console.log(tagColors);
-    console.log(tagColors["Vegetarian"]);
+    //console.log(tagColors);
+    //console.log(tagColors["Vegetarian"]);
 
     // ROW ITERATION
     for (var recipeNumber in data) {
@@ -62,9 +62,9 @@ function showInfo(data) {
             directionList.innerHTML = "";
             directionArray = this.getElementsByClassName("card-directions")[0].innerHTML.split("; ");
 
-            for (var y in directionArray) {
+            for (var z in directionArray) {
                 var direction = document.createElement('li');
-                direction.innerText = directionArray[y];
+                direction.innerText = directionArray[z];
                 directionList.appendChild(direction);
             }
         }
@@ -118,31 +118,25 @@ function showInfo(data) {
     }
 
     // BUTTON CREATION
-    for (var name in tagButtonNames) {
-        var newButton = document.createElement('button');
-        newButton.type = "button";
-        newButton.className = "btn btn-secondary btn-sm";
-        newButton.innerHTML = tagButtonNames[name];
-        newButton.style.background = tagColors[tagButtonNames[name]];
+    function createButtons() {
+        for (var name in tagButtonNames) {
+            var newButton = document.createElement('button');
+            newButton.type = "button";
+            newButton.className = "btn btn-secondary btn-sm";
+            newButton.innerHTML = tagButtonNames[name];
+            newButton.style.background = tagColors[tagButtonNames[name]];
+            document.getElementById("buttonholder").appendChild(newButton);
+            }
+        }
+    createButtons();
 
-        document.getElementById("buttonholder").appendChild(newButton);
-    }
-
-    // X BUTTON
-    document.getElementsByClassName("x-button")[0].onclick = function closeLargeCard(){
+    // CLOSE LARGE CARD
+    function closeLargeCard(){
         document.getElementById("large-card").style.display = "none";
     }
-
-    // Creating the layer which closes the large card when you click "outside" it.
-    var closeLargeCardLayer = document.createElement('div');
-    closeLargeCardLayer.id = 'close-large-card-layer';
-    closeLargeCardLayer.onclick = function() {
-        document.getElementById("large-card").style.display = "none";
-    }
-    document.body.appendChild(closeLargeCardLayer);
-
-
+    // attach to X BUTTON
+    document.getElementsByClassName("x-button")[0].onclick = function() { closeLargeCard() };
+    // attach to "CLICK OUTSIDE TO CLOSE" LAYER
+    document.getElementById("close-large-card-layer").onclick = function() { closeLargeCard() };
 
 }
-
-//document.write("<span class='wrapp'>The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a></span>");
