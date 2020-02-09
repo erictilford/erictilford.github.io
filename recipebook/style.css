@@ -60,6 +60,9 @@
 .badge {
     margin:0px 5px 0px 0px;
 }
+.navbar {
+    border-bottom: 2px solid #dee2e6;
+}
 button {
     margin: 0px 4px 10px;
 }

@@ -102,7 +102,7 @@ function showInfo(data) {
         
     }
 
-    // Creating the Buttons
+    // BUTTON CREATION
     for (var name in tagButtonNames) {
         var newButton = document.createElement('button');
         newButton.type = "button";

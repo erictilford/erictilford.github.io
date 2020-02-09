@@ -1,7 +1,10 @@
 # recipebook
+
 A recipe website by Eric Tilford.
 
 [Tabletop.js](https://github.com/jsoma/tabletop) is used to convert a [Google Sheet](https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit#gid=0) to JavaScript, the rest is my own work.
+
+*created 2.2.2020*
 
 ## to-do
 - [ ] Add loading spinner
@@ -16,6 +19,7 @@ A recipe website by Eric Tilford.
   - [x] Buttons
     - [ ] Functions
 - [x] Sticky header/ footer with github and google sheet icon
+- [ ] Dark theme switch
 
 ## changelog
 
