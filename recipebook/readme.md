@@ -19,6 +19,7 @@ A recipe website by Eric Tilford.
 - [ ] Dark theme switch
 - [x] Color badges and buttons
 - [ ] Update Summaries
+- [ ] Add (c) to footer
 
 ## changelog
 
