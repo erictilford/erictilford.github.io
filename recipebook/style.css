@@ -1,4 +1,5 @@
 .card {
+    z-index:500;
     margin: 0px 10px 15px;
     display: inline-block;
     width: 18rem;
@@ -15,12 +16,20 @@
 .full-page {
     padding:10px 15px;
     height:600px;
-    position:absolute;
+    position:fixed;
     left:10%;
     top:55px;
     width:80%;
-    z-index:1021;
+    z-index:3000;
     box-shadow: 0 0 10px 0px rgba(0, 0, 0, .4);
+}
+#close-large-card-layer{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 400;
 }
 .x-button {
     color:grey;
@@ -52,7 +61,7 @@
     margin:0px 5px 0px 0px;
 }
 button {
-    margin: 0px 5px 15px;
+    margin: 0px 4px 10px;
 }
 @media only screen and (max-width: 768px) {
     .card {
@@ -60,7 +69,6 @@ button {
         margin: 0px 0px 15px;
     }
     .full-page {
-        position:fixed;
         left:10px;
         top:10px;
         width:calc(100% - 20px);

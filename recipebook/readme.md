@@ -9,7 +9,7 @@ A recipe website by Eric Tilford.
   - [x] To spreadsheet
   - [x] To card
 - [ ] Add Title, other info to popup
-- [ ] Close popup by clicking outside
+- [x] Close popup by clicking outside
 - [ ] Tag + badge system
   - [x] Badges
   - [x] Tags
@@ -20,6 +20,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 2.8.2020
+- Added click outside large card to close
 - Added buttons for each unique Tag
 - Added directions to large card
 - Added Sticky header

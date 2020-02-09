@@ -10,14 +10,15 @@ window.addEventListener('DOMContentLoaded', init);
 
 function showInfo(data) {
 
-    console.log(data);
-    console.log("Successfully processed " + data.length + " rows!");
+    //console.log(data);
+    //console.log("Successfully processed " + data.length + " rows!");
 
     var tagButtonNames = [];
 
+    // ROW ITERATION
     for (var recipeNumber in data) {
 
-        // BUTTONS //
+        // TAG GENERATION //
         var tags = data[recipeNumber].tags.split("; ");
         for (var tag in tags){
             if (!tagButtonNames.includes(tags[tag])){
@@ -25,12 +26,11 @@ function showInfo(data) {
             }
         }
 
-
         // CARDS //
         var newElement = document.createElement('div');
         newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover";
 
-        newElement.onclick = function largeCard()
+        newElement.onclick = function openlargeCard()
         { 
             document.getElementById("large-card").style.display = "block";
 
@@ -75,7 +75,7 @@ function showInfo(data) {
 
         var tags = data[recipeNumber].tags.split("; ");
         for (var tag in tags){
-            console.log(tags[tag]);
+            //console.log(tags[tag]);
             var testBadge = document.createElement('span');
             testBadge.className = 'badge badge-secondary';
             testBadge.innerHTML = tags[tag];
@@ -99,11 +99,10 @@ function showInfo(data) {
         newElement.appendChild(cardDirections);
 
         document.getElementById("cardholder").appendChild(newElement);
-
-
-
+        
     }
 
+    // Creating the Buttons
     for (var name in tagButtonNames) {
         var newButton = document.createElement('button');
         newButton.type = "button";
@@ -113,11 +112,18 @@ function showInfo(data) {
         document.getElementById("buttonholder").appendChild(newButton);
     }
 
-    console.log(tagButtonNames);
-
+    // X BUTTON
     document.getElementsByClassName("x-button")[0].onclick = function closeLargeCard(){
         document.getElementById("large-card").style.display = "none";
     }
+
+    // Creating the layer which closes the large card when you click "outside" it.
+    var closeLargeCardLayer = document.createElement('div');
+    closeLargeCardLayer.id = 'close-large-card-layer';
+    closeLargeCardLayer.onclick = function() {
+        document.getElementById("large-card").style.display = "none";
+    }
+    document.body.appendChild(closeLargeCardLayer);
 }
 
 //document.write("<span class='wrapp'>The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a></span>");
