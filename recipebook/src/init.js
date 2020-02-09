@@ -10,12 +10,9 @@ window.addEventListener('DOMContentLoaded', init);
 
 function showInfo(data) {
 
-    //console.log(data);
-    //console.log("Successfully processed " + data.length + " rows!");
-
     var tagButtonNames = [];
 
-    // Coloring Badges
+    // TAG/BADGE COLORS
     var tagColors = {
         "Vegetarian" : "#228B22",
         "Italian" : "#8B0000",
@@ -26,13 +23,11 @@ function showInfo(data) {
         "Fast Food" : "#495057",
         "Chinese" : "#dc3545"
     };
-    //console.log(tagColors);
-    //console.log(tagColors["Vegetarian"]);
 
     // ROW ITERATION
     for (var recipeNumber in data) {
 
-        // TAG GENERATION //
+        // TAG GENERATION
         var tags = data[recipeNumber].tags.split("; ");
         for (var tag in tags){
             if (!tagButtonNames.includes(tags[tag])){
@@ -40,10 +35,11 @@ function showInfo(data) {
             }
         }
 
-        // CARDS //
+        // C A R D S
         var newElement = document.createElement('div');
         newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover";
 
+        // LARGE CARD
         newElement.onclick = function openlargeCard()
         { 
             document.getElementById("large-card").style.display = "block";
@@ -128,16 +124,13 @@ function showInfo(data) {
             document.getElementById("buttonholder").appendChild(newButton);
             }
         }
-    createButtons();
+    //createButtons();
 
     // CLOSE LARGE CARD
-    function closeLargeCard(){
-        document.getElementById("large-card").style.display = "none";
-    }
+    function closeLargeCard(){ document.getElementById("large-card").style.display = "none"; }
     // attach to X BUTTON
     document.getElementsByClassName("x-button")[0].onclick = function() { closeLargeCard() };
     // attach to "CLICK OUTSIDE TO CLOSE" LAYER
     document.getElementById("close-large-card-layer").onclick = function() { closeLargeCard() };
 
-    // delete me - test for commit
 }
