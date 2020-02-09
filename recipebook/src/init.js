@@ -139,4 +139,5 @@ function showInfo(data) {
     // attach to "CLICK OUTSIDE TO CLOSE" LAYER
     document.getElementById("close-large-card-layer").onclick = function() { closeLargeCard() };
 
+    // delete me - test for commit
 }
