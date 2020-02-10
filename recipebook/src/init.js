@@ -44,6 +44,17 @@ function showInfo(data) {
         { 
             document.getElementById("large-card").style.display = "block";
 
+            var recipeTitle = document.getElementsByClassName("recipe-title")[0];
+            recipeTitle.innerHTML = this.getElementsByClassName("card-title")[0].innerHTML;
+
+            var handsOnTime = document.getElementsByClassName("hands-on-time")[0];
+            // TODO Convert Minutes to H/M
+            handsOnTime.innerHTML = "Hands-on time: " + this.getElementsByClassName("card-hands-on-time")[0].innerHTML + " minutes";
+
+            var handsOnTime = document.getElementsByClassName("total-time")[0];
+            // TODO Convert Minutes to H/M
+            handsOnTime.innerHTML = "Total time: " + this.getElementsByClassName("card-total-time")[0].innerHTML + " minutes";
+
             var ingredientList = document.getElementsByClassName("ingredient-list")[0];
             ingredientList.innerHTML = "";
             ingredientArray = this.getElementsByClassName("card-ingredients")[0].innerHTML.split("; ");
@@ -95,18 +106,30 @@ function showInfo(data) {
 
         newElement.appendChild(cardBody);
 
-        // adding hidden ingredient list
+        // ADDING HIDDEN INFO
+        
+        // hands-on time
+        var handsOnTime = document.createElement('div');
+        handsOnTime.className = "card-hands-on-time d-none";
+        handsOnTime.innerHTML = data[recipeNumber].hands_on_time;
+        newElement.appendChild(handsOnTime);
+
+        // total time
+        var totalTime = document.createElement('div');
+        totalTime.className = "card-total-time d-none";
+        totalTime.innerHTML = data[recipeNumber].total_time;
+        newElement.appendChild(totalTime);
+
+        // ingredient list
         var cardIngredients = document.createElement('div'); 
-        cardIngredients.className = "card-ingredients";
-        cardIngredients.innerHTML = data[recipeNumber].ingredients; 
-        cardIngredients.style.display = "none";
+        cardIngredients.className = "card-ingredients d-none";
+        cardIngredients.innerHTML = data[recipeNumber].ingredients;
         newElement.appendChild(cardIngredients);
 
-        // adding hidden direction list
+        // direction list
         var cardDirections = document.createElement('div');
-        cardDirections.className = "card-directions";
+        cardDirections.className = "card-directions d-none";
         cardDirections.innerHTML = data[recipeNumber].directions;
-        cardDirections.style.display = "none";
         newElement.appendChild(cardDirections);
 
         document.getElementById("cardholder").appendChild(newElement);

@@ -9,6 +9,10 @@ A recipe website by Eric Tilford.
 ## to-do
 - [ ] Add loading spinner
 - [ ] Add Title, other info to popup
+  - [x] Title
+  - [x] Hands-on time, total time
+  - [ ] Badges
+  - [ ] Other info
 - [x] Close popup by clicking outside
 - [ ] Tag + badge system
   - [x] Badges
@@ -19,11 +23,14 @@ A recipe website by Eric Tilford.
 - [ ] Dark theme switch
 - [x] Color badges and buttons
 - [ ] Update Summaries
-- [ ] Add (c) to footer
+- [x] Add (c) to footer
 
 ## changelog
 
 ### 2.9.2020
+- Added hands-on time, total time
+- Added copyright to footer
+- Added Title to large card
 - Function creation / code cleanup
 
 ### 2.8.2020
