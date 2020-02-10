@@ -47,13 +47,31 @@ function showInfo(data) {
             var recipeTitle = document.getElementsByClassName("recipe-title")[0];
             recipeTitle.innerHTML = this.getElementsByClassName("card-title")[0].innerHTML;
 
+            // Minutes to Hours/Minutes
+            function M2HM(mins) {
+                var s = "";
+                var hours = Math.floor(mins / 60);
+                if (hours == 1) {
+                    s += "1 Hour ";
+                } else if (hours >= 2) {
+                    s += hours + " Hours";
+                }
+                var minutes = mins % 60;
+                if (minutes == 1) {
+                    s += "1 Minute ";
+                } else if (minutes >= 2) {
+                    s += minutes + " Minutes";
+                }
+                return s;
+            }
+
             var handsOnTime = document.getElementsByClassName("hands-on-time")[0];
-            // TODO Convert Minutes to H/M
-            handsOnTime.innerHTML = "Hands-on time: " + this.getElementsByClassName("card-hands-on-time")[0].innerHTML + " minutes";
+            var handsOnPretty = M2HM( this.getElementsByClassName("card-hands-on-time")[0].innerHTML );
+            handsOnTime.innerHTML = "Hands-on time: " + handsOnPretty;
 
             var totalTime = document.getElementsByClassName("total-time")[0];
-            // TODO Convert Minutes to H/M
-            totalTime.innerHTML = "Total time: " + this.getElementsByClassName("card-total-time")[0].innerHTML + " minutes";
+            var totalPretty = M2HM( this.getElementsByClassName("card-total-time")[0].innerHTML );
+            totalTime.innerHTML = "Total time: " + totalPretty;
 
             var ingredientList = document.getElementsByClassName("ingredient-list")[0];
             ingredientList.innerHTML = "";
