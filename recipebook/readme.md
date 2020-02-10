@@ -7,27 +7,27 @@ A recipe website by Eric Tilford.
 *created 2.2.2020*
 
 ## to-do
-- [ ] Add loading spinner
-- [ ] Add Title, other info to popup
+- [x] Add loading spinner
+- [x] Add Title, other info to popup
   - [x] Title
   - [x] Hands-on time, total time
   - [ ] Badges
   - [ ] Other info
-- [x] Close popup by clicking outside
 - [ ] Tag + badge system
   - [x] Badges
   - [x] Tags
   - [x] Buttons
     - [ ] Functions
-- [x] Sticky header/ footer with github and google sheet icon
 - [ ] Dark theme switch
 - [x] Color badges and buttons
 - [ ] Update Summaries
-- [x] Add (c) to footer
+- [ ] 'Toggle Buttons' Button
 
 ## changelog
 
 ### 2.9.2020
+- Added loading spinner
+- Added minutes to hours/minutes function
 - Added hands-on time, total time
 - Added copyright to footer
 - Added Title to large card

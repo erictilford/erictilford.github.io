@@ -67,6 +67,11 @@ button {
     border: 0px !important;
     border-radius: 0.4em !important;
 }
+#loading-spinner {
+    width:100vw;
+    height: calc(100vh - 58px);
+    text-align: center;
+}
 @media only screen and (max-width: 768px) {
     .card {
         width:100%;

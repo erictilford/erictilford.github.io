@@ -175,4 +175,6 @@ function showInfo(data) {
     // attach to "CLICK OUTSIDE TO CLOSE" LAYER
     document.getElementById("close-large-card-layer").onclick = function() { closeLargeCard() };
 
+    // HIDE LOADING SPINNER
+    document.getElementById("loading-spinner").style.display = "none";
 }
