@@ -51,9 +51,9 @@ function showInfo(data) {
             // TODO Convert Minutes to H/M
             handsOnTime.innerHTML = "Hands-on time: " + this.getElementsByClassName("card-hands-on-time")[0].innerHTML + " minutes";
 
-            var handsOnTime = document.getElementsByClassName("total-time")[0];
+            var totalTime = document.getElementsByClassName("total-time")[0];
             // TODO Convert Minutes to H/M
-            handsOnTime.innerHTML = "Total time: " + this.getElementsByClassName("card-total-time")[0].innerHTML + " minutes";
+            totalTime.innerHTML = "Total time: " + this.getElementsByClassName("card-total-time")[0].innerHTML + " minutes";
 
             var ingredientList = document.getElementsByClassName("ingredient-list")[0];
             ingredientList.innerHTML = "";
@@ -76,6 +76,7 @@ function showInfo(data) {
             }
         }
 
+        // CARD CONTENT
         var cardImage = document.createElement('img');
         cardImage.src = "assets/recipes/"+data[recipeNumber].image; 
         cardImage.className = "card-img-top";
