@@ -7,6 +7,7 @@ A recipe website by Eric Tilford.
 *created 2.2.2020*
 
 ## to-do
+- [ ] 
 - [x] Add loading spinner
 - [x] Add Title, other info to popup
   - [x] Title
@@ -24,6 +25,11 @@ A recipe website by Eric Tilford.
 - [ ] 'Toggle Buttons' Button
 
 ## changelog
+
+### 6.28.2020
+- Added Yellow Curry Recipe
+- Added scrolling to "large" card
+- Added 'contributor' to spreadsheet
 
 ### 2.9.2020
 - Added loading spinner
