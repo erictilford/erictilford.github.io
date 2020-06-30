@@ -67,11 +67,11 @@ function showInfo(data) {
 
             var handsOnTime = document.getElementsByClassName("hands-on-time")[0];
             var handsOnPretty = M2HM( this.getElementsByClassName("card-hands-on-time")[0].innerHTML );
-            handsOnTime.innerHTML = "Hands-on time: " + handsOnPretty;
+            handsOnTime.innerHTML = "<b>Hands-on time:</b> " + handsOnPretty;
 
             var totalTime = document.getElementsByClassName("total-time")[0];
             var totalPretty = M2HM( this.getElementsByClassName("card-total-time")[0].innerHTML );
-            totalTime.innerHTML = "Total time: " + totalPretty;
+            totalTime.innerHTML = "<b>Total time:</b> " + totalPretty;
 
             var ingredientList = document.getElementsByClassName("ingredient-list")[0];
             ingredientList.innerHTML = "";
