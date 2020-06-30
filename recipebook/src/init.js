@@ -92,6 +92,16 @@ function showInfo(data) {
                 direction.innerText = directionArray[z];
                 directionList.appendChild(direction);
             }
+
+            var noteList = document.getElementsByClassName("note-list")[0];
+            noteList.innerHTML = "";
+            noteArray = this.getElementsByClassName("card-notes")[0].innerHTML.split("; ");
+
+            for (var z in noteArray) {
+                var note = document.createElement('li');
+                note.innerText = noteArray[z];
+                noteList.appendChild(note);
+            }
         }
 
         // CARD CONTENT
@@ -150,6 +160,12 @@ function showInfo(data) {
         cardDirections.className = "card-directions d-none";
         cardDirections.innerHTML = data[recipeNumber].directions;
         newElement.appendChild(cardDirections);
+
+        // notes list
+        var cardNotes = document.createElement('div');
+        cardNotes.className = "card-notes d-none";
+        cardNotes.innerHTML = data[recipeNumber].notes;
+        newElement.appendChild(cardNotes);
 
         document.getElementById("cardholder").appendChild(newElement);
         
