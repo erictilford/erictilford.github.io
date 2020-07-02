@@ -1,14 +1,17 @@
 :root {
-    --primary-color: #121212;
-    --secondary-color: #1d1d1d;
-    --tertiary-color: #333333;
-    --text-color: #fff;
+    --primary-color: #1d1d1d; /*#121212*/
+    --secondary-color: #333333;
+    --tertiary-color: #555555;
+    --text-color: #eeeeee;
     --badge-text-color: #000;
     --card-highlight: rgba(35, 173, 255, 1);
 }
 
 body {
     background-color:var(--primary-color);
+}
+hr {
+    background-color: var(--tertiary-color)
 }
 
 .card {
@@ -17,7 +20,7 @@ body {
     z-index:500;
     margin: 0px 10px 15px;
     display: inline-block;
-    width: 18rem;
+    width: calc(33% - 18px);
     transition: all 200ms ease-out;
 }
 .card-img-top {
@@ -96,8 +99,8 @@ button {
 }
 @media only screen and (max-width: 768px) {
     .card {
-        width:100%;
-        margin: 0px 0px 15px;
+        width:calc(50% - 20px);
+        /*margin: 0px 0px 15px;*/
     }
     .full-page {
         left:10px;
@@ -108,5 +111,11 @@ button {
     .navbar {
         padding-left:0px;
         padding-right:0px;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .card {
+        width: 100%;
+        margin:0px 0px 15px;
     }
 }
