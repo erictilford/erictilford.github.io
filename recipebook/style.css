@@ -1,4 +1,19 @@
+:root {
+    --primary-color: #121212;
+    --secondary-color: #1d1d1d;
+    --tertiary-color: #333333;
+    --text-color: #fff;
+    --badge-text-color: #000;
+    --card-highlight: rgba(35, 173, 255, 1);
+}
+
+body {
+    background-color:var(--primary-color);
+}
+
 .card {
+    background-color:var(--secondary-color);
+    color:var(--text-color);
     z-index:500;
     margin: 0px 10px 15px;
     display: inline-block;
@@ -33,14 +48,14 @@
     z-index: 400;
 }
 .x-button {
-    color:grey;
+    color:var(--tertiary-color);
     padding:0px 5px 4px;
     line-height:16px;
     font-weight:bold;
     position:absolute;
     top:5px;
     right:5px;
-    border:2px solid lightgray;
+    border:2px solid var(--secondary-color);
     border-radius:5px;
 }
 .unselectable {
@@ -55,18 +70,24 @@
 }
  */
 .blue-hover:hover {
-    box-shadow: 0 0 6px 0px rgba(35, 173, 255, 1);
+    box-shadow: 0 0 6px 0px var(--card-highlight);
 }
 .badge {
     margin:0px 5px 0px 0px;
+    color:var(--badge-text-color);
 }
 .navbar {
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid var(--tertiary-color);
+    background-color: var(--secondary-color) !important;
 }
 button {
     margin: 0px 4px 10px;
     border: 0px !important;
     border-radius: 0.4em !important;
+}
+.footer-text {
+    text-align: center;
+    color:var(--text-color);
 }
 #loading-spinner {
     width:100vw;
