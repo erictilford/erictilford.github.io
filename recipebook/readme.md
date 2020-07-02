@@ -7,24 +7,27 @@ A recipe website by Eric Tilford.
 *created 2.2.2020*
 
 ## to-do
-- [ ] 
-- [x] Add loading spinner
-- [x] Add Title, other info to popup
-  - [x] Title
-  - [x] Hands-on time, total time
+
+- [ ] Add info to popup
   - [ ] Badges
-  - [ ] Other info
-- [ ] Tag + badge system
-  - [x] Badges
-  - [x] Tags
-  - [x] Buttons
-    - [ ] Functions
-- [ ] Dark theme switch
-- [x] Color badges and buttons
-- [ ] Update Summaries
+  - [ ] Date Added
+  - [ ] Contributor(s)
+  - [ ] Servings
+  - [ ] Summary
+- [ ] Options 
+  - [ ] Dark / Light theme
 - [ ] 'Toggle Buttons' Button
 
 ## changelog
+
+### 7.2.2020
+- Updated To-do
+- Dark theme
+- Style variables
+
+### 6.30.2020
+- Added Mex. Chicken, Tom Kha recipes
+- Added notes section
 
 ### 6.28.2020
 - Added Yellow Curry Recipe
