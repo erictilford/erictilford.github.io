@@ -2,7 +2,7 @@
     --primary-color: #1d1d1d; /*#121212*/
     --secondary-color: #333333;
     --tertiary-color: #555555;
-    --text-color: #eeeeee;
+    --text-color: #dddddd;
     --badge-text-color: #000;
     --card-highlight: rgba(35, 173, 255, 1);
 }
@@ -82,6 +82,9 @@ hr {
 .navbar {
     border-bottom: 2px solid var(--tertiary-color);
     background-color: var(--secondary-color) !important;
+}
+.navbar-brand {
+    color: var(--text-color) !important;
 }
 button {
     margin: 0px 4px 10px;
