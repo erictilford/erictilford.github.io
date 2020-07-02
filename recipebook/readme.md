@@ -21,6 +21,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.2.2020
+- Reworked card sizes and media breakpoints
 - Updated To-do
 - Dark theme
 - Style variables
