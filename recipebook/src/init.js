@@ -215,7 +215,7 @@ function showInfo(data) {
                 .setProperty('--tertiary-color', 'var(--dark-tertiary)');
             document.documentElement.style
                 .setProperty('--text-color', 'var(--dark-text)');
-            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-sun-o fa-2x light-mode-button header-icon";
+            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-sun fa-2x light-mode-button header-icon";
             darkMode = true;
         }
     }
