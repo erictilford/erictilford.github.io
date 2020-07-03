@@ -9,7 +9,8 @@ A recipe website by Eric Tilford.
 ## to-do
 
 - [ ] Organize CSS
-- [ ] Fix mobile 'Large Card'
+- [x] Fix mobile 'Large Card'
+- [ ] Fix mobile scrolling issue
 - [ ] Add info to popup
   - [ ] Badges
   - [ ] Date Added
@@ -23,6 +24,8 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.2.2020
+- Fixed List spacing
+- Fixed mobile "Large Card" layout
 - Added Dark / Light mode switch!
 - Reworked card sizes and media breakpoints
 - Updated To-do
