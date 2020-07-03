@@ -48,6 +48,9 @@ function showInfo(data) {
             var recipeTitle = document.getElementsByClassName("recipe-title")[0];
             recipeTitle.innerHTML = this.getElementsByClassName("card-title")[0].innerHTML;
 
+            var recipeSummary = document.getElementsByClassName("summary")[0];
+            recipeSummary.innerHTML = this.getElementsByClassName("card-text")[0].innerHTML;
+
             // Minutes to Hours/Minutes
             function M2HM(mins) {
                 var s = "";
