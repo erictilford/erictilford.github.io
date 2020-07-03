@@ -1,8 +1,18 @@
 :root {
-    --primary-color: #1d1d1d; /*#121212*/
-    --secondary-color: #333333;
-    --tertiary-color: #555555;
-    --text-color: #dddddd;
+    --dark-primary:#1d1d1d;
+    --dark-secondary:#333333;
+    --light-tertiary:#555555;
+    --dark-text:#dddddd;
+
+    --light-primary:#eee;
+    --light-secondary:#ccc;
+    --light-tertiary:#999;
+    --light-text:#000;
+
+    --primary-color: var(--dark-primary);
+    --secondary-color: var(--dark-secondary);
+    --tertiary-color: var(--light-tertiary);
+    --text-color: var(--dark-text);
     --badge-text-color: #000;
     --card-highlight: rgba(35, 173, 255, 1);
 }

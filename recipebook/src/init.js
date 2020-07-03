@@ -192,6 +192,39 @@ function showInfo(data) {
     // attach to "CLICK OUTSIDE TO CLOSE" LAYER
     document.getElementById("close-large-card-layer").onclick = function() { closeLargeCard() };
 
-    // HIDE LOADING SPINNER
+    // LIGHT / DARK MODE
+    var darkMode = true;
+    function toggleLightMode() {
+        if (darkMode == true) {
+            document.documentElement.style
+                .setProperty('--primary-color', 'var(--light-primary)');
+            document.documentElement.style
+                .setProperty('--secondary-color', 'var(--light-secondary)');
+            document.documentElement.style
+                .setProperty('--tertiary-color', 'var(--light-tertiary)');
+            document.documentElement.style
+                .setProperty('--text-color', 'var(--light-text)');
+            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-moon-o fa-2x light-mode-button";
+            darkMode = false;
+        }
+        else if (darkMode == false) {
+            document.documentElement.style
+                .setProperty('--primary-color', 'var(--dark-primary)');
+            document.documentElement.style
+                .setProperty('--secondary-color', 'var(--dark-secondary)');
+            document.documentElement.style
+                .setProperty('--tertiary-color', 'var(--dark-tertiary)');
+            document.documentElement.style
+                .setProperty('--text-color', 'var(--dark-text)');
+            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-sun-o fa-2x light-mode-button";
+            darkMode = true;
+        }
+    }
+    // attach to SUN BUTTON
+    document.getElementsByClassName("light-mode-button")[0].onclick = function() { toggleLightMode() };
+
+
+
+    // HIDE LOADING SPINNER (this goes last)
     document.getElementById("loading-spinner").style.display = "none";
 }

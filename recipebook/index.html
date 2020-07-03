@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -19,9 +20,15 @@
         <div class="container">
             <h1 class="navbar-brand" style="margin-bottom:0px">Recipe Book</h1>
             <form class="form-inline">
-                <div class="light-mode-button"><img style="width:24px; margin-left:10px;" src="assets/sun.png"></div>
+
+                <i class="fa fa-sun-o fa-2x light-mode-button" aria-hidden="true" style="color:var(--text-color); margin-left:10px"></i>
+                <a target="_blank" href="https://github.com/erictilford/erictilford.github.io/tree/master/recipebook">
+                    <i class="fa fa-github fa-2x" aria-hidden="true" style="color:var(--text-color); margin-left:10px"></i></a>
+                <a target="_blank" href="https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing">
+                    <i class="fa fa-table fa-2x" aria-hidden="true" style="color:var(--text-color); margin-left:10px; margin-top:4px"></i></a>
+                <!--<div class="light-mode-button"><img style="width:24px; margin-left:10px;" src="assets/sun.png"></div>
                 <a target="_blank" href="https://github.com/erictilford/erictilford.github.io/tree/master/recipebook"><img style="width:24px; margin-left:10px;" src="assets/github.png"></a>
-                <a target="_blank" href="https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing"><img style="width:24px; margin-left:10px;" src="assets/table.png"></a>
+                <a target="_blank" href="https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing"><img style="width:24px; margin-left:10px;" src="assets/table.png"></a>-->
             </form>
         </div>
     </nav>
@@ -62,6 +69,8 @@
             <div id="cardholder"></div>
             <br>
             <p class="footer-text">&copy; Eric Tilford MMXX</p>
+
+
 
             <script type="text/javascript" src="../src/tabletop.js"></script>
             <script type="text/javascript" src="src/init.js"></script>
