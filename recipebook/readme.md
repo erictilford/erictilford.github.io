@@ -15,12 +15,13 @@ A recipe website by Eric Tilford.
   - [ ] Servings
   - [ ] Summary
 - [ ] Options 
-  - [ ] Dark / Light theme
+  - [x] Dark / Light theme
 - [ ] 'Toggle Buttons' Button
 
 ## changelog
 
 ### 7.2.2020
+- Added Dark / Light mode switch!
 - Reworked card sizes and media breakpoints
 - Updated To-do
 - Dark theme
