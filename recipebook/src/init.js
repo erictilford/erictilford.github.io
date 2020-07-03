@@ -169,7 +169,6 @@ function showInfo(data) {
         newElement.appendChild(cardNotes);
 
         document.getElementById("cardholder").appendChild(newElement);
-        
     }
 
     // BUTTON CREATION
@@ -204,7 +203,7 @@ function showInfo(data) {
                 .setProperty('--tertiary-color', 'var(--light-tertiary)');
             document.documentElement.style
                 .setProperty('--text-color', 'var(--light-text)');
-            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-moon-o fa-2x light-mode-button";
+            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-moon-o fa-2x light-mode-button header-icon";
             darkMode = false;
         }
         else if (darkMode == false) {
@@ -216,14 +215,12 @@ function showInfo(data) {
                 .setProperty('--tertiary-color', 'var(--dark-tertiary)');
             document.documentElement.style
                 .setProperty('--text-color', 'var(--dark-text)');
-            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-sun-o fa-2x light-mode-button";
+            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-sun-o fa-2x light-mode-button header-icon";
             darkMode = true;
         }
     }
     // attach to SUN BUTTON
     document.getElementsByClassName("light-mode-button")[0].onclick = function() { toggleLightMode() };
-
-
 
     // HIDE LOADING SPINNER (this goes last)
     document.getElementById("loading-spinner").style.display = "none";

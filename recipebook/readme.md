@@ -8,6 +8,8 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] Organize CSS
+- [ ] Fix mobile 'Large Card'
 - [ ] Add info to popup
   - [ ] Badges
   - [ ] Date Added

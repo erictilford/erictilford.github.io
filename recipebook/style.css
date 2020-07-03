@@ -1,7 +1,7 @@
 :root {
     --dark-primary:#1d1d1d;
     --dark-secondary:#333333;
-    --light-tertiary:#555555;
+    --dark-tertiary:#555555;
     --dark-text:#dddddd;
 
     --light-primary:#ddd;
@@ -23,7 +23,9 @@ body {
 hr {
     background-color: var(--tertiary-color)
 }
-
+dl, ol, ul {
+    margin-left:-15px;
+}
 .card {
     background-color:var(--secondary-color);
     color:var(--text-color);
@@ -40,6 +42,10 @@ hr {
 #large-card { 
     width:100%;
     display:none;
+}
+.header-icon{
+    color:var(--text-color);
+    margin-left:12px;
 }
 .full-page {
     padding:10px 15px;
