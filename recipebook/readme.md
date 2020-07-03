@@ -16,7 +16,7 @@ A recipe website by Eric Tilford.
   - [ ] Date Added
   - [ ] Contributor(s)
   - [ ] Servings
-  - [ ] Summary
+  - [x] Summary
 - [ ] Options 
   - [x] Dark / Light theme
 - [ ] 'Toggle Buttons' Button
@@ -24,6 +24,8 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.2.2020
+- Fixed 'time' layout on large card
+- Added summary to Large Card
 - Fixed List spacing
 - Fixed mobile "Large Card" layout
 - Added Dark / Light mode switch!
