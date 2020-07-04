@@ -17,11 +17,12 @@ function showInfo(data) {
         "Thai" : "#83dec4",
         "Vegetarian" : "#228B22",
         "Italian" : "#8B0000",
-        "Meat" : "#bd2130",
+        "Dinner" : "#f2a68f",
         "Japanese" : "#117a8b",
         "Fish" : "#0062cc",
         "Tex-Mex" : "#ca7c08",
         "Fast Food" : "#495057",
+        "Dessert" : "#ebb7c3",
         "Chinese" : "#dc3545"
     };
 

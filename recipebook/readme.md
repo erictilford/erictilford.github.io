@@ -8,6 +8,7 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] Comment EVERYTHING
 - [ ] Organize CSS
 - [x] Fix mobile 'Large Card'
 - [ ] Fix mobile scrolling issue
@@ -22,6 +23,10 @@ A recipe website by Eric Tilford.
 - [ ] 'Toggle Buttons' Button
 
 ## changelog
+
+### 7.3.2020
+- Added Red beans and sausage
+- Amber added Blueberry muffins :)
 
 ### 7.2.2020
 - Fixed 'time' layout on large card
