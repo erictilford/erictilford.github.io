@@ -8,6 +8,7 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] Clean up assets folder
 - [ ] Comment EVERYTHING
 - [ ] Organize CSS
 - [x] Fix mobile 'Large Card'
@@ -25,6 +26,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.3.2020
+- Added Madeleines
 - Added unique highlight color to dark theme
 - Added servings to Large Card
 - Adjusted Large Card spacing
