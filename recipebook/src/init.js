@@ -216,7 +216,7 @@ function showInfo(data) {
                 .setProperty('--tertiary-color', 'var(--light-tertiary)');
             document.documentElement.style
                 .setProperty('--text-color', 'var(--light-text)');
-            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-moon-o fa-2x light-mode-button header-icon";
+            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-moon-o fa-lg light-mode-button header-icon";
             darkMode = false;
         }
         else if (darkMode == false) {
@@ -228,7 +228,7 @@ function showInfo(data) {
                 .setProperty('--tertiary-color', 'var(--dark-tertiary)');
             document.documentElement.style
                 .setProperty('--text-color', 'var(--dark-text)');
-            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-sun fa-2x light-mode-button header-icon";
+            document.getElementsByClassName("light-mode-button")[0].className = "fa fa-sun fa-lg light-mode-button header-icon";
             darkMode = true;
         }
     }
