@@ -3,19 +3,21 @@
     --dark-secondary:#333333;
     --dark-tertiary:#555555;
     --dark-text:#dddddd;
+    --dark-card-highlight: rgba(226, 156, 240, 1);
 
     --light-primary:#ddd;
     --light-secondary:#ccc;
     --light-tertiary:#999;
     --light-text:#000;
+    --light-card-highlight: rgba(35, 173, 255, 1);
 
     --primary-color: var(--dark-primary);
     --secondary-color: var(--dark-secondary);
     --tertiary-color: var(--light-tertiary);
     --text-color: var(--dark-text);
+    --card-highlight: var(--dark-card-highlight);
 
     --badge-text-color: #000;
-    --card-highlight: rgba(35, 173, 255, 1);
 }
 
 body {
@@ -25,7 +27,7 @@ hr {
     background-color: var(--tertiary-color)
 }
 dl, ol, ul {
-    margin-left:-15px;
+    margin-left:-12px;
 }
 .card {
     background-color:var(--secondary-color);
@@ -90,7 +92,7 @@ dl, ol, ul {
 }
  */
 .blue-hover:hover {
-    box-shadow: 0 0 6px 0px var(--card-highlight);
+    box-shadow: 0 0 10px 0px var(--card-highlight);
 }
 .badge {
     margin:0px 5px 0px 0px;
