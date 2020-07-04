@@ -24,7 +24,8 @@ A recipe website by Eric Tilford.
 
 ## changelog
 
-### 7.3.
+### 7.3.2020
+- Added unique highlight color to dark theme
 - Added servings to Large Card
 - Adjusted Large Card spacing
 - Added Red beans and sausage
