@@ -78,6 +78,9 @@ function showInfo(data) {
             var totalPretty = M2HM( this.getElementsByClassName("card-total-time")[0].innerHTML );
             totalTime.innerHTML = "<b>Total time:</b> " + totalPretty;
 
+            var servings = document.getElementsByClassName("servings")[0];
+            servings.innerHTML = "<b>Serves:</b> " + this.getElementsByClassName("card-servings")[0].innerHTML;
+
             var ingredientList = document.getElementsByClassName("ingredient-list")[0];
             ingredientList.innerHTML = "";
             ingredientArray = this.getElementsByClassName("card-ingredients")[0].innerHTML.split("; ");
@@ -154,6 +157,12 @@ function showInfo(data) {
         totalTime.innerHTML = data[recipeNumber].total_time;
         newElement.appendChild(totalTime);
 
+        // servings
+        var cardServings = document.createElement('div');
+        cardServings.className = "card-servings d-none";
+        cardServings.innerHTML = data[recipeNumber].serves;
+        newElement.appendChild(cardServings);
+        
         // ingredient list
         var cardIngredients = document.createElement('div'); 
         cardIngredients.className = "card-ingredients d-none";

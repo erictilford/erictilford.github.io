@@ -13,6 +13,7 @@
     --secondary-color: var(--dark-secondary);
     --tertiary-color: var(--light-tertiary);
     --text-color: var(--dark-text);
+
     --badge-text-color: #000;
     --card-highlight: rgba(35, 173, 255, 1);
 }
@@ -49,7 +50,7 @@ dl, ol, ul {
 }
 .full-page {
     padding:10px 15px;
-    height:600px;
+    height:calc(100% - 100px);
     position:fixed;
     left:10%;
     top:55px;

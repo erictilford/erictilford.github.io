@@ -16,7 +16,7 @@ A recipe website by Eric Tilford.
   - [ ] Badges
   - [ ] Date Added
   - [ ] Contributor(s)
-  - [ ] Servings
+  - [x] Servings
   - [x] Summary
 - [ ] Options 
   - [x] Dark / Light theme
@@ -24,7 +24,9 @@ A recipe website by Eric Tilford.
 
 ## changelog
 
-### 7.3.2020
+### 7.3.
+- Added servings to Large Card
+- Adjusted Large Card spacing
 - Added Red beans and sausage
 - Amber added Blueberry muffins :)
 
