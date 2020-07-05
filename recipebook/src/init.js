@@ -17,14 +17,17 @@ function showInfo(data) {
         "Sides" : "#81ccc8",
         "BBQ" : "#c99393",
         "Thai" : "#83dec4",
+        "Dessert" : "#ebb7c3",
+        "Dinner" : "#f2a68f",
+        "Holiday" : "#7dc991",
+        "Baking" : "#e0db90",
+        // OLD
         "Vegetarian" : "#228B22",
         "Italian" : "#8B0000",
-        "Dinner" : "#f2a68f",
         "Japanese" : "#117a8b",
         "Fish" : "#0062cc",
         "Tex-Mex" : "#ca7c08",
         "Fast Food" : "#495057",
-        "Dessert" : "#ebb7c3",
         "Chinese" : "#dc3545"
     };
 
@@ -61,7 +64,7 @@ function showInfo(data) {
                 if (hours == 1) {
                     s += "1 Hour ";
                 } else if (hours >= 2) {
-                    s += hours + " Hours";
+                    s += hours + " Hours ";
                 }
                 var minutes = mins % 60;
                 if (minutes == 1) {
