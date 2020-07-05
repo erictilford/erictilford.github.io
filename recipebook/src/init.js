@@ -14,6 +14,8 @@ function showInfo(data) {
 
     // TAG/BADGE COLORS
     var tagColors = {
+        "Sides" : "#81ccc8",
+        "BBQ" : "#c99393",
         "Thai" : "#83dec4",
         "Vegetarian" : "#228B22",
         "Italian" : "#8B0000",

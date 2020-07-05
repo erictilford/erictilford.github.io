@@ -27,6 +27,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.4.2020
+- Added 'Gingerbread Loaf'
 - Added 'Coleslaw'
 
 ### 7.3.2020
