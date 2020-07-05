@@ -38,9 +38,14 @@ dl, ol, ul {
     width: calc(33% - 18px);
     transition: all 200ms ease-out;
 }
+.card-body {
+    padding-top: 0px;
+}
 .card-img-top {
     height:150px;
     object-fit:cover;
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 #large-card { 
     width:100%;
@@ -139,5 +144,14 @@ button {
     .card {
         width: 100%;
         margin:0px 0px 15px;
+    }
+    .card-img-top {
+        height: 100px;
+    }
+    .card-title {
+        font-size: 1.5rem;
+    }
+    .card-text {
+        display: none;
     }
 }

@@ -26,6 +26,10 @@ A recipe website by Eric Tilford.
 
 ## changelog
 
+### 7.5.2020
+- Added image fade
+- Increased title size, hid card text on mobile
+
 ### 7.4.2020
 - Added Tags: Baking, Holiday, Sides
 - Added 'Dutch Oven Bread'
