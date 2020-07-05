@@ -8,6 +8,7 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] Make Large Card auto adjust size
 - [ ] Clean up assets folder
 - [ ] Comment EVERYTHING
 - [ ] Organize CSS
@@ -24,6 +25,9 @@ A recipe website by Eric Tilford.
 - [ ] 'Toggle Buttons' Button
 
 ## changelog
+
+### 7.4.2020
+- Added 'Coleslaw'
 
 ### 7.3.2020
 - Added Madeleines
