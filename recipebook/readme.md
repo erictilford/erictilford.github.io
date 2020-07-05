@@ -8,7 +8,7 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
-- [ ] Make Large Card auto adjust size (shrink if too large)
+- [x] Make Large Card auto adjust size (shrink if too large)
 - [ ] Clean up assets folder
 - [ ] Comment EVERYTHING
 - [ ] Organize CSS
@@ -27,6 +27,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.5.2020
+- Fixed Large Card size issue
 - Added image fade
 - Increased title size, hid card text on mobile
 
