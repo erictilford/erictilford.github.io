@@ -38,14 +38,32 @@ dl, ol, ul {
     width: calc(33% - 18px);
     transition: all 200ms ease-out;
 }
+.small-card {
+    border-radius: 10px;
+    height:175px;
+    border: none;
+}
 .card-body {
-    padding-top: 0px;
+    position:absolute;
+    bottom:0;
+    padding-bottom:16px;
+    /*width:100%;*/
 }
 .card-img-top {
-    height:150px;
+    border-radius: inherit;
+    position:absolute;
+    z-index: -10;
+    height:100%;
     object-fit:cover;
-    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.card-title {
+    margin-bottom:8px;
+    padding-right:25px;
+    line-height:2.0rem;
+    padding-left:20px;
+    margin-left:-20px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0));
+    color: var(--dark-text);
 }
 #large-card { 
     width:100%;
@@ -57,7 +75,7 @@ dl, ol, ul {
 }
 .full-page {
     padding:10px 15px 15px;
-    max-height:calc(100% - 100px);
+    max-height:calc(100%);
     position:fixed;
     left:10%;
     top:55px;
@@ -145,10 +163,7 @@ button {
         width: 100%;
         margin:0px 0px 15px;
     }
-    .card-img-top {
-        height: 100px;
-    }
-    .card-text {
-        display: none;
+    .small-card {
+        height:125px;
     }
 }

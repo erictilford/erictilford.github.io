@@ -8,6 +8,9 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] Elevate cards on hover?
+- [ ] Make small card unselectable
+  - [ ] Pointer icon
 - [x] Make Large Card auto adjust size (shrink if too large)
 - [ ] Clean up assets folder
 - [ ] Comment EVERYTHING
@@ -27,6 +30,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.5.2020
+- Overhauled Small Card design!!
 - Fixed Large Card size issue
 - Added image fade
 - Increased title size, hid card text on mobile

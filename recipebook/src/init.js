@@ -44,7 +44,7 @@ function showInfo(data) {
 
         // C A R D S
         var newElement = document.createElement('div');
-        newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover";
+        newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover small-card";
 
         // LARGE CARD
         newElement.onclick = function openlargeCard()
@@ -132,7 +132,7 @@ function showInfo(data) {
         cardBody.appendChild(cardTitle);
 
         var cardText = document.createElement('p'); 
-        cardText.className = "card-text";
+        cardText.className = "card-text d-none";
         cardText.innerHTML = data[recipeNumber].summary;
         cardBody.appendChild(cardText);
 
