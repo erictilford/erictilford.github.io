@@ -30,6 +30,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.5.2020
+- Added 'Pesto', 'Pico', 'Greek Salad'
 - Adjusted badge spacing
 - Fixed mobile Large Card size issue
 - Overhauled Small Card design!!

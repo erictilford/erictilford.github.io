@@ -14,6 +14,7 @@ function showInfo(data) {
 
     // TAG/BADGE COLORS
     var tagColors = {
+        "Sauce" : "#d4b5ff",
         "Sides" : "#81ccc8",
         "BBQ" : "#c99393",
         "Thai" : "#83dec4",
@@ -21,12 +22,12 @@ function showInfo(data) {
         "Dinner" : "#f2a68f",
         "Holiday" : "#7dc991",
         "Baking" : "#e0db90",
+        "Italian" : "#c99393",
+        "Tex-Mex" : "#ffc14f",
         // OLD
         "Vegetarian" : "#228B22",
-        "Italian" : "#8B0000",
         "Japanese" : "#117a8b",
         "Fish" : "#0062cc",
-        "Tex-Mex" : "#ca7c08",
         "Fast Food" : "#495057",
         "Chinese" : "#dc3545"
     };
