@@ -8,6 +8,8 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] Center loading spinner
+- [ ] Fix print layout
 - [ ] Elevate cards on hover?
 - [ ] Make small card unselectable
   - [ ] Pointer icon
@@ -17,7 +19,8 @@ A recipe website by Eric Tilford.
 - [ ] Organize CSS
 - [x] Fix mobile 'Large Card'
 - [ ] Fix mobile scrolling issue
-- [ ] Add info to popup
+- [ ] Add info to Large Card
+  - [ ] Image
   - [ ] Badges
   - [ ] Date Added
   - [ ] Contributor(s)
