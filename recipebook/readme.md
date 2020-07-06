@@ -30,6 +30,8 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.5.2020
+- Adjusted badge spacing
+- Fixed mobile Large Card size issue
 - Overhauled Small Card design!!
 - Fixed Large Card size issue
 - Added image fade
