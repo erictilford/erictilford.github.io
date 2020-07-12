@@ -78,10 +78,14 @@ function showInfo(data) {
 
             var imageFrame = document.getElementsByClassName("large-card-image-frame")[0];
             imageFrame.innerHTML = "";
+            var imageAnchor = document.createElement('a');
+            imageAnchor.href = this.getElementsByClassName("card-img-top")[0].src;
+            imageAnchor.target = "_blank";
+            imageFrame.appendChild(imageAnchor)
             var recipeThumb = document.createElement('img');
             recipeThumb.src = this.getElementsByClassName("card-img-top")[0].src;
             recipeThumb.className = "recipe-thumb";
-            imageFrame.appendChild(recipeThumb);
+            imageAnchor.appendChild(recipeThumb);
 
             var handsOnTime = document.getElementsByClassName("hands-on-time")[0];
             var handsOnPretty = M2HM( this.getElementsByClassName("card-hands-on-time")[0].innerHTML );

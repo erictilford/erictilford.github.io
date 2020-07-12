@@ -124,7 +124,7 @@ dl, ol, ul {
     color: var(--text-color) !important;
 }
 .recipe-thumb {
-    height:100px;
+    height:125px;
     max-width:100%;
     border: 3px solid white;
 }

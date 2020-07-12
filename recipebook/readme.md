@@ -24,9 +24,9 @@ A recipe website by Eric Tilford.
 - [x] Organize CSS
 - [x] Fix mobile 'Large Card'
 - [ ] Fix mobile scrolling issue
-- [ ] Add info to Large Card
-  - [x] 
-    - [ ] links to image in new tab
+- [x] Add info to Large Card
+  - [x] Image
+    - [x] links to image in new tab
   - [ ] Badges
   - [ ] Date Added
   - [ ] Contributor(s)
@@ -39,6 +39,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.11.2020
+- Large card thumb links to full image
 - Fixed X button Z-index issue
 - Adjusted X button on mobile
 - Added 'pointer' to all header icons
