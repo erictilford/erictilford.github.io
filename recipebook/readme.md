@@ -8,6 +8,9 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] "New" banner
+- [ ] Large Card BG gradient
+- [ ] Time "Bar"
 - [ ] Fix print layout
 - [ ] Elevate cards on hover?
 - [x] Make small card unselectable
