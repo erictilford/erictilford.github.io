@@ -199,6 +199,9 @@ dl, ol, ul {
         width: 100%;
         margin: 0px 0px 15px;
     }
+    .middle-row {
+        text-align: center;
+    }
     .small-card {
         height:125px;
     }
