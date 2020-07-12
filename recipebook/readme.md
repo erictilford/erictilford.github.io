@@ -9,7 +9,7 @@ A recipe website by Eric Tilford.
 ## to-do
 
 - [ ] Implement multiple images 
-- [ ] Lighten Dark Primary color
+- [x] Lighten Dark Primary color
 - [x] Clean up to-do list
 - [ ] Large Card BG gradient
 - [x] Time "Bar"
@@ -35,6 +35,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.11.2020
+- Adjusted Colors
 - Added "Bar" to 'Time' row
 - Cleaned up to-do, added 'maybe' section
 - Large card thumb links to full image
