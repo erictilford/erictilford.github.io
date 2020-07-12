@@ -108,9 +108,12 @@ dl, ol, ul {
     text-align: center;
     color:var(--text-color);
 }
-.header-icon{
+.header-icon {
     color:var(--text-color);
     margin-left:12px;
+}
+.header-icon:hover {
+    cursor:pointer;
 }
 .navbar {
      border-bottom: 2px solid var(--tertiary-color);
