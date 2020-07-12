@@ -8,7 +8,7 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
-- [ ] Reposition/resize 'x button' on mobile
+- [x] Reposition/resize 'x button' on mobile
 - [ ] "New" banner
 - [ ] Large Card BG gradient
 - [ ] Time "Bar"
@@ -37,6 +37,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.11.2020
+- Adjusted X button on mobile
 - Added 'pointer' to all header icons
 - Added image thumbnail to Large Card
 - Added 'pointer' to Small Cards, X button
