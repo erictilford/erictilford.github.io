@@ -195,7 +195,7 @@ function showInfo(data) {
         for (var name in tagButtonNames) {
             var newButton = document.createElement('button');
             newButton.type = "button";
-            newButton.className = "btn btn-secondary btn-sm";
+            newButton.className = "btn btn-secondary btn-sm tag-button";
             newButton.innerHTML = tagButtonNames[name];
             newButton.style.background = tagColors[tagButtonNames[name]];
             document.getElementById("buttonholder").appendChild(newButton);

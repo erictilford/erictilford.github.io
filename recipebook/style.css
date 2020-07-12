@@ -1,3 +1,4 @@
+/* ROOT VARIABLES */
 :root {
     --dark-primary:#1d1d1d;
     --dark-secondary:#333333;
@@ -20,6 +21,7 @@
     --badge-text-color: #000;
 }
 
+/* ELEMENTS */
 body {
     background-color:var(--primary-color);
 }
@@ -29,6 +31,37 @@ hr {
 dl, ol, ul {
     margin-left:-12px;
 }
+
+/* IDs */
+#buttonholder {
+    margin-bottom: 5px;
+}
+#close-large-card-layer{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 400;
+}
+#large-card {
+    width:100%;
+    display:none;
+}
+#loading-spinner {
+    width:100vw;
+    height: calc(100vh - 58px);
+    text-align: center;
+}
+
+/* CLASSES */
+.badge {
+    margin:0px 8px 0px 0px;
+    color:var(--badge-text-color);
+}
+.blue-hover:hover {
+    box-shadow: 0 0 10px 0px var(--card-highlight);
+}
 .card {
     background-color:var(--secondary-color);
     color:var(--text-color);
@@ -37,11 +70,6 @@ dl, ol, ul {
     display: inline-block;
     width: calc(33% - 18px);
     transition: all 200ms ease-out;
-}
-.small-card {
-    border-radius: 10px;
-    height:175px;
-    border: none;
 }
 .card-body {
     position:absolute;
@@ -65,14 +93,6 @@ dl, ol, ul {
     background: linear-gradient(90deg, rgba(0,0,0,0.6) 85%, rgba(0,0,0,0.3), rgba(0,0,0,0.0));
     color: var(--dark-text);
 }
-#large-card { 
-    width:100%;
-    display:none;
-}
-.header-icon{
-    color:var(--text-color);
-    margin-left:12px;
-}
 .full-page {
     padding:10px 15px 15px;
     max-height:calc(100%);
@@ -84,13 +104,40 @@ dl, ol, ul {
     box-shadow: 0 0 10px 0px rgba(0, 0, 0, .4);
     overflow-y: auto;
 }
-#close-large-card-layer{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index: 400;
+.footer-text {
+    text-align: center;
+    color:var(--text-color);
+}
+.header-icon{
+    color:var(--text-color);
+    margin-left:12px;
+}
+.navbar {
+     border-bottom: 2px solid var(--tertiary-color);
+     background-color: var(--secondary-color) !important;
+     margin-bottom: 15px;
+ }
+.navbar-brand {
+    color: var(--text-color) !important;
+}
+.small-card {
+    border-radius: 10px;
+    height:175px;
+    border: none;
+}
+.summary{
+    margin-bottom:0px;
+}
+.tag-button{
+    margin: 0px 5px 10px;
+    border: 0px !important;
+    border-radius: 0.4em !important;
+}
+.unselectable {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 .x-button {
     color:var(--text-color);
@@ -103,55 +150,21 @@ dl, ol, ul {
     border:2px solid var(--text-color);
     border-radius:5px;
 }
-.unselectable {
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
-/*
 .x-button:hover {
-    cursor:default;
-}
- */
-.blue-hover:hover {
-    box-shadow: 0 0 10px 0px var(--card-highlight);
-}
-.badge {
-    margin:0px 8px 0px 0px;
-    color:var(--badge-text-color);
-}
-.navbar {
-    border-bottom: 2px solid var(--tertiary-color);
-    background-color: var(--secondary-color) !important;
-}
-.navbar-brand {
-    color: var(--text-color) !important;
-}
-button {
-    margin: 0px 4px 10px;
-    border: 0px !important;
-    border-radius: 0.4em !important;
-}
-.footer-text {
-    text-align: center;
-    color:var(--text-color);
-}
-#loading-spinner {
-    width:100vw;
-    height: calc(100vh - 58px);
-    text-align: center;
-}
+     cursor:pointer;
+ }
+
+/* MEDIA CALLS */
 @media only screen and (max-width: 768px) {
     .card {
         width:calc(50% - 20px);
-        /*margin: 0px 0px 15px;*/
     }
     .full-page {
         left:0px;
         top:0px;
         width:calc(100%);
         height:calc(100%);
+        margin:0px 0px;
     }
     .navbar {
         padding-left:0px;
@@ -161,7 +174,7 @@ button {
 @media only screen and (max-width: 425px) {
     .card {
         width: 100%;
-        margin:0px 0px 15px;
+        margin: 0px 0px 15px;
     }
     .small-card {
         height:125px;

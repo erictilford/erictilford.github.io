@@ -16,7 +16,7 @@ A recipe website by Eric Tilford.
 - [x] Make Large Card auto adjust size (shrink if too large)
 - [ ] Clean up assets folder
 - [ ] Comment EVERYTHING
-- [ ] Organize CSS
+- [x] Organize CSS
 - [x] Fix mobile 'Large Card'
 - [ ] Fix mobile scrolling issue
 - [ ] Add info to Large Card
@@ -31,6 +31,12 @@ A recipe website by Eric Tilford.
 - [ ] 'Toggle Buttons' Button
 
 ## changelog
+
+### 7.11.2020
+- Adjusted Button Layout
+- Organized CSS
+- Experimented with image layouts
+- Fixed large card layout on tablet
 
 ### 7.5.2020
 - Added 'Pesto', 'Pico', 'Greek Salad'
