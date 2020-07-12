@@ -9,22 +9,13 @@ A recipe website by Eric Tilford.
 ## to-do
 
 - [ ] Lighten Dark Primary color
-- [ ] Clean up to-do list
-- [x] Reposition/resize 'x button' on mobile
-- [ ] "New" banner
+- [x] Clean up to-do list
 - [ ] Large Card BG gradient
 - [ ] Time "Bar"
 - [ ] Fix print layout
-- [ ] Elevate cards on hover?
-- [x] Make small card unselectable
-  - [x] Pointer icon
-- [x] Make Large Card auto adjust size (shrink if too large)
 - [ ] Clean up assets folder
 - [ ] Comment EVERYTHING
-- [x] Organize CSS
-- [x] Fix mobile 'Large Card'
-- [ ] Fix mobile scrolling issue
-- [x] Add info to Large Card
+- [ ] Add info to Large Card
   - [x] Image
     - [x] links to image in new tab
   - [ ] Badges
@@ -32,13 +23,18 @@ A recipe website by Eric Tilford.
   - [ ] Contributor(s)
   - [x] Servings
   - [x] Summary
-- [ ] Options 
-  - [x] Dark / Light theme
 - [ ] 'Toggle Buttons' Button
+
+### maybe 
+- [ ] Change x button to icon
+- [ ] Fix mobile scrolling issue
+- [ ] Elevate cards on hover
+- [ ] "New" banner
 
 ## changelog
 
 ### 7.11.2020
+- Cleaned up to-do, added 'maybe' section
 - Large card thumb links to full image
 - Fixed X button Z-index issue
 - Adjusted X button on mobile
