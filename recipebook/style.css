@@ -120,10 +120,18 @@ dl, ol, ul {
 .navbar-brand {
     color: var(--text-color) !important;
 }
+.recipe-thumb {
+    height:100px;
+    max-width:100%;
+    border: 3px solid white;
+}
 .small-card {
     border-radius: 10px;
     height:175px;
     border: none;
+}
+.small-card:hover {
+    cursor:pointer;
 }
 .summary{
     margin-bottom:0px;

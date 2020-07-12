@@ -76,6 +76,13 @@ function showInfo(data) {
                 return s;
             }
 
+            var imageFrame = document.getElementsByClassName("large-card-image-frame")[0];
+            imageFrame.innerHTML = "";
+            var recipeThumb = document.createElement('img');
+            recipeThumb.src = this.getElementsByClassName("card-img-top")[0].src;
+            recipeThumb.className = "recipe-thumb";
+            imageFrame.appendChild(recipeThumb);
+
             var handsOnTime = document.getElementsByClassName("hands-on-time")[0];
             var handsOnPretty = M2HM( this.getElementsByClassName("card-hands-on-time")[0].innerHTML );
             handsOnTime.innerHTML = "<b>Hands-on time:</b> " + handsOnPretty;
@@ -128,7 +135,7 @@ function showInfo(data) {
         cardBody.className = "card-body";
 
         var cardTitle = document.createElement('h5'); 
-        cardTitle.className = "card-title";
+        cardTitle.className = "card-title unselectable";
         cardTitle.innerHTML = data[recipeNumber].recipe_name;
         cardBody.appendChild(cardTitle);
 
@@ -141,7 +148,7 @@ function showInfo(data) {
         var badges = data[recipeNumber].tags.split("; ");
         for (badge in badges){
             var testBadge = document.createElement('span');
-            testBadge.className = 'badge badge-secondary';
+            testBadge.className = 'badge badge-secondary unselectable';
             testBadge.innerHTML = badges[badge];
             testBadge.style.background = tagColors[badges[badge]];
             cardBody.appendChild(testBadge);

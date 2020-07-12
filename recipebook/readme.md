@@ -8,11 +8,10 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
-- [ ] Center loading spinner
 - [ ] Fix print layout
 - [ ] Elevate cards on hover?
-- [ ] Make small card unselectable
-  - [ ] Pointer icon
+- [x] Make small card unselectable
+  - [x] Pointer icon
 - [x] Make Large Card auto adjust size (shrink if too large)
 - [ ] Clean up assets folder
 - [ ] Comment EVERYTHING
@@ -20,7 +19,8 @@ A recipe website by Eric Tilford.
 - [x] Fix mobile 'Large Card'
 - [ ] Fix mobile scrolling issue
 - [ ] Add info to Large Card
-  - [ ] Image
+  - [x] 
+    - [ ] links to image in new tab
   - [ ] Badges
   - [ ] Date Added
   - [ ] Contributor(s)
@@ -33,6 +33,8 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.11.2020
+- Added image thumbnail to Large Card
+- Added 'pointer' to Small Cards, X button
 - Adjusted Button Layout
 - Organized CSS
 - Experimented with image layouts
