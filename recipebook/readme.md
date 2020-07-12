@@ -11,7 +11,7 @@ A recipe website by Eric Tilford.
 - [ ] Lighten Dark Primary color
 - [x] Clean up to-do list
 - [ ] Large Card BG gradient
-- [ ] Time "Bar"
+- [x] Time "Bar"
 - [ ] Fix print layout
 - [ ] Clean up assets folder
 - [ ] Comment EVERYTHING
@@ -34,6 +34,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.11.2020
+- Added "Bar" to 'Time' row
 - Cleaned up to-do, added 'maybe' section
 - Large card thumb links to full image
 - Fixed X button Z-index issue
