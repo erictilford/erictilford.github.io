@@ -29,7 +29,7 @@ hr {
     background-color: var(--tertiary-color)
 }
 dl, ol, ul {
-    margin-left:-12px;
+    margin-left:-18px;
 }
 
 /* IDs */
@@ -121,9 +121,6 @@ dl, ol, ul {
 .middle-row {
     padding-top: 8px;
     padding-bottom: 5px;
-    border-radius: 10px;
-    background-color: var(--primary-color);
-    margin: 10px -5px 5px;
 }
 .navbar {
      border-bottom: 2px solid var(--tertiary-color);
@@ -137,6 +134,13 @@ dl, ol, ul {
     height:125px;
     max-width:100%;
     border: 3px solid var(--text-color);
+    margin-bottom: 5px;
+}
+.shadow-box {
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    margin: 5px -5px;
+    padding: 8px 12px;
 }
 .small-card {
     border-radius: 10px;
