@@ -1,7 +1,7 @@
 /* ROOT VARIABLES */
 :root {
-    --dark-primary:#1d1d1d;
-    --dark-secondary:#333333;
+    --dark-primary:#222;
+    --dark-secondary:#2e2e2e;
     --dark-tertiary:#555555;
     --dark-text:#dddddd;
     --dark-card-highlight: rgba(226, 156, 240, 1);
@@ -14,7 +14,7 @@
 
     --primary-color: var(--dark-primary);
     --secondary-color: var(--dark-secondary);
-    --tertiary-color: var(--light-tertiary);
+    --tertiary-color: var(--dark-tertiary);
     --text-color: var(--dark-text);
     --card-highlight: var(--dark-card-highlight);
 
@@ -136,7 +136,7 @@ dl, ol, ul {
 .recipe-thumb {
     height:125px;
     max-width:100%;
-    border: 3px solid var(--dark-text);
+    border: 3px solid var(--text-color);
 }
 .small-card {
     border-radius: 10px;
