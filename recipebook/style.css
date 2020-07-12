@@ -136,7 +136,7 @@ dl, ol, ul {
 .recipe-thumb {
     height:125px;
     max-width:100%;
-    border: 3px solid white;
+    border: 3px solid var(--dark-text);
 }
 .small-card {
     border-radius: 10px;

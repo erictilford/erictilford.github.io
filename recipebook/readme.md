@@ -8,6 +8,7 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] Implement multiple images 
 - [ ] Lighten Dark Primary color
 - [x] Clean up to-do list
 - [ ] Large Card BG gradient
