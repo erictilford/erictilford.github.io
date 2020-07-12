@@ -8,6 +8,8 @@ A recipe website by Eric Tilford.
 
 ## to-do
 
+- [ ] Lighten Dark Primary color
+- [ ] Clean up to-do list
 - [x] Reposition/resize 'x button' on mobile
 - [ ] "New" banner
 - [ ] Large Card BG gradient
@@ -37,6 +39,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.11.2020
+- Fixed X button Z-index issue
 - Adjusted X button on mobile
 - Added 'pointer' to all header icons
 - Added image thumbnail to Large Card

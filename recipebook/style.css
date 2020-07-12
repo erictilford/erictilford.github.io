@@ -160,6 +160,8 @@ dl, ol, ul {
     right:5px;
     border:2px solid var(--text-color);
     border-radius:5px;
+    z-index:9001;
+    background: var(--primary-color);
 }
 .x-button:hover {
      cursor:pointer;
