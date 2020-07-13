@@ -35,6 +35,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.12.2020
+- Added image to large card shadow box
 - Added shadow boxes to large card
 
 ### 7.11.2020

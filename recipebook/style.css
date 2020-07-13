@@ -115,6 +115,21 @@ dl, ol, ul {
 .header-icon:hover {
     cursor:pointer;
 }
+.large-card-card-image {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 20px);
+    top: 5px;
+    z-index: -1;
+    border-radius: inherit;
+    left: 10px;
+    filter: brightness(40%);
+    object-fit: cover;
+}
+.large-card-shadow-box {
+    background:unset !important;
+    height:100%;
+}
 .margin-bot-5 {
     margin-bottom: 5px;
 }
@@ -131,10 +146,11 @@ dl, ol, ul {
     color: var(--text-color) !important;
 }
 .recipe-thumb {
-    height:125px;
+    height:100px;
     max-width:100%;
     border: 3px solid var(--text-color);
-    margin-bottom: 5px;
+    /*margin-bottom: 5px;*/
+    margin-top: 10px;
 }
 .shadow-box {
     border-radius: 10px;

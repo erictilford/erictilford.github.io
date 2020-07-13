@@ -86,6 +86,8 @@ function showInfo(data) {
             recipeThumb.src = this.getElementsByClassName("card-img-top")[0].src;
             recipeThumb.className = "recipe-thumb";
             imageAnchor.appendChild(recipeThumb);
+            var largeImage = document.getElementsByClassName("large-card-card-image")[0];
+            largeImage.src = this.getElementsByClassName("card-img-top")[0].src;
 
             var handsOnTime = document.getElementsByClassName("hands-on-time")[0];
             var handsOnPretty = M2HM( this.getElementsByClassName("card-hands-on-time")[0].innerHTML );
