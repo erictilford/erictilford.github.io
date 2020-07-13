@@ -237,6 +237,8 @@ function showInfo(data) {
                 .setProperty('--text-color', 'var(--light-text)');
             document.documentElement.style
                 .setProperty('--card-highlight', 'var(--light-card-highlight)');
+            document.documentElement.style
+                .setProperty('--shadow-filter', 'var(--light-filter)');
             document.getElementsByClassName("light-mode-button")[0].className = "fa fa-moon-o fa-lg light-mode-button header-icon";
             darkMode = false;
         }
@@ -251,6 +253,8 @@ function showInfo(data) {
                 .setProperty('--text-color', 'var(--dark-text)');
             document.documentElement.style
                 .setProperty('--card-highlight', 'var(--dark-card-highlight)');
+            document.documentElement.style
+                .setProperty('--shadow-filter', 'var(--dark-filter)');
             document.getElementsByClassName("light-mode-button")[0].className = "fa fa-sun fa-lg light-mode-button header-icon";
             darkMode = true;
         }
