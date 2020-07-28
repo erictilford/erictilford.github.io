@@ -7,7 +7,7 @@ A recipe website by Eric Tilford.
 *created 2.2.2020*
 
 ## to-do
-
+- [ ] Switch IDE to VS Code
 - [ ] Implement multiple images 
 - [x] Lighten Dark Primary color
 - [x] Clean up to-do list
@@ -33,6 +33,13 @@ A recipe website by Eric Tilford.
 - [ ] "New" banner
 
 ## changelog
+
+### 7.27.2020
+TESETSETASETAET
+- Migrated to VS Code
+
+### 7.26.2020
+- Added meatloaf recipe
 
 ### 7.12.2020
 - Added image to large card shadow box
