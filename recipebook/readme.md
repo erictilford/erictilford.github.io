@@ -7,7 +7,9 @@ A recipe website by Eric Tilford.
 *created 2.2.2020*
 
 ## to-do
-- [ ] Switch IDE to VS Code
+- [ ] Update todo list
+- [x] Fix scroll to top issue
+- [x] Switch IDE to VS Code
 - [ ] Implement multiple images 
 - [x] Lighten Dark Primary color
 - [x] Clean up to-do list
@@ -35,7 +37,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 7.27.2020
-TESETSETASETAET
+- Fixed Scroll to top issue
 - Migrated to VS Code
 
 ### 7.26.2020

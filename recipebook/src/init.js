@@ -51,6 +51,8 @@ function showInfo(data) {
         newElement.onclick = function openlargeCard()
         { 
             document.getElementById("large-card").style.display = "block";
+            // scroll to top
+            document.getElementsByClassName("full-page")[0].scrollTop = 0;
 
             var recipeTitle = document.getElementsByClassName("recipe-title")[0];
             recipeTitle.innerHTML = this.getElementsByClassName("card-title")[0].innerHTML;
@@ -214,7 +216,7 @@ function showInfo(data) {
             document.getElementById("buttonholder").appendChild(newButton);
             }
         }
-    //createButtons();
+    createButtons();
 
     // CLOSE LARGE CARD
     function closeLargeCard(){ document.getElementById("large-card").style.display = "none"; }
