@@ -209,7 +209,7 @@ dl, ol, ul {
         left:0px;
         top:0px;
         width:calc(100%);
-        height:calc(100%);
+        max-height:calc(100%);
         margin:0px 0px;
     }
     .navbar {
