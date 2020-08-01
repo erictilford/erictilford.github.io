@@ -37,6 +37,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 8.1.2020
+- **Pulled Pork**
 - Fixed Large Card size issue on desktop
 - Updated theme elements on large card
 
