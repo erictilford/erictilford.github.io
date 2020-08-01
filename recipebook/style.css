@@ -96,7 +96,7 @@ dl, ol, ul {
 }
 .full-page {
     padding:15px 15px 15px;
-    max-height:calc(100%);
+    max-height:calc(90%);
     position:fixed;
     left:10%;
     top:55px;
