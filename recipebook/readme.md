@@ -37,6 +37,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 8.1.2020
+- Fixed Large Card size issue on desktop
 - Updated theme elements on large card
 
 ### 7.27.2020
