@@ -149,8 +149,7 @@ dl, ol, ul {
 .recipe-thumb {
     height:100px;
     max-width:100%;
-    border: 3px solid var(--text-color);
-    color: var(--dark-text);
+    border: 3px solid var(--dark-text);
     margin-top: 10px;
 }
 .recipe-title, .summary {
