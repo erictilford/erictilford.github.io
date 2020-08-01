@@ -34,6 +34,9 @@ A recipe website by Eric Tilford.
 - [ ] Elevate cards on hover
 - [ ] "New" banner
 
+### VS Code
+- [ ] Color visualizer
+
 ## changelog
 
 ### 8.1.2020
