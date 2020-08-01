@@ -5,21 +5,19 @@
     --dark-tertiary:#555555;
     --dark-text:#dddddd;
     --dark-card-highlight: rgba(226, 156, 240, 1);
-    --dark-filter: brightness(40%);
 
     --light-primary:#ddd;
     --light-secondary:#ccc;
     --light-tertiary:#999;
     --light-text:#000;
     --light-card-highlight: rgba(35, 173, 255, 1);
-    --light-filter: brightness(150%);
 
     --primary-color: var(--dark-primary);
     --secondary-color: var(--dark-secondary);
     --tertiary-color: var(--dark-tertiary);
     --text-color: var(--dark-text);
     --card-highlight: var(--dark-card-highlight);
-    --shadow-filter: var(--dark-filter);
+    --shadow-filter: brightness(40%);
 
     --badge-text-color: #000;
 }
@@ -152,8 +150,11 @@ dl, ol, ul {
     height:100px;
     max-width:100%;
     border: 3px solid var(--text-color);
-    /*margin-bottom: 5px;*/
+    color: var(--dark-text);
     margin-top: 10px;
+}
+.recipe-title, .summary {
+    color: var(--dark-text);
 }
 .shadow-box {
     border-radius: 10px;

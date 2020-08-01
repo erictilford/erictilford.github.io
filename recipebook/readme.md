@@ -36,6 +36,9 @@ A recipe website by Eric Tilford.
 
 ## changelog
 
+### 8.1.2020
+- Updated theme elements on large card
+
 ### 7.27.2020
 - Fixed Scroll to top issue
 - Migrated to VS Code
