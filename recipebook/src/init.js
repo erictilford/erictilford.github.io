@@ -216,7 +216,7 @@ function showInfo(data) {
             document.getElementById("buttonholder").appendChild(newButton);
             }
         }
-    createButtons();
+    //createButtons();
 
     // CLOSE LARGE CARD
     function closeLargeCard(){ document.getElementById("large-card").style.display = "none"; }
