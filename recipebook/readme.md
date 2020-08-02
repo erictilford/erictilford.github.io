@@ -39,6 +39,9 @@ A recipe website by Eric Tilford.
 
 ## changelog
 
+### 8.2.2020
+- **Green Bean Casserole**
+
 ### 8.1.2020
 - **Jalapeño Popper Dip**
 - **Pulled Pork**
