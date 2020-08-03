@@ -2,7 +2,7 @@
 
 A recipe website by Eric Tilford.
 
-[Tabletop.js](https://github.com/jsoma/tabletop) is used to convert a [Google Sheet](https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit#gid=0) to JavaScript, the rest is my own work.
+[Tabletop.js](https://github.com/jsoma/tabletop) is used to convert a [Google Sheet](https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit#gid=0) to JavaScript, and [NoSleep.js](https://github.com/richtr/NoSleep.js) is used to prevent mobile screen lock while cooking, the rest is my own work.
 
 *created 2.2.2020*
 
@@ -23,6 +23,7 @@ A recipe website by Eric Tilford.
   - [x] Summary
 - [ ] 'Toggle Buttons' Button
 - [ ] Update font, particularly titles
+- [x] Prevent screen from locking on large card
 
 ### maybe 
 - [ ] Change x button to icon
@@ -36,6 +37,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 8.2.2020
+- Implemented NoSleep.js to prevent screen lock
 - Updated **Blueberry Muffin** image
 - Added badges to large card
 - Updated to-do
