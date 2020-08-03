@@ -36,6 +36,7 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 8.2.2020
+- Updated **Blueberry Muffin** image
 - Added badges to large card
 - Updated to-do
 - Added a lot of comments

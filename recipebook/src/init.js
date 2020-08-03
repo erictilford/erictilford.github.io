@@ -101,6 +101,7 @@ function showInfo(data) {
             // "photo" section
             var imageFrame = document.getElementsByClassName("large-card-image-frame")[0];
             imageFrame.innerHTML = "";
+            //add for loop for multiple images here
             var imageAnchor = document.createElement('a');
             imageAnchor.href = this.getElementsByClassName("card-img-top")[0].src;
             imageAnchor.target = "_blank";
@@ -109,6 +110,7 @@ function showInfo(data) {
             recipeThumb.src = this.getElementsByClassName("card-img-top")[0].src;
             recipeThumb.className = "recipe-thumb";
             imageAnchor.appendChild(recipeThumb);
+            
             // title background image
             var largeImage = document.getElementsByClassName("large-card-card-image")[0];
             largeImage.src = this.getElementsByClassName("card-img-top")[0].src;
