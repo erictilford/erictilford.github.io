@@ -1,3 +1,5 @@
+import NoSleep from '../src/NoSleep.js';
+
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing';
 
 function init() {
@@ -9,6 +11,8 @@ function init() {
 window.addEventListener('DOMContentLoaded', init);
 
 function showInfo(data) {
+
+    var noSleep = new NoSleep();
 
     var tagButtonNames = [];
 
@@ -52,6 +56,8 @@ function showInfo(data) {
         // LARGE CARD
         newElement.onclick = function openlargeCard()
         { 
+            noSleep.enable();
+
             document.getElementById("large-card").style.display = "block";
             // scroll to top
             document.getElementsByClassName("full-page")[0].scrollTop = 0;
@@ -110,7 +116,7 @@ function showInfo(data) {
             recipeThumb.src = this.getElementsByClassName("card-img-top")[0].src;
             recipeThumb.className = "recipe-thumb";
             imageAnchor.appendChild(recipeThumb);
-            
+
             // title background image
             var largeImage = document.getElementsByClassName("large-card-card-image")[0];
             largeImage.src = this.getElementsByClassName("card-img-top")[0].src;
@@ -250,7 +256,10 @@ function showInfo(data) {
     //createButtons();
 
     // CLOSE LARGE CARD
-    function closeLargeCard(){ document.getElementById("large-card").style.display = "none"; }
+    function closeLargeCard(){ 
+        noSleep.disable();
+        document.getElementById("large-card").style.display = "none"; 
+    }
     // attach to X BUTTON
     document.getElementsByClassName("x-button")[0].onclick = function() { closeLargeCard() };
     // attach to "CLICK OUTSIDE TO CLOSE" LAYER
