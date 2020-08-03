@@ -10,7 +10,7 @@ A recipe website by Eric Tilford.
 - [x] Update todo list
 - [ ] Implement multiple images 
 - [ ] Large Card BG gradient / custom BG img
-- [ ] Fix print layout
+- [x] Fix print layout
 - [ ] Clean up assets folder
 - [x] Comment EVERYTHING
 - [ ] Add info to Large Card
@@ -35,6 +35,9 @@ A recipe website by Eric Tilford.
 - [ ] Color visualizer
 
 ## changelog
+
+### 8.3.2020
+- Updated Print layout
 
 ### 8.2.2020
 - Implemented NoSleep.js to prevent screen lock
