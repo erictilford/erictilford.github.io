@@ -56,11 +56,29 @@ function showInfo(data) {
             // scroll to top
             document.getElementsByClassName("full-page")[0].scrollTop = 0;
 
+            // recipe title
             var recipeTitle = document.getElementsByClassName("recipe-title")[0];
             recipeTitle.innerHTML = this.getElementsByClassName("card-title")[0].innerHTML;
 
+            // recipe summary
             var recipeSummary = document.getElementsByClassName("summary")[0];
             recipeSummary.innerHTML = this.getElementsByClassName("card-text")[0].innerHTML;
+
+            // large card badges
+            var largeCardBadges = document.getElementsByClassName("large-card-badges")[0];
+            largeCardBadges.innerHTML = "";
+            var largeCardBadgeArray = this.getElementsByClassName("badge");
+            
+            for (var x in largeCardBadgeArray) {
+                badgeName = largeCardBadgeArray[x].innerHTML;
+                if (badgeName !== undefined){ // no idea why this is happening
+                    var testBadge = document.createElement('span');
+                    testBadge.className = 'badge badge-secondary unselectable';
+                    testBadge.innerHTML = badgeName;
+                    testBadge.style.background = tagColors[badgeName];
+                    largeCardBadges.appendChild(testBadge);
+                }
+            }
 
             // Minutes to Hours/Minutes
             function M2HM(mins) {
@@ -79,31 +97,35 @@ function showInfo(data) {
                 }
                 return s;
             }
-
+            
+            // "photo" section
             var imageFrame = document.getElementsByClassName("large-card-image-frame")[0];
             imageFrame.innerHTML = "";
             var imageAnchor = document.createElement('a');
             imageAnchor.href = this.getElementsByClassName("card-img-top")[0].src;
             imageAnchor.target = "_blank";
-            imageFrame.appendChild(imageAnchor)
+            imageFrame.appendChild(imageAnchor);
             var recipeThumb = document.createElement('img');
             recipeThumb.src = this.getElementsByClassName("card-img-top")[0].src;
             recipeThumb.className = "recipe-thumb";
             imageAnchor.appendChild(recipeThumb);
+            // title background image
             var largeImage = document.getElementsByClassName("large-card-card-image")[0];
             largeImage.src = this.getElementsByClassName("card-img-top")[0].src;
 
+            // hands-on time
             var handsOnTime = document.getElementsByClassName("hands-on-time")[0];
             var handsOnPretty = M2HM( this.getElementsByClassName("card-hands-on-time")[0].innerHTML );
             handsOnTime.innerHTML = "<b>Hands-on time:</b> " + handsOnPretty;
-
+            // total time
             var totalTime = document.getElementsByClassName("total-time")[0];
             var totalPretty = M2HM( this.getElementsByClassName("card-total-time")[0].innerHTML );
             totalTime.innerHTML = "<b>Total time:</b> " + totalPretty;
-
+            // servings
             var servings = document.getElementsByClassName("servings")[0];
             servings.innerHTML = "<b>Serves:</b> " + this.getElementsByClassName("card-servings")[0].innerHTML;
 
+            // ingredients
             var ingredientList = document.getElementsByClassName("ingredient-list")[0];
             ingredientList.innerHTML = "";
             ingredientArray = this.getElementsByClassName("card-ingredients")[0].innerHTML.split("; ");
@@ -114,6 +136,7 @@ function showInfo(data) {
                 ingredientList.appendChild(ingredient);
             }
 
+            // directions
             var directionList = document.getElementsByClassName("direction-list")[0];
             directionList.innerHTML = "";
             directionArray = this.getElementsByClassName("card-directions")[0].innerHTML.split("; ");
@@ -124,6 +147,7 @@ function showInfo(data) {
                 directionList.appendChild(direction);
             }
 
+            // notes
             var noteList = document.getElementsByClassName("note-list")[0];
             noteList.innerHTML = "";
             noteArray = this.getElementsByClassName("card-notes")[0].innerHTML.split("; ");
@@ -141,14 +165,17 @@ function showInfo(data) {
         cardImage.className = "card-img-top";
         newElement.appendChild(cardImage);
 
+        // card body
         var cardBody = document.createElement('div'); 
         cardBody.className = "card-body";
 
+        // card title AKA recipe name
         var cardTitle = document.createElement('h5'); 
         cardTitle.className = "card-title unselectable";
         cardTitle.innerHTML = data[recipeNumber].recipe_name;
         cardBody.appendChild(cardTitle);
 
+        // card text AKA summary
         var cardText = document.createElement('p'); 
         cardText.className = "card-text d-none";
         cardText.innerHTML = data[recipeNumber].summary;

@@ -30,7 +30,7 @@ hr {
     background-color: var(--tertiary-color)
 }
 dl, ol, ul {
-    margin-left:-18px;
+    margin-left:-16px;
 }
 
 /* IDs */

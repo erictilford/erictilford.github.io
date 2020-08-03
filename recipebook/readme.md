@@ -7,26 +7,22 @@ A recipe website by Eric Tilford.
 *created 2.2.2020*
 
 ## to-do
-- [ ] Update todo list
-- [x] Fix scroll to top issue
-- [x] Switch IDE to VS Code
+- [x] Update todo list
 - [ ] Implement multiple images 
-- [x] Lighten Dark Primary color
-- [x] Clean up to-do list
-- [ ] Large Card BG gradient
-- [x] Time "Bar"
+- [ ] Large Card BG gradient / custom BG img
 - [ ] Fix print layout
 - [ ] Clean up assets folder
-- [ ] Comment EVERYTHING
+- [x] Comment EVERYTHING
 - [ ] Add info to Large Card
   - [x] Image
     - [x] links to image in new tab
-  - [ ] Badges
+  - [x] Badges
   - [ ] Date Added
   - [ ] Contributor(s)
   - [x] Servings
   - [x] Summary
 - [ ] 'Toggle Buttons' Button
+- [ ] Update font, particularly titles
 
 ### maybe 
 - [ ] Change x button to icon
@@ -40,6 +36,9 @@ A recipe website by Eric Tilford.
 ## changelog
 
 ### 8.2.2020
+- Added badges to large card
+- Updated to-do
+- Added a lot of comments
 - **Green Bean Casserole**
 
 ### 8.1.2020
