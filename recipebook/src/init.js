@@ -1,5 +1,3 @@
-//import NoSleep from '../src/NoSleep.js';
-
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing';
 
 function init() {
