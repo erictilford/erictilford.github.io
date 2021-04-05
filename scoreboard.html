@@ -7,11 +7,32 @@
 
 <body>
     <h1 id="title"></h1>
-    <input id="input"></input>
-    <button id="addPlayerButton"><i class='fa fa-lg fa-user'></i> <b> ADD PLAYER</b></button>
-    <button id="sortButton" onclick="SortTable()"><i class='fa fa-lg fa-sort'></i></button>
-    <br>
-    <table id="playerContainer"></table>
+        <div style ="float:left">
+            <input id="input"></input>
+            <button id="addPlayerButton"><i class='fa fa-lg fa-user'></i> <b> ADD PLAYER</b></button>
+            <button id="sortButton" onclick="SortTable()"><i class='fa fa-lg fa-sort'></i></button>
+            <br>
+            <table id="playerContainer"></table>
+        </div>
+        <div style ="float:left; padding-left:40px">
+            <h2>Stuff</h2>
+            <table id="optionTable">
+                <tr>
+                    <td class="optionText">Round</td>
+                    <td class="optionButton" style ="width:20px"><button id="sortButton" onclick="minusRound()"><i class='fa fa-lg fa-minus'></i></button></td>
+                    <td class="optionText" id ="roundNumber" style ="text-align: center; width:30px">1</td>
+                    <td class="optionButton"style ="width:20px"><button id="sortButton" onclick="addRound()"><i class='fa fa-lg fa-plus'></i></button></td>
+                </tr>
+
+                <tr>
+                    <td class="optionText">Question</td>
+                    <td class="optionButton" style ="width:20px"><button id="sortButton" onclick="minusQuestion()"><i class='fa fa-lg fa-minus'></i></button></td>
+                    <td class="optionText" id ="questionNumber" style ="text-align: center; width:30px">1</td>
+                    <td class="optionButton"style ="width:20px"><button id="sortButton" onclick="addQuestion()"><i class='fa fa-lg fa-plus'></i></button></td>
+                </tr>
+
+            </table>
+        </div>
 </body>
 
 <style>
@@ -22,8 +43,20 @@
         width: 400px;
         margin-top: 5px;
     }
+    #optionTable {
+        width: 300px;
+    }
+    .optionText {
+        font-size: 24px;
+    }
+    .optionButton {
+        font-size: 10px;
+    }
     .fa-lg {
         padding: 4px 0px 2px;
+    }
+    .floatLeft {
+        float: left;
     }
 </style>
 
@@ -136,7 +169,29 @@
         }
     }
 
+    var roundNumber = 1;
+    var roundText = document.getElementById("roundNumber");
+    function addRound() {
+        roundNumber ++;
+        roundText.innerHTML = roundNumber;
+    }
+    function minusRound() {
+        roundNumber --;
+        roundText.innerHTML = roundNumber;
+    }
 
+    var questionNumber = 1;
+    var questionText = document.getElementById("questionNumber");
+    function addQuestion() {
+        questionNumber ++;
+        questionText.innerHTML = questionNumber;
+    }
+    function minusQuestion() {
+        questionNumber --;
+        questionText.innerHTML = questionNumber;
+    }
+
+    
 </script>
 
 </html>
