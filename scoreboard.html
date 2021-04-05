@@ -31,7 +31,11 @@
                     <td class="optionButton"style ="width:20px"><button id="sortButton" onclick="addQuestion()"><i class='fa fa-lg fa-plus'></i></button></td>
                 </tr>
 
+                
+
             </table>
+            <br>
+            <button style="padding-right: 5px" id = "timerButton" onclick="startTimer()">Timer</button> <input id="timeInput" value="10" style="width:40px;">s</input>
         </div>
 </body>
 
@@ -190,6 +194,34 @@
         questionNumber --;
         questionText.innerHTML = questionNumber;
     }
+
+    var timerButtonOn = true;
+    function startTimer () {
+        if (timerButtonOn){
+            timerButtonOn = false;
+            var timeleft = Number(document.getElementById("timeInput").value);
+            console.log(timeleft);
+                var downloadTimer = setInterval(function(){
+                if(timeleft <= 0){
+                    clearInterval(downloadTimer);
+                    document.getElementById("timerButton").innerHTML = "Finished";
+                    timerButtonOn = true;
+                } else {
+                    document.getElementById("timerButton").innerHTML = timeleft + " seconds remaining";
+                }
+                timeleft -= 1;
+                
+            }, 1000);
+        }
+    }
+
+    function generateRandomColor()
+    {
+        var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+        return randomColor;
+        //random color will be freshly served
+    }
+    document.body.style.backgroundColor = generateRandomColor()
 
     
 </script>
