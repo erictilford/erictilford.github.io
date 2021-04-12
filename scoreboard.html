@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ddc56dc609.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -11,6 +12,7 @@
             <input id="input"></input>
             <button id="addPlayerButton"><i class='fa fa-lg fa-user'></i> <b> ADD PLAYER</b></button>
             <button id="sortButton" onclick="SortTable()"><i class='fa fa-lg fa-sort'></i></button>
+            <button id="colorButton" onclick="document.body.style.backgroundColor = generateRandomColor()"><i class='fas fa-lg fa-palette'></i></button>
             <br>
             <table id="playerContainer"></table>
         </div>
@@ -31,8 +33,6 @@
                     <td class="optionButton"style ="width:20px"><button id="sortButton" onclick="addQuestion()"><i class='fa fa-lg fa-plus'></i></button></td>
                 </tr>
 
-                
-
             </table>
             <br>
             <button style="padding-right: 5px" id = "timerButton" onclick="startTimer()">Timer</button> <input id="timeInput" value="10" style="width:40px;">s</input>
@@ -40,6 +40,9 @@
 </body>
 
 <style>
+    .fas {
+        font-weight: 900;
+    }
     body {
         padding-left:20px;
     }
