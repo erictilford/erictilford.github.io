@@ -25,6 +25,8 @@ A recipe website by Eric Tilford.
 - [ ] Update font, particularly titles
 - [x] Prevent screen from locking on large card
 
+- [ ] Add proper pagination? https://ecommerce-platforms.com/articles/automated-web-page-creation-php
+
 ### maybe 
 - [ ] Change x button to icon
 - [ ] Fix mobile scrolling issue
