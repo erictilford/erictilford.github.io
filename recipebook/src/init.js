@@ -1,14 +1,25 @@
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing';
-
+/*
 function init() {
     Tabletop.init( { key: public_spreadsheet_url,
                     callback: showInfo,
                     simpleSheet: true } );
 }
+*/
+function init() {
+    Papa.parse(public_spreadsheet_url, {
+      download: true,
+      header: true,
+      complete: function(results) {
+        var data = results.data
+        console.log(data)
+      }
+    })
+  }
 
 window.addEventListener('DOMContentLoaded', init);
 
-function showInfo(data) {
+function showInfo(results) {
 
     var noSleep = new NoSleep();
 
