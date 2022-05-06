@@ -1,4 +1,4 @@
-var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing';
+//var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing';
 /*
 function init() {
     Tabletop.init( { key: public_spreadsheet_url,
@@ -6,6 +6,8 @@ function init() {
                     simpleSheet: true } );
 }
 */
+
+/*
 function init() {
     Papa.parse(public_spreadsheet_url, {
       download: true,
@@ -16,10 +18,13 @@ function init() {
       }
     })
   }
+*/
 
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', showInfo);
 
 function showInfo(results) {
+
+    //alert("TEST");
 
     var noSleep = new NoSleep();
 
@@ -46,6 +51,8 @@ function showInfo(results) {
         "Fast Food" : "#495057",
         "Chinese" : "#dc3545"
     };
+
+    
 
     // ROW ITERATION
     for (var recipeNumber in data) {

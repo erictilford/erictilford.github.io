@@ -38,6 +38,9 @@ A recipe website by Eric Tilford.
 
 ## changelog
 
+### 5.6.2022
+- FIXED SITE (Tabletop / Papaparse was broken, JSON-ified everything)
+
 ### 8.3.2020
 - Updated Print layout
 
