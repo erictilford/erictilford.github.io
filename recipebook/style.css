@@ -38,6 +38,7 @@ dl, ol, ul {
     margin-bottom: 5px;
 }
 #close-large-card-layer{
+    display:none;
     position:fixed;
     top:0;
     left:0;
@@ -176,6 +177,8 @@ dl, ol, ul {
     margin: 0px 5px 10px;
     border: 0px !important;
     border-radius: 0.4em !important;
+    color:var(--badge-text-color);
+    font-weight: bold;
 }
 .unselectable {
     -webkit-user-select: none; /* Safari */        

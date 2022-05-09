@@ -24,8 +24,6 @@ window.addEventListener('DOMContentLoaded', showInfo);
 
 function showInfo(results) {
 
-    //alert("TEST");
-
     var noSleep = new NoSleep();
 
     var tagButtonNames = [];
@@ -52,8 +50,6 @@ function showInfo(results) {
         "Chinese" : "#dc3545"
     };
 
-    
-
     // ROW ITERATION
     for (var recipeNumber in data) {
 
@@ -74,6 +70,7 @@ function showInfo(results) {
         { 
             noSleep.enable();
 
+            document.getElementById("close-large-card-layer").style.display = "block";
             document.getElementById("large-card").style.display = "block";
             // scroll to top
             document.getElementsByClassName("full-page")[0].scrollTop = 0;
@@ -207,8 +204,11 @@ function showInfo(results) {
 
         // BADGES
         var badges = data[recipeNumber].tags.split("; ");
-        for (badge in badges){
+        for (var badge in badges){
             var testBadge = document.createElement('span');
+            //testBadge.onclick = function showCardsWithThisTag()  {
+            //    alert("WTF");
+            //}
             testBadge.className = 'badge badge-secondary unselectable';
             testBadge.innerHTML = badges[badge];
             testBadge.style.background = tagColors[badges[badge]];
@@ -258,23 +258,44 @@ function showInfo(results) {
         document.getElementById("cardholder").appendChild(newElement);
     }
 
-    // BUTTON CREATION
+    // TAG BUTTON CREATION
     function createButtons() {
+        var newButton = document.createElement('button');
+        newButton.type = "button";
+        newButton.className = "btn btn-secondary btn-sm tag-button";
+        newButton.innerHTML = "All";
+        newButton.style.background = "lightgray";
+
+        newButton.addEventListener("click", function () {
+            $(".small-card").show();
+        });
+
+        document.getElementById("buttonholder").appendChild(newButton);
         for (var name in tagButtonNames) {
             var newButton = document.createElement('button');
             newButton.type = "button";
             newButton.className = "btn btn-secondary btn-sm tag-button";
             newButton.innerHTML = tagButtonNames[name];
             newButton.style.background = tagColors[tagButtonNames[name]];
+
+            newButton.addEventListener("click", function () {
+                $btnTxt =this.innerText;
+                $(".small-card").hide();
+                $("span.badge").filter(function () {
+                    return this.innerHTML == $btnTxt;
+                }).parents(".card").show();
+            });
+
             document.getElementById("buttonholder").appendChild(newButton);
-            }
         }
-    //createButtons();
+    }
+    createButtons();
 
     // CLOSE LARGE CARD
     function closeLargeCard(){ 
         noSleep.disable();
         document.getElementById("large-card").style.display = "none"; 
+        document.getElementById("close-large-card-layer").style.display = "none"; 
     }
     // attach to X BUTTON
     document.getElementsByClassName("x-button")[0].onclick = function() { closeLargeCard() };
