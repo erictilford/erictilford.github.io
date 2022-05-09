@@ -18,10 +18,10 @@ var data = [
     {
         "recipe_name": "Curry Chicken Salad",
         "summary": "A delicious Trader Joe's copycat recipe - \"Slightly sweet with a spicy kick.\"",
-        "ingredients": "1 lb chicken (~1&frac12; cups chopped); 3 green onion greens, chopped; 1 cup shredded carrot; &frac12; cup cashews; &frac12; cup raisins; &frac12; cup mayonnaise; 1 Tbs yellow curry powder; 1+ Tbs maple syrup; 2 tsp lemon juice*; 2 tsp Dijon mustard; &frac12; tsp ground ginger; &frac12; tsp garlic powder; &frac18;-&frac14; tsp cayenne pepper; ",
+        "ingredients": "1 lb chicken (~1&frac12; cups chopped); 3 green onion greens, chopped; 1 cup shredded carrot; &frac12; cup cashews; &frac12; cup raisins; &frac12; cup mayonnaise; 1 Tbs yellow curry powder; 1+ Tbs maple syrup; 2 tsp lemon juice*; 2 tsp Dijon mustard; &frac12; tsp ground ginger; &frac12; tsp garlic powder; &frac18;-&frac14; tsp cayenne pepper",
         "directions": "In a large bowl, combine ingredients and mix thoroughly.; Chill at least 30 minutes and serve.",
-        "notes": "Lime juice works too.; Great with bread, croissant, salad greens, tortilla or pita chips.",
-        "tags": "Sides, Thai",
+        "notes": "*Lime juice works too.; Great with bread, croissant, salad greens, tortilla or pita chips.",
+        "tags": "Sides; Thai",
         "hands_on_time": "30",
         "total_time": "60",
         "date_added": "05/09/2022",
