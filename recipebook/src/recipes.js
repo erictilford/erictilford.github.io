@@ -16,10 +16,24 @@ var data = [
     },
     */
     {
+        "recipe_name": "Rice Pudding",
+        "summary": "This easy rice pudding recipe uses left over cooked rice.",
+        "ingredients": "2 cups cooked rice*; 2 cups whole or non-dairy milk; 3 Tbs sugar; ~&frac12; cup raisins; &frac18; tsp salt; 1 tsp vanilla extract",
+        "directions": "In a large pot, combine ingredients except vanilla extract.; Cook about 20 minutes on Medium heat, stirring until thickening.; Remove from heat and stir in vanilla extract.; Serve warm or chilled with whipped cream and cinnamon (optional).",
+        "notes": "*Refrigerated day-old rice works great.; We use jasmine rice but would recommend any medium grain rice.; &frac18;-&frac14; tsp nutmeg optional.",
+        "tags": "Dessert",
+        "hands_on_time": "30",
+        "total_time": "30",
+        "date_added": "05/09/2022",
+        "contributor": "Eric Tilford",
+        "serves": "~1 quart",
+        "image": "ricepudding.jpg"
+    },
+    {
         "recipe_name": "Chickpea &amp; Edamame Salad",
         "summary": "A fresh bean salad in an herb viniagrette.",
         "ingredients": "15oz can chickpeas, rinsed and drained; 1&frac12; cup shelled edamame; &frac14 cup finely diced carrot; &frac14; cup finely diced red bell pepper; &frac14; cup dried cranberries; 3 Tbs extra virgin olive oil; 3 Tbs red wine vinegar; 1 Tbs Italian seasoning; &frac12; tsp salt; &frac12; tsp ground black pepper; &frac18; tsp ground cumin",
-        "directions": "In a large bowl, combine chickpeas, edamame, carrot, bell pepper, and craisins.; In a separate container, combine remaining ingredients until thoroughly mixed.; Add dressing to bowl and stir until thoroughly mixed.; Chill at least 30 minutes and serve.",
+        "directions": "In a large bowl, combine chickpeas, edamame, carrot, bell pepper, and dried cranberries.; In a separate container, combine remaining ingredients until thoroughly mixed.; Add dressing to bowl and stir until thoroughly mixed.; Chill at least 30 minutes and serve.",
         "notes": "Inspired by an ALDI recipe",
         "tags": "Sides",
         "hands_on_time": "30",
@@ -97,6 +111,6 @@ var data = [
         'recipe_name': 'Mexican Shredded Chicken', 'summary': 'Inspired by taco trucks for use in tacos / bowls / nachos. Recipe for slow / pressure cooker or Dutch oven.', 'ingredients': '2 lbs (3 large) chicken breast*; 2 (10oz) cans Rotel; 1 cup chicken broth; 1 yellow onion, chopped; 4 cloves garlic, chopped; 1/4-&frac12; tsp cayenne pepper; 1 tsp cumin; 1 tsp coriander; 1 tsp mexican chili powder; &frac12; tsp salt; &frac12; tsp pepper', 'directions': 'Saut&eacute;e onion and garlic until soft.; Drain Rotel.; Add everything to pot.; If Dutch oven, cook for ~1h 15m @ 375&deg;F. If slow cooker, cook on low ~8h. If pressure cooker, cook on high pressure 40m.; Remove chicken, shred, and return to pot.; If Dutch oven, return to oven and cook 20-30m. If slow / pressure cooker, slow cook on high for 30m.; Serve with taco accoutrements.', 'notes': '*We like to use cilantro-lime marinated chicken breast from Aldi which comes in a 1.5lb size.', 'tags': 'Tex-Mex; Dinner', 'hands_on_time': '20', 'total_time': '90', 'date_added': '06/30/2020', 'contributor': 'Justin Tilford', 'serves': '4-5 servings', 'image': 'mexicanChicken.jpg'
     },
     {
-        'recipe_name': 'Tom Kha Gai', 'summary': 'Thai Chicken Mushroom soup inspired by Bistro 38 in OKC. Recipe for slow / pressure cooker.', 'ingredients': '2 lbs (3 large) chicken breast*; 1 lg. yellow onion; 8oz sliced mushrooms; 2 (13.5 oz) cans coconut milk; 1 tsp ground ginger; 1 tsp garlic powder; 1 &frac12; tsp salt; 4 Tbs brown sugar; 1 &frac12; tsp crushed red pepper; Juice of 1/4-&frac12; lime; Scallions or cilantro to finish', 'directions': 'In slow / pressure cooker, add vegetables and chicken.; In bowl (or in coconut milk can), mix coconut milk and spices, add to slow cooker.; If slow cooker, cook on low ~4h or on high ~2.5h. If pressure cooker, cook on high pressure 40m.; Remove chicken, chop, and return to cooker.; Slow cook on high 30m; Serve with rice (optional), finish with scallions / cilantro.', 'notes': '*We like to use cilantro-lime marinated chicken breast from Aldi which comes in a 1.5lb size.', 'tags': 'Thai; Dinner', 'hands_on_time': '20', 'total_time': '90', 'date_added': '06/30/2020', 'contributor': 'Eric Tilford', 'serves': '4-5 servings', 'image': 'tomkha.jpg'
+        'recipe_name': 'Tom Kha Gai', 'summary': 'Thai Chicken Mushroom soup inspired by Bistro 38 in OKC. Recipe for slow / pressure cooker.', 'ingredients': '2 lbs (3 large) chicken breast*; 1 lg. yellow onion; 8oz sliced mushrooms; 2 (13.5 oz) cans coconut milk; 1 tsp ground ginger; 1 tsp garlic powder; 1 &frac12; tsp salt; 4 Tbs brown sugar; 1 &frac12; tsp crushed red pepper; Juice of &frac14;-&frac12; lime; Scallions or cilantro to finish', 'directions': 'In slow / pressure cooker, add vegetables and chicken.; In bowl (or in coconut milk can), mix coconut milk and spices, add to slow cooker.; If slow cooker, cook on low ~4h or on high ~2.5h. If pressure cooker, cook on high pressure 40m.; Remove chicken, chop, and return to cooker.; Slow cook on high 30m; Serve with rice (optional), finish with scallions / cilantro.', 'notes': '*We like to use cilantro-lime marinated chicken breast from Aldi which comes in a 1.5lb size.', 'tags': 'Thai; Dinner', 'hands_on_time': '20', 'total_time': '90', 'date_added': '06/30/2020', 'contributor': 'Eric Tilford', 'serves': '4-5 servings', 'image': 'tomkha.jpg'
     }
 ]
