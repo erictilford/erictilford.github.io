@@ -32,7 +32,7 @@ var data = [
     {
         "recipe_name": "Rice Pudding",
         "summary": "This easy rice pudding recipe uses left over cooked rice.",
-        "ingredients": "2 cups cooked rice*; 2 cups whole or non-dairy milk; 3 Tbs sugar; ~&frac12; cup raisins; &frac18; tsp salt; 1 tsp vanilla extract",
+        "ingredients": "2 cups cooked rice*; 2 cups whole or non-dairy milk; 3 Tbs granulated sugar; ~&frac12; cup raisins; &frac18; tsp salt; 1 tsp vanilla extract",
         "directions": "In a large pot, combine ingredients except vanilla extract.; Cook about 20 minutes on Medium heat, stirring until thickening.; Remove from heat and stir in vanilla extract.; Serve warm or chilled with whipped cream and cinnamon (optional).",
         "notes": "*Refrigerated day-old rice works great.; We use jasmine rice but would recommend any medium grain rice.; &frac18;-&frac14; tsp nutmeg optional.",
         "tags": "Dessert",
