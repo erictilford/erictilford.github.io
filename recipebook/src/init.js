@@ -302,6 +302,10 @@ function showInfo(results) {
     // attach to "CLICK OUTSIDE TO CLOSE" LAYER
     document.getElementById("close-large-card-layer").onclick = function() { closeLargeCard() };
 
+    document.getElementsByClassName("tag-filter-toggle-btn")[0].onclick = function() { 
+        $("#buttonholder").toggle();
+     };
+
     // LIGHT / DARK MODE
     var darkMode = true;
     function toggleLightMode() {

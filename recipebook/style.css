@@ -36,6 +36,7 @@ dl, ol, ul {
 /* IDs */
 #buttonholder {
     margin-bottom: 5px;
+    display:none;
 }
 #close-large-card-layer{
     display:none;
