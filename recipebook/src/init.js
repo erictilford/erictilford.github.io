@@ -42,6 +42,7 @@ function showInfo(results) {
         "Baking" : "#e0db90",
         "Italian" : "#c99393",
         "Tex-Mex" : "#ffc14f",
+        "Guides" : "#bbbbbb",
         // OLD
         "Vegetarian" : "#228B22",
         "Japanese" : "#117a8b",
