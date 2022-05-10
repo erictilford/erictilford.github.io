@@ -4,12 +4,19 @@ body {
     background-position: center;
     background-size: cover;
 }
-.main-tray {
+#main-title {
+    text-align: center;
+    margin:auto;
+}
+#main-tray {
     padding:20px;
     margin:100px auto;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     font-size: larger;
     font-weight: bold;
+}
+.my-hr {
+    border-top: 2px solid white;
 }
