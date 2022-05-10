@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function (){
     
+    // WALLPAPERS
     const wallpapers = [
         "6zwch8y1q4nz.jpg",
         "38bbDQM.jpg",
@@ -11,8 +12,6 @@ window.addEventListener('DOMContentLoaded', function (){
         "X2qDwdN.jpg",
         "xygoflg84kf21.png"
     ];
-
     let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-    
     document.body.style.backgroundImage = "url('assets/backgrounds/"+ randomWallpaper +"')";
 });
