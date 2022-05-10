@@ -18,9 +18,9 @@ var data = [
     {
         "recipe_name": "Water Bath Canning",
         "summary": "How to can food using the water bath method.",
-        "ingredients": "(Equipment); Water bath canning pot with lid and jar rack; Mason jars with new lids and bands; Mason jar tongs; Jar funnel, bubble pupper, and lid grabber",
-        "directions": "Sterilize jar lids by immersing in >190&deg;F water for 10 minutes (Leave jars metal side up).; Fill canner to cover empty jars by at least 1\" water.; Heat jars to a simmer (180&deg;F) to prevent breakage (5-10 minutes).; Remove and fill jars with desired filling, leaving  ~&frac12;-&frac14;\" space.; Pop bubbles if present and wipe any food from rim.; Attach lids, turning bands until fingertip tight.; Return Jars to simmering water.; Heat water to a boil, cover with lid and process for recommended time (typically 10 minutes).; Turn off heat, remove pot lid and let cool 5 minutes.; Remove jars and place onto cooling rack or towel, and allow to cool overnight.",
-        "notes": "Lids will pop down from the time they are removed until an hour or so - this is a sign that the processing was successful. *Our canner will process 10 x 16oz or 12 x 8oz Ball Mason jars.",
+        "ingredients": "[EQUIPMENT]; Water bath canning pot with lid and jar rack; Mason jars with new lids and bands; Mason jar tongs; Jar funnel, bubble pupper, and lid grabber; Drying rack or towel",
+        "directions": "Sterilize jar lids by immersing in 180-190&deg;F water for 10 minutes (Leave lids metal side up).; Fill canner to cover empty jars by at least 1\" water.; Heat jars to a simmer (180&deg;F) to prevent breakage (5-10 minutes).; Remove and fill jars with desired filling, leaving  ~&frac12;-&frac14;\" space.; Pop bubbles against glass if present and wipe any food from rim.; Attach lids, turning bands until fingertip tight.; Return jars to simmering water.; Heat water to a boil, cover with lid and process for recommended time (typically 10 minutes).; Turn off heat, remove pot lid and let cool 5 minutes.; Remove jars and place onto cooling rack or towel, and allow to cool overnight.",
+        "notes": "Lids will pop down from the time they are removed until an hour or so - this is a sign that the processing was successful.; *Our canner processes (10) 16oz or (12) 8oz Ball Mason jars.",
         "tags": "Guides",
         "hands_on_time": "60",
         "total_time": "120",
