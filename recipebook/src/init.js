@@ -261,6 +261,7 @@ function showInfo(results) {
 
     // TAG BUTTON CREATION
     function createButtons() {
+        // "ALL" Button
         var newButton = document.createElement('button');
         newButton.type = "button";
         newButton.className = "btn btn-secondary btn-sm tag-button";
@@ -272,6 +273,8 @@ function showInfo(results) {
         });
 
         document.getElementById("buttonholder").appendChild(newButton);
+        // TAG Buttons
+        tagButtonNames.sort();
         for (var name in tagButtonNames) {
             var newButton = document.createElement('button');
             newButton.type = "button";
