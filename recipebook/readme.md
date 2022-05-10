@@ -7,12 +7,12 @@ A recipe website by Eric Tilford.
 *created 2.2.2020*
 
 ## to-do
-- [x] Update todo list
+- [ ] Update todo list
 - [ ] Implement multiple images 
 - [ ] Large Card BG gradient / custom BG img
-- [x] Fix print layout
+- [ ] Check print layout
 - [ ] Clean up assets folder
-- [x] Comment EVERYTHING
+- [ ] Comment MORE
 - [ ] Add info to Large Card
   - [x] Image
     - [x] links to image in new tab
@@ -21,7 +21,7 @@ A recipe website by Eric Tilford.
   - [ ] Contributor(s)
   - [x] Servings
   - [x] Summary
-- [ ] 'Toggle Buttons' Button
+- [x] 'Toggle Buttons' Button
 - [ ] Update font, particularly titles
 - [x] Prevent screen from locking on large card
 
@@ -37,6 +37,13 @@ A recipe website by Eric Tilford.
 - [ ] Color visualizer
 
 ## changelog
+
+### 5.9.2022
+- Added tag filtering
+- CHICKPEA & EDAMAME SALAD
+- RICE PUDDING
+- CURRY CHICKEN SALAD
+- WATER BATH CANNING
 
 ### 5.6.2022
 - FIXED SITE (Tabletop / Papaparse was broken, JSON-ified everything)
