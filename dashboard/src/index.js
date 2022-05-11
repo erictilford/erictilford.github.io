@@ -1,7 +1,7 @@
-window.addEventListener('DOMContentLoaded', mainFunction);
+//window.addEventListener('DOMContentLoaded', mainFunction);
 
-function mainFunction() {
-    //$(document).ready(function(){
+//function mainFunction() {
+$(document).ready(function() {
     
     // WALLPAPERS
     const wallpapers = [
@@ -50,8 +50,25 @@ function mainFunction() {
     const output = monthLong + " " + day + ", " + d.getFullYear() + " "+ zSign;
     $("#date-text").text(output);
     
+    // WEATHER
+    $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/onecall?lat=35.55&lon=-97.61&units=imperial&appid=39839cdc97338bcf0c85742eb0729651",
+        type: "GET",
+        success: function(result) {
+          console.log(result);
+          const temp = result.current.temp;
+          const feelsLike = result.current.feels_like;
+          const s = temp + "°F (Feels like " + feelsLike + "°F)";
+          $("#temp-text").text(s);
+        },
+        error: function(error) {
+          console.log(error);
+        }
+    });
+    
+
     // YYYY/MM/DD Format
     //var output = d.getFullYear() + '/' +
     //    ((''+month).length<2 ? '0' : '') + monthLong + '/' +
     //    ((''+day).length<2 ? '0' : '') + day;
-}
+});
