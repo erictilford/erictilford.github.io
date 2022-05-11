@@ -26,7 +26,28 @@ function mainFunction() {
     ];
     const monthLong = monthNames[month - 1];
     const day = d.getDate();
-    const output = monthLong + " " + day + ", " + d.getFullYear();
+    const zodiacSymbols = {
+        "Aries" : "\u2648",
+        "Gemini" : "\u264a",
+        "Leo" : "\u264c",
+        "Libra" : "\u264e",
+        "Sagittarius" : "\u2650",
+        "Aquarius" : "\u2652",
+        "Taurus" : "\u2649",
+        "Cancer" : "\u264b",
+        "Virgo" : "\u264d",
+        "Scorpio" : "\u264f",
+        "Capricorn" : "\u2651",
+        "Pisces" : "\u2653"
+    };
+    function zodiac(day, month){  
+        var zodiac =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn']; 
+        var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19]; 
+        return (day > last_day[month]) ? zodiac[month*1 + 1] : zodiac[month]; 
+    } 
+    const zSign = zodiacSymbols[zodiac(day, month)];
+    
+    const output = monthLong + " " + day + ", " + d.getFullYear() + " "+ zSign;
     $("#date-text").text(output);
     
     // YYYY/MM/DD Format
