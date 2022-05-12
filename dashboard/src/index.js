@@ -23,6 +23,8 @@ $(document).ready(function() {
     ];
     const monthLong = monthNames[month - 1];
     const day = d.getDate();
+    const dateOutput = monthLong + " " + day + ", " + d.getFullYear();
+    $("#date-text").text(dateOutput);
 
     // ZODIAC
     const zodiacSymbols = {
@@ -46,15 +48,8 @@ $(document).ready(function() {
     } 
     const zSign = zodiacSymbols[zodiac(day, month)][0];
     const zTitle = zodiacSymbols[zodiac(day, month)][1];
-    //zSpan = " <span title ='" + zodiac(day,month) + ", " + zTitle + "'>" + zSign + "</span>";
-
-    
     $("#zodiac-symbol").text(zSign);
     $("#zodiac-symbol").attr("title" , zodiac(day,month) + ", " + zTitle);
-    
-    const dateOutput = monthLong + " " + day + ", " + d.getFullYear();
-    $("#date-text").text(dateOutput);
-
     
     // WEATHER
     // https://openweathermap.org/api/one-call-api
