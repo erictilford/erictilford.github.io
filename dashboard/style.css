@@ -16,6 +16,9 @@ body {
     color: white;
     font-size: larger;
 }
+#zodiac-symbol {
+    float: right;
+}
 .my-hr {
     border-top: 2px solid white;
 }
