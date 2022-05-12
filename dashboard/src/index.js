@@ -51,8 +51,10 @@ $(document).ready(function() {
     $("#date-text").text(output);
     
     // WEATHER
+    // https://openweathermap.org/api/one-call-api
+    const wKey = config.WEATHER_API_KEY;
     $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/onecall?lat=35.55&lon=-97.61&units=imperial&appid=39839cdc97338bcf0c85742eb0729651",
+        url: "https://api.openweathermap.org/data/2.5/onecall?lat=35.55&lon=-97.61&units=imperial&appid=" + wKey,
         type: "GET",
         success: function(result) {
           console.log(result);
