@@ -26,29 +26,33 @@ $(document).ready(function() {
     ];
     const monthLong = monthNames[month - 1];
     const day = d.getDate();
+
+    // ZODIAC
     const zodiacSymbols = {
-        "Aries" : "\u2648",
-        "Gemini" : "\u264a",
-        "Leo" : "\u264c",
-        "Libra" : "\u264e",
-        "Sagittarius" : "\u2650",
-        "Aquarius" : "\u2652",
-        "Taurus" : "\u2649",
-        "Cancer" : "\u264b",
-        "Virgo" : "\u264d",
-        "Scorpio" : "\u264f",
-        "Capricorn" : "\u2651",
-        "Pisces" : "\u2653"
+        "Aries" : ["\u2648" , "The Ram"],
+        "Gemini" : ["\u264a", "The Twins"],
+        "Leo" : ["\u264c", "The Lion"],
+        "Libra" : ["\u264e", "The Scales"],
+        "Sagittarius" : ["\u2650", "The Archer"],
+        "Aquarius" : ["\u2652", "The Water Bearer"],
+        "Taurus" : ["\u2649", "The Bull"],
+        "Cancer" : ["\u264b", "The Crab"],
+        "Virgo" : ["\u264d", "The Virgin"],
+        "Scorpio" : ["\u264f", "The Scorpion"],
+        "Capricorn" : ["\u2651", "The Goat"],
+        "Pisces" : ["\u2653", "The Fish"]
     };
     function zodiac(day, month){  
         var zodiac =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn']; 
         var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19]; 
         return (day > last_day[month]) ? zodiac[month*1 + 1] : zodiac[month]; 
     } 
-    const zSign = zodiacSymbols[zodiac(day, month)];
+    const zSign = zodiacSymbols[zodiac(day, month)][0];
+    const zTitle = zodiacSymbols[zodiac(day, month)][1];
+    zSpan = " <span title ='" + zodiac(day,month) + ", " + zTitle + "'>" + zSign + "</span>";
     
-    const output = monthLong + " " + day + ", " + d.getFullYear() + " "+ zSign;
-    $("#date-text").text(output);
+    const output = monthLong + " " + day + ", " + d.getFullYear() + zSpan;
+    $("#date-text").html(output);
     
     // WEATHER
     // https://openweathermap.org/api/one-call-api
@@ -58,8 +62,9 @@ $(document).ready(function() {
         type: "GET",
         success: function(result) {
           console.log(result);
-          const temp = result.current.temp;
-          const feelsLike = result.current.feels_like;
+          function OneDec (x) { return Math.round(x * 10) / 10 }
+          const temp =  OneDec(result.current.temp);
+          const feelsLike = OneDec(result.current.feels_like);
           const currentIcon = result.current.weather[0].icon;
           $("#current-weather-icon").attr("src", "http://openweathermap.org/img/wn/" + currentIcon + ".png");
           const s = temp + "°F (Feels like " + feelsLike + "°F)";
