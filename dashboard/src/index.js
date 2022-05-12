@@ -1,6 +1,3 @@
-//window.addEventListener('DOMContentLoaded', mainFunction);
-
-//function mainFunction() {
 $(document).ready(function() {
     
     // WALLPAPERS
@@ -51,8 +48,8 @@ $(document).ready(function() {
     const zTitle = zodiacSymbols[zodiac(day, month)][1];
     zSpan = " <span title ='" + zodiac(day,month) + ", " + zTitle + "'>" + zSign + "</span>";
     
-    const output = monthLong + " " + day + ", " + d.getFullYear() + zSpan;
-    $("#date-text").html(output);
+    const dateOutput = monthLong + " " + day + ", " + d.getFullYear() + zSpan;
+    $("#date-text").html(dateOutput);
     
     // WEATHER
     // https://openweathermap.org/api/one-call-api
