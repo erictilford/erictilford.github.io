@@ -61,11 +61,16 @@ $(document).ready(function() {
           console.log(result);
           function OneDec (x) { return Math.round(x * 10) / 10 }
           const temp =  OneDec(result.current.temp);
-          const feelsLike = OneDec(result.current.feels_like);
           const currentIcon = result.current.weather[0].icon;
           $("#current-weather-icon").attr("src", "http://openweathermap.org/img/wn/" + currentIcon + ".png");
-          const s = temp + "°F (Feels like " + feelsLike + "°F)";
+          $("#current-weather-text").text(temp + "°");
+          
+          const todayHighTemp = OneDec(result.daily[0].temp.max);
+          const todayLowTemp = OneDec(result.daily[0].temp.min);
+          const feelsLike = OneDec(result.current.feels_like);
+          const s =  todayHighTemp + "° / " + todayLowTemp + "° (Feels like " + feelsLike + "°)";
           $("#temp-text").text(s);
+          //alert(todayHighTemp);
         },
         error: function(error) {
           console.log(error);
