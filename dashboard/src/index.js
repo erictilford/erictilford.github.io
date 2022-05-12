@@ -60,6 +60,8 @@ $(document).ready(function() {
           console.log(result);
           const temp = result.current.temp;
           const feelsLike = result.current.feels_like;
+          const currentIcon = result.current.weather[0].icon;
+          $("#current-weather-icon").attr("src", "http://openweathermap.org/img/wn/" + currentIcon + ".png");
           const s = temp + "°F (Feels like " + feelsLike + "°F)";
           $("#temp-text").text(s);
         },
@@ -67,8 +69,6 @@ $(document).ready(function() {
           console.log(error);
         }
     });
-    
-
     // YYYY/MM/DD Format
     //var output = d.getFullYear() + '/' +
     //    ((''+month).length<2 ? '0' : '') + monthLong + '/' +
