@@ -4,6 +4,9 @@ body {
     background-position: center;
     background-size: cover;
 }
+#banner-div {
+    text-align: center;
+}
 #main-title {
     text-align: center;
     margin:auto;
@@ -15,6 +18,10 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     font-size: larger;
+}
+#serugai-banner {
+    margin: -20px -50px -10px;
+    height: 100px;
 }
 #zodiac-symbol {
     float: right;
@@ -41,3 +48,13 @@ body {
 
     }
 }
+/*Filter styles*/
+.saturate { filter: saturate(3); }
+.grayscale { filter: grayscale(100%); }
+.contrast { filter: contrast(160%); }
+.brightness { filter: brightness(100); }
+.blur { filter: blur(3px); }
+.invert { filter: invert(100%); }
+.sepia { filter: sepia(100%); }
+.huerotate { filter: hue-rotate(180deg); }
+.rss.opacity { filter: opacity(50%); }
