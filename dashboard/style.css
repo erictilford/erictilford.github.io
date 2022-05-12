@@ -33,7 +33,11 @@ body {
     } */
 }
 @media only screen and (max-width: 425px) { /* PHONE*/
+    .container {
+        padding: 0 5px;
+    }
     #main-tray {
-        margin:20px auto;
+        margin:10px auto;
+
     }
 }

@@ -67,7 +67,7 @@ $(document).ready(function() {
           function OneDec (x) { return Math.round(x * 10) / 10 }
           const temp =  OneDec(result.current.temp);
           const currentIcon = result.current.weather[0].icon;
-          $("#current-weather-icon").attr("src", "http://openweathermap.org/img/wn/" + currentIcon + ".png");
+          $("#current-weather-icon").attr("src", "https://openweathermap.org/img/wn/" + currentIcon + ".png");
           $("#current-weather-text").text(temp + "°");
           
           const todayHighTemp = OneDec(result.daily[0].temp.max);
