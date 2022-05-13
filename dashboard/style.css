@@ -21,7 +21,6 @@ body {
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    /*font-size: medium;*/
 }
 #serugai-banner {
     margin: -20px -50px -10px;
@@ -37,7 +36,6 @@ body {
     float: right;
 }
 .daily-temp {
-    /*float: right !important;*/
     width: 45px;
     text-align: center;
     padding-left:5px

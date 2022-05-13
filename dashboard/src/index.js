@@ -75,7 +75,7 @@ $(document).ready(function() {
             const icon = "<td class='weather-icon-column'><img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></td>";
             const high = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.max) + "°</td>";
             const low = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</td>";
-            const pop = "<td class='daily-temp precip'><i class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
+            const pop = "<td class='daily-temp precip'><i style='filter: opacity(" + (result.daily[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
             const row = "<tr>" + dayname + pop + icon + high + low +"</tr>";
             $("#weather-table").append(row);
 
