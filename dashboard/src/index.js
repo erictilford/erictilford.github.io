@@ -53,7 +53,7 @@ $(document).ready(function() {
           const currentIcon = result.current.weather[0].icon;
           $("#current-weather-icon").attr("src", "https://openweathermap.org/img/wn/" + currentIcon + ".png");
 		  $("#current-weather-icon").attr("title", result.current.weather[0].description);
-          $("#current-weather-text").text(temp + "°");
+          $("#current-weather-text").text(" " + temp + "°");
           
           const todayHighTemp = OneDec(result.daily[0].temp.max);
           const todayLowTemp = OneDec(result.daily[0].temp.min);
@@ -71,12 +71,12 @@ $(document).ready(function() {
                 if (d.getDay() + i > 6) { j-=7; }
                 dayName = dayNames[d.getDay() + j];
             }
-            const dayname = "<div class='div-table-col day-name' style='float:left;'>" + dayName + "</div>";
-            const icon = "<div class='div-table-col'><img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></div>";
-            const high = "<div class='div-table-col daily-temp'>" + OneDec(result.daily[i].temp.max) + "°</div>";
-            const low = "<div class='div-table-col daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</div>";
-            const pop = "<div class='div-table-col daily-temp precip'><i class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</div>";
-            const row = "<div class='div-table-row'>" + dayname + low + high + icon + pop + "</div>";
+            const dayname = "<td class='day-name' valign='center'>" + dayName + "</td>";
+            const icon = "<td class='weather-icon-column'><img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></td>";
+            const high = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.max) + "°</td>";
+            const low = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</td>";
+            const pop = "<td class='daily-temp precip'><i class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
+            const row = "<tr>" + dayname + pop + icon + high + low +"</tr>";
             $("#weather-table").append(row);
 
           }

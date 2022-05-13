@@ -6,7 +6,7 @@ body {
 }
 #current-weather-icon {
     max-height: 72px;
-    margin: -24px -5px -16px ;
+    margin: -24px -8px -16px ;
 }
 #banner-div {
     text-align: center;
@@ -21,47 +21,47 @@ body {
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    font-size: larger;
+    /*font-size: medium;*/
 }
 #serugai-banner {
     margin: -20px -50px -10px;
     height: 100px;
 }
 #weather-table {
-    padding: 10px 0 0 0;
+    width:100%;
+    margin-top: 10px;
+    color: white;
+    table-layout: fixed;
 }
 #zodiac-symbol {
     float: right;
 }
 .daily-temp {
-    float: right !important;
-    width: 50px;
+    /*float: right !important;*/
+    width: 45px;
     text-align: center;
+    padding-left:5px
 }
-.div-table {
-    display: table;         
-    width: 100%;         
-}
-.div-table-row {
-    display: table-row;
-    width: 100%;
-    clear: both;
-}
-.div-table-col {
-    float: right; /* fix for  buggy browsers */
-    display: table-column;         
-    /* width: auto; */
+.day-name {
+    max-width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .my-hr {
     border-top: 2px solid white;
 }
 .precip {
-    font-size: medium;
+    font-size: small;
     width: 60px;
     line-height: 30px;
+
 }
 .weather-icon {
     margin: -10px 0 -8px 0;
+}
+.weather-icon-column {
+    width: 50px;
 }
 /* MEDIA CALLS */
 @media only screen and (max-width: 768px) { /*TABLET*/
@@ -75,7 +75,7 @@ body {
     }
     #main-tray {
         margin:10px auto;
-
+        padding: 15px;
     }
 }
 /*Filter styles*/
