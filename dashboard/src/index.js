@@ -55,7 +55,7 @@ $(document).ready(function() {
     // https://openweathermap.org/api/one-call-api
     const wKey = config.WEATHER_API_KEY;
     $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/onecall?lat=35.55&lon=-97.61&units=imperial&appid=" + wKey,
+        url: "https://api.openweathermap.org/data/2.5/onecall?lat=35.55&lon=-97.61&lang=en&units=imperial&appid=" + wKey,
         type: "GET",
         success: function(result) {
           console.log(result);
@@ -63,6 +63,7 @@ $(document).ready(function() {
           const temp =  OneDec(result.current.temp);
           const currentIcon = result.current.weather[0].icon;
           $("#current-weather-icon").attr("src", "https://openweathermap.org/img/wn/" + currentIcon + ".png");
+		  $("#current-weather-icon").attr("title", result.current.weather[0].description);
           $("#current-weather-text").text(temp + "°");
           
           const todayHighTemp = OneDec(result.daily[0].temp.max);
@@ -82,7 +83,7 @@ $(document).ready(function() {
                 dn = dayNames[d.getDay() + j];
             }
             const dayName = "<div class='div-table-col day-name' style='float:left;'>" + dn + "</div>";
-            const icon = "<div class='div-table-col'><img class='weather-icon' src=https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png></div>";
+            const icon = "<div class='div-table-col'><img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></div>";
             const high = "<div class='div-table-col daily-temp'>" + OneDec(result.daily[i].temp.max) + "°</div>";
             const low = "<div class='div-table-col daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</div>";
             const row = "<div class='div-table-row'>" + dayName + low + high + icon + "</div>";
