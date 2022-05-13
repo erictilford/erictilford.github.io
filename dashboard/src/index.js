@@ -70,7 +70,25 @@ $(document).ready(function() {
           const feelsLike = OneDec(result.current.feels_like);
           const s =  todayHighTemp + "° / " + todayLowTemp + "° (Feels like " + feelsLike + "°)";
           $("#temp-text").text(s);
-          //alert(todayHighTemp);
+          
+          const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+          for (let i = 0; i < result.daily.length; i++) {
+            let dn = "";
+            if (i == 0) {
+                dn = "Today";
+            } else {
+                let j = i;
+                if (d.getDay() + i > 6) { j-=7; }
+                dn = dayNames[d.getDay() + j];
+            }
+            const dayName = "<div class='div-table-col day-name' style='float:left;'>" + dn + "</div>";
+            const icon = "<div class='div-table-col'><img class='weather-icon' src=https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png></div>";
+            const high = "<div class='div-table-col daily-temp'>" + OneDec(result.daily[i].temp.max) + "°</div>";
+            const low = "<div class='div-table-col daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</div>";
+            const row = "<div class='div-table-row'>" + dayName + low + high + icon + "</div>";
+            $("#weather-table").append(row);
+
+          }
         },
         error: function(error) {
           console.log(error);

@@ -4,6 +4,10 @@ body {
     background-position: center;
     background-size: cover;
 }
+#current-weather-icon {
+    max-height: 72px;
+    margin: -24px -5px -16px ;
+}
 #banner-div {
     text-align: center;
 }
@@ -23,15 +27,36 @@ body {
     margin: -20px -50px -10px;
     height: 100px;
 }
+#weather-table {
+    padding: 10px 0 0 0;
+}
 #zodiac-symbol {
     float: right;
+}
+.daily-temp {
+    float: right !important;
+    width: 50px;
+    text-align: center;
+}
+.div-table {
+    display: table;         
+    width: 100%;         
+}
+.div-table-row {
+    display: table-row;
+    width: 100%;
+    clear: both;
+}
+.div-table-col {
+    float: right; /* fix for  buggy browsers */
+    display: table-column;         
+    /* width: auto; */
 }
 .my-hr {
     border-top: 2px solid white;
 }
 .weather-icon {
-    max-height: 72px;
-    margin: -24px -5px -16px ;
+    margin: -10px 0 -8px 0;
 }
 /* MEDIA CALLS */
 @media only screen and (max-width: 768px) { /*TABLET*/
