@@ -55,6 +55,11 @@ body {
 .my-hr {
     border-top: 2px solid white;
 }
+.precip {
+    font-size: medium;
+    width: 60px;
+    line-height: 30px;
+}
 .weather-icon {
     margin: -10px 0 -8px 0;
 }

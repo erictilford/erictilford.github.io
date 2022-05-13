@@ -63,20 +63,20 @@ $(document).ready(function() {
           
           const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
           for (let i = 0; i < result.daily.length; i++) {
-            let dn = "";
+            let dayName = "";
             if (i == 0) {
-                dn = "Today";
+                dayName = "Today";
             } else {
                 let j = i;
                 if (d.getDay() + i > 6) { j-=7; }
-                dn = dayNames[d.getDay() + j];
+                dayName = dayNames[d.getDay() + j];
             }
-            const dayName = "<div class='div-table-col day-name' style='float:left;'>" + dn + "</div>";
+            const dayname = "<div class='div-table-col day-name' style='float:left;'>" + dayName + "</div>";
             const icon = "<div class='div-table-col'><img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></div>";
             const high = "<div class='div-table-col daily-temp'>" + OneDec(result.daily[i].temp.max) + "°</div>";
             const low = "<div class='div-table-col daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</div>";
-            const pop = "<div class='div-table-col daily-temp'><i class='fa-solid fa-droplet fas fa'></i>" + result.daily[i].pop * 100 + "%</div>";
-            const row = "<div class='div-table-row'>" + dayName + low + high + icon + pop + "</div>";
+            const pop = "<div class='div-table-col daily-temp precip'><i class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</div>";
+            const row = "<div class='div-table-row'>" + dayname + low + high + icon + pop + "</div>";
             $("#weather-table").append(row);
 
           }
