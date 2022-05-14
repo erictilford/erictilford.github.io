@@ -10,9 +10,11 @@ $(document).ready(function() {
     const monthNames = ["January", "February", "March", "April", "May", "June",
      "July", "August", "September", "October", "November", "December"
     ];
+    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     const monthLong = monthNames[month - 1];
     const day = d.getDate();
-    const dateOutput = monthLong + " " + day + ", " + d.getFullYear();
+    const dayNameHeader = dayNames[d.getDay()];
+    const dateOutput = dayNameHeader + ", " + monthLong + " " + day + ", " + d.getFullYear();
     $("#date-text").text(dateOutput);
 
     // ZODIAC
@@ -61,7 +63,6 @@ $(document).ready(function() {
           const s =  todayHighTemp + "° / " + todayLowTemp + "° (Feels like " + feelsLike + "°)";
           $("#temp-text").text(s);
           
-          const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
           for (let i = 0; i < result.daily.length; i++) {
             let dayName = "";
             if (i == 0) {
