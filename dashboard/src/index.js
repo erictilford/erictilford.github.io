@@ -24,18 +24,18 @@ $(document).ready(function() {
 
     // ZODIAC
     const zodiacSymbols = {
-        "Aries" : ["\u2648" , "The Ram"],
-        "Gemini" : ["\u264a", "The Twins"],
-        "Leo" : ["\u264c", "The Lion"],
-        "Libra" : ["\u264e", "The Scales"],
-        "Sagittarius" : ["\u2650", "The Archer"],
-        "Aquarius" : ["\u2652", "The Water Bearer"],
-        "Taurus" : ["\u2649", "The Bull"],
-        "Cancer" : ["\u264b", "The Crab"],
-        "Virgo" : ["\u264d", "The Virgin"],
-        "Scorpio" : ["\u264f", "The Scorpion"],
         "Capricorn" : ["\u2651", "The Goat"],
-        "Pisces" : ["\u2653", "The Fish"]
+        "Aquarius" : ["\u2652", "The Water Bearer"],
+        "Pisces" : ["\u2653", "The Fish"],
+        "Aries" : ["\u2648" , "The Ram"],
+        "Taurus" : ["\u2649", "The Bull"],
+        "Gemini" : ["\u264a", "The Twins"],
+        "Cancer" : ["\u264b", "The Crab"],
+        "Leo" : ["\u264c", "The Lion"],
+        "Virgo" : ["\u264d", "The Virgin"],
+        "Libra" : ["\u264e", "The Scales"],
+        "Scorpio" : ["\u264f", "The Scorpion"],
+        "Sagittarius" : ["\u2650", "The Archer"]
     };
     function zodiac(day, month){  
         var zodiac =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn']; 
