@@ -26,9 +26,13 @@ body {
     margin: -20px -50px -10px;
     height: 100px;
 }
+#temp-text {
+    font-size: medium;
+    font-weight: normal;
+}
 #weather-table {
     width:100%;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     color: white;
     table-layout: fixed;
 }
@@ -48,6 +52,7 @@ body {
 }
 .my-hr {
     border-top: 2px solid white;
+    filter: opacity(50%);
 }
 .precip {
     font-size: small;

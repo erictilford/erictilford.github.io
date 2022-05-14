@@ -60,7 +60,7 @@ $(document).ready(function() {
           const todayHighTemp = OneDec(result.daily[0].temp.max);
           const todayLowTemp = OneDec(result.daily[0].temp.min);
           const feelsLike = OneDec(result.current.feels_like);
-          const s =  todayHighTemp + "° / " + todayLowTemp + "° (Feels like " + feelsLike + "°)";
+          const s =  /* todayHighTemp + "° / " + todayLowTemp + "°*/" (Feels like " + feelsLike + "°)";
           $("#temp-text").text(s);
           
           for (let i = 0; i < result.daily.length; i++) {
