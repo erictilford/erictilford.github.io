@@ -18,6 +18,41 @@ function checkHoliday (month, day, dayOfWeek) {
 
 const holidayArray = [
     {
+        "holiday_name" : "Wedding Anniversary <3",
+        "month" : 5,
+        "day_one" : 15,
+        "day_two" : null,
+        "day" : null
+    },
+    {
+        "holiday_name" : "New Year's Eve",
+        "month" : 12,
+        "day_one" : 31,
+        "day_two" : null,
+        "day" : null
+    },
+    {
+        "holiday_name" : "Amber's Birthday",
+        "month" : 12,
+        "day_one" : 31,
+        "day_two" : null,
+        "day" : null
+    },
+    {
+        "holiday_name" : "ET Birthday",
+        "month" : 7,
+        "day_one" : 17,
+        "day_two" : null,
+        "day" : null
+    },
+    {
+        "holiday_name" : "Evie's Birthday!",
+        "month" : 3,
+        "day_one" : 5,
+        "day_two" : null,
+        "day" : null
+    },
+    {
         "holiday_name" : "Friday the 13<sup>th</sup>",
         "month" : null,
         "day_one" : 13,
