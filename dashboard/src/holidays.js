@@ -12,10 +12,9 @@ function checkHoliday (month, day, dayOfWeek) {
                 holidays.push(holidayArray[i].holiday_name);
             }
         } else { // everything else AKA day of week / date based
-            if (dayOfWeek == holidayArray[i].day && month == holidayArray[i].month
-                && day >= holidayArray[i].day_one && day <= holidayArray[i].day_two) {
-                    holidays.push(holidayArray[i].holiday_name);
-                }
+            if (dayOfWeek == holidayArray[i].day && month == holidayArray[i].month && day >= holidayArray[i].day_one && day <= holidayArray[i].day_two) {
+                holidays.push(holidayArray[i].holiday_name);
+            }
         }
     }
     return holidays;
@@ -228,7 +227,7 @@ const holidayArray = [
         "day" : null
     },
     {
-        "holiday_name" : "Wedding Anniversary <3",
+        "holiday_name" : "Anniversary &hearts;",
         "month" : 5,
         "day_one" : 15,
         "day_two" : null,

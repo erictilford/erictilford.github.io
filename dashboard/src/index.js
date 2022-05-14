@@ -73,9 +73,16 @@ $(document).ready(function() {
             if (i == 0) {
                 dayName = "Today";
             } else {
+              const thisDay = new Date(d);
+              thisDay.setDate(thisDay.getDate() + i);
+              const todayHolidays = checkHoliday(thisDay.getMonth()+1, thisDay.getDate(), thisDay.getDay());
+              if (todayHolidays.length != 0) {
+                dayName = todayHolidays[0];
+              } else {
                 let j = i;
                 if (d.getDay() + i > 6) { j-=7; }
                 dayName = dayNames[d.getDay() + j];
+              }
             }
             const dayname = "<td class='day-name' valign='center'>" + dayName + "</td>";
             const icon = "<td class='weather-icon-column'><img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></td>";
