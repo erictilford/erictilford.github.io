@@ -9,7 +9,7 @@ $(document).ready(function () {
   for (let i = 0; i < links.video.length; i++){
     const link = links.video[i];
     const li = '<li>' + link.icon + '<br>' + link.title + '<br>' + link.url + '</li>';
-    $("#video-list").append(li);
+    $("#video-list").append(li); 
   }
 
 	// DATE
