@@ -11,13 +11,13 @@ body {
 #banner-div {
     text-align: center;
 }
-#links-list {
+#links-div > ul {
     display:flex;
     text-align: center;
     list-style-type: none;
     padding-left: 0;
 }
-#links-list > li {
+#links-div > ul > li {
     padding: 10px;
 }
 #main-title {

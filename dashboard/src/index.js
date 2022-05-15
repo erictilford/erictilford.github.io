@@ -4,6 +4,14 @@ $(document).ready(function () {
 	let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 	document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 
+  // LINKS
+  // videos
+  for (let i = 0; i < links.video.length; i++){
+    const link = links.video[i];
+    const li = '<li>' + link.icon + '<br>' + link.title + '<br>' + link.url + '</li>';
+    $("#video-list").append(li);
+  }
+
 	// DATE
 	const d = new Date();
 	const month = d.getMonth() + 1;

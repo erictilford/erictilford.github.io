@@ -1,6 +1,33 @@
 var config = {
     WEATHER_API_KEY : 'bc038703ed9fdf90453fa1cf0930896d'
 }
+const links = {
+    "video" : [
+        {
+            "title" : "Toonami Aftermath",
+            "url" : "https://www.toonamiaftermath.com",
+            "icon" : '<i class="fa-solid fa-meteor"></i>'
+        },
+        {
+            "title" : "Twitch",
+            "url" : "https://www.twitch.tv",
+            "icon" : '<i class="fa-brands fa-twitch"></i>'
+        }
+    ],
+    "tools" : [
+        {
+            "title" : "Toonami Aftermath",
+            "url" : "https://www.toonamiaftermath.com",
+            "icon" : "fa-dog"
+        },
+        {
+            "title" : "Toonami Aftermath",
+            "url" : "https://www.toonamiaftermath.com",
+            "icon" : "fa-dog"
+        }
+    ],
+}
+
 const wallpapers = [
     "1211882520893.jpg",
     "1226553584928.jpg",
