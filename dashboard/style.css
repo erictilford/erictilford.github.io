@@ -11,6 +11,10 @@ body {
 #banner-div {
     text-align: center;
 }
+#links-list {
+    display:flex;
+    text-align: center;
+}
 #main-title {
     text-align: center;
     margin:auto;
