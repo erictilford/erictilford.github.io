@@ -91,8 +91,13 @@ $(document).ready(function() {
             const pop = "<td class='daily-temp precip'><i style='filter: opacity(" + (result.daily[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
             const row = "<tr>" + dayname + pop + icon + high + low +"</tr>";
             $("#weather-table").append(row);
-
           }
+          // wind_speed MPH
+          // humidity %
+          // uvi
+          $("#weather-extra-uv").html('<i class="fa-solid fa-lg fa-sun weather-extra-icon"></i><br>UV Index<br>' + result.current.uvi);
+          $("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon"></i><br>Wind<br>' + result.current.wind_speed + ' mph');
+          $("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon"></i><br>Humidity<br>' + result.current.humidity + '%');
         },
         error: function(error) {
           console.log(error);
