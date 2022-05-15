@@ -30,6 +30,15 @@ body {
     font-size: medium;
     font-weight: normal;
 }
+#weather-extra-table {
+    margin-top:10px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+#weather-extra-table td {
+    width: 33%;
+}
 #weather-table {
     width:100%;
     /*margin-top: 10px;*/
