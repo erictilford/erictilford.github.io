@@ -6,10 +6,10 @@ $(document).ready(function () {
 
   // LINKS
   // videos
-  for (let i = 0; i < links.video.length; i++){
-    const link = links.video[i];
-    const li = '<li>' + link.icon + '<br>' + link.title + '<br>' + link.url + '</li>';
-    $("#video-list").append(li); 
+  for (let i = 0; i < links.length; i++){
+    const link = links[i];
+    const li = '<a href=' + link.url + '><li>' + link.icon + '<br>' + link.title + '</li>';
+    $(link.target).append(li); 
   }
 
 	// DATE
