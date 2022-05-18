@@ -2,43 +2,55 @@ var config = {
     WEATHER_API_KEY : 'bc038703ed9fdf90453fa1cf0930896d'
 }
 const links = [
-        {
-            "title" : "Toonami Aftermath",
-            "url" : "https://www.toonamiaftermath.com",
-            "icon" : '<i class="fa-solid fa-2x fa-meteor" style="color:mediumaquamarine"></i>',
-            "target" : "#video-list"
-        },
-        {
-            "title" : "Twitch",
-            "url" : "https://www.twitch.tv",
-            "icon" : '<i class="fa-brands fa-2x fa-twitch" style="color:#a970ff"></i>',
-            "target" : "#video-list"
-        },
-        {
-            "title" : "YouTube",
-            "url" : "https://www.youtube.com",
-            "icon" : '<i class="fa-brands fa-2x fa-youtube" style="color:red;"></i>',
-            "target" : "#video-list"
-        },
-        {
-            "title" : "Netflix",
-            "url" : "https://www.netflix.com",
-            "icon" : '<i class="fa-solid fa-2x fa-n" style="color:#e50914"></i>',
-            "target" : "#video-list"
-        },
-        {
-            "title" : "Gmail",
-            "url" : "https://mail.google.com/mail/u/0/#inbox",
-            "icon" : '<i class="fa-solid fa-2x fa-envelope" style="color:#ea4335"></i>',
-            "target" : "#tools-list"
-        },
-        {
-            "title" : "Google Drive",
-            "url" : "https://drive.google.com/drive/my-drive",
-            "icon" : '<i class="fa-brands fa-2x fa-google-drive" style="color:#fbbc04"></i>',
-            "target" : "#tools-list"
-        }
-    ]
+    {
+        "title" : "Toonami Aftermath",
+        "url" : "https://www.toonamiaftermath.com",
+        "icon" : '<i class="fa-solid fa-2x fa-meteor" style="color:mediumaquamarine"></i>',
+        "target" : "#video-list"
+    },
+    {
+        "title" : "Twitch",
+        "url" : "https://www.twitch.tv",
+        "icon" : '<i class="fa-brands fa-2x fa-twitch" style="color:#a970ff"></i>',
+        "target" : "#video-list"
+    },
+    {
+        "title" : "YouTube",
+        "url" : "https://www.youtube.com",
+        "icon" : '<i class="fa-brands fa-2x fa-youtube" style="color:red;"></i>',
+        "target" : "#video-list"
+    },
+    {
+        "title" : "Netflix",
+        "url" : "https://www.netflix.com",
+        "icon" : '<i class="fa-solid fa-2x fa-n" style="color:#e50914"></i>',
+        "target" : "#video-list"
+    },
+    {
+        "title" : "Gmail",
+        "url" : "https://mail.google.com/mail/u/0/#inbox",
+        "icon" : '<i class="fa-solid fa-2x fa-envelope" style="color:#ea4335"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Google Drive",
+        "url" : "https://drive.google.com/drive/my-drive",
+        "icon" : '<i class="fa-brands fa-2x fa-google-drive" style="color:#fbbc04"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Reddit",
+        "url" : "https://old.reddit.com",
+        "icon" : '<i class="fa-brands fa-2x fa-reddit" style="color:orangered"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Recipe Book",
+        "url" : "https://erictilford.github.io/recipebook",
+        "icon" : '<i class="fa-solid fa-2x fa-book-skull" style="color:cornflowerblue"></i>',
+        "target" : "#tools-list"
+    }
+]
 
 const wallpapers = [
     "1211882520893.jpg",
