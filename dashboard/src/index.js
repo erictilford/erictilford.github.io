@@ -5,7 +5,6 @@ $(document).ready(function () {
 	document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 
   // LINKS
-  // videos
   for (let i = 0; i < links.length; i++){
     const link = links[i];
     const li = '<a href=' + link.url + '><li>' + link.icon + '<br>' + link.title + '</li>';
@@ -118,6 +117,7 @@ $(document).ready(function () {
 		},
 		error: function (error) {
 			console.log(error);
+      $("#temp-text").html("<p>Failed to Load Weather Data</p>");
 		}
 	});
 	// YYYY/MM/DD Format
