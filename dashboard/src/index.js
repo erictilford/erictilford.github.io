@@ -40,6 +40,9 @@ $(document).ready(function () {
 		} else if (freedomHours == 0) {
 			freedomHours = 12;
 		}
+		else if (freedomHours == 12) {
+			ampm = "PM";
+		}
 		let time = freedomHours + ":" + timeDate.getMinutes().toString().padStart(2 , "0") + ":" + timeDate.getSeconds().toString().padStart(2 , "0") + " ";
 		$("#time-text").text(time);
 		$("#ampm-text").text(ampm);
