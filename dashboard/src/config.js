@@ -27,6 +27,18 @@ const links = [
         "target" : "#video-list"
     },
     {
+        "title" : "Disney+",
+        "url" : "https://www.disneyplus.com/en-gb/home",
+        "icon" : '<i class="fa-solid fa-2x fa-hat-wizard" style="color:steelblue"></i>',
+        "target" : "#video-list"
+    },
+    {
+        "title" : "Prime Video",
+        "url" : "https://www.amazon.com/gp/video/storefront",
+        "icon" : '<i class="fa-brands fa-2x fa-amazon" style="color:#00a8e1;"></i>',
+        "target" : "#video-list"
+    },
+    {
         "title" : "Gmail",
         "url" : "https://mail.google.com/mail/u/0/#inbox",
         "icon" : '<i class="fa-solid fa-2x fa-envelope" style="color:#ea4335"></i>',
@@ -48,6 +60,12 @@ const links = [
         "title" : "Recipe Book",
         "url" : "https://erictilford.github.io/recipebook",
         "icon" : '<i class="fa-solid fa-2x fa-book-skull" style="color:cornflowerblue"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Wordle",
+        "url" : "https://www.nytimes.com/games/wordle/index.html",
+        "icon" : '<i class="fa-solid fa-2x fa-w" style="color:#69a662"></i>',
         "target" : "#tools-list"
     }
 ]
