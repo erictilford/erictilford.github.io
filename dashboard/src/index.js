@@ -30,17 +30,22 @@ $(document).ready(function () {
 	}
 
 	// TIME
-	let freedomHours = d.getHours();
-	let ampm = "AM";
-	if (freedomHours > 12) {
-		freedomHours -= 12;
-		ampm = "PM";
-	} else if (freedomHours == 0) {
-		freedomHours = 12;
+	function updateClock() {
+		let timeDate = new Date();
+		let freedomHours = timeDate.getHours();
+		let ampm = "AM";
+		if (freedomHours > 12) {
+			freedomHours -= 12;
+			ampm = "PM";
+		} else if (freedomHours == 0) {
+			freedomHours = 12;
+		}
+		let time = freedomHours + ":" + timeDate.getMinutes().toString().padStart(2 , "0") + ":" + timeDate.getSeconds().toString().padStart(2 , "0") + " ";
+		$("#time-text").text(time);
+		$("#ampm-text").text(ampm);
+		setTimeout(updateClock,1000);
 	}
-	let time = freedomHours + ":" + d.getMinutes().toString().padStart(2 , "0") /* + ":" + d.getSeconds() */ + " ";
-	$("#time-text").text(time);
-	$("#ampm-text").text(ampm);
+	updateClock();
 
 	// ZODIAC
 	const zodiacSymbols = {
