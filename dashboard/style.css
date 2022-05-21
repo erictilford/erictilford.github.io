@@ -15,6 +15,9 @@ body {
     max-height: 72px;
     margin: -24px -8px -16px ;
 }
+#ampm-text {
+    font-size: 70%;
+}
 #banner-div {
     text-align: center;
 }

@@ -4,13 +4,13 @@ $(document).ready(function () {
 	let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 	document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 
-  // LINKS
-  for (let i = 0; i < links.length; i++){
-    const link = links[i];
-    const li = '<a href=' + link.url + '><li>' + link.icon + '<br>' + link.title + '</li>';
-    $(link.target).append(li); 
-  }
-
+	// LINKS
+	for (let i = 0; i < links.length; i++) {
+		const link = links[i];
+		const li = '<a href=' + link.url + '><li>' + link.icon + '<br>' + link.title + '</li>';
+		$(link.target).append(li);
+	}
+	
 	// DATE
 	const d = new Date();
 	const month = d.getMonth() + 1;
@@ -29,6 +29,18 @@ $(document).ready(function () {
 		$("#holiday-names").append("<h6>" + todayHolidays[i] + "</h6>");
 	}
 
+	// TIME
+	let freedomHours = d.getHours();
+	let ampm = "";
+	if (freedomHours > 12) {
+		freedomHours -= 12;
+		ampm = "PM";
+	} else {
+		ampm = "AM";
+	}
+	let time = freedomHours + ":" + d.getMinutes().toString().padStart(2 , "0") /* + ":" + d.getSeconds() */ + " ";
+	$("#time-text").text(time);
+	$("#ampm-text").text(ampm);
 	// ZODIAC
 	const zodiacSymbols = {
 		"Capricorn": ["\u2651", "The Goat"],
@@ -111,13 +123,13 @@ $(document).ready(function () {
 			else if (uvi >= 8 && uvi < 11) { uvtext = "Very High"; uvcolor = "crimson" }
 			else if (uvi >= 11) { uvtext = "Extreme"; uvcolor = "magenta" }
 
-			$("#weather-extra-uv").html('<i class="fa-solid fa-lg ' + uvicon + ' weather-extra-icon" style="color:' + uvcolor + '"></i><br>UV Index<br>' + uvtext + " | " + result.current.uvi );
+			$("#weather-extra-uv").html('<i class="fa-solid fa-lg ' + uvicon + ' weather-extra-icon" style="color:' + uvcolor + '"></i><br>UV Index<br>' + uvtext + " | " + result.current.uvi);
 			$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind<br>' + result.current.wind_speed + ' mph');
 			$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity<br>' + result.current.humidity + '%');
 		},
 		error: function (error) {
 			console.log(error);
-      $("#temp-text").html("<p>Failed to Load Weather Data</p>");
+			$("#temp-text").html("<p>Failed to Load Weather Data</p>");
 		}
 	});
 	// YYYY/MM/DD Format
