@@ -31,16 +31,17 @@ $(document).ready(function () {
 
 	// TIME
 	let freedomHours = d.getHours();
-	let ampm = "";
+	let ampm = "AM";
 	if (freedomHours > 12) {
 		freedomHours -= 12;
 		ampm = "PM";
-	} else {
-		ampm = "AM";
+	} else if (freedomHours == 0) {
+		freedomHours = 12;
 	}
 	let time = freedomHours + ":" + d.getMinutes().toString().padStart(2 , "0") /* + ":" + d.getSeconds() */ + " ";
 	$("#time-text").text(time);
 	$("#ampm-text").text(ampm);
+
 	// ZODIAC
 	const zodiacSymbols = {
 		"Capricorn": ["\u2651", "The Goat"],
