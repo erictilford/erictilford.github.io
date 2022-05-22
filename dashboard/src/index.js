@@ -34,9 +34,8 @@ $(document).ready(function () {
 	}
 
 	// TIME
-	function updateClock() {
-		let timeDate = new Date();
-		let freedomHours = timeDate.getHours();
+	function prettyTime(newDate) {
+		let freedomHours = newDate.getHours();
 		let ampm = "AM";
 		if (freedomHours > 12) {
 			freedomHours -= 12;
@@ -47,9 +46,19 @@ $(document).ready(function () {
 		else if (freedomHours == 12) {
 			ampm = "PM";
 		}
-		let time = freedomHours + ":" + timeDate.getMinutes().toString().padStart(2 , "0") + /* ":" + timeDate.getSeconds().toString().padStart(2 , "0") + */ " ";
-		$("#time-text").text(time);
-		$("#ampm-text").text(ampm);
+		let minutes = newDate.getMinutes().toString().padStart(2 , "0");
+		let seconds = newDate.getSeconds().toString().padStart(2 , "0");
+		let time = freedomHours + ":" + minutes + /* ":" + seconds + */ " ";
+
+		return { 
+			'time' : time,
+			'ampm' : ampm
+		}
+	}
+	function updateClock() {
+		let pt = prettyTime(new Date());
+		$("#time-text").text(pt.time);
+		$("#ampm-text").text(pt.ampm);
 		setTimeout(updateClock,1000 * 60);
 	}
 	updateClock();
@@ -87,7 +96,9 @@ $(document).ready(function () {
 		type: "GET",
 		success: function (result) {
 			console.log(result);
-			function OneDec(x) { return Math.round(x * 10) / 10 }
+			function OneDec(x) { 
+				return Math.round(x * 10) / 10 
+			};
 			const temp = OneDec(result.current.temp);
 			const currentIcon = result.current.weather[0].icon;
 			$("#current-weather-icon").attr("src", "https://openweathermap.org/img/wn/" + currentIcon + ".png");
