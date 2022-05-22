@@ -21,6 +21,11 @@ body {
 #banner-div {
     text-align: center;
 }
+#last-updated-text {
+    font-size: small;
+    font-style: italic;
+    opacity: .5;
+}
 #links-div > ul {
     display:flex;
     flex-wrap: wrap;

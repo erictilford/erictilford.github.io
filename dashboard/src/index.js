@@ -110,9 +110,9 @@ $(document).ready(function () {
 			const s =  /* todayHighTemp + "° / " + todayLowTemp + "°*/" (Feels like " + feelsLike + "°)";
 			$("#temp-text").text(s);
 
-			// wip
-			//let currentTime = result.current.dt;
-			//console.log(prettyTime(currentTime * 1000).time);
+      let currentUTC = new Date(result.current.dt * 1000);
+      let pt = prettyTime(currentUTC);
+      $("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
 
 			for (let i = 0; i < result.daily.length; i++) {
 				let dayName = "";
