@@ -4,6 +4,10 @@ $(document).ready(function () {
 	let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 	document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 
+	$('#elem').fadeTo('slow', 0.3, function() {
+    	$(this).css('background-image', 'url(' + $img + ')');
+	}).fadeTo('slow', 1);
+
 	// LINKS
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
@@ -43,10 +47,10 @@ $(document).ready(function () {
 		else if (freedomHours == 12) {
 			ampm = "PM";
 		}
-		let time = freedomHours + ":" + timeDate.getMinutes().toString().padStart(2 , "0") + ":" + timeDate.getSeconds().toString().padStart(2 , "0") + " ";
+		let time = freedomHours + ":" + timeDate.getMinutes().toString().padStart(2 , "0") + /* ":" + timeDate.getSeconds().toString().padStart(2 , "0") + */ " ";
 		$("#time-text").text(time);
 		$("#ampm-text").text(ampm);
-		setTimeout(updateClock,1000);
+		setTimeout(updateClock,1000 * 60);
 	}
 	updateClock();
 
