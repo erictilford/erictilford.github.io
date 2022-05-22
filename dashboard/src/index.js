@@ -49,7 +49,6 @@ $(document).ready(function () {
 		let minutes = newDate.getMinutes().toString().padStart(2 , "0");
 		let seconds = newDate.getSeconds().toString().padStart(2 , "0");
 		let time = freedomHours + ":" + minutes + /* ":" + seconds + */ " ";
-
 		return { 
 			'time' : time,
 			'ampm' : ampm
@@ -110,6 +109,10 @@ $(document).ready(function () {
 			const feelsLike = OneDec(result.current.feels_like);
 			const s =  /* todayHighTemp + "° / " + todayLowTemp + "°*/" (Feels like " + feelsLike + "°)";
 			$("#temp-text").text(s);
+
+			// wip
+			//let currentTime = result.current.dt;
+			//console.log(prettyTime(currentTime * 1000).time);
 
 			for (let i = 0; i < result.daily.length; i++) {
 				let dayName = "";
