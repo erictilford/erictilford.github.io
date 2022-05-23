@@ -28,6 +28,7 @@ $(document).ready(function () {
 	const dateOutput = dayNameHeader + ", " + monthLong + " " + day + ", " + d.getFullYear();
 	$("#date-text").text(dateOutput);
 
+	// Holidays
 	const todayHolidays = checkHoliday(month, day, d.getDay());
 	for (let i = 0; i < todayHolidays.length; i++) {
 		$("#holiday-names").append("<h6>" + todayHolidays[i] + "</h6>");
