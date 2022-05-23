@@ -8,7 +8,7 @@ A project by Eric Tilford
 
 - [ ] More links
 - [ ] Footer links
-- [ ] Holiday 
+- [ ] Holiday Theming
 - [x] Moon Phases
 - Weather
   - [ ] Wind Direction
