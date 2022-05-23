@@ -16,6 +16,20 @@ var data = [
     },
     */
     {
+        "recipe_name": "Peanut Butter Protein Bites",
+        "summary": "Energy balls with optional ingredients for lactation support.",
+        "ingredients": "2 cups rolled oats; 1 cup peanut butter*; &frac12; cup ground flax seed; 1 Tbs brewer's yeast**; &frac13;+ cup honey; &frac18; tsp coarse salt; 1 Tbs avocado oil*; &frac12; cup dark chocolate chips (chopped if large)",
+        "directions": "Add all ingredients to a large bowl, mixing until thouroughly combined.; Using a tablespoon measuring spoon, scoop and shape mixture into balls.; Store refrigerated in an airtight container for up to a week.",
+        "notes": "*Crunchy, unsalted, unsweetened peanut butter is preferred.; **Brewer's yeast should only be added for lactation support due to its flavor.; *More avocado oil may be necessary depending on the peanut butter's oil content and the consistency of the mixture.; Also known as \"boobie balls.\"",
+        "tags": "Dessert",
+        "hands_on_time": "30",
+        "total_time": "30",
+        "date_added": "5/22/2022",
+        "contributor": "Amber Tilford",
+        "serves": "20-24 bites",
+        "image": "proteinballs.jpg"
+    },
+    {
         "recipe_name": "Air Fryer Buffalo Cauliflower",
         "summary": "Like Buffalo wings except with air-fried battered cauliflower",
         "ingredients": "1 large head cauliflower, cut into small-medium florets (about 4 cups); &frac12; cup AP flour*; &frac12; cup water; 1 tsp garlic powder; 1 tsp paprika; &frac12; cup salt; &frac14; tsp black pepper; &frac12; cup Buffalo sauce*",
