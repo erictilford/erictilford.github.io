@@ -9,7 +9,7 @@ A project by Eric Tilford
 - [ ] More links
 - [ ] Footer links
 - [ ] Holiday 
-- [ ] Moon Phases
+- [x] Moon Phases
 - Weather
   - [ ] Wind Direction
   - [ ] Alerts

@@ -154,6 +154,47 @@ $(document).ready(function () {
 			$("#weather-extra-uv").html('<i class="fa-solid fa-lg ' + uvicon + ' weather-extra-icon" style="color:' + uvcolor + '"></i><br>UV Index<br>' + uvtext + " | " + result.current.uvi);
 			$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind<br>' + result.current.wind_speed + ' mph');
 			$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity<br>' + result.current.humidity + '%');
+
+      // Moon phases
+
+      /*0 and 1 are 'new moon', 0.25 is 'first quarter moon', 
+      0.5 is 'full moon' and 0.75 is 'last quarter moon'. The periods in 
+      between are called 'waxing crescent', 'waxing [gibbous]', 'waning [gibbous]', 
+      and 'waning crescent', respectively. */
+      console.log(result.daily[0].moon_phase);
+      let moontext = "";
+      let moonimg = "";
+      let moon = result.daily[0].moon_phase;
+      if (moon == 0 || moon == 1) {
+        moontext = "New Moon";
+        moonimg = "newmoon.png";
+      } else if (moon > 0 && moon < 0.25) {
+        moontext = "Waxing Crescent";
+        moonimg = "waxingcrescent.png";
+      } else if (moon == 0.25) {
+        moontext = "First Quarter";
+        moonimg = "firstquarter.png";
+      } else if (moon > 0.25 && moon < 0.50) {
+        moontext = "Waxing Gibbous";
+        moonimg = "waxinggibbous.png";
+      } else if (moon == 0.50) {
+        moontext = "Full Moon";
+        moonimg = "fullmoon.png";
+      } else if (moon > 0.50 && moon < 0.75) {
+        moontext = "Waning Gibbous";
+        moonimg = "waninggibbous.png";
+      } else if (moon == 0.75) {
+        moontext = "Last Quarter";
+        moonimg = "lastquarter.png";
+      } else if (moon > 0.75 && moon < 1) {
+        moontext = "Waning Crescent";
+        moonimg = "waningcrescent.png";
+      }
+      $("#weather-extra-moon").html('<img src="assets/moonphases/' + moonimg + '"><br>Moon Phase<br>' + moontext);
+
+
+      // Wind direction
+      $("#weather-extra-direction").html('<i class="fa-solid fa-lg fa-compass weather-extra-icon" style="color:white"></i><br>Wind Direction<br>' + result.current.wind_deg);
 		},
 		error: function (error) {
 			console.log(error);

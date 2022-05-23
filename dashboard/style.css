@@ -57,6 +57,10 @@ body {
     font-size: medium;
     font-weight: normal;
 }
+#weather-extra-moon > img {
+    height:20px;
+    padding-bottom: 2px;
+}
 #weather-extra-table {
     margin-top:15px;
     width: 100%;
@@ -66,6 +70,9 @@ body {
 }
 #weather-extra-table td {
     width: 33%;
+}
+#weather-extra-table:not(:last-child) {
+    padding-bottom:100px;
 }
 #weather-table {
     width:100%;
@@ -98,6 +105,10 @@ body {
 }
 .weather-extra-icon {
     padding-bottom: 10px;
+}
+.weather-extra-row-2 {
+    padding-top: 12px;
+    vertical-align: bottom;
 }
 .weather-icon {
     margin: -10px 0 -8px 0;
