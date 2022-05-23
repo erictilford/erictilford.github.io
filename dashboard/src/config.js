@@ -10,7 +10,7 @@ const links = [
     },
     {
         "title" : "Twitch",
-        "url" : "https://www.twitch.tv",
+        "url" : "https://www.twitch.tv/directory/following/live",
         "icon" : '<i class="fa-brands fa-2x fa-twitch" style="color:#a970ff"></i>',
         "target" : "#video-list"
     },
