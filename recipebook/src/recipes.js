@@ -16,6 +16,20 @@ var data = [
     },
     */
     {
+        "recipe_name": "Air Fryer Buffalo Cauliflower",
+        "summary": "Like Buffalo wings except with air-fried battered cauliflower",
+        "ingredients": "1 large head cauliflower, cut into small-medium florets (about 4 cups); &frac12; cup AP flour*; &frac12; cup water; 1 tsp garlic powder; 1 tsp paprika; &frac12; cup salt; &frac14; tsp black pepper; &frac12; cup Buffalo sauce*",
+        "directions": "Wash and chop cauliflower into florets and pat dry.; In a large bowl, whisk together flour, water, garlic powder, paprika, salt and pepper.; Add cauliflower to mixture and toss until coated evenly.; Place battered cauliflower into air fryer, cooking 10 minutes at 400&deg;F.; Place cauliflower in a large bowl and toss with Buffalo sauce.; Return sauced cauliflower to air fryer, cooking another 10 minutes at 400&deg;F.; Remove from air fryer and serve with ranch or bleu cheese dressing.",
+        "notes": "*Gluten-free 1:1 flour will work too.; *[Buffalo Sauce]; 2 parts hot sauce (traditionally Frank's Red Hot), 1 part melted butter; For &frac34 cup Buffalo sauce:; 4oz hot sauce; &frac14; cup (&frac12; stick) melted butter",
+        "tags": "Appetizer; Party",
+        "hands_on_time": "40",
+        "total_time": "60",
+        "date_added": "05/22/2022",
+        "contributor": "Eric Tilford",
+        "serves": "8 servings",
+        "image": "buffalocauliflower.jpg"
+    },
+    {
         "recipe_name": "Water Bath Canning",
         "summary": "How to can food using the water bath method.",
         "ingredients": "[EQUIPMENT]; Water bath canning pot with lid and jar rack; Mason jars with new lids and bands; Mason jar tongs; Jar funnel, bubble pupper, and lid grabber; Drying rack or towel",
@@ -86,17 +100,17 @@ var data = [
         "image": "greenbeancasserole.jpg"
     },
     {
-        'recipe_name': 'Jalape&ntilde;o Popper Dip', 
-        'summary': 'A great party dip with the essence of stuffed jalape&ntilde;o poppers.', 
-        'ingredients': '2 (8oz) packages cream cheese, softened; 6-8 slices of bacon, chopped; 1 cup mayonnaise; 4-6 jalape&ntilde;os, seeded and diced; 1 cup shredded cheddar cheese; &frac12; cup shredded mozzarella cheese; &frac14; cup chopped green onion; (Topping); &frac14; cup butter, melted; 1 cup crushed Ritz crackers; &frac12; cup parmesan cheese', 
-        'directions': 'Preheat oven to 350&deg;F.; In a small bowl, combine Ritz crackers, parmesan cheese, and butter, and reserve for topping.; In a large mixing bowl, add cream cheese and blend until smooth.; Add remainder of ingredients and stir well.; Transfer mixture to 8" x 8" baking dish and add topping. Bake 20-30 minutes or until bubbly.; Allow to cool about 15 minutes before serving.', 
-        'notes': 'Serve with tortilla chips, pita, or Ritz crackers, pita chips, Fritos scoops, etc.; Great served warm or at room temperature.', 
-        'tags': 'Appetizer; Party', 
-        'hands_on_time': '20', 
-        'total_time': '50', 
-        'date_added': '08/01/2020', 
-        'contributor': 'Amber Tilford', 
-        'serves': '8 servings', 
+        'recipe_name': 'Jalape&ntilde;o Popper Dip',
+        'summary': 'A great party dip with the essence of stuffed jalape&ntilde;o poppers.',
+        'ingredients': '2 (8oz) packages cream cheese, softened; 6-8 slices of bacon, chopped; 1 cup mayonnaise; 4-6 jalape&ntilde;os, seeded and diced; 1 cup shredded cheddar cheese; &frac12; cup shredded mozzarella cheese; &frac14; cup chopped green onion; (Topping); &frac14; cup butter, melted; 1 cup crushed Ritz crackers; &frac12; cup parmesan cheese',
+        'directions': 'Preheat oven to 350&deg;F.; In a small bowl, combine Ritz crackers, parmesan cheese, and butter, and reserve for topping.; In a large mixing bowl, add cream cheese and blend until smooth.; Add remainder of ingredients and stir well.; Transfer mixture to 8" x 8" baking dish and add topping. Bake 20-30 minutes or until bubbly.; Allow to cool about 15 minutes before serving.',
+        'notes': 'Serve with tortilla chips, pita, or Ritz crackers, pita chips, Fritos scoops, etc.; Great served warm or at room temperature.',
+        'tags': 'Appetizer; Party',
+        'hands_on_time': '20',
+        'total_time': '50',
+        'date_added': '08/01/2020',
+        'contributor': 'Amber Tilford',
+        'serves': '8 servings',
         'image': 'jalapenopopperdip.jpg'
     },
     {
