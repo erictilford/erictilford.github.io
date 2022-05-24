@@ -157,6 +157,13 @@ $(document).ready(function () {
 			$("#weather-extra-direction").html(windDirectionString + windDeg + "&deg; " + windDirectionName(windDeg));
 			$("#wind-deg-icon").css("transform","rotate(" + windDeg + "deg)");
 			
+			// Pressure
+			let pressure = result.current.pressure;
+			let pressureName = "";
+			if (pressure > 1022.689) { pressureName = "High" }
+			else if (pressure <= 1022.689 && pressure > 1009.144) { pressureName = "Normal"}
+			else if (pressure <= 1009.144) { pressureName = "Low"}
+			$("#weather-extra-pressure").html('<i class="fa-solid fa-lg fa-gauge weather-extra-icon" style="color:burlywood"></i><br>Air Pressure<br>' + pressure + ' hPa | ' + pressureName);
 		},
 		error: function (error) {
 			console.log(error);

@@ -57,11 +57,11 @@ body {
     font-size: medium;
     font-weight: normal;
 }
-#weather-extra-moon {
+/*#weather-extra-moon {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
+}*/
 #weather-extra-moon > img {
     height:20px;
     padding-bottom: 2px;
@@ -75,6 +75,8 @@ body {
 }
 #weather-extra-table td {
     width: 33%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #weather-extra-table:not(:last-child) {
     padding-bottom:100px;
@@ -142,7 +144,7 @@ body {
     }
     #serugai-banner {
         margin: -20px -50px -15px;
-        height: 86px;
+        height: 60px;
     }
 }
 /*Filter styles*/
