@@ -13,8 +13,7 @@ A project by Eric Tilford
 - [X] Mobile layout improvement
 - Weather
   - [x] Wind Direction
-  - [ ] One more "Extra"
-      - Sunset / Sunrise?
+  - [x] One more "Extra"
   - [ ] Alerts
   - [ ] Yesterday
   - [ ] Refresh button
@@ -25,10 +24,10 @@ A project by Eric Tilford
 ### Weather
 - 8-day weather report
 - UV index icon color based on level
-- % precipication icons opacity based on %
+- Precipication icons opacity based on % chance
 - Wind speed & direction
+- Humidity & Air Pressure
 - Moon phases
-- Humidity
 
 ### Holidays
 - Holiday bank including birthdays & anniversaries
