@@ -10,7 +10,7 @@ A project by Eric Tilford
 - [ ] Footer links
 - [ ] Holiday Theming
 - [x] Moon Phases
-- [ ] Mobile layout improvement
+- [X] Mobile layout improvement
 - Weather
   - [x] Wind Direction
   - [ ] One more "Extra"
@@ -26,8 +26,9 @@ A project by Eric Tilford
 - 8-day weather report
 - UV index icon color based on level
 - % precipication icons opacity based on %
-- Wind speed & humidity
+- Wind speed & direction
 - Moon phases
+- Humidity
 
 ### Holidays
 - Holiday bank including birthdays & anniversaries

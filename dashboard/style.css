@@ -57,6 +57,11 @@ body {
     font-size: medium;
     font-weight: normal;
 }
+#weather-extra-moon {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 #weather-extra-moon > img {
     height:20px;
     padding-bottom: 2px;
