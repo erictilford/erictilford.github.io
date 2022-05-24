@@ -161,7 +161,6 @@ $(document).ready(function () {
 			0.5 is 'full moon' and 0.75 is 'last quarter moon'. The periods in 
 			between are called 'waxing crescent', 'waxing [gibbous]', 'waning [gibbous]', 
 			and 'waning crescent', respectively. */
-			console.log(result.daily[0].moon_phase);
 			let moontext = "";
 			let moonimg = "";
 			let moon = result.daily[0].moon_phase;
@@ -195,7 +194,8 @@ $(document).ready(function () {
 
 			// Wind direction
 			let windDeg = result.current.wind_deg;
-			$("#weather-extra-direction").html('<div id="wind-deg-icon" style="margin-bottom:10px"><i class="fa-solid fa-lg fa-arrow-down-long weather-extra-icon" style="color:mediumslateblue; padding-bottom:0"></i></div>Wind Direction<br>' + windDeg + "&deg;");
+			let windDirectionString = '<div id="wind-deg-icon" style="margin-bottom:10px"><i class="fa-solid fa-lg fa-arrow-down-long weather-extra-icon" style="color:mediumslateblue; padding-bottom:0"></i></div>Wind Direction<br>';
+			$("#weather-extra-direction").html(windDirectionString + windDeg + "&deg; " + windDirectionName(windDeg));
 			$("#wind-deg-icon").css("transform","rotate(" + windDeg + "deg)");
 			
 		},
