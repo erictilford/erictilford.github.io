@@ -16,5 +16,5 @@ function windDirectionName(wd) {
     else if ( wd > 303.75 && wd <= 326.25) { return "SE" }
     else if ( wd > 326.25 && wd <= 348.75) { return "SSE" }
 }
-// Wind direction values represent where the wind is coming from, which is
+// Meterological wind direction values represent where the wind is coming from, which is
 // why the names are opposite what you might assume.
