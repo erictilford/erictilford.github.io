@@ -12,7 +12,7 @@ A project by Eric Tilford
 - [x] Moon Phases
 - [ ] Mobile layout improvement
 - Weather
-  - [ ] Wind Direction (complete)
+  - [x] Wind Direction
   - [ ] One more "Extra"
   - [ ] Alerts
 

@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	// WALLPAPERS
+	// WALLPAPERS | config.js
 	let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 	document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 
@@ -8,7 +8,7 @@ $(document).ready(function () {
 		$(this).css('background-image', 'url(' + $img + ')');
 	}).fadeTo('slow', 1);
 
-	// LINKS
+	// LINKS | config.js
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
 		const li = '<a href=' + link.url + '><li>' + link.icon + '<br>' + link.title + '</li>';
@@ -28,7 +28,7 @@ $(document).ready(function () {
 	const dateOutput = dayNameHeader + ", " + monthLong + " " + day + ", " + d.getFullYear();
 	$("#date-text").text(dateOutput);
 
-	// Holidays
+	// Holidays | holidays.js
 	const todayHolidays = checkHoliday(month, day, d.getDay());
 	for (let i = 0; i < todayHolidays.length; i++) {
 		$("#holiday-names").append("<h6>" + todayHolidays[i] + "</h6>");
@@ -150,7 +150,6 @@ $(document).ready(function () {
 			// Moon phases | moon.js
 			let moonPhase = result.daily[0].moon_phase;
 			$("#weather-extra-moon").html('<img src="assets/moonphases/' + moonPhaseInfo(moonPhase).image + '"><br>Moon Phase<br>' + moonPhaseInfo(moonPhase).text);
-
 
 			// Wind direction | wind.js
 			let windDeg = result.current.wind_deg;
