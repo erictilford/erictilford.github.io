@@ -136,14 +136,14 @@ $(document).ready(function () {
 			let uvtext = "";
 			let uvcolor = "";
 			let uvicon = "fa-sun";
-			if (uvi == 0) { uvtext = "-"; uvcolor = "aliceblue"; uvicon = "fa-moon" }
-			else if (uvi > 0 && uvi < 3) { uvtext = "Low"; uvcolor = "khaki" }
-			else if (uvi >= 3 && uvi < 6) { uvtext = "Moderate"; uvcolor = "goldenrod" }
-			else if (uvi >= 6 && uvi < 8) { uvtext = "High"; uvcolor = "orangered" }
-			else if (uvi >= 8 && uvi < 11) { uvtext = "Very High"; uvcolor = "crimson" }
-			else if (uvi >= 11) { uvtext = "Extreme"; uvcolor = "magenta" }
+			if (uvi == 0) { uvcolor = "aliceblue"; uvicon = "fa-moon" }
+			else if (uvi > 0 && uvi < 3) { uvtext = "Low | "; uvcolor = "khaki" }
+			else if (uvi >= 3 && uvi < 6) { uvtext = "Moderate | "; uvcolor = "goldenrod" }
+			else if (uvi >= 6 && uvi < 8) { uvtext = "High | "; uvcolor = "orangered" }
+			else if (uvi >= 8 && uvi < 11) { uvtext = "Very High | "; uvcolor = "crimson" }
+			else if (uvi >= 11) { uvtext = "Extreme | "; uvcolor = "magenta" }
 
-			$("#weather-extra-uv").html('<i class="fa-solid fa-lg ' + uvicon + ' weather-extra-icon" style="color:' + uvcolor + '"></i><br>UV Index<br>' + uvtext + " | " + result.current.uvi);
+			$("#weather-extra-uv").html('<i class="fa-solid fa-lg ' + uvicon + ' weather-extra-icon" style="color:' + uvcolor + '"></i><br>UV Index<br>' + uvtext + result.current.uvi);
 			$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind<br>' + result.current.wind_speed + ' mph');
 			$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity<br>' + result.current.humidity + '%');
 
@@ -163,7 +163,7 @@ $(document).ready(function () {
 			if (pressure > 1022.689) { pressureName = "High" }
 			else if (pressure <= 1022.689 && pressure > 1009.144) { pressureName = "Normal"}
 			else if (pressure <= 1009.144) { pressureName = "Low"}
-			$("#weather-extra-pressure").html('<i class="fa-solid fa-lg fa-gauge weather-extra-icon" style="color:burlywood"></i><br>Air Pressure<br>' + pressure + ' hPa | ' + pressureName);
+			$("#weather-extra-pressure").html('<i class="fa-solid fa-lg fa-gauge weather-extra-icon" style="color:burlywood"></i><br>Air Pressure<br>' + pressureName + ' | ' + pressure + " hPa");
 		},
 		error: function (error) {
 			console.log(error);
