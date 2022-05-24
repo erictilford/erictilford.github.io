@@ -51,7 +51,7 @@ body {
 }
 #serugai-banner {
     margin: -20px -50px -10px;
-    height: 20%;
+    height: 100px;
 }
 #temp-text {
     font-size: medium;
@@ -124,14 +124,20 @@ body {
 }
 @media only screen and (max-width: 425px) { /* PHONE*/
     .container {
-        padding: 0 5px;
+        padding: 0;
     }
     #links-div > ul > a {
         width: 33%;
     }
     #main-tray {
-        margin:10px auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        margin:0;
+        border-radius: 0;
         padding: 15px;
+    }
+    #serugai-banner {
+        margin: -20px -50px -15px;
+        height: 86px;
     }
 }
 /*Filter styles*/

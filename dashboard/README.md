@@ -14,7 +14,11 @@ A project by Eric Tilford
 - Weather
   - [x] Wind Direction
   - [ ] One more "Extra"
+      - Sunset / Sunrise?
   - [ ] Alerts
+  - [ ] Yesterday
+  - [ ] Refresh button
+  - [ ] Refresh "every"
 
 ## Features
 

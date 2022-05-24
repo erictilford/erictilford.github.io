@@ -113,7 +113,6 @@ const wallpapers = [
     "GT7oIIL.jpg",
     "ID169.jpg",
     "kaamZIZ.jpg",
-    "kcf4mtbjca231.jpg",
     "kCQTW0N.jpg",
     "Lava_Ballad_by_Orioto.jpg",
     "lxkpopzwbgq21.png",
