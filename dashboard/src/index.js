@@ -4,8 +4,8 @@ $(document).ready(function () {
 	let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 	document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 
-	$('#elem').fadeTo('slow', 0.3, function() {
-    	$(this).css('background-image', 'url(' + $img + ')');
+	$('#elem').fadeTo('slow', 0.3, function () {
+		$(this).css('background-image', 'url(' + $img + ')');
 	}).fadeTo('slow', 1);
 
 	// LINKS
@@ -14,7 +14,7 @@ $(document).ready(function () {
 		const li = '<a href=' + link.url + '><li>' + link.icon + '<br>' + link.title + '</li>';
 		$(link.target).append(li);
 	}
-	
+
 	// DATE
 	const d = new Date();
 	const month = d.getMonth() + 1;
@@ -47,19 +47,19 @@ $(document).ready(function () {
 		else if (freedomHours == 12) {
 			ampm = "PM";
 		}
-		let minutes = newDate.getMinutes().toString().padStart(2 , "0");
-		let seconds = newDate.getSeconds().toString().padStart(2 , "0");
+		let minutes = newDate.getMinutes().toString().padStart(2, "0");
+		let seconds = newDate.getSeconds().toString().padStart(2, "0");
 		let time = freedomHours + ":" + minutes + /* ":" + seconds + */ " ";
-		return { 
-			'time' : time,
-			'ampm' : ampm
+		return {
+			'time': time,
+			'ampm': ampm
 		}
 	}
 	function updateClock() {
 		let pt = prettyTime(new Date());
 		$("#time-text").text(pt.time);
 		$("#ampm-text").text(pt.ampm);
-		setTimeout(updateClock,1000 * 60);
+		setTimeout(updateClock, 1000 * 60);
 	}
 	updateClock();
 
@@ -96,8 +96,8 @@ $(document).ready(function () {
 		type: "GET",
 		success: function (result) {
 			console.log(result);
-			function OneDec(x) { 
-				return Math.round(x * 10) / 10 
+			function OneDec(x) {
+				return Math.round(x * 10) / 10
 			};
 			const temp = OneDec(result.current.temp);
 			const currentIcon = result.current.weather[0].icon;
@@ -111,9 +111,9 @@ $(document).ready(function () {
 			const s =  /* todayHighTemp + "° / " + todayLowTemp + "°*/" (Feels like " + feelsLike + "°)";
 			$("#temp-text").text(s);
 
-      let currentUTC = new Date(result.current.dt * 1000);
-      let pt = prettyTime(currentUTC);
-      $("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
+			let currentUTC = new Date(result.current.dt * 1000);
+			let pt = prettyTime(currentUTC);
+			$("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
 
 			for (let i = 0; i < result.daily.length; i++) {
 				let dayName = "";
@@ -155,46 +155,49 @@ $(document).ready(function () {
 			$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind<br>' + result.current.wind_speed + ' mph');
 			$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity<br>' + result.current.humidity + '%');
 
-      // Moon phases
+			// Moon phases
 
-      /*0 and 1 are 'new moon', 0.25 is 'first quarter moon', 
-      0.5 is 'full moon' and 0.75 is 'last quarter moon'. The periods in 
-      between are called 'waxing crescent', 'waxing [gibbous]', 'waning [gibbous]', 
-      and 'waning crescent', respectively. */
-      console.log(result.daily[0].moon_phase);
-      let moontext = "";
-      let moonimg = "";
-      let moon = result.daily[0].moon_phase;
-      if (moon == 0 || moon == 1) {
-        moontext = "New Moon";
-        moonimg = "newmoon.png";
-      } else if (moon > 0 && moon < 0.25) {
-        moontext = "Waxing Crescent";
-        moonimg = "waxingcrescent.png";
-      } else if (moon == 0.25) {
-        moontext = "First Quarter";
-        moonimg = "firstquarter.png";
-      } else if (moon > 0.25 && moon < 0.50) {
-        moontext = "Waxing Gibbous";
-        moonimg = "waxinggibbous.png";
-      } else if (moon == 0.50) {
-        moontext = "Full Moon";
-        moonimg = "fullmoon.png";
-      } else if (moon > 0.50 && moon < 0.75) {
-        moontext = "Waning Gibbous";
-        moonimg = "waninggibbous.png";
-      } else if (moon == 0.75) {
-        moontext = "Last Quarter";
-        moonimg = "lastquarter.png";
-      } else if (moon > 0.75 && moon < 1) {
-        moontext = "Waning Crescent";
-        moonimg = "waningcrescent.png";
-      }
-      $("#weather-extra-moon").html('<img src="assets/moonphases/' + moonimg + '"><br>Moon Phase<br>' + moontext);
+			/*0 and 1 are 'new moon', 0.25 is 'first quarter moon', 
+			0.5 is 'full moon' and 0.75 is 'last quarter moon'. The periods in 
+			between are called 'waxing crescent', 'waxing [gibbous]', 'waning [gibbous]', 
+			and 'waning crescent', respectively. */
+			console.log(result.daily[0].moon_phase);
+			let moontext = "";
+			let moonimg = "";
+			let moon = result.daily[0].moon_phase;
+			if (moon == 0 || moon == 1) {
+				moontext = "New Moon";
+				moonimg = "newmoon.png";
+			} else if (moon > 0 && moon < 0.25) {
+				moontext = "Waxing Crescent";
+				moonimg = "waxingcrescent.png";
+			} else if (moon == 0.25) {
+				moontext = "First Quarter";
+				moonimg = "firstquarter.png";
+			} else if (moon > 0.25 && moon < 0.50) {
+				moontext = "Waxing Gibbous";
+				moonimg = "waxinggibbous.png";
+			} else if (moon == 0.50) {
+				moontext = "Full Moon";
+				moonimg = "fullmoon.png";
+			} else if (moon > 0.50 && moon < 0.75) {
+				moontext = "Waning Gibbous";
+				moonimg = "waninggibbous.png";
+			} else if (moon == 0.75) {
+				moontext = "Last Quarter";
+				moonimg = "lastquarter.png";
+			} else if (moon > 0.75 && moon < 1) {
+				moontext = "Waning Crescent";
+				moonimg = "waningcrescent.png";
+			}
+			$("#weather-extra-moon").html('<img src="assets/moonphases/' + moonimg + '"><br>Moon Phase<br>' + moontext);
 
 
-      // Wind direction
-      $("#weather-extra-direction").html('<i class="fa-solid fa-lg fa-compass weather-extra-icon" style="color:white"></i><br>Wind Direction<br>' + result.current.wind_deg);
+			// Wind direction
+			let windDeg = result.current.wind_deg;
+			$("#weather-extra-direction").html('<div id="wind-deg-icon" style="margin-bottom:10px"><i class="fa-solid fa-lg fa-arrow-down-long weather-extra-icon" style="color:mediumslateblue; padding-bottom:0"></i></div>Wind Direction<br>' + windDeg + "&deg;");
+			$("#wind-deg-icon").css("transform","rotate(" + windDeg + "deg)");
+			
 		},
 		error: function (error) {
 			console.log(error);
