@@ -39,6 +39,7 @@ function showInfo(results) {
         "Dessert" : "#ebb7c3",
         "Dinner" : "#f2a68f",
         "Holiday" : "#7dc991",
+        "Japanese" : "#1594a8",
         "Baking" : "#e0db90",
         "Italian" : "#c99393",
         "Tex-Mex" : "#ffc14f",

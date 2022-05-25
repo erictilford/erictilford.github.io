@@ -154,7 +154,7 @@ $(document).ready(function () {
 			// Wind direction | wind.js
 			let windDeg = result.current.wind_deg;
 			let windDirectionString = '<div id="wind-deg-icon" style="margin-bottom:10px"><i class="fa-solid fa-lg fa-arrow-down-long weather-extra-icon" style="color:mediumslateblue; padding-bottom:0"></i></div>Wind Direction<br>';
-			$("#weather-extra-direction").html(windDirectionString + windDeg + "&deg; " + windDirectionName(windDeg));
+			$("#weather-extra-direction").html(windDirectionString  + windDirectionName(windDeg) + " | " + windDeg + "&deg; ");
 			$("#wind-deg-icon").css("transform","rotate(" + windDeg + "deg)");
 			
 			// Pressure
