@@ -46,7 +46,6 @@ function showInfo(results) {
         "Guides" : "#bbbbbb",
         // OLD
         "Vegetarian" : "#228B22",
-        "Japanese" : "#117a8b",
         "Fish" : "#0062cc",
         "Fast Food" : "#495057",
         "Chinese" : "#dc3545"

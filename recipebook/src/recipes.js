@@ -17,7 +17,7 @@ var data = [
     */
     {
         "recipe_name": "Tonkatsu",
-        "summary": "",
+        "summary": "Panko-breaded pork served with rice, cabbage, and a savory sauce.",
         "ingredients": "Pork tenderloin fillets*; &frac12; cup flour; 1 large egg; &frac12; cup panko breadcrumbs; &frac12; head cabbage, finely shredded (~1-1&frac12; quart);salt & black pepper; [Katsu Sauce]; 3 Tbs Ketchup; 1&frac12; Tbs Worcestershire sauce; 1 Tbs soy sauce; 1 Tbs mirin; 1 Tbs honey; &frac12; tsp Dijon mustard; [Dressing for Cabbage Salad]; 3 Tbs Extra virgin olive oil; 1 Tbs mirin; 1 Tbs rice vinegar; 1 Tbs honey; 1 tsp sesame oil; &frac14; tsp salt & black pepper",
         "directions": "Mix ingredients for salad dressing until thouroughly combined.; In a large bowl, mix cabbage with dressing, and store covered in the fridge until serving.;Pat pork dry and season both sides with salt and pepper.; In 3 seperate rimmed plates, add the flour, the egg beaten, and the panko*.; Add pork to flour, coat completely and shake off excess.; Transfer to egg and then panko, each time repeating the process then placing the breaded pork on a separate plate.; If pan-frying: Heat oil to 350&deg;F and fry pork until golden brown, turning halfway through.; If air-frying: Preheat air fryer to 400&deg;F and cook pork 10 minutes each side*.; Serve over rice with katsu sauce and cabbage salad.",
         "notes": "*Chicken tenderloins or thinly-sliced/pounded breast may also be used.; *Season breadcrumb to taste.; Pork should reach an internal temperature of 165&deg;F.",
@@ -45,7 +45,7 @@ var data = [
     },
     {
         "recipe_name": "Air Fryer Buffalo Cauliflower",
-        "summary": "Like Buffalo wings except with air-fried battered cauliflower",
+        "summary": "Like Buffalo wings except with air-fried battered cauliflower.",
         "ingredients": "1 large head cauliflower, cut into small-medium florets (about 4 cups); &frac12; cup AP flour*; &frac12; cup water; 1 tsp garlic powder; 1 tsp paprika; &frac12; cup salt; &frac14; tsp black pepper; &frac12; cup Buffalo sauce*",
         "directions": "Wash and chop cauliflower into florets and pat dry.; In a large bowl, whisk together flour, water, garlic powder, paprika, salt and pepper.; Add cauliflower to mixture and toss until coated evenly.; Place battered cauliflower into air fryer, cooking 10 minutes at 400&deg;F.; Place cauliflower in a large bowl and toss with Buffalo sauce.; Return sauced cauliflower to air fryer, cooking another 10 minutes at 400&deg;F.; Remove from air fryer and serve with ranch or bleu cheese dressing.",
         "notes": "*Gluten-free 1:1 flour will work too.; *[Buffalo Sauce]; 2 parts hot sauce (traditionally Frank's Red Hot), 1 part melted butter; For &frac34 cup Buffalo sauce:; 4oz hot sauce; &frac14; cup (&frac12; stick) melted butter",
