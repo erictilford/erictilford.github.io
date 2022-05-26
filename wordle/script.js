@@ -1,52 +1,12 @@
-// Code goes here
-
-function buildStringFrom(text){
-    if (!text) return '';
-    text = ' '+ text.split('').join(' ') + ' '
-    var toReturn = ''
-    var textArr = text.split('')
-    for (var i = 0; i<=6; i++){
-      textArr.forEach(function(letter){
-        toReturn += map[letter][i]
-      })
-      toReturn += '\n'
-    }
-    return toReturn;
-  }
-  
-  var convertToEmoji = function(str,light,dark){
-    str = str.toLowerCase()
-    str = buildStringFrom(str)
-    return str.replace(/0/g,light).replace(/1/g,dark)
-  }
-  
-  var app = angular.module('emojiConverter', [])
-  app.controller('MainCtrl', function($scope){
-    $scope.lightSquare = ':white_square:'
-    $scope.darkSquare = ':black_square:'
-    $scope.convert = function(){
-      checkInput();
-      $scope.output = convertToEmoji($scope.inputStr,$scope.lightSquare,$scope.darkSquare)
-      if ($scope.output.length >  4000) $scope.error = 'You are over the Slack character limit! Try using a shorter emoji name or less characters'
-    }
-  
-    var checkInput = function(){
-      $scope.error = ''
-      if ($scope.inputStr && $scope.inputStr.match(/[.,-\/#!$%\^&\*;:{}=\-_`~()]|[0-9]/)){
-        $scope.error = "Sorry, punctuation and numbers are not yet supported"
-      }
-    }
-    
-    $scope.copyToClipboard = function(){
-      var copyFrom = document.createElement("textarea");
-      copyFrom.textContent = $scope.output
-      var body = document.getElementsByTagName('body')[0];
-      body.appendChild(copyFrom);
-      copyFrom.select();
-      document.execCommand('copy');
-      body.removeChild(copyFrom);
-    };
-  
-    $scope.error = ''
-  })
-  
+$( document ).ready(function() {
+  $("#convert-button").click(function() {
+    let input = $("#input").val();
+    let bs = $("#bsquare").val();
+    let ys = $("#ysquare").val();
+    let gs = $("#ysquare").val();
+    //let str = input.toLowerCase();
+    let output = input.replace(/:black_large_square:/g,bs).replace(/:large_yellow_square:/g,ys).replace(/:large_green_square:/g,gs);
+    console.log(bs);
+    //$("#outputText").text(input);
+  });
+});
