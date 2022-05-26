@@ -1,27 +1,14 @@
 /* Styles go here */
 body{
-    font-family: 'Lato', sans-serif;
-  }
-  pre {
-    font-size: 10px;
-    cursor: pointer;
-  }
-  pre:hover{
-    background: white;
-  }
-  pre:active{
-    background: #EEE;
-  }
-  
-  h4{
-    margin-top: 0px;
-  }
-  
-  .btn-lg{
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .page-header{
-    margin: 10px;
-  }
+  background: #f1fff1;
+}
+#outputDiv {
+  display: none;
+}
+#outputText {
+  cursor: grab;
+}
+.container {
+  padding-top: 30px;
+  width: 100%;
+}
