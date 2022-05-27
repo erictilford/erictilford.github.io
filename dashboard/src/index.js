@@ -4,10 +4,12 @@ $(document).ready(function () {
 	let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 	document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 
+	/*
 	$('#elem').fadeTo('slow', 0.3, function () {
 		$(this).css('background-image', 'url(' + $img + ')');
 	}).fadeTo('slow', 1);
-
+	*/
+	
 	// LINKS | config.js
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];

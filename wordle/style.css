@@ -1,13 +1,16 @@
 /* Styles go here */
-body{
+body {
   background: #f1fff1;
 }
+
 #outputDiv {
   display: none;
 }
+
 #outputText {
   cursor: grab;
 }
+
 .container {
   padding-top: 30px;
   width: 100%;

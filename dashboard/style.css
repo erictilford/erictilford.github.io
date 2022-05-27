@@ -1,150 +1,190 @@
 a {
-    color:white;
+    color: white;
 }
+
 a:hover {
     text-decoration: none;
     color: white;
 }
+
 body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
 }
+
 #current-weather-icon {
     max-height: 72px;
-    margin: -24px -8px -16px ;
+    margin: -24px -8px -16px;
 }
+
 #ampm-text {
     font-size: 70%;
 }
-#banner-div {
-    text-align: center;
-}
+
 #last-updated-text {
     font-size: small;
     font-style: italic;
     opacity: .5;
 }
-#links-div > ul {
-    display:flex;
+
+#links-div>ul {
+    display: flex;
     flex-wrap: wrap;
     text-align: center;
     list-style-type: none;
     padding-left: 10px;
 }
-#links-div > ul > a {
+
+#links-div>ul>a {
     font-size: small;
     padding: 10px;
     width: 90px;
 }
+
 #main-title {
     text-align: center;
-    margin:auto;
+    margin: auto;
 }
+
 #main-tray {
-    padding:20px;
-    margin:50px auto;
+    padding: 20px;
+    margin: 50px auto;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
+
 #serugai-banner {
     margin: -20px -50px -10px;
     height: 100px;
 }
+
+#serugai-banner-mobile {
+    display: none;
+    margin: -15px auto;
+    height: 60px;
+}
+
 #temp-text {
     font-size: medium;
     font-weight: normal;
 }
+
 /*#weather-extra-moon {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }*/
-#weather-extra-moon > img {
-    height:20px;
+#weather-extra-moon>img {
+    height: 20px;
     padding-bottom: 2px;
 }
+
 #weather-extra-table {
-    margin-top:15px;
+    margin-top: 15px;
     width: 100%;
     color: white;
     text-align: center;
     font-size: small;
 }
+
 #weather-extra-table td {
     width: 33%;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 #weather-extra-table:not(:last-child) {
-    padding-bottom:100px;
+    padding-bottom: 100px;
 }
+
 #weather-table {
-    width:100%;
+    width: 100%;
     color: white;
     table-layout: fixed;
 }
+
 #zodiac-symbol {
     float: right;
 }
+
+.banner-div {
+    text-align: center;
+}
+
 .daily-temp {
     width: 45px;
     text-align: center;
-    padding-left:5px
+    padding-left: 5px
 }
+
 .day-name {
     max-width: auto;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .my-hr {
     border-top: 2px solid white;
     filter: opacity(50%);
 }
+
 .precip {
     font-size: small;
     width: 60px;
     line-height: 30px;
 
 }
+
 .weather-extra-icon {
     padding-bottom: 10px;
 }
+
 .weather-extra-row-2 {
     padding-top: 12px;
     vertical-align: bottom;
 }
+
 .weather-icon {
     margin: -10px 0 -8px 0;
 }
+
 .weather-icon-column {
     width: 50px;
 }
+
 /* MEDIA CALLS */
-@media only screen and (max-width: 768px) { /*TABLET*/
-    /* #main-tray {
-        
-    } */
+@media only screen and (max-width: 768px) {
+
+    /*TABLET*/
+    #serugai-banner {
+        display: none;
+    }
+
+    #serugai-banner-mobile {
+        display: block;
+    }
 }
-@media only screen and (max-width: 425px) { /* PHONE*/
+
+@media only screen and (max-width: 425px) {
+
+    /* PHONE*/
     .container {
         padding: 0;
     }
-    #links-div > ul > a {
+
+    #links-div>ul>a {
         width: 33%;
     }
+
     #main-tray {
         background-color: rgba(0, 0, 0, 0.6);
-        margin:0;
+        margin: 0;
         border-radius: 0;
         padding: 15px;
-    }
-    #serugai-banner {
-        margin: -15px -50px -15px;
-        height: 60px;
     }
 }
 /*Filter styles*/
