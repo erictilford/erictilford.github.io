@@ -9,11 +9,11 @@ $(document).ready(function () {
 		$(this).css('background-image', 'url(' + $img + ')');
 	}).fadeTo('slow', 1);
 	*/
-	
+
 	// LINKS | config.js
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
-		const li = '<a href=' + link.url + '><li>' + link.icon + '<br>' + link.title + '</li>';
+		const li = '<a href=' + link.url + ' target="_blank"><li>' + link.icon + '<br>' + link.title + '</li>';
 		$(link.target).append(li);
 	}
 
