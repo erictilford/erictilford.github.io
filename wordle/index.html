@@ -28,24 +28,33 @@
 <body>
   <div class="container">
     <center>
-      <h2>Wordle Slackmojifier</h2>
-      <br>
-      <textarea id="inputText" name="inputText" rows="10" cols="30" style="resize:none"></textarea>
-      <br><br>
-      <label for="bsquare">Black Square</label>
-      <input type="text" id="bsquare" name="bsquare" value=:black_heart:><br><br>
-      <label for="ysquare">Yellow Square</label>
-      <input type="text" id="ysquare" name="ysquare" value=:yellow_heart:><br><br>
-      <label for="ysquare">Green Square</label>
-      <input type="text" id="gsquare" name="gsquare"value=:green_heart:><br><br>
-
-      <button class="btn" id="convert-button">Convert!</button>
-      <br><br>
-      <div id="outputDiv">
-      <h5>Output - click to copy to clipboard!</h5>
-      <textarea id="outputText" name="outputText" rows="10" cols="100" style="resize:none"></textarea>
+    <h2>Wordle Slackmojifier</h2>
+  </center>
+    <br>
+    <div class="row">
+      <div class="col-lg-4">
+        <center>
+          <h5>Input - paste Wordle "share"</h5>
+          <textarea id="inputText" name="inputText" rows="8" cols="24" style="resize:none"></textarea>
+          <br><br>
+          <label for="bsquare">&#11035; / &#11036; &#x2192;</label>
+          <input type="text" style="width: 150px;" id="bsquare" name="bsquare" placeholder=:black_heart:><br><br>
+          <label for="ysquare"> &#129000; / &#128998; &#x2192;</label>
+          <input type="text" style="width: 150px;" id="ysquare" name="ysquare" placeholder=:yellow_heart:><br><br>
+          <label for="ysquare"> &#129001; / &#128999; &#x2192;</label>
+          <input type="text" style="width: 150px;" id="gsquare" name="gsquare" placeholder=:green_heart:><br><br>
+          <button class="btn btn-lg" id="convert-button">Convert!</button><br><br>
+        </center>
       </div>
-    </center>
+      <div class="col-lg-8">
+        <div id="outputDiv">
+          <center>
+          <h5>Output - click to copy to clipboard</h5>
+          <textarea id="outputText" name="outputText" rows="8" cols="80" style="resize:none"></textarea>
+        </center>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 <footer>
