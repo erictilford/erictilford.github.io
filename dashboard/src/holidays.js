@@ -23,14 +23,14 @@ function checkHoliday (month, day, dayOfWeek) {
 const holidayArray = [
     // NORMAL HOLIDAYS
     {
-        "holiday_name" : "New Year's Day",
+        "holiday_name" : "New Year's Day &#128197;",
         "month" : 1,
         "day_one" : 1,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Groundhog Day",
+        "holiday_name" : "Groundhog Day &#128063;&#65039;",
         "month" : 2,
         "day_one" : 2,
         "day_two" : null,
@@ -51,90 +51,90 @@ const holidayArray = [
         "day" : null
     },
     {
-        "holiday_name" : "St. Patrick's Day",
+        "holiday_name" : "St. Patrick's Day &#127808;",
         "month" : 3,
         "day_one" : 17,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "April Fools' Day",
+        "holiday_name" : "April Fools' Day	&#127183;",
         "month" : 4,
         "day_one" : 1,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "4:20",
+        "holiday_name" : "4:20	&#127807;",
         "month" : 4,
         "day_one" : 20,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Earth Day",
+        "holiday_name" : "Earth Day	&#127758;",
         "month" : 4,
         "day_one" : 22,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Star Wars Day",
+        "holiday_name" : "Star Wars Day	&#10024;",
         "month" : 5,
         "day_one" : 4,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Cinco de Mayo",
+        "holiday_name" : "Cinco de Mayo &#127790;",
         "month" : 5,
         "day_one" : 5,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Juneteenth",
+        "holiday_name" : "Juneteenth &#9994;&#127999;",
         "month" : 6,
         "day_one" : 19,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Independence Day",
+        "holiday_name" : "Independence Day &#127878;",
         "month" : 7,
         "day_one" : 4,
         "day_two" : null,
         "day" : null
     },{
-        "holiday_name" : "Halloween",
+        "holiday_name" : "Halloween	&#127875;",
         "month" : 10,
         "day_one" : 31,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Veterans' Day",
+        "holiday_name" : "Veterans' Day &#127894;&#65039;",
         "month" : 11,
         "day_one" : 11,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Christmas Eve",
+        "holiday_name" : "Christmas Eve &#127877;&#127995;",
         "month" : 12,
         "day_one" : 24,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "Christmas Day",
+        "holiday_name" : "Christmas Day &#127876;",
         "month" : 12,
         "day_one" : 25,
         "day_two" : null,
         "day" : null
     },
     {
-        "holiday_name" : "New Year's Eve",
+        "holiday_name" : "New Year's Eve &#129346;",
         "month" : 12,
         "day_one" : 31,
         "day_two" : null,
@@ -156,14 +156,14 @@ const holidayArray = [
         "day" : 1
     },
     {
-        "holiday_name" : "Mothers' Day", // Second Sunday in May
+        "holiday_name" : "Mothers' Day &#128144;", // Second Sunday in May
         "month" : 5,
         "day_one" : 8,
         "day_two" : 14,
         "day" : 0
     },
     {
-        "holiday_name" : "Memorial Day", // Last Monday in May
+        "holiday_name" : "Memorial Day &#128367;&#65039;", // Last Monday in May
         "month" : 5,
         "day_one" : 25,
         "day_two" : 31,
@@ -177,28 +177,28 @@ const holidayArray = [
         "day" : 0
     },
     {
-        "holiday_name" : "Labor Day", // First Monday in Sep.
+        "holiday_name" : "Labor Day &#127970;", // First Monday in Sep.
         "month" : 9,
         "day_one" : 1,
         "day_two" : 7,
         "day" : 1
     },
     {
-        "holiday_name" : "Indigenous People's Day", // Second Monday in Oct. / F Columbus
+        "holiday_name" : "Indigenous People's Day &#127993;", // Second Monday in Oct. / F Columbus
         "month" : 10,
         "day_one" : 8,
         "day_two" : 14,
         "day" : 1
     },
     {
-        "holiday_name" : "Thanksgiving Day", // Fourth Thursday in Nov.
+        "holiday_name" : "Thanksgiving Day &#129411;", // Fourth Thursday in Nov.
         "month" : 11,
         "day_one" : 22,
         "day_two" : 28,
         "day" : 5
     },
     {
-        "holiday_name" : "Friday the 13<sup>th</sup>",
+        "holiday_name" : "Friday the 13<sup>th</sup> &#128298;",
         "month" : null,
         "day_one" : 13,
         "day_two" : null,
@@ -206,7 +206,7 @@ const holidayArray = [
     },
     // BIRTHDAYS
     {
-        "holiday_name" : "Dad's Birthday",
+        "holiday_name" : "Dad's Birthday &#128104;",
         "month" : 1,
         "day_one" : 19,
         "day_two" : null,
@@ -248,7 +248,7 @@ const holidayArray = [
         "day" : null
     },
     {
-        "holiday_name" : "Tim's Birthday",
+        "holiday_name" : "Tim's Birthday &#128104;&#127995;&#8205;&#9992;&#65039;",
         "month" : 12,
         "day_one" : 3,
         "day_two" : null,
