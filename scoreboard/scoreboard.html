@@ -1,0 +1,232 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ddc56dc609.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 id="title"></h1>
+        <div style ="float:left">
+            <input id="input"></input>
+            <button id="addPlayerButton"><i class='fa fa-lg fa-user'></i> <b> ADD PLAYER</b></button>
+            <button id="sortButton" onclick="SortTable()"><i class='fa fa-lg fa-sort'></i></button>
+            <button id="colorButton" onclick="document.body.style.backgroundColor = generateRandomColor()"><i class='fas fa-lg fa-palette'></i></button>
+            <br>
+            <table id="playerContainer"></table>
+        </div>
+        <div style ="float:left; padding-left:40px">
+            <h2>Stuff</h2>
+            <table id="optionTable">
+                <tr>
+                    <td class="optionText">Round</td>
+                    <td class="optionButton" style ="width:20px"><button id="sortButton" onclick="minusRound()"><i class='fa fa-lg fa-minus'></i></button></td>
+                    <td class="optionText" id ="roundNumber" style ="text-align: center; width:30px">1</td>
+                    <td class="optionButton"style ="width:20px"><button id="sortButton" onclick="addRound()"><i class='fa fa-lg fa-plus'></i></button></td>
+                </tr>
+
+                <tr>
+                    <td class="optionText">Question</td>
+                    <td class="optionButton" style ="width:20px"><button id="sortButton" onclick="minusQuestion()"><i class='fa fa-lg fa-minus'></i></button></td>
+                    <td class="optionText" id ="questionNumber" style ="text-align: center; width:30px">1</td>
+                    <td class="optionButton"style ="width:20px"><button id="sortButton" onclick="addQuestion()"><i class='fa fa-lg fa-plus'></i></button></td>
+                </tr>
+
+            </table>
+            <br>
+            <button style="padding-right: 5px" id = "timerButton" onclick="startTimer()">Timer</button> <input id="timeInput" value="10" style="width:40px;">s</input>
+        </div>
+</body>
+
+<style>
+    .fas {
+        font-weight: 900;
+    }
+    body {
+        padding-left:20px;
+    }
+    #playerContainer {
+        width: 400px;
+        margin-top: 5px;
+    }
+    #optionTable {
+        width: 300px;
+    }
+    .optionText {
+        font-size: 24px;
+    }
+    .optionButton {
+        font-size: 10px;
+    }
+    .fa-lg {
+        padding: 4px 0px 2px;
+    }
+    .floatLeft {
+        float: left;
+    }
+</style>
+
+<script>
+    title.innerHTML = "SCOREBOARD";
+
+    var apb = document.getElementById("addPlayerButton");
+    apb.addEventListener("click", AddPlayer);
+
+    var inputField = document.getElementById("input");
+    inputField.focus();
+    document.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) {
+            AddPlayer();
+        } 
+    });
+
+    var playerTable = document.getElementById("playerContainer");
+
+    function AddPlayer() {
+        var input = document.getElementById("input").value;
+
+        var playerRow = document.createElement("tr");
+        
+        var deleteCell = document.createElement("td");
+        deleteCell.style.width = "20px";
+        deleteCell.style.paddingRight = "5px";
+        deleteCell.innerHTML = "<button><i class='fa fa-lg fa-trash'></i></button>";
+        deleteCell.onclick = function () {
+            playerRow.remove();
+        }
+        playerRow.appendChild(deleteCell);
+
+
+        var nameCell = document.createElement("td");
+        var playerName = document.createTextNode(input);
+        nameCell.style.fontSize = "24px";
+        //nameCell.style.fontWeight ="bold";
+        
+        nameCell.appendChild(playerName);
+        playerRow.appendChild(nameCell);
+
+        var minusCell = document.createElement("td");
+        minusCell.style.width = "20px";
+        minusCell.innerHTML = '<button><i class="fa fa-lg fa-minus"></i></button>';
+        minusCell.onclick = function () {
+            score -= 1;
+            scoreCell.innerHTML = score;
+        }
+        playerRow.appendChild(minusCell);
+
+        var scoreCell = document.createElement("td");
+        scoreCell.style.width = "10%";
+        scoreCell.style.textAlign ="center";
+        scoreCell.style.fontSize = "24px";
+        //scoreCell.style.fontWeight ="bold";
+        var score = 0;
+        scoreCell.innerHTML = score;
+        playerRow.appendChild(scoreCell);
+
+        var plusCell = document.createElement("td");
+        plusCell.style.width = "20px";
+        plusCell.innerHTML = "<button><i class='fa fa-lg fa-plus'></i></button>";
+        plusCell.onclick = function () {
+            score += 1;
+            scoreCell.innerHTML = score;
+        }
+        playerRow.appendChild(plusCell);
+        
+        playerTable.appendChild(playerRow);
+
+        inputField.value = "";
+        inputField.focus();
+    }
+
+    function SortTable() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("playerContainer");
+        switching = true;
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 0; i < (rows.length - 1); i++) {
+                //start by saying there should be no switching:
+                shouldSwitch = false;
+                /*Get the two elements you want to compare,
+                one from current row and one from the next:*/
+                x = rows[i].getElementsByTagName("TD")[3];
+                console.log(x);
+                y = rows[i + 1].getElementsByTagName("TD")[3];
+                console.log(y);
+                //check if the two rows should switch place:
+                if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                /*If a switch has been marked, make the switch
+                and mark that a switch has been done:*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
+
+    var roundNumber = 1;
+    var roundText = document.getElementById("roundNumber");
+    function addRound() {
+        roundNumber ++;
+        roundText.innerHTML = roundNumber;
+    }
+    function minusRound() {
+        roundNumber --;
+        roundText.innerHTML = roundNumber;
+    }
+
+    var questionNumber = 1;
+    var questionText = document.getElementById("questionNumber");
+    function addQuestion() {
+        questionNumber ++;
+        questionText.innerHTML = questionNumber;
+    }
+    function minusQuestion() {
+        questionNumber --;
+        questionText.innerHTML = questionNumber;
+    }
+
+    var timerButtonOn = true;
+    function startTimer () {
+        if (timerButtonOn){
+            timerButtonOn = false;
+            var timeleft = Number(document.getElementById("timeInput").value);
+            console.log(timeleft);
+                var downloadTimer = setInterval(function(){
+                if(timeleft <= 0){
+                    clearInterval(downloadTimer);
+                    document.getElementById("timerButton").innerHTML = "Finished";
+                    timerButtonOn = true;
+                } else {
+                    document.getElementById("timerButton").innerHTML = timeleft + " seconds remaining";
+                }
+                timeleft -= 1;
+                
+            }, 1000);
+        }
+    }
+
+    function generateRandomColor()
+    {
+        var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+        return randomColor;
+        //random color will be freshly served
+    }
+    document.body.style.backgroundColor = generateRandomColor()
+
+    
+</script>
+
+</html>
