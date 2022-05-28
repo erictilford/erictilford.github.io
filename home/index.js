@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    // https://dog.ceo/dog-api/documentation/
+    // https://dog.ceo/api/breeds/image/random
     $.ajax({
         url: "https://dog.ceo/api/breed/schnauzer/images/random",
         type: "GET",
