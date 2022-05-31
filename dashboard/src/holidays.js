@@ -120,6 +120,14 @@ const holidayArray = [
         "emoji" : "&#127790;"
     },
     {
+        "holiday_name" : "Flag Day",
+        "month" : 6,
+        "day_one" : 14,
+        "day_two" : null,
+        "day" : null,
+        "emoji" : "&#127988;&#8205;&#9760;&#65039;"
+    },
+    {
         "holiday_name" : "Juneteenth",
         "month" : 6,
         "day_one" : 19,
@@ -134,7 +142,16 @@ const holidayArray = [
         "day_two" : null,
         "day" : null,
         "emoji" : "&#127878;"
-    },{
+    },
+    {
+        "holiday_name" : "Bastille Day",
+        "month" : 7,
+        "day_one" : 14,
+        "day_two" : null,
+        "day" : null,
+        "emoji" : "	&#129366;"
+    },
+    {
         "holiday_name" : "Halloween",
         "month" : 10,
         "day_one" : 31,
@@ -222,6 +239,14 @@ const holidayArray = [
         "day_two" : 7,
         "day" : 1,
         "emoji" : "&#127970;"
+    },
+    {
+        "holiday_name" : "Grandparents Day", // Sunday after Labor Day
+        "month" : 9,
+        "day_one" : 7,
+        "day_two" : 13,
+        "day" : 0,
+        "emoji" : "	&#128117;"
     },
     {
         "holiday_name" : "Indigenous People's Day", // Second Monday in Oct. / F Columbus
@@ -344,7 +369,7 @@ const holidayArray = [
         "day_two" : null,
         "day" : null,
         "year" : 2022,
-        "emoji" : "	&#127856; &hearts;"
+        "emoji" : "	&#127856;"
     },
 ]
 //console.log(checkHoliday(3,14,1));
