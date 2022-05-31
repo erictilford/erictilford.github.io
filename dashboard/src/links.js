@@ -83,9 +83,33 @@ const links = [
         "icon" : '<i class="fa-solid fa-2x fa-palette" style="color:palevioletred"></i>',
         "target" : "#tools-list"
     },
+    // Audio
+    {
+        "title" : "NPR",
+        "url" : "https://pixlr.com/x/",
+        "icon" : '<i class="fa-solid fa-2x fa-microphone-lines" style="color:lightslategray"></i>',
+        "target" : "#audio-list"
+    },
+    {
+        "title" : "Classical Station",
+        "url" : "https://theclassicalstation.org/listen/",
+        "icon" : '<i class="fa-solid fa-2x fa-guitar" style="color:rosybrown"></i>',
+        "target" : "#audio-list"
+    },
+    {
+        "title" : "Work Music",
+        "url" : "https://www.youtube.com/playlist?list=PLWx-JvCYWQuE1BfLAhIaVMCK4GrVYRotC",
+        "icon" : '<i class="fa-brands fa-2x fa-youtube-square" style="color:red"></i>',
+        "target" : "#audio-list"
+    },
+    // Projects
+
+
     // skribbl
     // projects
     // - home
     // - wordle slackmojifier
     // - scoreboard
+    // - recipe book
+    // - W&L
 ]
