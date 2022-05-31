@@ -46,9 +46,9 @@ var data = [
     {
         "recipe_name": "Air Fryer Buffalo Cauliflower",
         "summary": "Like Buffalo wings except with air-fried battered cauliflower.",
-        "ingredients": "1 large head cauliflower, cut into small-medium florets (about 4 cups); &frac12; cup AP flour*; &frac12; cup water; 1 tsp garlic powder; 1 tsp paprika; &frac12; cup salt; &frac14; tsp black pepper; &frac12; cup Buffalo sauce*",
+        "ingredients": "1 large head cauliflower, cut into small-medium florets (about 4 cups); &frac12; cup AP flour*; &frac12; cup water; 1 tsp garlic powder; 1 tsp paprika; &frac12; tsp salt; &frac14; tsp black pepper; &frac12; cup Buffalo sauce*",
         "directions": "Wash and chop cauliflower into florets and pat dry.; In a large bowl, whisk together flour, water, garlic powder, paprika, salt and pepper.; Add cauliflower to mixture and toss until coated evenly.; Place battered cauliflower into air fryer, cooking 10 minutes at 400&deg;F.; Place cauliflower in a large bowl and toss with Buffalo sauce.; Return sauced cauliflower to air fryer, cooking another 10 minutes at 400&deg;F.; Remove from air fryer and serve with ranch or bleu cheese dressing.",
-        "notes": "*Gluten-free 1:1 flour will work too.; *[Buffalo Sauce]; 2 parts hot sauce (traditionally Frank's Red Hot), 1 part melted butter; For &frac34 cup Buffalo sauce:; 4oz hot sauce; &frac14; cup (&frac12; stick) melted butter",
+        "notes": "*Gluten-free 1:1 flour will work too, although more may be needed to achieve a batter-like consistency.; *[Buffalo Sauce]; 2 parts hot sauce (traditionally Frank's Red Hot), 1 part melted butter; For &frac34 cup Buffalo sauce:; 4oz hot sauce; &frac14; cup (&frac12; stick) melted butter",
         "tags": "Appetizer; Party",
         "hands_on_time": "40",
         "total_time": "60",
