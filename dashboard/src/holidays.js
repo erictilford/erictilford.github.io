@@ -249,7 +249,7 @@ const holidayArray = [
     },
     // BIRTHDAYS
     {
-        "holiday_name" : "Dad's Birthday",
+        "holiday_name" : "Dad",
         "month" : 1,
         "day_one" : 19,
         "day_two" : null,
@@ -258,7 +258,7 @@ const holidayArray = [
         "emoji" : "&#127874;"
     },
     {
-        "holiday_name" : "Debbie's Birthday",
+        "holiday_name" : "Debbie's Bday",
         "month" : 9,
         "day_one" : 13,
         "day_two" : null,
@@ -266,7 +266,7 @@ const holidayArray = [
         "emoji" : "&#127874;"
     },
     {
-        "holiday_name" : "Charli's Birthday",
+        "holiday_name" : "Charli",
         "month" : 5,
         "day_one" : 11,
         "day_two" : null,
@@ -284,7 +284,7 @@ const holidayArray = [
         "emoji" : "&hearts;"
     },
     {
-        "holiday_name" : "Adam's Birthday",
+        "holiday_name" : "Adam",
         "month" : 11,
         "day_one" : 9,
         "day_two" : null,
@@ -293,7 +293,7 @@ const holidayArray = [
         "emoji" : "&#127874;"
     },
     {
-        "holiday_name" : "Cal's Birthday",
+        "holiday_name" : "Cal",
         "month" : 12,
         "day_one" : 8,
         "day_two" : null,
@@ -302,7 +302,7 @@ const holidayArray = [
         "emoji" : "&#127874;"
     },
     {
-        "holiday_name" : "Tim's Birthday",
+        "holiday_name" : "Tim",
         "month" : 12,
         "day_one" : 3,
         "day_two" : null,
@@ -311,7 +311,7 @@ const holidayArray = [
         "emoji" : "&#128104;&#127995;&#8205;&#9992;&#65039;"
     },
     {
-        "holiday_name" : "Amber's Birthday",
+        "holiday_name" : "Amber",
         "month" : 12,
         "day_one" : 31,
         "day_two" : null,
@@ -320,7 +320,7 @@ const holidayArray = [
         "emoji" : "	&#127856;"
     },
     {
-        "holiday_name" : "ET's Birthday",
+        "holiday_name" : "ET",
         "month" : 7,
         "day_one" : 17,
         "day_two" : null,
@@ -329,7 +329,7 @@ const holidayArray = [
         "emoji" : "&#127874;"
     },
     {
-        "holiday_name" : "JT's Birthday",
+        "holiday_name" : "JT",
         "month" : 7,
         "day_one" : 17,
         "day_two" : null,
@@ -338,13 +338,13 @@ const holidayArray = [
         "emoji" : "&#127874;"
     },
     {
-        "holiday_name" : "Evie's Birthday!",
+        "holiday_name" : "Evie",
         "month" : 3,
         "day_one" : 5,
         "day_two" : null,
         "day" : null,
         "year" : 2022,
-        "emoji" : "	&#127856;"
+        "emoji" : "	&#127856; &hearts;"
     },
 ]
 //console.log(checkHoliday(3,14,1));
