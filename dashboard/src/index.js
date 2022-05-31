@@ -31,7 +31,7 @@ $(document).ready(function () {
 	$("#date-text").text(dateOutput);
 
 	// Holidays | holidays.js
-	const todayHolidays = checkHoliday(month, day, d.getDay());
+	const todayHolidays = checkHoliday(month, day, d.getDay(), d.getFullYear());
 	for (let i = 0; i < todayHolidays.length; i++) {
 		$("#holiday-names").append("<h6>" + todayHolidays[i] + "</h6>");
 	}
@@ -89,10 +89,13 @@ $(document).ready(function () {
 		url: "https://api.openweathermap.org/data/2.5/onecall?lat=35.55&lon=-97.61&lang=en&units=imperial&appid=" + wKey,
 		type: "GET",
 		success: function (result) {
-			console.log(result);
-			function OneDec(x) {
+			//console.log(result);
+
+			function OneDec(x) { // round to one decimal place
 				return Math.round(x * 10) / 10
 			};
+
+			// Current temp
 			const temp = OneDec(result.current.temp);
 			const currentIcon = result.current.weather[0].icon;
 			$("#current-weather-icon").attr("src", "https://openweathermap.org/img/wn/" + currentIcon + ".png");
@@ -105,10 +108,12 @@ $(document).ready(function () {
 			const s =  /* todayHighTemp + "° / " + todayLowTemp + "°*/" (Feels like " + feelsLike + "°)";
 			$("#temp-text").text(s);
 
+			// Last updated text
 			let currentUTC = new Date(result.current.dt * 1000);
 			let pt = prettyTime(currentUTC);
 			$("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
-
+			
+			// 8-day Forecast
 			for (let i = 0; i < result.daily.length; i++) {
 				let dayName = "";
 				if (i == 0) {
@@ -116,7 +121,7 @@ $(document).ready(function () {
 				} else {
 					const thisDay = new Date(d);
 					thisDay.setDate(thisDay.getDate() + i);
-					const todayHolidays = checkHoliday(thisDay.getMonth() + 1, thisDay.getDate(), thisDay.getDay());
+					const todayHolidays = checkHoliday(thisDay.getMonth() + 1, thisDay.getDate(), thisDay.getDay(), thisDay.getFullYear());
 					if (todayHolidays.length != 0) {
 						dayName = todayHolidays[0];
 					} else {
@@ -133,7 +138,8 @@ $(document).ready(function () {
 				const row = "<tr>" + dayname + pop + icon + high + low + "</tr>";
 				$("#weather-table").append(row);
 			}
-
+			
+			// UV index
 			const uvi = result.current.uvi;
 			let uvtext = "";
 			let uvcolor = "";
@@ -151,6 +157,7 @@ $(document).ready(function () {
 
 			// Moon phases | moon.js
 			let moonPhase = result.daily[0].moon_phase;
+			// console.log("moonphase = " + moonPhase);
 			$("#weather-extra-moon").html('<img src="assets/moonphases/' + moonPhaseInfo(moonPhase).image + '"><br>Moon Phase<br>' + moonPhaseInfo(moonPhase).text);
 
 			// Wind direction | wind.js
@@ -159,7 +166,7 @@ $(document).ready(function () {
 			$("#weather-extra-direction").html(windDirectionString  + windDirectionName(windDeg) + " | " + windDeg + "&deg; ");
 			$("#wind-deg-icon").css("transform","rotate(" + windDeg + "deg)");
 			
-			// Pressure
+			// Air pressure
 			let pressure = result.current.pressure;
 			let pressureName = "";
 			if (pressure > 1022.689) { pressureName = "High" }
