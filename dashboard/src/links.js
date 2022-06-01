@@ -50,13 +50,7 @@ const links = [
     {
         "title" : "Reddit",
         "url" : "https://old.reddit.com",
-        "icon" : '<i class="fa-brands fa-2x fa-reddit" style="color:orangered"></i>',
-        "target" : "#tools-list"
-    },
-    {
-        "title" : "Recipe Book",
-        "url" : "https://erictilford.github.io/recipebook",
-        "icon" : '<i class="fa-solid fa-2x fa-book-skull" style="color:cornflowerblue"></i>',
+        "icon" : '<i class="fa-brands fa-2x fa-reddit-alien" style="color:orangered"></i>',
         "target" : "#tools-list"
     },
     {
@@ -80,7 +74,7 @@ const links = [
     {
         "title" : "Pixlr X",
         "url" : "https://pixlr.com/x/",
-        "icon" : '<i class="fa-solid fa-2x fa-palette" style="color:palevioletred"></i>',
+        "icon" : '<i class="fa-solid fa-2x fa-palette" style="color:bisque"></i>',
         "target" : "#tools-list"
     },
     // Audio
@@ -93,23 +87,43 @@ const links = [
     {
         "title" : "Classical Station",
         "url" : "https://theclassicalstation.org/listen/",
-        "icon" : '<i class="fa-solid fa-2x fa-guitar" style="color:rosybrown"></i>',
+        "icon" : '<i class="fa-solid fa-2x fa-music" style="color:sandybrown"></i>',
         "target" : "#audio-list"
     },
     {
         "title" : "Work Music",
         "url" : "https://www.youtube.com/playlist?list=PLWx-JvCYWQuE1BfLAhIaVMCK4GrVYRotC",
-        "icon" : '<i class="fa-brands fa-2x fa-youtube-square" style="color:red"></i>',
+        "icon" : '<i class="fa-brands fa-2x fa-youtube-square" style="color:#cb0e0e"></i>',
         "target" : "#audio-list"
     },
     // Projects
+    {
+        "title" : "Home",
+        "url" : "https://erictilford.github.io",
+        "icon" : '<i class="fa-solid fa-2x fa-house-chimney-user" style="color:lightblue"></i>',
+        "target" : "#project-list"
+    },
+    {
+        "title" : "Recipe Book",
+        "url" : "https://erictilford.github.io/recipebook",
+        "icon" : '<i class="fa-solid fa-2x fa-book-skull" style="color:cornflowerblue"></i>',
+        "target" : "#project-list"
+    },
+    {
+        "title" : "Wellness & Longevity",
+        "url" : "https://google.com",
+        "icon" : '<i class="fa-brands fa-2x fa-wordpress" style="color:#85aeb5"></i>',
+        "target" : "#project-list"
+    },
+    {
+        "title" : "Wordle Slackmojifier",
+        "url" : "https://erictilford.github.io/wordle",
+        "icon" : '<i class="fa-solid fa-2x fa-icons" style="color:orchid"></i>',
+        "target" : "#project-list"
+    },
 
-
-    // skribbl
-    // projects
-    // - home
-    // - wordle slackmojifier
-    // - scoreboard
-    // - recipe book
-    // - W&L
+    // games
+    // - skribbl
+    // - wordle
+    // - wos.gg
 ]
