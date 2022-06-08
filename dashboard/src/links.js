@@ -80,7 +80,7 @@ const links = [
     // Audio
     {
         "title" : "NPR",
-        "url" : "https://pixlr.com/x/",
+        "url" : "https://www.npr.org",
         "icon" : '<i class="fa-solid fa-2x fa-microphone-lines" style="color:lightslategray"></i>',
         "target" : "#audio-list"
     },
