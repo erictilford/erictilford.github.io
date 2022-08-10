@@ -36,6 +36,24 @@ const links = [
         "target" : "#video-list"
     },
     {
+        "title" : "LazyGoat",
+        "url" : "https://lazygoat.tv/multistream",
+        "icon" : '<i class="fa-solid fa-2x fa-table-cells-large" style="color:#FD5205;"></i>',
+        "target" : "#video-list"
+    },
+    {
+        "title" : "Adult Swim Streams",
+        "url" : "https://www.adultswim.com/streams/",
+        "icon" : '<i class="fa-solid fa-2x fa-water-ladder" style="color:#eeeeee;"></i>',
+        "target" : "#video-list"
+    },
+    {
+        "title" : "Crunchyroll",
+        "url" : "https://www.crunchyroll.com/",
+        "icon" : '<i class="fa-solid fa-2x fa-eye" style="color:#f47521;"></i>',
+        "target" : "#video-list"
+    },
+    {
         "title" : "Gmail",
         "url" : "https://mail.google.com/mail/u/0/#inbox",
         "icon" : '<i class="fa-solid fa-2x fa-envelope" style="color:#ea4335"></i>',
@@ -75,6 +93,30 @@ const links = [
         "title" : "Pixlr X",
         "url" : "https://pixlr.com/x/",
         "icon" : '<i class="fa-solid fa-2x fa-palette" style="color:bisque"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Heardle",
+        "url" : "https://www.heardle.app",
+        "icon" : '<i class="fa-solid fa-2x fa-ear-listen" style="color:#20af53"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "CodeWars",
+        "url" : "https://www.codewars.com/dashboard",
+        "icon" : '<i class="fa-solid fa-2x fa-laptop-code" style="color:#b1361e"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Duolingo",
+        "url" : "https://www.duolingo.com/",
+        "icon" : '<i class="fa-solid fa-2x fa-feather" style="color:#54ae43"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Github",
+        "url" : "https://github.com/erictilford/erictilford.github.io",
+        "icon" : '<i class="fa-brands fa-2x fa-github" style="color:slategray"></i>',
         "target" : "#tools-list"
     },
     // Audio
