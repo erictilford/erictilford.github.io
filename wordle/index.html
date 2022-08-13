@@ -37,12 +37,48 @@
           <h5>Input - paste Wordle "share"</h5>
           <textarea id="inputText" name="inputText" rows="8" cols="24" style="resize:none"></textarea>
           <br><br>
-          <label for="bsquare">&#11035; / &#11036; &#x2192;</label>
-          <input type="text" style="width: 150px;" id="bsquare" name="bsquare" value=:black_heart:><br><br>
-          <label for="ysquare"> &#129000; / &#128998; &#x2192;</label>
-          <input type="text" style="width: 150px;" id="ysquare" name="ysquare" value=:yellow_heart:><br><br>
-          <label for="ysquare"> &#129001; / &#128999; &#x2192;</label>
-          <input type="text" style="width: 150px;" id="gsquare" name="gsquare" value=:green_heart:><br><br>
+          
+
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-light active" id="wordle-button">
+              <input type="radio" name="options" id="option-1" autocomplete="off" checked> Wordle
+            </label>
+            <label class="btn btn-light" id="heardle-button">
+              <input type="radio" name="options" id="option-2" autocomplete="off"> Heardle
+            </label>
+          </div>
+
+          <br><br>
+
+          <div id="wordle-inputs">
+            <label for="bsquare">&#11035; / &#11036; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="bsquare" name="bsquare" value=:black_heart:><br><br>
+            <label for="ysquare"> &#129000; / &#128998; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="ysquare" name="ysquare" value=:yellow_heart:><br><br>
+            <label for="ysquare"> &#129001; / &#128999; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="gsquare" name="gsquare" value=:green_heart:><br><br>
+          </div>
+
+          <div id="heardle-inputs">
+            <label for="speaker">	&#x1F50A; /	&#x1F507; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="speaker" name="speaker" value=:speak_no_evil:><br><br>
+            
+            <label for="bsquare-h"> &#11035; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="bsquare-h" name="bsquare-h" value=:black_heart:><br><br>
+            
+            <label for="rsquare"> &#x1F7E5; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="rsquare" name="rsquare" value=:heart:><br><br>
+           
+            <label for="gsquare-h"> &#129001; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="gsquare-h" name="gsquare-h" value=:green_heart:><br><br>
+
+            <label for="wsquare"> &#11036; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="wsquare" name="wsquare" value=:white_heart:><br><br>
+           
+          </div>
+
+
+
           <button class="btn btn-lg" id="convert-button">Convert!</button><br><br>
         </center>
       </div>

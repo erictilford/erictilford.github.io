@@ -2,6 +2,10 @@ body {
   background: #f1fff1;
 }
 
+#heardle-inputs {
+  display: none;
+}
+
 #outputDiv {
   display: none;
 }
