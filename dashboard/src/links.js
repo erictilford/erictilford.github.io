@@ -1,6 +1,6 @@
 const links = [
     {
-        "title" : "Toonami Aftermath",
+        "title" : "Toonami",
         "url" : "https://www.toonamiaftermath.com",
         "icon" : '<i class="fa-solid fa-2x fa-meteor" style="color:mediumaquamarine"></i>',
         "target" : "#video-list"
@@ -42,7 +42,7 @@ const links = [
         "target" : "#video-list"
     },
     {
-        "title" : "Adult Swim Streams",
+        "title" : "Adult Swim",
         "url" : "https://www.adultswim.com/streams/",
         "icon" : '<i class="fa-solid fa-2x fa-water-ladder" style="color:#eeeeee;"></i>',
         "target" : "#video-list"
@@ -60,7 +60,7 @@ const links = [
         "target" : "#tools-list"
     },
     {
-        "title" : "Google Drive",
+        "title" : "Drive",
         "url" : "https://drive.google.com/drive/my-drive",
         "icon" : '<i class="fa-brands fa-2x fa-google-drive" style="color:#fbbc04"></i>',
         "target" : "#tools-list"
@@ -127,7 +127,7 @@ const links = [
         "target" : "#audio-list"
     },
     {
-        "title" : "Classical Station",
+        "title" : "Classical",
         "url" : "https://theclassicalstation.org/listen/",
         "icon" : '<i class="fa-solid fa-2x fa-music" style="color:sandybrown"></i>',
         "target" : "#audio-list"
