@@ -102,7 +102,7 @@ const links = [
         "target" : "#tools-list"
     },
     {
-        "title" : "CodeWars",
+        "title" : "Codewars",
         "url" : "https://www.codewars.com/dashboard",
         "icon" : '<i class="fa-solid fa-2x fa-laptop-code" style="color:#b1361e"></i>',
         "target" : "#tools-list"
@@ -124,19 +124,19 @@ const links = [
         "title" : "NPR",
         "url" : "https://www.npr.org",
         "icon" : '<i class="fa-solid fa-2x fa-microphone-lines" style="color:lightslategray"></i>',
-        "target" : "#audio-list"
+        "target" : "#video-list"
     },
     {
         "title" : "Classical",
         "url" : "https://theclassicalstation.org/listen/",
         "icon" : '<i class="fa-solid fa-2x fa-music" style="color:sandybrown"></i>',
-        "target" : "#audio-list"
+        "target" : "#video-list"
     },
     {
         "title" : "Work Music",
         "url" : "https://www.youtube.com/playlist?list=PLWx-JvCYWQuE1BfLAhIaVMCK4GrVYRotC",
         "icon" : '<i class="fa-brands fa-2x fa-youtube-square" style="color:#cb0e0e"></i>',
-        "target" : "#audio-list"
+        "target" : "#video-list"
     },
     // Projects
     {
