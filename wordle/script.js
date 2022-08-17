@@ -18,11 +18,13 @@ $(document).ready(function () {
       let sp = $("#speaker").val();
       let bs = $("#bsquare-h").val();
       let rs = $("#rsquare").val();
+      let ys = $("#ysquare-h").val();
       let gs = $("#gsquare-h").val();
       let ws = $("#wsquare").val();
       let output = input.replace(/\uD83D\uDD0A|\uD83D\uDD07/g, sp);
       output = output.replace(/\u2B1B/g, bs);
       output = output.replace(/\uD83D\uDFE5/g, rs);
+      output = output.replace(/\uD83D\uDFE8/g, ys);
       output = output.replace(/\uD83D\uDFE9/g, gs);
       output = output.replace(/\u2B1C/g, ws);
       output = output.replace(/[\r\n]+https:\/\/spotify.com\/heardle/g, "");
