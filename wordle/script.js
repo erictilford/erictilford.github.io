@@ -27,6 +27,7 @@ $(document).ready(function () {
       output = output.replace(/\uD83D\uDFE8/g, ys);
       output = output.replace(/\uD83D\uDFE9/g, gs);
       output = output.replace(/\u2B1C/g, ws);
+      output = output.replace(/#Heardle/g, "Heardle");
       output = output.replace(/[\r\n]+https:\/\/spotify.com\/heardle/g, "");
       $("#outputText").val(output);
     } 
