@@ -55,7 +55,7 @@ $(document).ready(function () {
   });
 
   $("#wordle-button").click(function () { 
-    showWordleInputs() 
+    showWordleInputs();
   });
 
   $("#heardle-button").click(function () {
@@ -65,10 +65,89 @@ $(document).ready(function () {
   function showWordleInputs() {
     $("#heardle-inputs").hide();
     $("#wordle-inputs").show();
+    $("#heardle-preset-buttons").hide();
+    $("#wordle-preset-buttons").show();
   }
 
   function showHeardleInputs() {
     $("#heardle-inputs").show();
     $("#wordle-inputs").hide();
+    $("#heardle-preset-buttons").show();
+    $("#wordle-preset-buttons").hide();
   }
+
+  function LoadPresets(buttonNumber) {
+
+    if ($("#wordle-button").hasClass("active")) 
+    {
+      if (localStorage.getItem("wordlePreset"+buttonNumber)) {
+        let storedInputs = JSON.parse(localStorage.getItem("wordlePreset"+buttonNumber));
+        $("#bsquare").val(storedInputs[0]);
+        $("#ysquare").val(storedInputs[1]);
+        $("#gsquare").val(storedInputs[2]);
+      } else {
+        $("#bsquare").val("");
+        $("#ysquare").val("");
+        $("#gsquare").val("");
+      }
+    }
+    else if ($("#heardle-button").hasClass("active")) 
+    {
+      if (localStorage.getItem("heardlePreset"+buttonNumber)) {
+        let storedInputs = JSON.parse(localStorage.getItem("heardlePreset"+buttonNumber));
+        $("#speaker").val(storedInputs[0]);
+        $("#bsquare-h").val(storedInputs[1]);
+        $("#rsquare").val(storedInputs[2]);
+        $("#ysquare-h").val(storedInputs[3]);
+        $("#gsquare-h").val(storedInputs[4]);
+        $("#wsquare").val(storedInputs[5]);
+      } else {
+        $("#speaker").val('');
+        $("#bsquare-h").val('');
+        $("#rsquare").val('');
+        $("#ysquare-h").val('');
+        $("#gsquare-h").val('');
+        $("#wsquare").val('');
+      }
+    }
+  }
+
+  $("#wordle-preset-buttons .btn, #heardle-preset-buttons .btn").click(function () {
+    LoadPresets($(this).find($(".label-text")).text());
+  });
+
+  LoadPresets(1);
+
+  $("#heardle-preset-buttons").hide();
+
+  $("#save-preset-button").click(function () {
+    // if in "wordle mode":
+    if ($("#wordle-button").hasClass("active")) 
+    {
+      let activeButton = $("#wordle-preset-buttons .active .label-text").text();
+      let bs = $("#bsquare").val();
+      let ys = $("#ysquare").val();
+      let gs = $("#gsquare").val();
+      const inputs = [bs, ys, gs];
+      // localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
+      localStorage.setItem("wordlePreset"+activeButton, JSON.stringify(inputs));
+    } 
+    else if ($("#heardle-button").hasClass("active")) 
+    {
+      let activeButton = $("#heardle-preset-buttons .active .label-text").text();
+      let sp = $("#speaker").val();
+      let bs = $("#bsquare-h").val();
+      let rs = $("#rsquare").val();
+      let ys = $("#ysquare-h").val();
+      let gs = $("#gsquare-h").val();
+      let ws = $("#wsquare").val();
+      const inputs = [sp, bs, rs, ys, gs, ws];
+      localStorage.setItem("heardlePreset"+activeButton, JSON.stringify(inputs));
+    } 
+  });
+
 }); // https://emojiterra.com/
+
+
+
+//TODO - add rotating hue to background
