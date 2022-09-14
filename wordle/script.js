@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+  // Rotating background color
+  var intervalId = window.setInterval(function(){
+    var backgroundColor = $("body").css("background-color");
+    const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`
+    var hueShifted = changeHue(rgb2hex(backgroundColor),5);
+    $("body").css("background-color", hueShifted);
+  }, 150);
+
+  // If convert button is pressed
   $("#convert-button").click(function () {
     let input = $("#inputText").val();
 
