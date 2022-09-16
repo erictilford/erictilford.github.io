@@ -156,7 +156,3 @@ $(document).ready(function () {
   });
 
 }); // https://emojiterra.com/
-
-
-
-//TODO - add rotating hue to background

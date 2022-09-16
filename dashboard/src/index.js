@@ -184,3 +184,9 @@ $(document).ready(function () {
 	//    ((''+month).length<2 ? '0' : '') + monthLong + '/' +
 	//    ((''+day).length<2 ? '0' : '') + day;
 });
+
+// TODO 
+// - Custom weather icons -- https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
+// - Yesterday's weather
+// - Alerts - https://openweathermap.org/api/one-call-api
+// - Hourly / periodical Weather
