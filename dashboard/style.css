@@ -67,6 +67,13 @@ body {
     height: 60px;
 }
 
+#smash-tourney {
+    float: right;
+    vertical-align: auto;
+    padding: 12px 5px 0px 0px;
+}
+
+
 #temp-text {
     font-size: medium;
     font-weight: normal;
@@ -106,8 +113,12 @@ body {
     table-layout: fixed;
 }
 
+
 #zodiac-symbol {
     float: right;
+    font-size: 20px;
+    line-height: 2.1;
+    cursor:default;
 }
 
 .banner-div {
@@ -137,6 +148,11 @@ body {
     width: 60px;
     line-height: 30px;
 
+}
+
+.smash-tourney-icon {
+    font-size: 18px;
+    line-height: 1.2;
 }
 
 .weather-extra-icon {

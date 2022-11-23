@@ -65,6 +65,33 @@ $(document).ready(function () {
 	}
 	updateClock();
 
+	// SMASH TOURNEY STATUS
+
+	const origin = new Date("11/18/2022");
+	let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
+	let dayDiffRemainder = daysDifference % 4;
+
+	if (dayDiffRemainder == 2 || dayDiffRemainder == 3) {
+		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-person-rays smash-tourney-icon" style="color:#ff7b4a"></i>');
+		if (dayDiffRemainder == 2) {
+			$("#smash-tourney").attr("title", "1v1 tourney ends: \n" + dayNames[(d.getDay() + (2 - dayDiffRemainder))]);
+		}
+		else if (dayDiffRemainder == 3) {
+			$("#smash-tourney").attr("title",  "1v1 tourney ends: \n Tomorrow" );
+		}
+		
+	} 
+	else if (dayDiffRemainder == 0 || dayDiffRemainder == 1) {
+
+		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-users-slash smash-tourney-icon" style="color:#146ebe"></i>');
+		if (dayDiffRemainder == 0) {
+			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n" + dayNames[(d.getDay() + (2 - dayDiffRemainder))]);
+		}
+		else if (dayDiffRemainder == 1) {
+			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n Tomorrow");
+		}
+	}
+
 	// ZODIAC
 	const zodiacSymbols = {
 		"Capricorn": ["\u2651", "The Goat"], "Aquarius": ["\u2652", "The Water Bearer"], "Pisces": ["\u2653", "The Fish"],
