@@ -74,7 +74,7 @@ $(document).ready(function () {
 	if (dayDiffRemainder == 2 || dayDiffRemainder == 3) {
 		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-person-rays smash-tourney-icon" style="color:#ff7b4a"></i>');
 		if (dayDiffRemainder == 2) {
-			$("#smash-tourney").attr("title", "1v1 tourney ends: \n" + dayNames[(d.getDay() + (2 - dayDiffRemainder))]);
+			$("#smash-tourney").attr("title", "1v1 tourney ends: \n" + dayNames[(d.getDay() + (2 - dayDiffRemainder))] + " (2 days)");
 		}
 		else if (dayDiffRemainder == 3) {
 			$("#smash-tourney").attr("title",  "1v1 tourney ends: \n Tomorrow" );
@@ -85,7 +85,7 @@ $(document).ready(function () {
 
 		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-users-slash smash-tourney-icon" style="color:#146ebe"></i>');
 		if (dayDiffRemainder == 0) {
-			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n" + dayNames[(d.getDay() + (2 - dayDiffRemainder))]);
+			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n" + dayNames[(d.getDay() + (2 - dayDiffRemainder))] + " (2 days)");
 		}
 		else if (dayDiffRemainder == 1) {
 			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n Tomorrow");
