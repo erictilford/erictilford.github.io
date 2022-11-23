@@ -257,11 +257,11 @@ const holidayArray = [
         "emoji": "&#127993;"
     },
     {
-        "holiday_name": "Thanksgiving Day", // Fourth Thursday in Nov.
+        "holiday_name": "Thanksgiving", // Fourth Thursday in Nov.
         "month": 11,
         "day_one": 22,
         "day_two": 28,
-        "day": 5,
+        "day": 4,
         "emoji": "&#129411;"
     },
     {
