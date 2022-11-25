@@ -78,7 +78,7 @@ $(document).ready(function () {
 			$("#smash-tourney").attr("title", "1v1 tourney ends: \n" + dayNames[(d.getDay() + 2 )] + " (2 days)");
 		}
 		else if (dayDiffRemainder == 3) {
-			$("#smash-tourney").attr("title",  "1v1 tourney ends: \n Tomorrow" );
+			$("#smash-tourney").attr("title",  "1v1 tourney ends: \nTomorrow" );
 		}
 		
 	} 
@@ -89,7 +89,7 @@ $(document).ready(function () {
 			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n" + dayNames[(d.getDay() + 2 )] + " (2 days)");
 		}
 		else if (dayDiffRemainder == 1) {
-			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n Tomorrow");
+			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \nTomorrow");
 		}
 	}
 
