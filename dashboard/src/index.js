@@ -70,7 +70,6 @@ $(document).ready(function () {
 	const origin = new Date("11/18/2022");
 	let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
 	let dayDiffRemainder = daysDifference % 4;
-	alert(dayDiffRemainder);
 
 	if (dayDiffRemainder == 2 || dayDiffRemainder == 3) {
 		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-person-rays smash-tourney-icon" style="color:#ff7b4a"></i>');
