@@ -20,6 +20,7 @@ $(document).ready(function () {
       let output = input.replace(/\u2B1B|\u2B1C/g, bs);
       output = output.replace(/\uD83D\uDFE8|\uD83D\uDFE6/g, ys);
       output = output.replace(/\uD83D\uDFE9|\uD83D\uDFE7/g, gs);
+      output = output.replace(/[\r\n]+nyt.com\/wordle/g, "");
       $("#outputText").val(output);
     } 
     else if ($("#heardle-button").hasClass("active")) 
