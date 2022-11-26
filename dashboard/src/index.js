@@ -72,15 +72,11 @@ $(document).ready(function () {
 
 	// RANDOM WALLPAPER BUTTON
 	$("#random-wallpaper-button").html('<i class="fa-regular fa-sm fa-image tray-icon" style="color:lightblue"></i>');
-
     $("#random-wallpaper-button").click(function() { setRandomWallpaper() });
-
 	$("#random-wallpaper-button").attr("title",  "Random Wallpaper (W)" );
-
 	$(document).on('keypress', function(e) {
-		//            ^^^^^^^^
 		var code = e.keyCode || e.which;
-		if (code == 119 ) { // w is pressed
+		if (code == 119 ) { // W
 		  setRandomWallpaper();
 		}
 	});

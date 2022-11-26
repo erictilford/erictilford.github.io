@@ -77,6 +77,11 @@ body {
     border-radius: 0 15px 15px 0;
     padding: 15px 15px 0px;
 }
+
+#random-wallpaper-button {
+    cursor: pointer;
+}
+
 /*
 #serugai-banner {
     margin: -20px -50px 0;
