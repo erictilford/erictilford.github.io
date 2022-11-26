@@ -237,3 +237,7 @@ $(document).ready(function () {
 // - Yesterday's weather
 // - Alerts - https://openweathermap.org/api/one-call-api
 // - Hourly / periodical Weather
+// - Settings icon / menu -- Weather location, etc.
+// - Random dog API
+// - Holiday Wallpapers
+// - Redo Wallpaper selection
