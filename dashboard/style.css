@@ -79,8 +79,8 @@ body {
 }
 
 #serugai-banner {
-    margin: -20px -50px -10px;
-    height: 100px;
+    margin: -20px -50px 0;
+    height: 64px;
 }
 
 #serugai-banner-mobile {
@@ -145,6 +145,9 @@ body {
 
 .banner-div {
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    width:100%;
 }
 
 .daily-temp {
@@ -253,4 +256,4 @@ body {
 .invert { filter: invert(100%); }
 .sepia { filter: sepia(100%); }
 .huerotate { filter: hue-rotate(180deg); }
-.rss.opacity { filter: opacity(50%); }
+.rss.opacity { filter: opacity(30%); }
