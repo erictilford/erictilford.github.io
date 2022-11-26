@@ -1,8 +1,13 @@
 $(document).ready(function () {
 
 	// WALLPAPERS | config.js
-	let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-	document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
+
+	function setRandomWallpaper(){ 
+		let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
+		document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
+    }
+	setRandomWallpaper();
+
 
 	/*
 	$('#elem').fadeTo('slow', 0.3, function () {
@@ -65,6 +70,21 @@ $(document).ready(function () {
 	}
 	updateClock();
 
+	// RANDOM WALLPAPER BUTTON
+	$("#random-wallpaper-button").html('<i class="fa-regular fa-sm fa-image tray-icon" style="color:lightblue"></i>');
+
+    $("#random-wallpaper-button").click(function() { setRandomWallpaper() });
+
+	$("#random-wallpaper-button").attr("title",  "Random Wallpaper (W)" );
+
+	$(document).on('keypress', function(e) {
+		//            ^^^^^^^^
+		var code = e.keyCode || e.which;
+		if (code == 119 ) { // w is pressed
+		  setRandomWallpaper();
+		}
+	});
+
 	// SMASH TOURNEY STATUS
 
 	const origin = new Date("11/18/2022");
@@ -72,7 +92,7 @@ $(document).ready(function () {
 	let dayDiffRemainder = daysDifference % 4;
 
 	if (dayDiffRemainder == 2 || dayDiffRemainder == 3) {
-		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-person-rays smash-tourney-icon" style="color:#ff7b4a"></i>');
+		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-person-rays tray-icon" style="color:#ff7b4a"></i>');
 		if (dayDiffRemainder == 2) {
 			$("#smash-tourney").attr("title", "1v1 tourney ends: \n" + dayNames[(d.getDay() + 2 )] + " (2 days)");
 		}
@@ -83,7 +103,7 @@ $(document).ready(function () {
 	} 
 	else if (dayDiffRemainder == 0 || dayDiffRemainder == 1) {
 
-		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-users-slash smash-tourney-icon" style="color:#146ebe"></i>');
+		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-users-slash tray-icon" style="color:#146ebe"></i>');
 		if (dayDiffRemainder == 0) {
 			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n" + dayNames[(d.getDay() + 2 )] + " (2 days)");
 		}
