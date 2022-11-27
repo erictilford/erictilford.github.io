@@ -272,6 +272,14 @@ const holidayArray = [
         "day": 5,
         "emoji": "&#128298;"
     },
+    {
+        "holiday_name": "Thursday the 20<sup>th</sup>",
+        "month": null,
+        "day_one": 20,
+        "day_two": null,
+        "day": 4,
+        "emoji": "&#127908;"
+    },
     // BIRTHDAYS
     {
         "holiday_name": "Dad",
@@ -369,7 +377,7 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "year": 2022,
-        "emoji": "	&#127856;"
+        "emoji": "&#127856;"
     },
     /*
     {

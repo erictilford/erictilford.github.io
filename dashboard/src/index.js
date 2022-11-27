@@ -232,6 +232,7 @@ $(document).ready(function () {
 	//    ((''+day).length<2 ? '0' : '') + day;
 });
 
+/*
 // TODO 
 // - Custom weather icons -- https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 // - Yesterday's weather
@@ -241,3 +242,5 @@ $(document).ready(function () {
 // - Random dog API
 // - Holiday Wallpapers
 // - Redo Wallpaper selection
+// - One-time holidays
+*/
