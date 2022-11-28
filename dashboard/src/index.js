@@ -168,7 +168,10 @@ $(document).ready(function () {
 				let pt = prettyTime(hourlyUTC);
 				let time = pt.hour + " " + pt.ampm;
 				let icon = "<img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.hourly[i].weather[0].icon + ".png' title='" + result.hourly[i].weather[0].description + "'></img>";
-				let pop = "<i style='filter: opacity(" + (result.hourly[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.hourly[i].pop * 100) + "%";
+				let pop = "";
+				if (result.hourly[i].pop != 0) {
+					pop = "<br><i style='filter: opacity(" + (result.hourly[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.hourly[i].pop * 100) + "%";
+				}
 				let temp = OneDec(result.hourly[i].temp) + "°";
 				hourlyColumns += "<td>" + time + "<br>" + icon + "<br>" + temp + "<br>" + pop + "</td>"; 
 			}
@@ -195,7 +198,12 @@ $(document).ready(function () {
 				const icon = "<td class='weather-icon-column'><img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></td>";
 				const high = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.max) + "°</td>";
 				const low = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</td>";
-				const pop = "<td class='daily-temp precip'><i style='filter: opacity(" + (result.daily[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
+				let pop = "";
+				if (result.daily[i].pop == 0) {
+					pop = "<td></td>";
+				} else {
+					pop = "<td class='daily-temp precip'><i style='filter: opacity(" + (result.daily[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
+				}
 				const row = "<tr>" + dayname + pop + icon + high + low + "</tr>";
 				$("#weather-table").append(row);
 			}
@@ -255,5 +263,4 @@ $(document).ready(function () {
 // - Holiday Wallpapers
 // - Redo Wallpaper selection
 // - One-time holidays
-// - Hide when 0% chance of precipitation?
 */
