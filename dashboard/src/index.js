@@ -8,7 +8,6 @@ $(document).ready(function () {
     }
 	setRandomWallpaper();
 
-
 	/*
 	$('#elem').fadeTo('slow', 0.3, function () {
 		$(this).css('background-image', 'url(' + $img + ')');
@@ -162,24 +161,18 @@ $(document).ready(function () {
 			let pt = prettyTime(currentUTC);
 			$("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
 
-			// Hourly 
-
+			// Hourly
 			let hourlyColumns = "";
 			for (let i = 0; i < 12; i += 3){
 				let hourlyUTC = new Date(result.hourly[i].dt * 1000);
 				let pt = prettyTime(hourlyUTC);
-				console.log(pt.hour + " " + pt.ampm);
 				let time = pt.hour + " " + pt.ampm;
 				let icon = "<img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.hourly[i].weather[0].icon + ".png' title='" + result.hourly[i].weather[0].description + "'></img>";
 				let pop = "<i style='filter: opacity(" + (result.hourly[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.hourly[i].pop * 100) + "%";
 				let temp = OneDec(result.hourly[i].temp) + "°";
-				console.log(result.hourly[i].temp);
-
 				hourlyColumns += "<td>" + time + "<br>" + icon + "<br>" + temp + "<br>" + pop + "</td>"; 
 			}
-			
-
-			$("#weather-hourly-table").append("<tr>" + hourlyColumns +"</tr>");
+			$("#weather-hourly-table").append("<tr>" + hourlyColumns + "</tr>");
 			
 			// 8-day Forecast
 			for (let i = 0; i < result.daily.length; i++) {
@@ -225,7 +218,6 @@ $(document).ready(function () {
 
 			// Moon phases | moon.js
 			let moonPhase = result.daily[0].moon_phase;
-			// console.log("moonphase = " + moonPhase);
 			$("#weather-extra-moon").html('<img src="assets/moonphases/' + moonPhaseInfo(moonPhase).image + '"><br>Moon Phase<br>' + moonPhaseInfo(moonPhase).text);
 
 			// Wind direction | wind.js
