@@ -57,7 +57,9 @@ $(document).ready(function () {
 		let minutes = newDate.getMinutes().toString().padStart(2, "0");
 		let seconds = newDate.getSeconds().toString().padStart(2, "0");
 		let time = freedomHours + ":" + minutes + /* ":" + seconds + */ " ";
+		let hour = freedomHours;
 		return {
+			'hour': hour,
 			'time': time,
 			'ampm': ampm
 		}
@@ -156,9 +158,28 @@ $(document).ready(function () {
 			$("#temp-text").text(s);
 
 			// Last updated text
-			let currentUTC = new Date(result.current.dt * 1000);
+			let currentUTC = new Date(result.current.dt * 1000); // create a date from what the API provides
 			let pt = prettyTime(currentUTC);
 			$("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
+
+			// Hourly 
+
+			let hourlyColumns = "";
+			for (let i = 0; i < 12; i += 3){
+				let hourlyUTC = new Date(result.hourly[i].dt * 1000);
+				let pt = prettyTime(hourlyUTC);
+				console.log(pt.hour + " " + pt.ampm);
+				let time = pt.hour + " " + pt.ampm;
+				let icon = "<img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.hourly[i].weather[0].icon + ".png' title='" + result.hourly[i].weather[0].description + "'></img>";
+				let pop = "<i style='filter: opacity(" + (result.hourly[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.hourly[i].pop * 100) + "%";
+				let temp = OneDec(result.hourly[i].temp) + "°";
+				console.log(result.hourly[i].temp);
+
+				hourlyColumns += "<td>" + time + "<br>" + icon + "<br>" + temp + "<br>" + pop + "</td>"; 
+			}
+			
+
+			$("#weather-hourly-table").append("<tr>" + hourlyColumns +"</tr>");
 			
 			// 8-day Forecast
 			for (let i = 0; i < result.daily.length; i++) {

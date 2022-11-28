@@ -129,6 +129,21 @@ body {
     padding-bottom: 100px;
 }
 
+#weather-hourly-table {
+    width: 100%;
+    color: white;
+    table-layout: fixed;
+    text-align: center;
+    font-size: small;
+    margin: 5px auto;
+}
+
+#weather-hourly-table td {
+    width: 25%;
+    /*text-overflow: ellipsis;
+    white-space: nowrap;*/
+}
+
 #weather-table {
     width: 100%;
     color: white;

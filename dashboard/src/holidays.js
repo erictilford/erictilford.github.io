@@ -25,8 +25,8 @@ function checkHoliday(month, day, dayOfWeek, year) {
         }
         // anni / birthday years
         if (holidayName && holidayArray[i].year) {
-            console.log("current year = " + year);
-            console.log("holiday year = " + holidayArray[i].year);
+            //console.log("current year = " + year);
+            //console.log("holiday year = " + holidayArray[i].year);
             holidayNumberText = " #" + (year - holidayArray[i].year);
             //holidayEmoji = " " + holidayArray[i].emoji;
         }
