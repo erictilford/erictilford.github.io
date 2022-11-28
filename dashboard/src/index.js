@@ -258,10 +258,10 @@ $(document).ready(function () {
 // - Custom weather icons -- https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 // - Yesterday's weather
 // - Alerts - https://openweathermap.org/api/one-call-api
-// - Hourly / periodical Weather
 // - Settings icon / menu -- Weather location, etc.
 // - Random dog API
 // - Holiday Wallpapers
 // - Redo Wallpaper selection
 // - One-time holidays
+// - Hide when 0% chance of precipitation?
 */
