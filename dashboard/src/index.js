@@ -148,7 +148,7 @@ $(document).ready(function () {
 			const currentIcon = result.current.weather[0].icon;
 			$("#current-weather-icon").attr("src", "https://openweathermap.org/img/wn/" + currentIcon + ".png");
 			$("#current-weather-icon").attr("title", result.current.weather[0].description);
-			$("#current-weather-text").text(" " + temp + "°");
+			$("#current-weather-text").text(temp + "°");
 
 			const todayHighTemp = OneDec(result.daily[0].temp.max);
 			const todayLowTemp = OneDec(result.daily[0].temp.min);

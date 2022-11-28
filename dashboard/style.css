@@ -16,7 +16,7 @@ body {
 
 #current-weather-icon {
     max-height: 72px;
-    margin: -24px -8px -16px;
+    margin: -24px 0 -16px 0;
 }
 
 #ampm-text {
@@ -143,6 +143,9 @@ body {
     /*text-overflow: ellipsis;
     white-space: nowrap;*/
 }
+#weather-title {
+    margin-bottom: 5px;
+}
 
 #weather-table {
     width: 100%;
@@ -154,7 +157,7 @@ body {
 #zodiac-symbol {
     float: right;
     font-size: 20px;
-    line-height: 2.1;
+    line-height: 1.8;
     cursor:default;
     padding-left: 2px;
 }
@@ -197,7 +200,7 @@ body {
 
 .tray-icon {
     font-size: 17px;
-    line-height: 1.3;
+    line-height: 0.9;
 }
 
 .tray-icon-holder {
