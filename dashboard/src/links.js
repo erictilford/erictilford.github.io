@@ -119,6 +119,12 @@ const links = [
         "icon" : '<i class="fa-brands fa-2x fa-github" style="color:slategray"></i>',
         "target" : "#tools-list"
     },
+    {
+        "title" : "Font Awesome",
+        "url" : "https://fontawesome.com/search",
+        "icon" : '<i class="fa-solid fa-2x fa-font-awesome" style="color:#528dd7"></i>',
+        "target" : "#tools-list"
+    },
     // Audio
     {
         "title" : "NPR",
