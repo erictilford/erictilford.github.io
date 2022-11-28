@@ -121,7 +121,7 @@ const links = [
     },
     {
         "title" : "Font Awesome",
-        "url" : "https://fontawesome.com/search",
+        "url" : "https://fontawesome.com/search?o=r&m=free",
         "icon" : '<i class="fa-solid fa-2x fa-font-awesome" style="color:#528dd7"></i>',
         "target" : "#tools-list"
     },
