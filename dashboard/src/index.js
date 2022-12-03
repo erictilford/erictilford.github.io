@@ -170,7 +170,7 @@ $(document).ready(function () {
 				let icon = "<img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.hourly[i].weather[0].icon + ".png' title='" + result.hourly[i].weather[0].description + "'></img>";
 				let pop = "";
 				if (result.hourly[i].pop != 0) {
-					pop = "<br><i style='filter: opacity(" + (result.hourly[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.hourly[i].pop * 100) + "%";
+					pop = "<i style='filter: opacity(" + (result.hourly[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.hourly[i].pop * 100) + "%";
 				}
 				let temp = OneDec(result.hourly[i].temp) + "°";
 				hourlyColumns += "<td>" + time + "<br>" + icon + "<br>" + temp + "<br>" + pop + "</td>"; 
@@ -263,4 +263,5 @@ $(document).ready(function () {
 // - Holiday Wallpapers
 // - Redo Wallpaper selection
 // - One-time holidays
+// - next full moon on tooltip
 */

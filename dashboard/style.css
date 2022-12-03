@@ -140,6 +140,7 @@ body {
 
 #weather-hourly-table td {
     width: 25%;
+    vertical-align:top;
     /*text-overflow: ellipsis;
     white-space: nowrap;*/
 }
