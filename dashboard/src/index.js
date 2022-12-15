@@ -163,7 +163,7 @@ $(document).ready(function () {
 
 			// Hourly
 			let hourlyColumns = "";
-			for (let i = 3; i < 15; i += 3){
+			for (let i = 3; i < 18; i += 3){
 				let hourlyUTC = new Date(result.hourly[i].dt * 1000);
 				let pt = prettyTime(hourlyUTC);
 				let time = pt.hour + " " + pt.ampm;
