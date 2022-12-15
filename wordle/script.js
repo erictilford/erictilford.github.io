@@ -39,6 +39,8 @@ $(document).ready(function () {
       output = output.replace(/\u2B1C/g, ws);
       output = output.replace(/#Heardle/g, "Heardle");
       output = output.replace(/[\r\n]+https:\/\/spotify.com\/heardle/g, "");
+      output = output.replace(/\?r=share/g, "");
+      
       $("#outputText").val(output);
     } 
 
