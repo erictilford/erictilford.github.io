@@ -194,7 +194,7 @@ body {
 
 .precip {
     font-size: small;
-    width: 60px;
+    max-width: 60px;
     line-height: 30px;
 
 }

@@ -193,7 +193,7 @@ const holidayArray = [
     },
     // DAY / DAY NAME HOLIDAYS
     {
-        "holiday_name": "Martin Luther King, Jr. Day", // Third Monday in Jan.
+        "holiday_name": "MLK Day", // Third Monday in Jan.
         "month": 1,
         "day_one": 15,
         "day_two": 21,

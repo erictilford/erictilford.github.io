@@ -200,7 +200,7 @@ $(document).ready(function () {
 				const low = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</td>";
 				let pop = "";
 				if (result.daily[i].pop == 0) {
-					pop = "<td></td>";
+					pop = "<td class='daily-temp precip'></td>";
 				} else {
 					pop = "<td class='daily-temp precip'><i style='filter: opacity(" + (result.daily[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
 				}
