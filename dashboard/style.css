@@ -194,9 +194,9 @@ body {
 
 .precip {
     font-size: small;
-    max-width: 60px;
+    width: 50px;
     line-height: 30px;
-
+    text-align: center;
 }
 
 .tray-icon {

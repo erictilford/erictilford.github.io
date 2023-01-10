@@ -200,9 +200,9 @@ $(document).ready(function () {
 				const low = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</td>";
 				let pop = "";
 				if (result.daily[i].pop == 0) {
-					pop = "<td class='daily-temp precip'></td>";
+					pop = "<td class='precip'></td>";
 				} else {
-					pop = "<td class='daily-temp precip'><i style='filter: opacity(" + (result.daily[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
+					pop = "<td class='precip'><i style='filter: opacity(" + (result.daily[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.daily[i].pop * 100) + "%</td>";
 				}
 				const row = "<tr>" + dayname + pop + icon + high + low + "</tr>";
 				$("#weather-table").append(row);
