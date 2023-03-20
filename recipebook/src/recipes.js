@@ -33,7 +33,7 @@ var data = [
         "recipe_name": "Baked Salmon",
         "summary": "Baked salmon with a crunchy, buttery, herby, lemony topping.",
         "ingredients": "2-3 salmon filets (~1 lb); 5 Tbs butter, melted; 1 tsp lemon zest; 1 Tbs lemon juice; 1 tsp salt / pepper; &frac34; cup panko breadcrumb; 3 cloves garlic, minced; 2 Tbs fresh parsley, minced; 2 Tbs grated Parmesan cheese; 1 Tbs fresh herb of choice, minced",
-        "directions": "Preheat oven to 400&deg;F.; In a bowl, combine panko, herbs, lemon zest, garlic, Parmesan, and 4 Tbs butter.; Add salmon to an oiled, foil-lined baking sheet or casserole dish.; Brush salmon with remaining butter, season with salt, pepper, and lemon juice.; Top salmon with breadcrumb mixture, spreading evenly and lightly packing down.; Cook 15-17 minutes or until flaky, or until internal temperature reaches 145&deg;F.; ",
+        "directions": "Preheat oven to 400&deg;F.; In a bowl, combine panko, herbs, lemon zest, garlic, Parmesan, and 4 Tbs butter.; Add salmon to an oiled, foil-lined baking sheet or casserole dish.; Brush salmon with remaining butter, season with salt, pepper, and lemon juice.; Top salmon with breadcrumb mixture, spreading evenly and lightly packing down.; Cook 15-17 minutes or until flaky, or until internal temperature reaches 145&deg;F.",
         "notes": "*Fish should not be cold or excessively wet.",
         "tags": "Dinner; Seafood",
         "hands_on_time": "25",
