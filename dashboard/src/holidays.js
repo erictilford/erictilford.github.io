@@ -64,6 +64,22 @@ const holidayArray = [
         "emoji": "&hearts;"
     },
     {
+        "holiday_name": "Mario Day",
+        "month": 3,
+        "day_one": 10,
+        "day_two": null,
+        "day": null,
+        "emoji": null
+    },
+    {
+        "holiday_name": "311 Day",
+        "month": 3,
+        "day_one": 11,
+        "day_two": null,
+        "day": null,
+        "emoji": null
+    },
+    {
         "holiday_name": "&Pi; Day",
         "month": 3,
         "day_one": 14,
