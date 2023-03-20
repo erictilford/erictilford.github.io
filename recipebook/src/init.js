@@ -43,10 +43,11 @@ function showInfo(results) {
         "Baking" : "#e0db90",
         "Italian" : "#c99393",
         "Tex-Mex" : "#ffc14f",
+        "Seafood" : "#81b0e3",
         "Guides" : "#bbbbbb",
+        "Breakfast" : "#ffe3a5",
         // OLD
         "Vegetarian" : "#228B22",
-        "Fish" : "#0062cc",
         "Fast Food" : "#495057",
         "Chinese" : "#dc3545"
     };

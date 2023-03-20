@@ -16,6 +16,48 @@ var data = [
     },
     */
     {
+        "recipe_name": "Pancakes",
+        "summary": "Classic pancakes!",
+        "ingredients": "1&frac12; cups all-purpose flour; 3&frac12; tsp baking powder; 1 Tbs sugar; &frac14; tsp salt; 1&frac14; cups milk; 3 Tbs butter, melted; 1 egg",
+        "directions": "Sift dry ingredients into a large bowl, and combine.; In a separate bowl, combine wet ingredients.; Make a well in the center of the dry mixture and add the wet mixture, mixing until smooth.; Heat non-stick griddle to medium-high.; Add batter in ~&frac14; cup scoops.; Cook 2-3 minutes per side until golden brown.",
+        "notes": "A pancake is the opposite of a pot pie.",
+        "tags": "Breakfast",
+        "hands_on_time": "30",
+        "total_time": "30",
+        "date_added": "3/19/2023",
+        "contributor": "Eric Tilford",
+        "serves": "2 cups mix / 8 pancakes",
+        "image": "pancakes.jpg"
+    },
+    {
+        "recipe_name": "Baked Salmon",
+        "summary": "Baked salmon with a crunchy, buttery, herby, lemony topping.",
+        "ingredients": "2-3 salmon filets (~1 lb); 5 Tbs butter, melted; 1 tsp lemon zest; 1 Tbs lemon juice; 1 tsp salt / pepper; &frac34; cup panko breadcrumb; 3 cloves garlic, minced; 2 Tbs fresh parsley, minced; 2 Tbs grated Parmesan cheese; 1 Tbs fresh herb of choice, minced",
+        "directions": "Preheat oven to 400&deg;F.; In a bowl, combine panko, herbs, lemon zest, garlic, Parmesan, and 4 Tbs butter.; Add salmon to an oiled, foil-lined baking sheet or casserole dish.; Brush salmon with remaining butter, season with salt, pepper, and lemon juice.; Top salmon with breadcrumb mixture, spreading evenly and lightly packing down.; Cook 15-17 minutes or until flaky, or until internal temperature reaches 145&deg;F.; ",
+        "notes": "*Fish should not be cold or excessively wet.",
+        "tags": "Dinner; Seafood",
+        "hands_on_time": "25",
+        "total_time": "45",
+        "date_added": "3/19/2023",
+        "contributor": "Eric Tilford",
+        "serves": "2-3 servings",
+        "image": "baked_salmon.jpg"
+    },
+    {
+        "recipe_name": "Italian Meatballs",
+        "summary": "Classic Italian meatballs!",
+        "ingredients": "1 cup panko breadcrumb; &frac13; cup milk; 1 lb ground beef; 1 lb ground pork; 4 cloves garlic, minced; 2 eggs; 1 cup grated Parmesan cheese; &frac14; cup fresh / 2-3 tsp dried herbs (parsley, basil, oregano); &frac14; cup grated onion; 2 tsp Worcestershire sauce; 1 tsp salt / pepper; &frac14; tsp crushed red pepper",
+        "directions": "Mix panko and milk in a bowl and set aside 5-10 minutes.; In a separate large bowl, add and mix remaining ingredients, then add panko mixture and combine until mixed well.; Cover bowl and chill for 30 minutes to 1 hour.; Preheat oven to 425&deg;F.; Form mixture into balls using a 2 Tbs scoop and arrange on a large parchment-lined baking sheet.; Cover with foil and cook 12 to 14 minutes or until internal temperature reaches 160&deg;F.",
+        "notes": "Serve with mom's spaghetti.",
+        "tags": "Dinner; Italian",
+        "hands_on_time": "45",
+        "total_time": "60",
+        "date_added": "3/19/2023",
+        "contributor": "Amber Tilford",
+        "serves": "~4 dozen meatballs",
+        "image": "meatballs.jpg"
+    },
+    {
         "recipe_name": "Tonkatsu",
         "summary": "Panko-breaded pork served with rice, cabbage, and a savory sauce.",
         "ingredients": "Pork tenderloin fillets*; &frac12; cup flour; 1 large egg; &frac12; cup panko breadcrumbs; salt and black pepper; [Katsu Sauce]; 3 Tbs Ketchup; 1&frac12; Tbs Worcestershire sauce; 1 Tbs soy sauce; 1 Tbs mirin; 1 Tbs honey; &frac12; tsp Dijon mustard; [Cabbage Salad]; &frac12; head cabbage, finely shredded (~1-1&frac12; quart); 3 Tbs Extra virgin olive oil; 1 Tbs mirin; 1 Tbs rice vinegar; 1 Tbs honey; 1 tsp sesame oil; &frac14; tsp salt and black pepper",
