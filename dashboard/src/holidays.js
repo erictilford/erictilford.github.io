@@ -291,6 +291,24 @@ const holidayArray = [
         "emoji": "&#127874;"
     },
     {
+        "holiday_name": "Xavier",
+        "month": 2,
+        "day_one": 16,
+        "day_two": null,
+        "day": null,
+        "year": 2022,
+        "emoji": "&#129473;"
+    },
+    {
+        "holiday_name": "Christina",
+        "month": 3,
+        "day_one": 24,
+        "day_two": null,
+        "day": null,
+        "year": 1988,
+        "emoji": "&#129473;"
+    },
+    {
         "holiday_name": "Debbie",
         "month": 9,
         "day_one": 13,
