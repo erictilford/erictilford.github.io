@@ -49,7 +49,7 @@ var data = [
         "ingredients": "1 cup panko breadcrumb; &frac13; cup milk; 1 lb ground beef; 1 lb ground pork; 4 cloves garlic, minced; 2 eggs; 1 cup grated Parmesan cheese; &frac14; cup fresh / 2-3 tsp dried herbs (parsley, basil, oregano); &frac14; cup grated onion; 2 tsp Worcestershire sauce; 1 tsp salt / pepper; &frac14; tsp crushed red pepper",
         "directions": "Mix panko and milk in a bowl and set aside 5-10 minutes.; In a separate large bowl, add and mix remaining ingredients, then add panko mixture and combine until mixed well.; Cover bowl and chill for 30 minutes to 1 hour.; Preheat oven to 425&deg;F.; Form mixture into balls using a 2 Tbs scoop and arrange on a large parchment-lined baking sheet.; Cover with foil and cook 12 to 14 minutes or until internal temperature reaches 160&deg;F.",
         "notes": "Serve with mom's spaghetti.",
-        "tags": "Dinner; Italian",
+        "tags": "Dinner; Appetizer; Italian",
         "hands_on_time": "45",
         "total_time": "60",
         "date_added": "3/19/2023",
