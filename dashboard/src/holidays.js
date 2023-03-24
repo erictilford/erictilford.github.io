@@ -318,7 +318,7 @@ const holidayArray = [
     {
         "holiday_name": "Christina",
         "month": 3,
-        "day_one": 24,
+        "day_one": 8,
         "day_two": null,
         "day": null,
         "year": 1988,
