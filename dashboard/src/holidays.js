@@ -225,6 +225,14 @@ const holidayArray = [
         "emoji": null
     },
     {
+        "holiday_name": "DST Begins", // Second Sunday in March
+        "month": 3,
+        "day_one": 8,
+        "day_two": 14,
+        "day": 0,
+        "emoji": "&#9193;"
+    },
+    {
         "holiday_name": "Mothers' Day", // Second Sunday in May
         "month": 5,
         "day_one": 8,
@@ -271,6 +279,14 @@ const holidayArray = [
         "day_two": 14,
         "day": 1,
         "emoji": "&#127993;"
+    },
+    {
+        "holiday_name": "DST Ends", // First Sunday in Nov.
+        "month": 11,
+        "day_one": 1,
+        "day_two": 7,
+        "day": 0,
+        "emoji": "&#9194;"
     },
     {
         "holiday_name": "Thanksgiving", // Fourth Thursday in Nov.
