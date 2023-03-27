@@ -80,6 +80,20 @@
                             <td>Zip Code</td>
                             <td style="float:right"><input onClick="this.select();" inputmode="numeric" class="text-input" type="text" style="width: 60px;" id="zipInput" name="zipInput" value="" maxlength="5"></td>
                         </tr>
+                        <tr>
+                            <td>Temperature Style</td>
+                            <td style="float:right">  
+                                <div class="btn-group btn-group-sm btn-group-toggle button-group-style" data-toggle="buttons">
+                                    <label class="btn btn-dark active" id="settings-button-temp-nodec">
+                                      <input type="radio" name="options" id="option-1" autocomplete="off" checked> 72&deg;
+                                    </label>
+                                    <label class="btn btn-dark" id="settings-button-temp-nodec">
+                                      <input type="radio" name="options" id="option-2" autocomplete="off"> 72.3&deg;
+                                    </label>
+                                  </div>
+                            </td>
+                        
+                        </tr>
                     </table>
                     <div style="text-align:center">
                         <button type="button" id="settings-apply-button" class="btn-sm btn-dark button-style">Save & Apply</button>

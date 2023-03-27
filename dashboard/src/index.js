@@ -137,22 +137,16 @@ $(document).ready(function () {
 	$("#settings-button").attr("title",  "Settings (S)" );
 	
 	$(document).on('keypress', function(e) {
-		var code = e.keyCode || e.which;
-		//console.log(code);
+		var code = e.keyCode || e.which; //console.log(code);
 		if (code == 115 ) { // S
 			$("#settings-panel").toggle(settingsPanelAnimationSpeed);
 		}
 	});
 
-	$("#settings-apply-button").click(function() { 
-		//let zipInput = $("#zipInput").val();
-		//validateZip();
-		ValidateAndSave();
-	});
+	$("#settings-apply-button").click(function() { ValidateAndSave(); });
 
-	$("#settings-close-button").click(function() { 
-		$("#settings-panel").hide(settingsPanelAnimationSpeed);
-	});
+	$("#settings-close-button").click(function() { $("#settings-panel").hide(settingsPanelAnimationSpeed); });
+	
 	function LoadSettings() {
 		let settings = JSON.parse(localStorage.getItem("settings"));
 		$("#zipInput").val(settings[0]);
@@ -161,7 +155,16 @@ $(document).ready(function () {
 
 	function SaveSettings () {
 		let zc = $("#zipInput").val();
-		const settings = [zc];
+
+		var td;
+		if ($("#settings-button-temp-nodec").hasClass("active")) {
+			let td = 0;
+		} 
+		else if ($("#settings-button-temp-nodec").hasClass("active")) {
+			let td = 1;
+		}
+		
+		const settings = [zc, td];
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
 	}
@@ -178,13 +181,8 @@ $(document).ready(function () {
 	function ValidateZip(){
 		{
 			var ex = /^[0-9]{5}$/;
-			if(ex.test($("#zipInput").val()))
-			{
-				return true;
-			} else {
-				return false;
-				//alert("ERROR: Zip Code must be a 5-digit number");
-			}
+			if(ex.test($("#zipInput").val())) { return true; } 
+			else { return false; }
 		}
 	}
 

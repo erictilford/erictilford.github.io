@@ -203,6 +203,24 @@ body {
     cursor: pointer;
 }
 
+.button-group-style {
+    border-radius: 5px;
+    background-color: none;
+    margin: auto;
+    cursor: pointer;
+    border: none;
+    padding-top: 5px;
+}
+.button-group-style > .btn {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+.button-group-style > label.active{
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    font-weight: bolder;
+    color: white;
+}
+
 .button-style:hover {
     background:rgba(0, 0, 0, 0.2);
 }
