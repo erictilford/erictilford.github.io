@@ -47,6 +47,13 @@ body {
     
 }
 
+#location-text {
+    font-size: small;
+    font-style: italic;
+    opacity: .5;
+    float: right;
+}
+
 #main-title {
     text-align: center;
     margin: auto;
