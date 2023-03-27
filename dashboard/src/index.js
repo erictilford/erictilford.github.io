@@ -146,28 +146,51 @@ $(document).ready(function () {
 
 	$("#settings-apply-button").click(function() { 
 		//let zipInput = $("#zipInput").val();
-		validateZip();
+		//validateZip();
+		ValidateAndSave();
 	});
 
 	$("#settings-close-button").click(function() { 
 		$("#settings-panel").hide(settingsPanelAnimationSpeed);
 	});
-	
-	function validateZip(){
+	function LoadSettings() {
+		let settings = JSON.parse(localStorage.getItem("settings"));
+		$("#zipInput").val(settings[0]);
+	}
+	LoadSettings();
+
+	function SaveSettings () {
+		let zc = $("#zipInput").val();
+		const settings = [zc];
+		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
+		localStorage.setItem("settings", JSON.stringify(settings));
+	}
+
+	function ValidateAndSave() {
+		if (ValidateZip() == false) {
+			alert("ERROR: Zip Code must be a 5-digit number");
+		} else {
+			SaveSettings();
+			LoadWeatherPanel($("#zipInput").val());
+		}
+	}
+
+	function ValidateZip(){
 		{
 			var ex = /^[0-9]{5}$/;
 			if(ex.test($("#zipInput").val()))
 			{
-				LoadWeatherPanel($("#zipInput").val());
+				return true;
 			} else {
-				alert("ERROR: Zip Code must be a 5-digit number");
+				return false;
+				//alert("ERROR: Zip Code must be a 5-digit number");
 			}
 		}
 	}
 
 	// WEATHER
 	// https://openweathermap.org/api/one-call-api
-	LoadWeatherPanel(73132);
+	LoadWeatherPanel($("#zipInput").val());
 	
 	function LoadWeatherPanel(zipCode) {
 		const lKey = config.LOCATION_API_KEY;
