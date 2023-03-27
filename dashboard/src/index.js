@@ -172,7 +172,7 @@ $(document).ready(function () {
 					let pt = prettyTime(currentUTC);
 					$("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
 					//Location text
-					$("#location-text").text(city + ", " + state /* + " " + zipCode */);
+					$("#location-text").html('<i class="fa-sm fa-solid fa-location-dot"></i> ' + city + ", " + state /* + " " + zipCode */);
 
 					// Hourly
 					let hourlyColumns = "";
