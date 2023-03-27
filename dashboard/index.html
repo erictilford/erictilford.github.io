@@ -22,7 +22,7 @@
     <div class="container">
         <div id="main-tray">
             <div class="row flex-column-reverse flex-lg-row">
-                <div id="panel-left">
+                <div id="panel-left" class="content-panel">
                     
                     <div id="links-div">
                         <ul id="video-list"></ul>
@@ -34,14 +34,17 @@
                         <ul id="audio-list"></ul>-->
                     </div>
                 </div>
-                <div id="panel-right">
+                <div id="panel-right" class="content-panel">
                     <!--div class="banner-div">
                     <img id="serugai-banner-mobile" class="brightness" src="assets/images/seruBanner.png">
                     </div-->
                     <h3><span id ="time-text"></span><span id="ampm-text"></span>
                         <span id="zodiac-symbol"></span>
                         <span id="smash-tourney" class="tray-icon-holder"></span>
-                        <span id="random-wallpaper-button" class="tray-icon-holder"></span></h3>
+                        <span id="random-wallpaper-button" class="tray-icon-holder"></span>
+                        <span id="settings-button" class="tray-icon-holder"></span>
+                    
+                    </h3>
                     <h5><span id ="date-text"></span></h5> 
                     <div id="holiday-names"></div>
                     <!--hr class="my-hr"-->
@@ -70,6 +73,8 @@
                     </table>
                     <hr class="my-hr mobile-hr">
                 </div>
+                <div id="settings-panel" class="content-panel"></div>
+                
             </div>
         </div>
     </div>

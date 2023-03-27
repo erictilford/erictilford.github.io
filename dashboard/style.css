@@ -68,19 +68,15 @@ body {
 }
 
 #panel-right {
-    position: absolute;
     right: 0;
     width: 360px;
-    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px 0 0 10px;
     padding: 8px 15px 15px;
 }
 
 #panel-left{
-    position: absolute;
     left: 0;
     width: 360px;
-    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 0 15px 15px 0;
     padding: 15px 15px 0px;
 }
@@ -89,6 +85,18 @@ body {
     cursor: pointer;
 }
 
+#settings-button {
+    cursor: pointer;
+}
+
+#settings-panel {
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 15px;
+    border-radius: 15px;
+    display: none;
+    min-width: 300px;
+}
 /*
 #serugai-banner {
     margin: -20px -50px 0;
@@ -177,6 +185,11 @@ body {
     width:100%;
 }
 */
+.content-panel {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+}
+
 .daily-temp {
     width: 45px;
     text-align: center;
@@ -274,6 +287,12 @@ body {
         position: unset;
     }
     
+    #settings-panel {
+        border-radius: 0;
+        width: 100%;
+        position: unset;
+        transform: none;
+    }
     .mobile-hr {
         display: block;
         margin-top: 2rem;

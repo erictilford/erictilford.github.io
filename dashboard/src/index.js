@@ -130,6 +130,23 @@ $(document).ready(function () {
 	$("#zodiac-symbol").text(zSign);
 	$("#zodiac-symbol").attr("title", zodiac(day, month) + ", " + zTitle);
 
+	// SETTINGS
+	$("#settings-button").html('<i class="fa-solid fa-sm fa-gear tray-icon" style="color:gray"></i>');
+    $("#settings-button").click(function() { $("#settings-panel").toggle(); });
+	$("#settings-button").attr("title",  "Settings" );
+
+	let settingsHTML = '<h5><center>Settings</center></h5><hr class="my-hr mobile-hr">'
+	$("#settings-panel").html(settingsHTML);
+	
+	$(document).on('keypress', function(e) {
+		var code = e.keyCode || e.which;
+		//console.log(code);
+		if (code == 115 ) { // S
+			$("#settings-panel").toggle();
+		}
+	});
+	
+
 	// WEATHER
 	// https://openweathermap.org/api/one-call-api
 	
