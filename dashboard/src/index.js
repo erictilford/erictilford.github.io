@@ -149,7 +149,12 @@ $(document).ready(function () {
 	
 	var tempDisplay;
 	function LoadSettings() {
-		let settings = JSON.parse(localStorage.getItem("settings"));
+		if (!localStorage.getItem("settings")) {
+			settings = [73132, 1]; // defaults
+		} else if (localStorage.getItem("settings")) {
+			settings = JSON.parse(localStorage.getItem("settings"));
+		}
+		
 		$("#zipInput").val(settings[0]);
 
 		tempDisplay = settings[1];
