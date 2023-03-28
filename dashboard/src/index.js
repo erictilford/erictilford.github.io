@@ -147,24 +147,34 @@ $(document).ready(function () {
 
 	$("#settings-close-button").click(function() { $("#settings-panel").hide(settingsPanelAnimationSpeed); });
 	
+	var tempDisplay;
 	function LoadSettings() {
 		let settings = JSON.parse(localStorage.getItem("settings"));
 		$("#zipInput").val(settings[0]);
+
+		tempDisplay = settings[1];
+		if (settings[1] == 0) {
+			$("#settings-button-temp-dec").removeClass("active");
+			$("#settings-button-temp-nodec").addClass("active");
+		} else if (settings[1] == 1) {
+			$("#settings-button-temp-dec").addClass("active");
+			$("#settings-button-temp-nodec").removeClass("active");
+		}
 	}
 	LoadSettings();
 
 	function SaveSettings () {
 		let zc = $("#zipInput").val();
 
-		var td;
+		//var td;
 		if ($("#settings-button-temp-nodec").hasClass("active")) {
-			let td = 0;
+			tempDisplay = 0;
 		} 
-		else if ($("#settings-button-temp-nodec").hasClass("active")) {
-			let td = 1;
+		else if ($("#settings-button-temp-dec").hasClass("active")) {
+			tempDisplay = 1;
 		}
 		
-		const settings = [zc, td];
+		const settings = [zc, tempDisplay];
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
 	}
@@ -208,7 +218,8 @@ $(document).ready(function () {
 					success: function (result) {
 
 						function OneDec(x) { // round to one decimal place
-							return Math.round(x * 10) / 10
+							y = 10 ** tempDisplay;
+							return Math.round(x * y) / y;
 						};
 
 						// Current temp
