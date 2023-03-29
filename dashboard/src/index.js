@@ -196,8 +196,7 @@ $(document).ready(function () {
 	function ValidateZip(){
 		{
 			var ex = /^[0-9]{5}$/;
-			if(ex.test($("#zipInput").val())) { return true; } 
-			else { return false; }
+			return ex.test($("#zipInput").val());
 		}
 	}
 
