@@ -253,7 +253,6 @@ $(document).ready(function () {
 							let alertBody = "";
 							let alertExpandButton = '<span id="alert-expand-button"><i class="fa-solid fa-caret-down"></i></span>'
 							for (let i = 0; i < result.alerts.length; i ++){
-								console.log(result.alerts[i]);
 								if (result.alerts[i].tags.includes("Snow/Ice")) {
 									icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>';
 								} else if (result.alerts[i].tags.includes("wind")) {
@@ -272,7 +271,6 @@ $(document).ready(function () {
 								}
 							}
 							$("#alert-window").html(alertBody);
-							//$("#alert-window").append(alertExpandButton);
 							$(".alert-hide").hide();
 							alertDetailsHidden = true;
 							$("#alert-expand-button").click(function() { ToggleAlertDetails() });
