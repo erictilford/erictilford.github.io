@@ -19,6 +19,23 @@ body {
     margin: -24px 0 -16px 0;
 }
 
+#alert-expand-button {
+    float: right;
+    font-size: medium;
+    color:rgba(255, 255, 255, 0.6);
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+#alert-window {
+    border: 2px solid indianred;
+    border-radius: 5px;
+    padding:5px;
+    font-size: small;
+    
+
+}
+
 #ampm-text {
     font-size: 70%;
 }

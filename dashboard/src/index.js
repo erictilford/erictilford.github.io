@@ -246,6 +246,52 @@ $(document).ready(function () {
 						//Location text
 						$("#location-text").html('<i class="fa-sm fa-solid fa-location-dot"></i> ' + city + ", " + state /* + " " + zipCode */);
 
+						// Alerts
+						if (result.alerts) {
+							$("#alert-panel").show();
+							$("#alert-icon").html('<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>');
+							let alertBody = "";
+							let alertExpandButton = '<span id="alert-expand-button"><i class="fa-solid fa-caret-down"></i></span>'
+							for (let i = 0; i < result.alerts.length; i ++){
+								console.log(result.alerts[i]);
+								if (result.alerts[i].tags.includes("Snow/Ice")) {
+									icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>';
+								} else if (result.alerts[i].tags.includes("wind")) {
+									icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>';
+								} else {
+									icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>';
+								}
+								let name = result.alerts[i].event;
+								let sender = '<u><span class="alert-hide"><br>' + result.alerts[i].sender_name + '</u></span>';
+								let desc = '<span class="alert-hide"><br>' + result.alerts[i].description + '</span>';
+
+								alertBody += icon + " " + name + alertExpandButton + sender + desc;
+						
+								if (i < result.alerts.length - 1) {
+									alertBody += "<br>";
+								}
+							}
+							$("#alert-window").html(alertBody);
+							//$("#alert-window").append(alertExpandButton);
+							$(".alert-hide").hide();
+							alertDetailsHidden = true;
+							$("#alert-expand-button").click(function() { ToggleAlertDetails() });
+						} else {
+							$("#alert-window").html("");
+							$("#alert-panel").hide();
+						}
+						
+						function ToggleAlertDetails() {
+							$(".alert-hide").toggle();
+							if (alertDetailsHidden) {
+								$("#alert-expand-button").html('<i class="fa-solid fa-caret-up"></i>');
+								alertDetailsHidden = false;
+							} else {
+								$("#alert-expand-button").html('<i class="fa-solid fa-caret-down"></i>');
+								alertDetailsHidden = true;
+							}
+						}
+
 						// Hourly
 						let hourlyColumns = "";
 						for (let i = 3; i < 18; i += 3){
