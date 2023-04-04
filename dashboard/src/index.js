@@ -74,13 +74,16 @@ $(document).ready(function () {
 	// RANDOM WALLPAPER BUTTON
 	$("#random-wallpaper-button").html('<i class="fa-regular fa-sm fa-image tray-icon" style="color:lightblue"></i>');
     $("#random-wallpaper-button").click(function() { setRandomWallpaper() });
-	$("#random-wallpaper-button").attr("title",  "Random Wallpaper (W)" );
+	$("#random-wallpaper-button").attr("title",  "Random Wallpaper" );
+
+	/* This breaks the City Name input functionality
 	$(document).on('keypress', function(e) {
 		var code = e.keyCode || e.which;
 		if (code == 119 ) { // W
 		  setRandomWallpaper();
 		}
 	});
+	*/
 
 	// SMASH TOURNEY STATUS
 
@@ -134,28 +137,30 @@ $(document).ready(function () {
 	const settingsPanelAnimationSpeed = 300;
 	$("#settings-button").html('<i class="fa-solid fa-sm fa-gear tray-icon" style="color:lightgray"></i>');
     $("#settings-button").click(function() { $("#settings-panel").toggle(settingsPanelAnimationSpeed); });
-	$("#settings-button").attr("title",  "Settings (S)" );
+	$("#settings-button").attr("title",  "Settings" );
 	
+	/* This breaks the City Name input functionality
 	$(document).on('keypress', function(e) {
 		var code = e.keyCode || e.which; //console.log(code);
 		if (code == 115 ) { // S
 			$("#settings-panel").toggle(settingsPanelAnimationSpeed);
 		}
 	});
+	*/
 
-	$("#settings-apply-button").click(function() { ValidateAndSave(); });
+	$("#settings-apply-button").click(function() { SaveAndReload(); });
 
 	$("#settings-close-button").click(function() { $("#settings-panel").hide(settingsPanelAnimationSpeed); });
 	
 	var tempDisplay;
 	function LoadSettings() {
 		if (!localStorage.getItem("settings")) {
-			settings = [73132, 1]; // defaults
+			settings = ["Oklahoma City", 1]; // defaults
 		} else if (localStorage.getItem("settings")) {
 			settings = JSON.parse(localStorage.getItem("settings"));
 		}
 		
-		$("#zipInput").val(settings[0]);
+		$("#locationInput").val(settings[0]);
 
 		tempDisplay = settings[1];
 		if (settings[1] == 0) {
@@ -169,9 +174,8 @@ $(document).ready(function () {
 	LoadSettings();
 
 	function SaveSettings () {
-		let zc = $("#zipInput").val();
+		let location = $("#locationInput").val();
 
-		//var td;
 		if ($("#settings-button-temp-nodec").hasClass("active")) {
 			tempDisplay = 0;
 		} 
@@ -179,43 +183,48 @@ $(document).ready(function () {
 			tempDisplay = 1;
 		}
 		
-		const settings = [zc, tempDisplay];
+		const settings = [location, tempDisplay];
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
 	}
 
-	function ValidateAndSave() {
-		if (ValidateZip() == false) {
-			alert("ERROR: Zip Code must be a 5-digit number");
-		} else {
-			SaveSettings();
-			LoadWeatherPanel($("#zipInput").val());
-		}
+	function SaveAndReload() {
+		SaveSettings();
+		LoadWeatherPanel($("#locationInput").val());
 	}
 
+	/*
 	function ValidateZip(){
 		{
 			var ex = /^[0-9]{5}$/;
 			return ex.test($("#zipInput").val());
 		}
 	}
+	*/
+
+	
+	$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
 
 	// WEATHER
 	// https://openweathermap.org/api/one-call-api
-	LoadWeatherPanel($("#zipInput").val());
+	LoadWeatherPanel($("#locationInput").val());
 	
-	function LoadWeatherPanel(zipCode) {
-		const lKey = config.LOCATION_API_KEY;
+	function LoadWeatherPanel(cityName) {
+		//const lKey = config.LOCATION_API_KEY;
+		const wKey = config.WEATHER_API_KEY;
+		const staticCity = "Oklahoma City";
 		$.ajax({ // Get location data from Zip Code
-			url: "https://thezipcodes.com/api/v1/search?zipCode=" + zipCode + "&countryCode=US&apiKey=" + lKey,
+			url: "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + wKey,
 			type: "GET",
 			success: function (result) {
-				let city = result.location[0].city;
-				let state = result.location[0].stateCode2;
-				let lat = Math.round(result.location[0].latitude * 100) / 100;
-				let long = Math.round(result.location[0].longitude * 100) / 100;
+				console.log(result[0]);
+				let city = result[0].name;
+				let state = result[0].state;
+				let country = result[0].country;
+				let lat = Math.round(result[0].lat * 100) / 100;
+				let long = Math.round(result[0].lon * 100) / 100;
 
-				const wKey = config.WEATHER_API_KEY;
+				
 				$.ajax({
 					url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&lang=en&units=imperial&appid=" + wKey,
 					type: "GET",
@@ -239,12 +248,21 @@ $(document).ready(function () {
 						const s =  /* todayHighTemp + "° / " + todayLowTemp + "°*/" (Feels like " + feelsLike + "°)";
 						$("#temp-text").text(s);
 
+						//Location text
+						if (country == "US") {
+							stateText = ", " + state;
+							countryText = "";
+						} else if (country != "US"){
+							countryText = ", " + country;
+							stateText = "";
+						}
+						$("#location-text").html('<i class="fa-sm fa-solid fa-location-dot"></i> ' + city + stateText + countryText /* + " " + zipCode */);
+
 						// Last updated text
 						let currentUTC = new Date(result.current.dt * 1000); // create a date from what the API provides
 						let pt = prettyTime(currentUTC);
 						$("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
-						//Location text
-						$("#location-text").html('<i class="fa-sm fa-solid fa-location-dot"></i> ' + city + ", " + state /* + " " + zipCode */);
+						
 
 						// Alerts
 						if (result.alerts) {
@@ -276,7 +294,6 @@ $(document).ready(function () {
 							$("#alert-icon-span").html(alertIcons);
 							$("#alert-window").html(alertBody);
 							$("#alert-panel").hide();
-							$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
 						} else {
 							$("#alert-window").html("");
 							$("#alert-panel").hide();
@@ -379,8 +396,6 @@ $(document).ready(function () {
 		});
 	 }
 
-
-	let zipCode = 73132;
 	
 	// YYYY/MM/DD Format
 	//var output = d.getFullYear() + '/' +

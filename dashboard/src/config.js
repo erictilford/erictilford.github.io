@@ -1,6 +1,6 @@
 var config = {
     WEATHER_API_KEY : 'bc038703ed9fdf90453fa1cf0930896d',
-    LOCATION_API_KEY : '29c1d60c90ef5f8a92fbfe5dca699b6a'
+    //LOCATION_API_KEY : '29c1d60c90ef5f8a92fbfe5dca699b6a'
 }
 
 // To get wallpaper list:
