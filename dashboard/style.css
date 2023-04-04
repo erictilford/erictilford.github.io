@@ -18,12 +18,18 @@ body {
     max-height: 72px;
     margin: -24px 0 -16px 0;
 }
-
+/*
 #alert-expand-button {
     float: right;
     font-size: medium;
     color:rgba(255, 255, 255, 0.6);
     padding-right: 3px;
+    cursor: pointer;
+}
+*/
+#alert-icon-span {
+    float: right;
+    font-size: medium;
     cursor: pointer;
 }
 
@@ -32,7 +38,12 @@ body {
     border-radius: 5px;
     padding:5px;
     font-size: small;
-    
+
+    background: rgb(0 , 0 , 0 , .9);
+    position: absolute;
+    max-width: calc(100% - 20px);
+    left: 10px;
+    z-index: 100;
 
 }
 
