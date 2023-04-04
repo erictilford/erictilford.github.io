@@ -202,7 +202,6 @@ $(document).ready(function () {
 	}
 	*/
 
-	
 	$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
 
 	// WEATHER
@@ -263,7 +262,6 @@ $(document).ready(function () {
 						let pt = prettyTime(currentUTC);
 						$("#last-updated-text").text("Last Updated " + pt.time + pt.ampm);
 						
-
 						// Alerts
 						if (result.alerts) {
 							$("#alert-panel").show();

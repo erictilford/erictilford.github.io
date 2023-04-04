@@ -45,6 +45,9 @@ body {
     left: 10px;
     z-index: 100;
 
+    overflow-x: hidden;
+    max-height: 500px;
+
 }
 
 #ampm-text {
@@ -389,3 +392,25 @@ body {
 .sepia { filter: sepia(100%); }
 .huerotate { filter: hue-rotate(180deg); }
 .rss.opacity { filter: opacity(30%); }
+
+/* Scrollbars /*
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255,255,255,0.2); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(255,255,255,0.4); 
+  }
