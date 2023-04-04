@@ -252,7 +252,7 @@ $(document).ready(function () {
 							let alertIcons = "";
 							let alertBody = "";
 							for (let i = 0; i < result.alerts.length; i ++){
-								//console.log(result.alerts[i].description);
+								console.log(result.alerts[i].tags);
 								if (result.alerts[i].tags.includes("Snow/Ice")) {
 									icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>';
 								} else if (result.alerts[i].tags.includes("Wind")) {
