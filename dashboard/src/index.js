@@ -229,7 +229,7 @@ $(document).ready(function () {
 					type: "GET",
 					success: function (result) {
 
-						function OneDec(x) { // round to one decimal place
+						function OneDec(x) { // rounds number (x) to (tempDisplay) decimal places
 							y = 10 ** tempDisplay;
 							return Math.round(x * y) / y;
 						};
@@ -405,8 +405,8 @@ $(document).ready(function () {
 // TODO 
 // - Custom weather icons -- https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 // - Yesterday's weather
-// - Alerts - https://openweathermap.org/api/one-call-api
-// - Settings icon / menu -- Weather location, etc.
+// - Alerts - https://openweathermap.org/api/one-call-api  - DONE
+// - Settings icon / menu -- Weather location, etc. - DONE
 // - Random dog API
 // - Holiday Wallpapers
 // - Redo Wallpaper selection
