@@ -223,7 +223,6 @@ $(document).ready(function () {
 				let lat = Math.round(result[0].lat * 100) / 100;
 				let long = Math.round(result[0].lon * 100) / 100;
 
-				
 				$.ajax({
 					url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&lang=en&units=imperial&appid=" + wKey,
 					type: "GET",
@@ -394,7 +393,6 @@ $(document).ready(function () {
 		});
 	 }
 
-	
 	// YYYY/MM/DD Format
 	//var output = d.getFullYear() + '/' +
 	//    ((''+month).length<2 ? '0' : '') + monthLong + '/' +
