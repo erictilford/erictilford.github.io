@@ -212,7 +212,7 @@ $(document).ready(function () {
 		//const lKey = config.LOCATION_API_KEY;
 		const wKey = config.WEATHER_API_KEY;
 		const staticCity = "Oklahoma City";
-		$.ajax({ // Get location data from Zip Code
+		$.ajax({ // Get location data from City Name
 			url: "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + wKey,
 			type: "GET",
 			success: function (result) {

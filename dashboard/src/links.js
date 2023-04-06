@@ -37,7 +37,7 @@ const links = [
     },
     {
         "title" : "LazyGoat",
-        "url" : "https://lazygoat.tv/multistream",
+        "url" : "https://lazygoat.tv/collection/y2sk7-nrAgbzRVHhFZUsyMEpvJEd/",
         "icon" : '<i class="fa-solid fa-2x fa-table-cells-large" style="color:#FD5205;"></i>',
         "target" : "#video-list"
     },
