@@ -197,7 +197,7 @@ $(document).ready(function () {
 	function ValidateZip(){
 		{
 			var ex = /^[0-9]{5}$/;
-			return ex.test($("#zipInput").val());
+			return ex.test($("#zipInput").val()); returns T/F
 		}
 	}
 	*/
@@ -378,6 +378,32 @@ $(document).ready(function () {
 						else if (pressure <= 1022.689 && pressure > 1009.144) { pressureName = "Normal"}
 						else if (pressure <= 1009.144) { pressureName = "Low"}
 						$("#weather-extra-pressure").html('<i class="fa-solid fa-lg fa-gauge weather-extra-icon" style="color:burlywood"></i><br>Air Pressure<br>' + pressureName + ' | ' + pressure + " hPa");
+
+						// Air quality | https://openweathermap.org/api/air-pollution
+						$.ajax({
+							url: "http://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + long + "&lang=en&units=imperial&appid=" + wKey,
+							type: "GET",
+							success: function (result) {
+								let aqi = result.list[0].main.aqi;
+								let aqicon = "fa-smog";
+								if (aqi == 1) { aqtext = "Good | "; aqcolor = "#6c82bf" }
+								else if (aqi == 2) { aqtext = "Fair | "; aqcolor = "#71b7aa" }
+								else if (aqi == 3) { aqtext = "Moderate | "; aqcolor = "#f5ae70" }
+								else if (aqi == 4) { aqtext = "Poor | "; aqcolor = "#cf9063" }
+								else if (aqi == 5) { aqtext = "Very Poor | "; aqcolor = "#9d60a1" }
+
+								$("#weather-extra-aqi").html('<i class="fa-solid fa-lg ' + aqicon + ' weather-extra-icon" style="color:' + aqcolor + '"></i><br>Air Quality<br>' + aqtext + aqi);
+								
+								let com = result.list[0].components;
+								let title = "CO : " + com.co + "\nNO : " + com.no + "\nNO2 : " + com.no2 + "\nO3 : " + com.o3 + "\nSO2 : " + com.so2 + "\nPM2.5 : " + com.pm2_5 + "\nPM10 : " + com.pm10 + "\nNH3 : " + com.nh3;
+								$("#weather-extra-aqi").attr("title",  title);
+								console.log(aqi);
+							},
+							error: function (error) {
+								console.log(error);
+							}
+						});
+
 					},
 					error: function (error) {
 						console.log(error);

@@ -318,6 +318,11 @@ body {
     vertical-align: bottom;
 }
 
+.weather-extra-row-3 {
+    padding-top: 21px;
+    vertical-align: bottom;
+}
+
 .weather-icon {
     margin: -10px 0 -8px 0;
 }
