@@ -381,7 +381,7 @@ $(document).ready(function () {
 
 						// Air quality | https://openweathermap.org/api/air-pollution
 						$.ajax({
-							url: "http://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + long + "&lang=en&units=imperial&appid=" + wKey,
+							url: "https://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + long + "&lang=en&units=imperial&appid=" + wKey,
 							type: "GET",
 							success: function (result) {
 								let aqi = result.list[0].main.aqi;
