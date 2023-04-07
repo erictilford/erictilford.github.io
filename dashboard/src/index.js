@@ -386,11 +386,11 @@ $(document).ready(function () {
 							success: function (result) {
 								let aqi = result.list[0].main.aqi;
 								let aqicon = "fa-smog";
-								if (aqi == 1) { aqtext = "Good | "; aqcolor = "#6c82bf" }
-								else if (aqi == 2) { aqtext = "Fair | "; aqcolor = "#71b7aa" }
-								else if (aqi == 3) { aqtext = "Moderate | "; aqcolor = "#f5ae70" }
-								else if (aqi == 4) { aqtext = "Poor | "; aqcolor = "#cf9063" }
-								else if (aqi == 5) { aqtext = "Very Poor | "; aqcolor = "#9d60a1" }
+								if (aqi == 1) { aqtext = "Good | "; aqcolor = "#eff5ff" }
+								else if (aqi == 2) { aqtext = "Fair | "; aqcolor = "#b8d4ff" }
+								else if (aqi == 3) { aqtext = "Moderate | "; aqcolor = "#82b3aa" } 
+								else if (aqi == 4) { aqtext = "Poor | "; aqcolor = "#cfa07f" }
+								else if (aqi == 5) { aqtext = "Very Poor | "; aqcolor = "#bc7bc1" }
 
 								$("#weather-extra-aqi").html('<i class="fa-solid fa-lg ' + aqicon + ' weather-extra-icon" style="color:' + aqcolor + '"></i><br>Air Quality<br>' + aqtext + aqi);
 								
