@@ -359,7 +359,7 @@ $(document).ready(function () {
 
 						$("#weather-extra-uv").html('<i class="fa-solid fa-lg ' + uvicon + ' weather-extra-icon" style="color:' + uvcolor + '"></i><br>UV Index<br>' + uvtext + result.current.uvi);
 						
-						// Wind speed
+						// Wind speed / gust
 						if ( result.current.wind_gust != undefined ) { gust = "-" + result.current.wind_gust; } 
 						else { gust = ""; }
 						$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind Speed<br>' + result.current.wind_speed + gust + ' mph');
@@ -410,9 +410,9 @@ $(document).ready(function () {
 							}
 						});
 
-						// Pollen
+						// Pollen | https://www.getambee.com/api-documentation??
 
-						// Cloudiness | 
+						// Cloudiness / Sunset & Sunrise?
 
 					},
 					error: function (error) {
