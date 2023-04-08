@@ -216,7 +216,7 @@ $(document).ready(function () {
 			url: "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + wKey,
 			type: "GET",
 			success: function (result) {
-				console.log(result[0]);
+				//console.log(result[0]);
 				let city = result[0].name;
 				let state = result[0].state;
 				let country = result[0].country;
@@ -391,7 +391,7 @@ $(document).ready(function () {
 							type: "GET",
 							success: function (result) {
 								let aqi = result.list[0].main.aqi;
-								let aqicon = "fa-smog";
+								let aqicon = "fa-lungs";
 								if (aqi == 1) { aqtext = "Good | "; aqcolor = "#eff5ff" }
 								else if (aqi == 2) { aqtext = "Fair | "; aqcolor = "#b8d4ff" }
 								else if (aqi == 3) { aqtext = "Moderate | "; aqcolor = "#82b3aa" } 
@@ -403,7 +403,7 @@ $(document).ready(function () {
 								let com = result.list[0].components;
 								let title = "CO : " + com.co + "\nNO : " + com.no + "\nNO2 : " + com.no2 + "\nO3 : " + com.o3 + "\nSO2 : " + com.so2 + "\nPM2.5 : " + com.pm2_5 + "\nPM10 : " + com.pm10 + "\nNH3 : " + com.nh3;
 								$("#weather-extra-aqi").attr("title",  title);
-								console.log(aqi);
+								//console.log(aqi);
 							},
 							error: function (error) {
 								console.log(error);
@@ -412,7 +412,18 @@ $(document).ready(function () {
 
 						// Pollen | https://www.getambee.com/api-documentation??
 
-						// Cloudiness / Sunset & Sunrise?
+						// Cloudiness
+						$("#weather-extra-clouds").html('<i class="fa-solid fa-lg fa-smog weather-extra-icon" style="color:aliceblue"></i><br>Cloudiness<br>' + result.current.clouds + '%');
+
+						// Sunrise / Sunset
+						let sunrise = new Date(result.current.sunrise * 1000); // create a date from what the API provides
+						let sunset = new Date(result.current.sunset * 1000); // create a date from what the API provides
+						let risetext = 'Sunrise | ' + prettyTime(sunrise).time + " " + prettyTime(sunrise).ampm;
+						let settext = 'Sunset |  ' + prettyTime(sunset).time + " " + prettyTime(sunset).ampm;
+						$("#weather-extra-sun").html('<i class="fa-solid fa-lg fa-sun weather-extra-icon" style="color:#c3a127"></i><br>' + risetext + '<br>' + settext);
+						console.log(sunrise.getDay());
+						console.log(sunset.getDay());
+
 
 					},
 					error: function (error) {
