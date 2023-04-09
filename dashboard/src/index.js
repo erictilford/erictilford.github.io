@@ -417,10 +417,10 @@ $(document).ready(function () {
 
 						// Sunrise / Sunset
 						let sunrise = new Date(result.current.sunrise * 1000); // create a date from what the API provides
-						let sunset = new Date(result.current.sunset * 1000); // create a date from what the API provides
-						let risetext = 'Sunrise | ' + prettyTime(sunrise).time + " " + prettyTime(sunrise).ampm;
-						let settext = 'Sunset |  ' + prettyTime(sunset).time + " " + prettyTime(sunset).ampm;
-						$("#weather-extra-sun").html('<i class="fa-solid fa-lg fa-sun weather-extra-icon" style="color:#c3a127"></i><br>' + risetext + '<br>' + settext);
+						let sunset = new Date(result.current.sunset * 1000); 
+						let riseSetText = prettyTime(sunrise).time + " " + prettyTime(sunrise).ampm + ' | ' + prettyTime(sunset).time + " " + prettyTime(sunset).ampm;
+						let riseSetIcon = "fa-solid fa-clock";
+						$("#weather-extra-sun").html('<i class="fa-lg ' + riseSetIcon + ' weather-extra-icon" style="color:lightgoldenrodyellow"></i><br>Sunrise | Sunset<br>' + riseSetText);
 
 					},
 					error: function (error) {
