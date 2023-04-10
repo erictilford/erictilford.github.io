@@ -441,7 +441,7 @@ $(document).ready(function () {
 
 	//TODO: X button, breed name, mobile layout
 
-	$("#widget-list").append('<a><li><i id="dog-button" class="fa-solid fa-dog fa-2x" style="color:gray"></i><br>Dog</li></a>');
+	$("#widget-list").append('<a id="dog-button"><li><i class="fa-solid fa-dog fa-2x" style="color:gray"></i><br>Dog</li></a>');
 	$("#dog-button").click(function() { 
 		$("#dog-panel").toggle(settingsPanelAnimationSpeed); 
 	});
