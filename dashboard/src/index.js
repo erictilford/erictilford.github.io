@@ -435,7 +435,55 @@ $(document).ready(function () {
 			}
 			
 		});
-	 }
+	}
+	 
+	// Dogs
+
+	//const li = '<li><i class="fa-solid fa-dog"></i><br>Dog</li>';
+	$("#widget-list").append('<a><li><i id="dog-button" class="fa-solid fa-dog fa-2x" style="color:gray"></i><br>Dog</li></a>');
+	$("#dog-button").click(function() { 
+		$("#dog-panel").toggle(settingsPanelAnimationSpeed); 
+	});
+	$("#dog-button").attr("title",  "Random Dog API" );
+	$.ajax({
+		url: "https://dog.ceo/api/breeds/list/all",
+		type: "GET",
+		success: function (result) {
+
+
+			//array = JSON.parse(result);
+			console.log(result.message);
+			console.log(Object.keys(result.message).length)
+			// build dog breed list
+			//for (i = 0; i<Object.keys(result.message).length; i++){
+			for ( var j in result.message) { // Get breeds
+				
+				//console.log(result.message[j].length);
+				let name = j.charAt(0).toUpperCase() + j.slice(1);
+
+				$("#dog-dropdown").append(' <option value="' + name + '">' + name + '</option>');
+				// <option value="1" selected="selected">Feature 1</option>
+				if (result.message[j].length != 0) {
+					for ( var k in result.message[j] ) { // Get sub-breeds
+						console.log(result.message[j][k]);
+						let name = result.message[j][k].charAt(0).toUpperCase() + result.message[j][k].slice(1);
+						let ascii = "&emsp;"
+						$("#dog-dropdown").append(' <option value="' + name + '">' + ascii + ' ' + name + '</option>');
+					}
+					//console.log(k);
+				}
+			}
+		},
+		error: function (error) {
+			console.log(error);
+		}
+	});
+
+
+
+
+
+
 
 	// YYYY/MM/DD Format
 	//var output = d.getFullYear() + '/' +
@@ -444,6 +492,7 @@ $(document).ready(function () {
 });
 
 /*
+
 // TODO 
 // - Custom weather icons -- https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 // - Yesterday's weather
@@ -452,7 +501,9 @@ $(document).ready(function () {
 // - Random dog API
 // - Holiday Wallpapers
 // - Redo Wallpaper selection
-// - One-time holidays
+// - One-time holidays / events (Easter, misc. reminders)
 // - next full moon on tooltip
 // - Statistics
+// - API Credits / Info
+
 */

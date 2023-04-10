@@ -54,6 +54,16 @@ body {
     font-size: 70%;
 }
 
+#dog-dropdown {
+    color:white;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+#dog-dropdown > option {
+    background-color:#111111;
+}
+
 #last-updated-text {
     float: right;
     font-size: small;
@@ -122,10 +132,6 @@ body {
 }
 
 #settings-panel {
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding: 15px;
-    border-radius: 15px;
     display: none;
     width: 300px;
 }
@@ -254,6 +260,13 @@ body {
 
 .button-style:hover {
     background:rgba(0, 0, 0, 0.2);
+}
+
+.center-panel {
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 15px;
+    border-radius: 15px;
 }
 
 .content-panel {
@@ -413,9 +426,12 @@ body {
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: rgb(255,255,255,0.2); 
+    
+    background: #444;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(255,255,255,0.4); 
+    background: #666;
   }

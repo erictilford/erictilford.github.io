@@ -25,6 +25,7 @@
                 <div id="panel-left" class="content-panel">
                     
                     <div id="links-div">
+                        <ul id="widget-list"></ul>
                         <ul id="video-list"></ul>
                         <!--h6>Tools</h6-->
                         <ul id="tools-list"></ul>
@@ -85,7 +86,32 @@
                     </table>
                     <hr class="my-hr mobile-hr">
                 </div>
-                <div id="settings-panel" class="content-panel">
+
+                <div id="dog-panel" class="content-panel center-panel">
+                    <h5 style="text-align:center">Random Dog</h5>
+                    <br>
+                    <!--
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-dark dropdown-toggle button-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="dog-breed-button-title"></span>
+                        </button>
+                        <div id="dog-dropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        </div>
+                    </div>
+                    -->
+                    <select id="dog-dropdown" class="bootstrap-select">
+                        <option value="all" selected="selected">All Breeds</option>
+                        <!--
+                        <option value="2">Feature 2</option>
+                        <option value="3">Feature 3</option>
+                        <option value="4">Feature 4</option>
+                        -->
+                      </select>
+                    <br>
+                    <div id="random-dog-image"></div>
+                </div>
+
+                <div id="settings-panel" class="content-panel center-panel">
                     <h5 style="text-align:center">Settings</h5>
                     <h6>Weather</h6>
                     <table id="settings-table">
