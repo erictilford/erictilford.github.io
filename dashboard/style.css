@@ -54,16 +54,6 @@ body {
     font-size: 70%;
 }
 
-#dog-dropdown {
-    color:white;
-    background-color: transparent;
-    border-radius: 5px;
-}
-
-#dog-dropdown > option {
-    background-color:#111111;
-}
-
 #last-updated-text {
     float: right;
     font-size: small;
@@ -121,6 +111,14 @@ body {
     width: 360px;
     border-radius: 0 15px 15px 0;
     padding: 15px 15px 0px;
+}
+
+#random-dog-image {
+    max-width: 500px;
+    border: 3px solid #ffffff;
+    margin-top: 5px;
+    border-radius: 10px;
+    display:none;
 }
 
 #random-wallpaper-button {
@@ -285,6 +283,20 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.dog-dropdown {
+    color:white;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.dog-dropdown > option {
+    background-color:#111111;
+}
+
+.dog-dropdown > option:disabled {
+    color:#666;
 }
 
 .mobile-hr {

@@ -437,9 +437,8 @@ $(document).ready(function () {
 		});
 	}
 	 
-	// Dogs
+	// Dogs | https://dog.ceo/dog-api/
 
-	//const li = '<li><i class="fa-solid fa-dog"></i><br>Dog</li>';
 	$("#widget-list").append('<a><li><i id="dog-button" class="fa-solid fa-dog fa-2x" style="color:gray"></i><br>Dog</li></a>');
 	$("#dog-button").click(function() { 
 		$("#dog-panel").toggle(settingsPanelAnimationSpeed); 
@@ -450,29 +449,66 @@ $(document).ready(function () {
 		type: "GET",
 		success: function (result) {
 
-
-			//array = JSON.parse(result);
-			console.log(result.message);
-			console.log(Object.keys(result.message).length)
-			// build dog breed list
-			//for (i = 0; i<Object.keys(result.message).length; i++){
 			for ( var j in result.message) { // Get breeds
-				
-				//console.log(result.message[j].length);
-				let name = j.charAt(0).toUpperCase() + j.slice(1);
-
-				$("#dog-dropdown").append(' <option value="' + name + '">' + name + '</option>');
-				// <option value="1" selected="selected">Feature 1</option>
-				if (result.message[j].length != 0) {
-					for ( var k in result.message[j] ) { // Get sub-breeds
-						console.log(result.message[j][k]);
-						let name = result.message[j][k].charAt(0).toUpperCase() + result.message[j][k].slice(1);
-						let ascii = "&emsp;"
-						$("#dog-dropdown").append(' <option value="' + name + '">' + ascii + ' ' + name + '</option>');
-					}
-					//console.log(k);
-				}
+				let name = j.charAt(0).toUpperCase() + j.slice(1); // capitalize
+				$("#dog-breed-dropdown").append(' <option value="' + name + '">' + name + '</option>'); // add option
 			}
+
+			$("#dog-breed-dropdown").change(function() {
+				$("#dog-sub-breed-dropdown").html("");
+				breed = $('#dog-breed-dropdown').find(":selected").text();
+				subBreeds = result.message[breed.toLowerCase()];
+				
+				if (breed == "All Breeds") {
+					let name = "All Sub-breeds";
+					console.log("WTF");
+					$("#dog-sub-breed-dropdown").append(' <option value="all"> ' + name + '</option>');
+				} else {
+					if (subBreeds.length > 1) {
+						$("#dog-sub-breed-dropdown").append(' <option value="all">All Sub-breeds (' + subBreeds.length + ')</option>');
+						for ( var k in subBreeds ) { // Get sub-breeds
+							subBreed = subBreeds[k]; 
+							let name = subBreed.charAt(0).toUpperCase() + subBreed.slice(1);
+							$("#dog-sub-breed-dropdown").append('<option value="' + name + '">' + name + '</option>');
+						}
+					} else if (subBreeds.length == 1) {
+						subBreed = subBreeds[0];
+						let name = subBreed.charAt(0).toUpperCase() + subBreed.slice(1);
+						$("#dog-sub-breed-dropdown").append(' <option value="' + name + '"> ' + name + '</option>');
+					} else if (subBreeds.length == 0) {
+						let name = "No Sub-breeds"
+						$("#dog-sub-breed-dropdown").append(' <option value="none"> ' + name + '</option>');
+					}
+				}
+			});
+
+			// button 
+			$("#random-dog-button").click(function() { 
+				breed = $('#dog-breed-dropdown').find(":selected").text();
+				if (breed == "All Breeds") {
+					str = "breeds/image/random";
+				} else {
+					subBreed = $('#dog-sub-breed-dropdown').find(":selected").text();
+					if (subBreed.includes("All Sub-breeds") | subBreed.includes("No Sub-breeds")) {
+						str = "breed/" + breed.toLowerCase() + "/images/random";
+					} else {
+						str = "breed/" + breed.toLowerCase() + "/" + subBreed.trim().toLowerCase() + "/images/random";
+					}
+				}
+				$.ajax({
+					url: "https://dog.ceo/api/" + str,
+					type: "GET",
+					crossDomain: true,
+					dataType: 'json',
+					success: function (result) {
+						$("#random-dog-image").attr("src", result.message);
+						$("#random-dog-image").show();
+					},
+					error: function (error) {
+						console.log(error);
+					}
+				});
+			});
 		},
 		error: function (error) {
 			console.log(error);
