@@ -515,7 +515,7 @@ $(document).ready(function () {
 						} else {
 							subBreed ="";
 						} 
-						if (breed == "Australian" ) { // for reverse-style breed names
+						if (breed == "Australian" | breed == "Finnish" ) { // for reverse-style breed names
 							breedName = breed.trim() + " " + subBreed.trim();
 						} 
 						else if (breed == "Germanshepherd" ) { breedName = "German Shepherd"; } 
@@ -532,6 +532,24 @@ $(document).ready(function () {
 						else if (breed == "Waterdog" ) { breedName = subBreed.trim() + " Water Dog"; } 
 						else if (breed == "African" ) { breedName = "African Wild Dog"; } 
 						else if (breed == "Shiba" ) { breedName = "Shiba Inu"; } 
+						else if (breed == "Appenzeller" ) { breedName = "Appenzeller Sennenhund"; } 
+						else if (breed == "Airedale" ) { breedName = "Airedale Terrier"; } 
+						else if (breed == "Bluetick" ) { breedName = "Bluetick Coonhound"; } 
+						else if (breed == "Bouvier" ) { breedName = "Bouvier des Flandres"; } 
+						else if (breed == "Bullterrier" ) { breedName = subBreed.trim() + " Bull Terrier"; } 
+						else if (breed == "Cattledog" ) { breedName = subBreed.trim() + " Cattle Dog"; } 
+						else if (breed == "Clumber" ) { breedName = "Clumber Spaniel"; }
+						else if (breed == "Redbone" ) { breedName = "Redbone Coonhound"; }
+						else if (breed == "Elkhound" ) { breedName = "Norwegian Elkhound"; }
+						else if (breed == "Eskimo" ) { breedName = "American Eskimo Dog"; }
+						else if (breed == "Groenendael" ) { breedName = "Groenendael (Belgian Sheepdog)"; }
+						else if (breed == "Kelpie" ) { breedName = "Australian Kelpie"; }
+						else if (breed == "Leonberg" ) { breedName = "Leonberger"; }
+						else if (breed == "Malamute" ) { breedName = "Alaskan Malamute"; }
+						else if (breed == "Malinois" ) { breedName = "Malinois (Belgian Shepherd)"; }
+						else if (breed == "Ovcharka" ) { breedName = "Ovcharka (Caucasian Shepherd)"; }
+						else if (breed == "Pekinese" ) { breedName = "Pekingese"; }
+						else if (breed == "Pyrenees" ) { breedName = "Great Pyrenees"; }
 						else {
 							breedName = subBreed.trim() + " " + breed.trim();
 						}
