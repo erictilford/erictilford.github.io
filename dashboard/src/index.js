@@ -135,7 +135,7 @@ $(document).ready(function () {
 
 	// SETTINGS
 	const settingsPanelAnimationSpeed = 300;
-	$("#settings-button").html('<i class="fa-solid fa-sm fa-gear tray-icon" style="color:lightgray"></i>');
+	$("#settings-button").html('<a href="#settings-panel"><i class="fa-solid fa-sm fa-gear tray-icon" style="color:lightgray"></i></a>');
     $("#settings-button").click(function() { $("#settings-panel").toggle(settingsPanelAnimationSpeed); });
 	$("#settings-button").attr("title",  "Settings" );
 	
@@ -267,12 +267,13 @@ $(document).ready(function () {
 							let alertBody = "";
 							for (let i = 0; i < result.alerts.length; i ++){
 								console.log(result.alerts[i].tags);
+								console.log("(^add me as a custom alert icon");
 
 								if (result.alerts[i].tags.includes("Snow/Ice")) { icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:indianred></i>'; } 
 								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>'; }
-								
+
 								let name = result.alerts[i].event;
 								let sender = '<u><br>' + result.alerts[i].sender_name + '</u>';
 								let desc = '<br><span style="white-space:pre-wrap">' + result.alerts[i].description + "</span>";
@@ -438,9 +439,10 @@ $(document).ready(function () {
 	 
 	// Dogs | https://dog.ceo/dog-api/
 
-	//TODO: X button, breed name, mobile layout
+	//TODO: breed name
 
-	$("#widget-list").append('<a href="#dog-panel" id="dog-button"><li><i class="fa-solid fa-dog fa-2x" style="color:gray"></i><br>Dog</li></a>');
+	$("#widget-list").append('<a href="#dog-panel" id="dog-button"><li><i class="fa-solid fa-dog fa-2x" style="color:gray"></i><br>Random Dog</li></a>');
+	$("#close-dog-button").click(function() { $("#dog-panel").hide(settingsPanelAnimationSpeed); });
 	$("#dog-button").click(function() { 
 		$("#dog-panel").toggle(settingsPanelAnimationSpeed); 
 	});
@@ -462,7 +464,6 @@ $(document).ready(function () {
 				
 				if (breed == "All Breeds") {
 					let name = "All Sub-breeds";
-					console.log("WTF");
 					$("#dog-sub-breed-dropdown").append(' <option value="all"> ' + name + '</option>');
 				} else {
 					if (subBreeds.length > 1) {
