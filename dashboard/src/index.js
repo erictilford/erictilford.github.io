@@ -267,13 +267,12 @@ $(document).ready(function () {
 							let alertBody = "";
 							for (let i = 0; i < result.alerts.length; i ++){
 								console.log(result.alerts[i].tags);
-								if (result.alerts[i].tags.includes("Snow/Ice")) {
-									icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>';
-								} else if (result.alerts[i].tags.includes("Wind")) {
-									icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>';
-								} else {
-									icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>';
-								}
+
+								if (result.alerts[i].tags.includes("Snow/Ice")) { icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>'; } 
+								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>'; } 
+								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:indianred></i>'; } 
+								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>'; }
+								
 								let name = result.alerts[i].event;
 								let sender = '<u><br>' + result.alerts[i].sender_name + '</u>';
 								let desc = '<br><span style="white-space:pre-wrap">' + result.alerts[i].description + "</span>";
