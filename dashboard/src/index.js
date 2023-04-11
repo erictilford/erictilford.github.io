@@ -505,6 +505,37 @@ $(document).ready(function () {
 					success: function (result) {
 						$("#random-dog-image").attr("src", result.message);
 						$("#random-dog-image").show();
+						// Get dog breed name
+						let dogURL = new URL(result.message); // build URL from response
+						let dogURLarray = dogURL.pathname.split("/"); // split pathname into array
+						let dogNames = dogURLarray[2].split("-"); // split breed and sub-breed
+						let breed = dogNames[0].charAt(0).toUpperCase() + dogNames[0].slice(1); // breed name
+						if (dogNames[1] && breed != "Mix") { // sub-breed name, if available
+							subBreed = dogNames[1].charAt(0).toUpperCase() + dogNames[1].slice(1); 
+						} else {
+							subBreed ="";
+						} 
+						if (breed == "Australian" ) { // for reverse-style breed names
+							breedName = breed.trim() + " " + subBreed.trim();
+						} 
+						else if (breed == "Germanshepherd" ) { breedName = "German Shepherd"; } 
+						else if (subBreed == "Germanlonghair" ) { breedName = "German Longhaired Pointer"; } 
+						else if (breed == "Pembroke" ) { breedName = "Pembroke Welsh Corgi"; } 
+						else if (breed == "Corgi" ) { breedName = "Cardigan Welsh Corgi"; } 
+						else if (breed == "Mountain" ) { breedName = subBreed.trim() + " Mountain Dog"; } 
+						else if (breed == "Stbernard" ) { breedName = "St. Bernard"; } 
+						else if (breed == "Cotondetulear" ) { breedName = "Coton de Tulear"; } 
+						else if (breed == "Entlebucher" ) { breedName = "Entlebucher Mountain Dog"; } 
+						else if (breed == "Lhasa" ) { breedName = "Lhasa Apso"; } 
+						else if (breed == "Mexicanhairless" ) { breedName = "Mexican Hairless (Xoloitzcuintle)"; } 
+						else if (breed == "Tervuren" ) { breedName = "Belgian Tervuren"; } 
+						else if (breed == "Waterdog" ) { breedName = subBreed.trim() + " Water Dog"; } 
+						else if (breed == "African" ) { breedName = "African Wild Dog"; } 
+						else {
+							breedName = subBreed.trim() + " " + breed.trim();
+						}
+						//console.log(breedName);
+						$("#dog-breed-name").html(breedName);
 					},
 					error: function (error) {
 						console.log(error);
