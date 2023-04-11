@@ -531,6 +531,7 @@ $(document).ready(function () {
 						else if (breed == "Tervuren" ) { breedName = "Belgian Tervuren"; } 
 						else if (breed == "Waterdog" ) { breedName = subBreed.trim() + " Water Dog"; } 
 						else if (breed == "African" ) { breedName = "African Wild Dog"; } 
+						else if (breed == "Shiba" ) { breedName = "Shiba Inu"; } 
 						else {
 							breedName = subBreed.trim() + " " + breed.trim();
 						}
