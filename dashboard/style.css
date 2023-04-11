@@ -54,6 +54,9 @@ body {
     font-size: 70%;
 }
 
+#dog-button {
+    cursor: pointer;
+}
 #last-updated-text {
     float: right;
     font-size: small;
@@ -289,6 +292,7 @@ body {
     color:white;
     background-color: transparent;
     border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .dog-dropdown > option {
@@ -395,8 +399,10 @@ body {
         width: 100%;
         position: unset;
     }
-    
-    #settings-panel {
+    #random-dog-image {
+        max-width: 100%;
+    }
+    .content-panel {
         border-radius: 0;
         width: 100%;
         position: unset;
