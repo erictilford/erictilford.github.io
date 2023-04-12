@@ -207,11 +207,15 @@ $(document).ready(function () {
 	}
 	*/
 
-	$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
+	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: breed name, fix "mix" bug
 
-	// WEATHER
-	// https://openweathermap.org/api/one-call-api
+	LoadDogAPI(settingsPanelAnimationSpeed);
+
+	// WEATHER | https://openweathermap.org/api/one-call-api
+
 	LoadWeatherPanel($("#locationInput").val());
+	
+	$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
 	
 	function LoadWeatherPanel(cityName) {
 		//const lKey = config.LOCATION_API_KEY;
@@ -442,11 +446,7 @@ $(document).ready(function () {
 		});
 	}
 	 
-	// Dogs | https://dog.ceo/dog-api/ | dog.js
-
-	//TODO: breed name
-
-	LoadDogAPI(settingsPanelAnimationSpeed);
+	
 
 
 
