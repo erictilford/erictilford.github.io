@@ -5,9 +5,14 @@ function LoadDogAPI(animSpeed) {
 		type: "GET",
 		success: function (result) {
 
-			$("#widget-list").append('<a href="#dog-panel" id="dog-button"><li><i class="fa-solid fa-paw fa-2x" style="color:lightblue"></i><br>Random Dog</li></a>');
+			$("#widget-list").append('<a id="dog-button"><li><i class="fa-solid fa-paw fa-2x" style="color:lightblue"></i><br>Random Dog</li></a>');
 			$("#close-dog-button").click(function() { $("#dog-panel").hide(animSpeed); });
-			$("#dog-button").click(function() {  $("#dog-panel").toggle(animSpeed); });
+			$("#dog-button").click(function() {  
+                $("#dog-panel").toggle(animSpeed); 
+                $('html,body').animate({
+                    scrollTop: $("#dog-panel").offset().top
+                 });
+            });
 			$("#dog-button").attr("title",  "Random Dog API" );
 
 			for ( var j in result.message) { // Get breeds
@@ -108,6 +113,14 @@ function LoadDogAPI(animSpeed) {
 						else if (breed == "Ovcharka" ) { breedName = "Ovcharka (Caucasian Shepherd)"; }
 						else if (breed == "Pekinese" ) { breedName = "Pekingese"; }
 						else if (breed == "Pyrenees" ) { breedName = "Great Pyrenees"; }
+                        else if (breed == "Terrier" && subBreed == "American" ) { breedName = "American Staffordshire Terrier"; } 
+                        else if (breed == "Terrier" && subBreed == "Dandie" ) { breedName = "Dandie Dinmont Terrier"; } 
+                        else if (breed == "Terrier" && subBreed == "Kerryblue" ) { breedName = "Kerry Blue Terrier"; } 
+                        else if (breed == "Terrier" && subBreed == "Scottish" ) { breedName = "Scottish Terrier (Scottie)"; } 
+                        else if (breed == "Terrier" && subBreed == "Toy" ) { breedName = "Toy Fox Terrier"; } 
+                        else if (breed == "Terrier" && subBreed == "Westhighland" ) { breedName = "West Highland White Terrier (Westie)"; } 
+                        else if (breed == "Terrier" && subBreed == "Wheaten" ) { breedName = "Soft-Coated Wheaten Terrier"; } 
+                        else if (breed == "Terrier" && subBreed == "Yorkshire" ) { breedName = "Yorkshire Terrier (Yorkie)"; } 
 						else {
 							breedName = subBreed.trim() + " " + breed.trim();
 						}

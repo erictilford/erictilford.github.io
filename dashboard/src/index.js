@@ -135,8 +135,13 @@ $(document).ready(function () {
 
 	// SETTINGS
 	const settingsPanelAnimationSpeed = 300;
-	$("#settings-button").html('<a href="#settings-panel"><i class="fa-solid fa-sm fa-gear tray-icon" style="color:lightgray"></i></a>');
-    $("#settings-button").click(function() { $("#settings-panel").toggle(settingsPanelAnimationSpeed); });
+	$("#settings-button").html('<i class="fa-solid fa-sm fa-gear tray-icon" style="color:lightgray"></i>');
+    $("#settings-button").click(function() { 
+		$("#settings-panel").toggle(settingsPanelAnimationSpeed); 
+		$('html,body').animate({
+			scrollTop: $("#dog-panel").offset().top
+		});
+	});
 	$("#settings-button").attr("title",  "Settings" );
 	
 	/* This breaks the City Name input functionality
