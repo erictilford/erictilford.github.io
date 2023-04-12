@@ -117,8 +117,8 @@ body {
 }
 
 #random-dog-image {
-    max-width: 500px;
-    max-height: 700px;
+    max-width: 100%;
+    max-height: 600px;
     border: 3px solid #ffffff;
     margin: 5px 0px;
     border-radius: 10px;
@@ -265,6 +265,7 @@ body {
 }
 
 .center-panel {
+    max-width: calc(100% - 730px);
     left: 50%;
     transform: translate(-50%, 0);
     padding: 15px;
@@ -362,6 +363,24 @@ body {
 }
 
 /* MEDIA CALLS */
+
+/* WORK IN PROGRESS
+@media only screen and (max-width: 988px) {
+
+    
+    #panel-left {
+        position: unset;
+    }
+    #panel-right {
+        position: unset;
+    }
+    .content-panel {
+        position: unset;
+        transform: none;
+    }
+}
+*/
+
 @media only screen and (max-width: 768px) {
 
     /*TABLET*/
@@ -402,6 +421,10 @@ body {
     }
     #random-dog-image {
         max-width: 100%;
+    }
+
+    .center-panel {
+        max-width: unset;
     }
     .content-panel {
         border-radius: 0;
