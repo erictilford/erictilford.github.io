@@ -447,32 +447,9 @@ $(document).ready(function () {
 	}
 	 
 	
+});
 
-
-
-
-
-
-
-	// YYYY/MM/DD Format
+// YYYY/MM/DD Format
 	//var output = d.getFullYear() + '/' +
 	//    ((''+month).length<2 ? '0' : '') + monthLong + '/' +
 	//    ((''+day).length<2 ? '0' : '') + day;
-});
-
-/*
-
-// TODO 
-// - Custom weather icons -- https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
-// - Yesterday's weather
-// - Alerts - https://openweathermap.org/api/one-call-api  - DONE
-// - Settings icon / menu -- Weather location, etc. - DONE
-// - Random dog API
-// - Holiday Wallpapers
-// - Redo Wallpaper selection
-// - One-time holidays / events (Easter, misc. reminders)
-// - next full moon on tooltip
-// - Statistics
-// - API Credits / Info
-
-*/

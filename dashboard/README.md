@@ -6,28 +6,33 @@ A project by Eric Tilford
 
 ## TODO
 
-- [ ] More links
-- [ ] Footer links
-- [ ] Holiday Theming
-- [x] Moon Phases
-- [X] Mobile layout improvement
+- [ ] Holiday theming
+- [ ] Update wallpapers
+- [ ] One-time holidays/events (Easter, etc.)
+- [ ] Statistics
+- [ ] API Credits / Info
+- [X] Update readme TODO
+- [X] Settings
+- [X] Random Dog API
 - Weather
-  - [x] Wind Direction
-  - [x] One more "Extra"
-  - [ ] Alerts
+  - [X] Alerts
   - [ ] Yesterday
-  - [ ] Refresh button
-  - [ ] Refresh "every"
+  - [ ] Auto-refresh setting
+  - [ ] Custom icons
+    - https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 
 ## Features
 
 ### Weather
 - 8-day weather report
+- Hourly forecast
 - UV index icon color based on level
 - Precipication icons opacity based on % chance
 - Wind speed & direction
 - Humidity & Air Pressure
 - Moon phases
+- Air quality index
+- Cloudiness, Sunrise / Sunset
 
 ### Holidays
 - Holiday bank including birthdays & anniversaries
@@ -39,4 +44,14 @@ A project by Eric Tilford
 - Tooltip includes name, nickname
 
 ### Links
-- Looking to implement deep linking for mobile links
+
+### Random Wallpaper Button
+
+### Settings
+- Weather
+  - Location Name
+  - Temperature display (decimal)
+
+### Random Dog API
+- Random dog image
+- Filter by breed, sub-breed
