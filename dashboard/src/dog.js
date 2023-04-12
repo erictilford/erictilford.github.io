@@ -122,6 +122,7 @@ function LoadDogAPI(animSpeed) {
                         else if (breed == "Terrier" && subBreed == "Wheaten" ) { breedName = "Soft-Coated Wheaten Terrier"; } 
                         else if (breed == "Terrier" && subBreed == "Yorkshire" ) { breedName = "Yorkshire Terrier (Yorkie)"; } 
                         else if (breed == "Hound" && subBreed == "Walker" ) { breedName = "Treeing Walker Coonhound"; } 
+						else if (breed == "Sheepdog" && subBreed == "Shetland" ) { breedName = "Shetland Sheepdog (Sheltie)"; } 
 						else {
 							breedName = subBreed.trim() + " " + breed.trim();
 						}
