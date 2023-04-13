@@ -22,7 +22,7 @@ function LoadDogAPI(animSpeed) {
 
 
 			// load dog settings
-			if (localStorage.getItem("dogSettings") && settings[2]) {
+			if (localStorage.getItem("dogSettings") && $("#rememberBreedCheckbox").is(":checked")) {
 				dogSettings = JSON.parse(localStorage.getItem("dogSettings"));
 				$("#dog-breed-dropdown option[value='" + dogSettings[0] + "']").attr('selected', 'selected');
 				LoadSubBreeds();
@@ -141,9 +141,8 @@ function LoadDogAPI(animSpeed) {
 						//console.log(breedName);
 						$("#dog-breed-name").html(breedName);
 
-
 						// save dog breed
-						if (settings[2]) {
+						if ($("#rememberBreedCheckbox").is(":checked")) {
 							let dogSettings = [$('#dog-breed-dropdown').find(":selected").text().trim(), $('#dog-sub-breed-dropdown').find(":selected").text().trim()];
 							localStorage.setItem("dogSettings", JSON.stringify(dogSettings));
 						}
@@ -161,4 +160,8 @@ function LoadDogAPI(animSpeed) {
 		}
 	});
 
+}
+
+function GetSetting(position){
+	return settings[position];
 }
