@@ -161,7 +161,7 @@ $(document).ready(function () {
 	var tempDisplay;
 	function LoadSettings() {
 		if (!localStorage.getItem("settings")) {
-			settings = ["Oklahoma City", 1]; // defaults
+			settings = ["Oklahoma City", 1, true]; // defaults
 		} else if (localStorage.getItem("settings")) {
 			settings = JSON.parse(localStorage.getItem("settings"));
 		}
@@ -176,6 +176,8 @@ $(document).ready(function () {
 			$("#settings-button-temp-dec").addClass("active");
 			$("#settings-button-temp-nodec").removeClass("active");
 		}
+		
+		if (settings[2] != undefined) { $("#rememberBreedCheckbox").prop("checked", settings[2]) } 
 	}
 	LoadSettings();
 
@@ -188,8 +190,10 @@ $(document).ready(function () {
 		else if ($("#settings-button-temp-dec").hasClass("active")) {
 			tempDisplay = 1;
 		}
+
+		rememberBreed = $("#rememberBreedCheckbox").is(":checked");
 		
-		const settings = [location, tempDisplay];
+		const settings = [location, tempDisplay, rememberBreed];
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
 	}
@@ -197,6 +201,10 @@ $(document).ready(function () {
 	function SaveAndReload() {
 		SaveSettings();
 		LoadWeatherPanel($("#locationInput").val());
+	}
+
+	function AccessSetting(position) {
+		return settings[position];
 	}
 
 	/*
@@ -208,7 +216,7 @@ $(document).ready(function () {
 	}
 	*/
 
-	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: breed name, fix "mix" bug
+	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: fix "mix" bug
 
 	LoadDogAPI(settingsPanelAnimationSpeed);
 
