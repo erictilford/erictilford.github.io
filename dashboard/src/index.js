@@ -439,7 +439,7 @@ $(document).ready(function () {
 	 
 	// Dogs | https://dog.ceo/dog-api/
 
-	//TODO: breed name
+	//TODO: breed name, save selection(s)
 
 	$("#widget-list").append('<a href="#dog-panel" id="dog-button"><li><i class="fa-solid fa-dog fa-2x" style="color:gray"></i><br>Random Dog</li></a>');
 	$("#close-dog-button").click(function() { $("#dog-panel").hide(settingsPanelAnimationSpeed); });
@@ -484,8 +484,7 @@ $(document).ready(function () {
 				}
 			});
 
-			// button 
-			$("#random-dog-button").click(function() { 
+			$("#random-dog-button").click(function() { // button
 				breed = $('#dog-breed-dropdown').find(":selected").text();
 				if (breed == "All Breeds") {
 					str = "breeds/image/random";
