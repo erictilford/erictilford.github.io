@@ -135,8 +135,13 @@ $(document).ready(function () {
 
 	// SETTINGS
 	const settingsPanelAnimationSpeed = 300;
-	$("#settings-button").html('<a href="#settings-panel"><i class="fa-solid fa-sm fa-gear tray-icon" style="color:lightgray"></i></a>');
-    $("#settings-button").click(function() { $("#settings-panel").toggle(settingsPanelAnimationSpeed); });
+	$("#settings-button").html('<i class="fa-solid fa-sm fa-gear tray-icon" style="color:lightgray"></i>');
+    $("#settings-button").click(function() { 
+		$("#settings-panel").toggle(settingsPanelAnimationSpeed); 
+		$('html,body').animate({
+			scrollTop: $("#dog-panel").offset().top
+		});
+	});
 	$("#settings-button").attr("title",  "Settings" );
 	
 	/* This breaks the City Name input functionality
@@ -202,11 +207,15 @@ $(document).ready(function () {
 	}
 	*/
 
-	$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
+	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: breed name, fix "mix" bug
 
-	// WEATHER
-	// https://openweathermap.org/api/one-call-api
+	LoadDogAPI(settingsPanelAnimationSpeed);
+
+	// WEATHER | https://openweathermap.org/api/one-call-api
+
 	LoadWeatherPanel($("#locationInput").val());
+	
+	$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
 	
 	function LoadWeatherPanel(cityName) {
 		//const lKey = config.LOCATION_API_KEY;
@@ -437,110 +446,10 @@ $(document).ready(function () {
 		});
 	}
 	 
-	// Dogs | https://dog.ceo/dog-api/
+	
+});
 
-	//TODO: breed name, save selection(s)
-
-	$("#widget-list").append('<a href="#dog-panel" id="dog-button"><li><i class="fa-solid fa-dog fa-2x" style="color:gray"></i><br>Random Dog</li></a>');
-	$("#close-dog-button").click(function() { $("#dog-panel").hide(settingsPanelAnimationSpeed); });
-	$("#dog-button").click(function() { 
-		$("#dog-panel").toggle(settingsPanelAnimationSpeed); 
-	});
-	$("#dog-button").attr("title",  "Random Dog API" );
-	$.ajax({
-		url: "https://dog.ceo/api/breeds/list/all",
-		type: "GET",
-		success: function (result) {
-
-			for ( var j in result.message) { // Get breeds
-				let name = j.charAt(0).toUpperCase() + j.slice(1); // capitalize
-				$("#dog-breed-dropdown").append(' <option value="' + name + '">' + name + '</option>'); // add option
-			}
-
-			$("#dog-breed-dropdown").change(function() {
-				$("#dog-sub-breed-dropdown").html("");
-				breed = $('#dog-breed-dropdown').find(":selected").text();
-				subBreeds = result.message[breed.toLowerCase()];
-				
-				if (breed == "All Breeds") {
-					let name = "All Sub-breeds";
-					$("#dog-sub-breed-dropdown").append(' <option value="all"> ' + name + '</option>');
-				} else {
-					if (subBreeds.length > 1) {
-						$("#dog-sub-breed-dropdown").append(' <option value="all">All Sub-breeds (' + subBreeds.length + ')</option>');
-						for ( var k in subBreeds ) { // Get sub-breeds
-							subBreed = subBreeds[k]; 
-							let name = subBreed.charAt(0).toUpperCase() + subBreed.slice(1);
-							$("#dog-sub-breed-dropdown").append('<option value="' + name + '">' + name + '</option>');
-						}
-					} else if (subBreeds.length == 1) {
-						subBreed = subBreeds[0];
-						let name = subBreed.charAt(0).toUpperCase() + subBreed.slice(1);
-						$("#dog-sub-breed-dropdown").append(' <option value="' + name + '"> ' + name + '</option>');
-					} else if (subBreeds.length == 0) {
-						let name = "No Sub-breeds"
-						$("#dog-sub-breed-dropdown").append(' <option value="none"> ' + name + '</option>');
-					}
-				}
-			});
-
-			$("#random-dog-button").click(function() { // button
-				breed = $('#dog-breed-dropdown').find(":selected").text();
-				if (breed == "All Breeds") {
-					str = "breeds/image/random";
-				} else {
-					subBreed = $('#dog-sub-breed-dropdown').find(":selected").text();
-					if (subBreed.includes("All Sub-breeds") | subBreed.includes("No Sub-breeds")) {
-						str = "breed/" + breed.toLowerCase() + "/images/random";
-					} else {
-						str = "breed/" + breed.toLowerCase() + "/" + subBreed.trim().toLowerCase() + "/images/random";
-					}
-				}
-				$.ajax({
-					url: "https://dog.ceo/api/" + str,
-					type: "GET",
-					crossDomain: true,
-					dataType: 'json',
-					success: function (result) {
-						$("#random-dog-image").attr("src", result.message);
-						$("#random-dog-image").show();
-					},
-					error: function (error) {
-						console.log(error);
-					}
-				});
-			});
-		},
-		error: function (error) {
-			console.log(error);
-		}
-	});
-
-
-
-
-
-
-
-	// YYYY/MM/DD Format
+// YYYY/MM/DD Format
 	//var output = d.getFullYear() + '/' +
 	//    ((''+month).length<2 ? '0' : '') + monthLong + '/' +
 	//    ((''+day).length<2 ? '0' : '') + day;
-});
-
-/*
-
-// TODO 
-// - Custom weather icons -- https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
-// - Yesterday's weather
-// - Alerts - https://openweathermap.org/api/one-call-api  - DONE
-// - Settings icon / menu -- Weather location, etc. - DONE
-// - Random dog API
-// - Holiday Wallpapers
-// - Redo Wallpaper selection
-// - One-time holidays / events (Easter, misc. reminders)
-// - next full moon on tooltip
-// - Statistics
-// - API Credits / Info
-
-*/
