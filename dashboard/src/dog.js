@@ -20,6 +20,7 @@ function LoadDogAPI(animSpeed) {
 				$("#dog-breed-dropdown").append(' <option value="' + name + '">' + name + '</option>'); // add option
 			}
 
+
 			// load dog settings
 			if (!localStorage.getItem("dogSettings")) {
 				dogSettings = ["Schnauzer", "Miniature"]; // defaults
@@ -28,14 +29,10 @@ function LoadDogAPI(animSpeed) {
 			}
 			$("#dog-breed-dropdown option[value='" + dogSettings[0] + "']").attr('selected', 'selected');
 			LoadSubBreeds();
-			//$("#dog-sub-breed-dropdown").val(dogSettings[1]);
-
 			$("#dog-sub-breed-dropdown option[value='" + dogSettings[1] + "']").attr('selected', 'selected');
-			console.log(dogSettings[1].trim());
+			//
 
-			$("#dog-breed-dropdown").change(function() {
-				LoadSubBreeds();
-			});
+			$("#dog-breed-dropdown").change(function() { LoadSubBreeds(); });
 
 			function LoadSubBreeds() { 
 				$("#dog-sub-breed-dropdown").html("");
@@ -150,7 +147,8 @@ function LoadDogAPI(animSpeed) {
 						// save dog breed
 						let dogSettings = [$('#dog-breed-dropdown').find(":selected").text().trim(), $('#dog-sub-breed-dropdown').find(":selected").text().trim()];
 						localStorage.setItem("dogSettings", JSON.stringify(dogSettings));
-						
+						//
+
 					},
 					error: function (error) {
 						console.log(error);
