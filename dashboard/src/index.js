@@ -136,7 +136,11 @@ $(document).ready(function () {
 
 	// SETTINGS
 	const settingsPanelAnimationSpeed = 300;
-	$("#settings-button").html('<i class="fa-solid fa-sm fa-gear tray-icon" style="color:lightgray"></i>');
+
+	icon = 'fa-solid fa-gear" style="color:lightgray';
+	$("#settings-title").append(' <i class=" ' + icon + '">');
+
+	$("#settings-button").html('<i class=" fa-sm tray-icon ' + icon + '"></i>');
     $("#settings-button").click(function() { 
 		$("#settings-panel").toggle(settingsPanelAnimationSpeed); 
 		$('html,body').animate({
@@ -216,7 +220,7 @@ $(document).ready(function () {
 	}
 	*/
 
-	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: fix "mix" bug
+	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: fix "mix" bug, load dog on open option
 
 	LoadDogAPI(settingsPanelAnimationSpeed);
 

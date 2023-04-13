@@ -4,8 +4,9 @@ function LoadDogAPI(animSpeed) {
 		url: "https://dog.ceo/api/breeds/list/all",
 		type: "GET",
 		success: function (result) {
-
-			$("#widget-list").append('<a id="dog-button"><li><i class="fa-solid fa-paw fa-2x" style="color:lightblue"></i><br>Random Dog</li></a>');
+			icon = 'fa-solid fa-paw " style="color:lightblue';
+			$("#random-dog-title").append(' <i class=" ' + icon + '">');
+			$("#widget-list").append('<a id="dog-button"><li><i class="fa-2x ' + icon + '"></i><br>Random Dog</li></a>');
 			$("#close-dog-button").click(function() { $("#dog-panel").hide(animSpeed); });
 			$("#dog-button").click(function() {  
                 $("#dog-panel").toggle(animSpeed); 
