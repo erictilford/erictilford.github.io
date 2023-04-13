@@ -103,6 +103,7 @@ const holidayArray = [
         "day": null,
         "emoji": "&#127183;"
     },
+    /*
     {
         "holiday_name": "4:20",
         "month": 4,
@@ -111,6 +112,7 @@ const holidayArray = [
         "day": null,
         "emoji": "&#127807;"
     },
+    */
     {
         "holiday_name": "Earth Day",
         "month": 4,

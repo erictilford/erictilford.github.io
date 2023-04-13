@@ -111,7 +111,7 @@
                 <div id="settings-panel" class="content-panel center-panel">
                     <h5 style="text-align:center">Settings</h5>
                     <h6>Weather</h6>
-                    <table id="settings-table">
+                    <table class="settings-table">
                         <tr>
                             <td>Location</td>
                             <td style="float:right"><input onClick="this.select();" class="text-input" type="text" style="width: 150px;" id="locationInput" name="locationInput" value="" maxlength="100"></td>
@@ -129,6 +129,20 @@
                                   </div>
                             </td>
                         
+                        </tr>
+                    </table>
+                    <h6>Dogs</h6>
+                    <table class="settings-table">
+                        <tr>
+                            <td>Remember Breed</td>
+                            <td style="float:right">
+                                <!--input type="checkbox" id="rememberBreedcheckbox" name="rememberBreedcheckbox" value=""-->
+                                <label class="checkboxContainer">
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>  
+                            </td>
+                                  
                         </tr>
                     </table>
                     <div style="text-align:center">
