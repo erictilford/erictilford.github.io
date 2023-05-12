@@ -294,6 +294,7 @@ $(document).ready(function () {
 								if (result.alerts[i].tags.includes("Snow/Ice")) { icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:indianred></i>'; } 
+								else if (result.alerts[i].tags.includes("Tornado")) { icon = '<i class="fa-solid fa-tornado"; style=color:indianred></i>'; } 
 								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>'; }
 
 								let name = result.alerts[i].event;
