@@ -96,9 +96,9 @@ const links = [
         "target" : "#tools-list"
     },
     {
-        "title" : "Heardle",
-        "url" : "https://www.heardle.app",
-        "icon" : '<i class="fa-solid fa-2x fa-ear-listen" style="color:#20af53"></i>',
+        "title" : "ChatGPT",
+        "url" : "https://chat.openai.com/",
+        "icon" : '<i class="fa-solid fa-2x fa-comments" style="color:#20af53"></i>',
         "target" : "#tools-list"
     },
     {
