@@ -98,7 +98,7 @@ const links = [
     {
         "title" : "ChatGPT",
         "url" : "https://chat.openai.com/",
-        "icon" : '<i class="fa-solid fa-2x fa-comments" style="color:#20af53"></i>',
+        "icon" : '<i class="fa-regular fa-2x fa-comments" style="color:#71a699"></i>',
         "target" : "#tools-list"
     },
     {
