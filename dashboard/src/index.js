@@ -389,8 +389,8 @@ $(document).ready(function () {
 						
 						// Humidity / Dewpoint
 						let humidity = result.current.humidity;
-						let dewpoint = result.current.dewpoint;
-						$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity<br>' + result.current.humidity + '%');
+						let dewpoint = Math.round(result.current.dew_point);
+						$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity | ' + humidity + '%<br>Dew Point | ' + dewpoint + "&deg;");
 						console.log(dewpoint);
 
 						// Moon phases | moon.js
