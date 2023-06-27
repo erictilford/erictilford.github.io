@@ -295,6 +295,7 @@ $(document).ready(function () {
 								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Tornado")) { icon = '<i class="fa-solid fa-tornado"; style=color:indianred></i>'; } 
+								else if (result.alerts[i].tags.includes("Extreme temperature value")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:indianred></i>'; } 
 								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>'; }
 
 								let name = result.alerts[i].event;
@@ -386,8 +387,11 @@ $(document).ready(function () {
 						else { gust = ""; }
 						$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind Speed<br>' + result.current.wind_speed + gust + ' mph');
 						
-						// Humidity
+						// Humidity / Dewpoint
+						let humidity = result.current.humidity;
+						let dewpoint = result.current.dewpoint;
 						$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity<br>' + result.current.humidity + '%');
+						console.log(dewpoint);
 
 						// Moon phases | moon.js
 						let moonPhase = result.daily[0].moon_phase;
