@@ -154,7 +154,7 @@ const holidayArray = [
         "emoji": "&#9994;&#127999;"
     },
     {
-        "holiday_name": "Independence Day",
+        "holiday_name": "July 4<sup>th</sup>",
         "month": 7,
         "day_one": 4,
         "day_two": null,
