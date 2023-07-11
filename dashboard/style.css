@@ -442,6 +442,16 @@ body {
         line-height: 0.8;
     }
 }
+
+/* HEIGHT - tray positioning*/
+@media only screen and (max-height: 768px) {
+
+    #main-tray {
+        margin: 0;
+    }
+
+}
+
 /*Filter styles*/
 .saturate { filter: saturate(3); }
 .grayscale { filter: grayscale(100%); }
