@@ -387,10 +387,21 @@ $(document).ready(function () {
 						else { gust = ""; }
 						$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind Speed<br>' + result.current.wind_speed + gust + ' mph');
 						
-						// Humidity / Dewpoint
+						// Humidity
 						let humidity = result.current.humidity;
+						$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity<br>' + humidity + '%');
+						
+						// Dewpoint
 						let dewpoint = Math.round(result.current.dew_point);
-						$("#weather-extra-humidity").html('<i class="fa-solid fa-lg fa-droplet weather-extra-icon" style="color:cornflowerblue"></i><br>Humidity | ' + humidity + '%<br>Dew Point | ' + dewpoint + "&deg;");
+						let dewpointColor = "";
+						let dewpointIcon = "";
+						let dewpointText = "";
+						if (dewpoint < 60) { dewpointColor = "aliceblue"; dewpointIcon = "fa-temperature-empty"; dewpointText = "Pleasant"}
+						else if (dewpoint >= 60 && dewpoint < 65) { dewpointColor = "khaki"; dewpointIcon = "fa-temperature-quarter"; dewpointText = "Sticky"}
+						else if (dewpoint >= 65 && dewpoint < 70) { dewpointColor = "goldenrod"; dewpointIcon = "fa-temperature-half"; dewpointText = "Uncomfortable"}
+						else if (dewpoint >= 70 && dewpoint < 75) { dewpointColor = "orangered"; dewpointIcon = "fa-temperature-three-quarters"; dewpointText = "Opressive"}
+						else if (dewpoint >= 75) { dewpointColor = "crimson"; dewpointIcon = "fa-temperature-full"; dewpointText = "Miserable"}
+						$("#weather-extra-dewpoint").html('<i class="fa-solid fa-lg ' + dewpointIcon + ' weather-extra-icon" style="color:' + dewpointColor + '"></i><br>Dewpoint<br>' + dewpoint + "&deg; | " + dewpointText);
 
 						// Moon phases | moon.js
 						let moonPhase = result.daily[0].moon_phase;
