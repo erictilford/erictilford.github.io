@@ -64,7 +64,7 @@ $(document).ready(function () {
 			'ampm': ampm
 		}
 	}
-	function updateClock() {
+	function updateClock() { // update clock every minute
 		let pt = prettyTime(new Date());
 		$("#time-text").text(pt.time);
 		$("#ampm-text").text(pt.ampm);
@@ -229,6 +229,28 @@ $(document).ready(function () {
 	LoadWeatherPanel($("#locationInput").val());
 	
 	$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
+
+	
+	// weather auto-refresher
+
+	function autoRefreshWeather() { // update clock every minute
+		let refreshDuration = .2; // 1 minute
+		setTimeout(weatherRefresherSetup, 1000 * 60 * refreshDuration);
+		
+		function weatherRefresherSetup() {
+			// temp settings 
+			if (!localStorage.getItem("settings")) {
+				tempSettings = ["Oklahoma City", 1, true]; // defaults
+			} else if (localStorage.getItem("settings")) {
+				tempSettings = JSON.parse(localStorage.getItem("settings"));
+			}
+			LoadWeatherPanel(tempSettings[0]);
+			autoRefreshWeather();
+		}
+		
+	}
+	autoRefreshWeather();
+	
 	
 	function LoadWeatherPanel(cityName) {
 		//const lKey = config.LOCATION_API_KEY;
