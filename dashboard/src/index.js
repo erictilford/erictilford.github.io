@@ -15,6 +15,10 @@ $(document).ready(function () {
 	}).fadeTo('slow', 1);
 	*/
 
+	
+
+	
+
 	// LINKS | config.js
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
@@ -64,7 +68,7 @@ $(document).ready(function () {
 			'ampm': ampm
 		}
 	}
-	function updateClock() { // update clock every minute
+	function updateClock() {
 		let pt = prettyTime(new Date());
 		$("#time-text").text(pt.time);
 		$("#ampm-text").text(pt.ampm);
@@ -165,7 +169,7 @@ $(document).ready(function () {
 	var tempDisplay;
 	function LoadSettings() {
 		if (!localStorage.getItem("settings")) {
-			settings = ["Oklahoma City", 1, true]; // defaults
+			settings = ["Oklahoma City", 1, true, true, 5]; // DEFAULTS: Weather location, temp style, remember breed, weather auto refresh, <= duration
 		} else if (localStorage.getItem("settings")) {
 			settings = JSON.parse(localStorage.getItem("settings"));
 		}
@@ -182,8 +186,13 @@ $(document).ready(function () {
 		}
 		
 		if (settings[2] != undefined) { $("#rememberBreedCheckbox").prop("checked", settings[2]) } 
+
+		if (settings[3] != undefined) { $("#weatherAutoRefreshCheckox").prop("checked", settings[3]) } 
+
+		$("#weatherRefreshDurationInput").val(settings[4]);
 	}
 	LoadSettings();
+	console.log(settings);
 
 	function SaveSettings () {
 		let location = $("#locationInput").val();
@@ -196,8 +205,12 @@ $(document).ready(function () {
 		}
 
 		rememberBreed = $("#rememberBreedCheckbox").is(":checked");
+
+		weatherAutoRefresh = $("#weatherAutoRefreshCheckox").is(":checked");
+
+		weatherAutoRefreshDuration = $("#weatherRefreshDurationInput").val();
 		
-		const settings = [location, tempDisplay, rememberBreed];
+		const settings = [location, tempDisplay, rememberBreed, weatherAutoRefresh, weatherAutoRefreshDuration];
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
 	}
@@ -233,18 +246,20 @@ $(document).ready(function () {
 	
 	// weather auto-refresher
 
-	function autoRefreshWeather() { // update clock every minute
-		let refreshDuration = .2; // 1 minute
+	function autoRefreshWeather() { // update weather on a duration
+		if (!localStorage.getItem("settings")) {
+			tempSettings = ["Oklahoma City", 1, true, true, 5]; // defaults
+		} else if (localStorage.getItem("settings")) {
+			tempSettings = JSON.parse(localStorage.getItem("settings"));
+		}
+		let refreshDuration = tempSettings[4]; // minutes
 		setTimeout(weatherRefresherSetup, 1000 * 60 * refreshDuration);
 		
 		function weatherRefresherSetup() {
-			// temp settings 
-			if (!localStorage.getItem("settings")) {
-				tempSettings = ["Oklahoma City", 1, true]; // defaults
-			} else if (localStorage.getItem("settings")) {
-				tempSettings = JSON.parse(localStorage.getItem("settings"));
+			if (settings[3]) { 
+				LoadWeatherPanel(tempSettings[0]); 
+				//console.log("REFRESHED");
 			}
-			LoadWeatherPanel(tempSettings[0]);
 			autoRefreshWeather();
 		}
 		

@@ -114,6 +114,19 @@
                     <h6 style="text-align:center">Weather</h6>
                     <table class="settings-table">
                         <tr>
+                            <td>Auto-Refresh</td>
+                            <td style="float:right"><input onClick="this.select();" class="text-input" type="text" style="width: 30px;" id="weatherRefreshDurationInput" name="weatherRefreshDurationInput" value="5" maxlength="100">m</td>
+                            <td style="float:right; padding:4px 4px 0 0">
+                                <!--input type="checkbox" id="rememberBreedcheckbox" name="rememberBreedcheckbox" value=""-->
+                                <label class="checkboxContainer">
+                                    <input id="weatherAutoRefreshCheckox" type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>  
+                            </td>
+
+                                  
+                        </tr>
+                        <tr>
                             <td>Location</td>
                             <td style="float:right"><input onClick="this.select();" class="text-input" type="text" style="width: 150px;" id="locationInput" name="locationInput" value="" maxlength="100"></td>
                         </tr>
