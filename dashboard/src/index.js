@@ -166,51 +166,60 @@ $(document).ready(function () {
 
 	$("#settings-close-button").click(function() { $("#settings-panel").hide(settingsPanelAnimationSpeed); });
 	
-	var tempDisplay;
-	function LoadSettings() {
-		if (!localStorage.getItem("settings")) {
-			settings = ["Oklahoma City", 1, true, true, 5]; // DEFAULTS: Weather location, temp style, remember breed, weather auto refresh, <= duration
-		} else if (localStorage.getItem("settings")) {
-			settings = JSON.parse(localStorage.getItem("settings"));
-		}
-		
-		$("#locationInput").val(settings[0]);
+	//var tempDisplay;
 
-		tempDisplay = settings[1];
-		if (settings[1] == 0) {
+	function LoadSettings() {
+		// JSON settings!
+		defaultSettings = {
+			location: "Oklahoma City",
+			tempFormat: 1,
+			rememberBreed : true,
+			weatherAutoRefresh : false,
+			weatherAutoRefreshDuration : 30
+		}
+
+		if (localStorage.getItem("settings")) { settings = JSON.parse(localStorage.getItem("settings")); }
+
+		// weather location
+		if (settings.location != null) { $("#locationInput").val(settings.location); } 
+		else { $("#locationInput").val(defaultSettings.location); }
+		// temp format
+		if (settings.tempFormat != null) { tempDisplay = settings.tempFormat } 
+		else { tempDisplay = defaultSettings.tempFormat }
+
+		if (tempDisplay == 0) {
 			$("#settings-button-temp-dec").removeClass("active");
 			$("#settings-button-temp-nodec").addClass("active");
-		} else if (settings[1] == 1) {
+		} else if (tempDisplay == 1) {
 			$("#settings-button-temp-dec").addClass("active");
 			$("#settings-button-temp-nodec").removeClass("active");
 		}
-		
-		if (settings[2] != undefined) { $("#rememberBreedCheckbox").prop("checked", settings[2]) } 
+		// remember dog breed
+		if (settings.rememberBreed != undefined) { $("#rememberBreedCheckbox").prop("checked", settings.rememberBreed) } 
+		else { $("#rememberBreedCheckbox").prop("checked", defaultSettings.rememberBreed) }
+		// weather auto refresh
+		if (settings.weatherAutoRefresh != undefined) { $("#weatherAutoRefreshCheckox").prop("checked", settings.weatherAutoRefresh) } 
+		else { $("#weatherAutoRefreshCheckox").prop("checked", defaultSettings.weatherAutoRefresh) }
+		// -- duration
+		if (settings.weatherAutoRefreshDuration != null) { $("#weatherRefreshDurationInput").val(settings.weatherAutoRefreshDuration); } 
+		else { $("#weatherRefreshDurationInput").val(defaultSettings.weatherAutoRefreshDuration); }
 
-		if (settings[3] != undefined) { $("#weatherAutoRefreshCheckox").prop("checked", settings[3]) } 
-
-		$("#weatherRefreshDurationInput").val(settings[4]);
 	}
 	LoadSettings();
-	console.log(settings);
+	//console.log(settings);
 
 	function SaveSettings () {
-		let location = $("#locationInput").val();
 
-		if ($("#settings-button-temp-nodec").hasClass("active")) {
-			tempDisplay = 0;
-		} 
-		else if ($("#settings-button-temp-dec").hasClass("active")) {
-			tempDisplay = 1;
-		}
-
-		rememberBreed = $("#rememberBreedCheckbox").is(":checked");
-
-		weatherAutoRefresh = $("#weatherAutoRefreshCheckox").is(":checked");
-
-		weatherAutoRefreshDuration = $("#weatherRefreshDurationInput").val();
+		if ($("#settings-button-temp-nodec").hasClass("active")) { tempDisplay = 0; } 
+		else if ($("#settings-button-temp-dec").hasClass("active")) { tempDisplay = 1; }
 		
-		const settings = [location, tempDisplay, rememberBreed, weatherAutoRefresh, weatherAutoRefreshDuration];
+		const settings = {
+			location: $("#locationInput").val(),
+			tempFormat: tempDisplay,
+			rememberBreed : $("#rememberBreedCheckbox").is(":checked"),
+			weatherAutoRefresh : $("#weatherAutoRefreshCheckox").is(":checked"),
+			weatherAutoRefreshDuration : $("#weatherRefreshDurationInput").val()
+		}
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
 	}
@@ -220,9 +229,11 @@ $(document).ready(function () {
 		LoadWeatherPanel($("#locationInput").val());
 	}
 
+	/*
 	function AccessSetting(position) {
 		return settings[position];
 	}
+	*/
 
 	/*
 	function ValidateZip(){
@@ -247,17 +258,28 @@ $(document).ready(function () {
 	// weather auto-refresher
 
 	function autoRefreshWeather() { // update weather on a duration
-		if (!localStorage.getItem("settings")) {
-			tempSettings = ["Oklahoma City", 1, true, true, 5]; // defaults
-		} else if (localStorage.getItem("settings")) {
-			tempSettings = JSON.parse(localStorage.getItem("settings"));
+		// get settings
+		// weather location
+		if (settings.location != null) { weatherLocation = settings.location } 
+		else { weatherLocation = defaultSettings.location }
+		// weather auto refresh
+		if (settings.weatherAutoRefresh != undefined) { autoRefresh = settings.weatherAutoRefresh } 
+		else { autoRefresh = defaultSettings.weatherAutoRefresh }
+		// -- duration
+		if (settings.weatherAutoRefreshDuration != undefined) { autoRefreshDuration = settings.weatherAutoRefreshDuration } 
+		else { autoRefreshDuration = defaultSettings.weatherAutoRefreshDuration }
+
+		// prevent timing out the API (again) - add validation
+		if (autoRefreshDuration < 1) { // 1 minute
+			 autoRefreshDuration = 1 
+			 console.log("Error: Weather Auto Refresh Rate Invalid.");
 		}
-		let refreshDuration = tempSettings[4]; // minutes
-		setTimeout(weatherRefresherSetup, 1000 * 60 * refreshDuration);
+
+		setTimeout(weatherRefresherSetup, 1000 * 60 * autoRefreshDuration);
 		
 		function weatherRefresherSetup() {
-			if (settings[3]) { 
-				LoadWeatherPanel(tempSettings[0]); 
+			if (autoRefresh) { 
+				LoadWeatherPanel(weatherLocation); 
 				//console.log("REFRESHED");
 			}
 			autoRefreshWeather();
@@ -265,7 +287,6 @@ $(document).ready(function () {
 		
 	}
 	autoRefreshWeather();
-	
 	
 	function LoadWeatherPanel(cityName) {
 		//const lKey = config.LOCATION_API_KEY;
