@@ -362,7 +362,7 @@ $(document).ready(function () {
 								let desc = '<br><span style="white-space:pre-wrap">' + result.alerts[i].description + "</span>";
 								
 								alertIcons += icon;
-								alertBody += "<span style='font-size:medium'>" + icon + " " + name + "</span>" /*+ sender*/ + desc;
+								alertBody += "<span style='font-size:medium'>" + icon + " " + name + "</span>" + sender + desc;
 						
 								if (i < result.alerts.length - 1) {
 									alertBody += "<br><br>";
