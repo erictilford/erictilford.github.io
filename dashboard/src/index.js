@@ -178,6 +178,7 @@ $(document).ready(function () {
 			weatherAutoRefreshDuration : 30
 		}
 
+		settings = {};
 		if (localStorage.getItem("settings")) { settings = JSON.parse(localStorage.getItem("settings")); }
 
 		// weather location
@@ -269,7 +270,7 @@ $(document).ready(function () {
 		if (settings.weatherAutoRefreshDuration != undefined) { autoRefreshDuration = settings.weatherAutoRefreshDuration } 
 		else { autoRefreshDuration = defaultSettings.weatherAutoRefreshDuration }
 
-		// prevent timing out the API (again) - add validation
+		// prevent timing out the API (again) - add validation and put this in the save setting function
 		if (autoRefreshDuration < 1) { // 1 minute
 			 autoRefreshDuration = 1 
 			 console.log("Error: Weather Auto Refresh Rate Invalid.");
