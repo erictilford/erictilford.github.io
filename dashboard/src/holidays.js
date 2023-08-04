@@ -515,6 +515,37 @@ const holidayArray = [
         "emoji": "&#129470;&#x1F916;",
         "type": "oneTime"
     },
+    {
+        "holiday_name": "SMB Wonder",
+        "month": 10,
+        "day_one": 20,
+        "day_two": null,
+        "day": null,
+        "year": 2023,
+        "emoji": "&#11088;",
+        "type": "oneTime"
+    },
+    {
+        "holiday_name": "Mario RPG",
+        "month": 11,
+        "day_one": 17,
+        "day_two": null,
+        "day": null,
+        "year": 2023,
+        "emoji": "&#128176;",
+        "type": "oneTime"
+    },
+    {
+        "holiday_name": "Starfield",
+        "month": 9,
+        "day_one": 6,
+        "day_two": null,
+        "day": null,
+        "year": 2023,
+        "emoji": "&#128126;",
+        "type": "oneTime"
+    },
+    
 
 ]
 //console.log(checkHoliday(3,14,1));
