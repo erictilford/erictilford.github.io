@@ -508,7 +508,7 @@ const holidayArray = [
     {
         "holiday_name": "AC 6",
         "month": 8,
-        "day_one": 6,
+        "day_one": 25,
         "day_two": null,
         "day": null,
         "year": 2023,
