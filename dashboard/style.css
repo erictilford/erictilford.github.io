@@ -158,6 +158,19 @@ body {
     font-weight: normal;
 }
 
+#wallpaper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: background-image 2s ease-in;
+}
+
 /*#weather-extra-moon {
     overflow: hidden;
     text-overflow: ellipsis;
