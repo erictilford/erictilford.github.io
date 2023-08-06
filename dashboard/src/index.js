@@ -5,8 +5,8 @@ $(document).ready(function () {
 
 	function setRandomWallpaper(){ 
 		let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-		// document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
-		$("#wallpaper-container").css("background-image", "url('assets/backgrounds/" + randomWallpaper + "')");  
+		document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
+		// $("#wallpaper-container").css("background-image", "url('assets/backgrounds/" + randomWallpaper + "')");  
     }
 	setRandomWallpaper();
 
