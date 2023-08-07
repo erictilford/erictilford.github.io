@@ -10,32 +10,6 @@ $(document).ready(function () {
     }
 	setRandomWallpaper();
 
-	/*
-
-	$('#changeImage').click(function() {
-		let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-
-		//currentImageIndex = (currentImageIndex + 1) % images.length;
-		//var newImageUrl = images[currentImageIndex];
-		
-		$('#wallpaper-container').fadeOut(500, function() {
-		  $(this).css('background-image', "url('assets/backgrounds/" + randomWallpaper + "')").fadeIn(500);
-		});
-	});
-
-	$('#elem').fadeTo('slow', 0.3, function()
-	{
-		$(this).css('background-image', 'url(' + $img + ')');
-	}).delay(5000).fadeTo('slow', 1);
-
-	*/
-
-	/*
-	$('#elem').fadeTo('slow', 0.3, function () {
-		$(this).css('background-image', 'url(' + $img + ')');
-	}).fadeTo('slow', 1);
-	*/
-
 	
 
 	
