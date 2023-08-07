@@ -10,6 +10,8 @@ $(document).ready(function () {
     }
 	setRandomWallpaper();
 
+	// wallpaper auto-refresher
+
 	
 
 	
@@ -170,7 +172,9 @@ $(document).ready(function () {
 			tempFormat: 1,
 			rememberBreed : true,
 			weatherAutoRefresh : false,
-			weatherAutoRefreshDuration : 30
+			weatherAutoRefreshDuration : 30,
+			wallpaperAutoRefresh : false,
+			wallpaperAutoRefreshDuration : 5
 		}
 
 		settings = {};
@@ -199,6 +203,12 @@ $(document).ready(function () {
 		// -- duration
 		if (settings.weatherAutoRefreshDuration != null) { $("#weatherRefreshDurationInput").val(settings.weatherAutoRefreshDuration); } 
 		else { $("#weatherRefreshDurationInput").val(defaultSettings.weatherAutoRefreshDuration); }
+		// wallpaper auto refresh
+		if (settings.wallpaperAutoRefresh != undefined) { $("#wallpaperAutoRefreshCheckox").prop("checked", settings.wallpaperAutoRefresh) } 
+		else { $("#wallpaperAutoRefreshCheckox").prop("checked", defaultSettings.wallpaperAutoRefresh) }
+		// -- duration
+		if (settings.wallpaperAutoRefreshDuration != null) { $("#wallpaperRefreshDurationInput").val(settings.wallpaperAutoRefreshDuration); } 
+		else { $("#wallpaperRefreshDurationInput").val(defaultSettings.wallpaperAutoRefreshDuration); }
 
 	}
 	LoadSettings();
@@ -214,7 +224,9 @@ $(document).ready(function () {
 			tempFormat: tempDisplay,
 			rememberBreed : $("#rememberBreedCheckbox").is(":checked"),
 			weatherAutoRefresh : $("#weatherAutoRefreshCheckox").is(":checked"),
-			weatherAutoRefreshDuration : $("#weatherRefreshDurationInput").val()
+			weatherAutoRefreshDuration : $("#weatherRefreshDurationInput").val(),
+			wallpaperAutoRefresh : $("#wallpaperAutoRefreshCheckox").is(":checked"),
+			wallpaperAutoRefreshDuration : $("#wallpaperRefreshDurationInput").val()
 		}
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
@@ -224,6 +236,36 @@ $(document).ready(function () {
 		SaveSettings();
 		LoadWeatherPanel($("#locationInput").val());
 	}
+
+
+	function autoRefreshWallpaper() { // update wallpaper on a duration
+		// get settings
+		// wallpaper auto refresh
+		if (settings.wallpaperAutoRefresh != undefined) { autoRefresh = settings.wallpaperAutoRefresh } 
+		else { autoRefresh = defaultSettings.wallpaperAutoRefresh }
+		// -- duration
+		if (settings.wallpaperAutoRefreshDuration != undefined) { autoRefreshDuration = settings.wallpaperAutoRefreshDuration } 
+		else { autoRefreshDuration = defaultSettings.wallpaperAutoRefreshDuration }
+
+		// refresh duration minimum - add validation and put this in the save setting function
+		if (autoRefreshDuration < 1) { // 1 minute
+			 autoRefreshDuration = 1 
+			 console.log("Error: Wallpaper Auto Refresh Rate Invalid.");
+		}
+
+		setTimeout(wallpaperRefresherSetup, 1000 * 60 * autoRefreshDuration);
+		
+		function wallpaperRefresherSetup() {
+			if (autoRefresh) { 
+				setRandomWallpaper();
+			}
+			autoRefreshWallpaper();
+		}
+		
+	}
+	autoRefreshWallpaper();
+
+
 
 	/*
 	function AccessSetting(position) {
