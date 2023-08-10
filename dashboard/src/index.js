@@ -381,8 +381,9 @@ $(document).ready(function () {
 								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Tornado")) { icon = '<i class="fa-solid fa-tornado"; style=color:indianred></i>'; } 
-								else if (result.alerts[i].tags.includes("Extreme temperature value")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:indianred></i>'; }
+								else if (result.alerts[i].tags.includes("Extreme temperature value")) { icon = '<i class="fa-solid fa-temperature-full"; style=color:indianred></i>'; }
 								else if (name.includes("Air Quality")) { icon = '<i class="fa-solid fa-lungs"; style=color:indianred></i>'; } 
+								else if (name.includes("Heat Advisory")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:indianred></i>'; } 
 								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>'; }
 
 								alertIcons += icon;
