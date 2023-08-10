@@ -2,19 +2,12 @@
 $(document).ready(function () {
 
 	// WALLPAPERS | config.js
-
 	function setRandomWallpaper(){ 
 		let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 		document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 		// $("#wallpaper-container").css("background-image", "url('assets/backgrounds/" + randomWallpaper + "')");  
     }
 	setRandomWallpaper();
-
-	// wallpaper auto-refresher
-
-	
-
-	
 
 	// LINKS | config.js
 	for (let i = 0; i < links.length; i++) {
@@ -88,7 +81,6 @@ $(document).ready(function () {
 	*/
 
 	// SMASH TOURNEY STATUS
-
 	const origin = new Date("11/18/2022");
 	let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
 	let dayDiffRemainder = daysDifference % 4;
@@ -237,7 +229,7 @@ $(document).ready(function () {
 		LoadWeatherPanel($("#locationInput").val());
 	}
 
-
+	// wallpaper auto-refresher
 	function autoRefreshWallpaper() { // update wallpaper on a duration
 		// get settings
 		// wallpaper auto refresh
@@ -265,8 +257,6 @@ $(document).ready(function () {
 	}
 	autoRefreshWallpaper();
 
-
-
 	/*
 	function AccessSetting(position) {
 		return settings[position];
@@ -283,18 +273,14 @@ $(document).ready(function () {
 	*/
 
 	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: fix "mix" bug, load dog on open option
-
 	LoadDogAPI(settingsPanelAnimationSpeed);
 
 	// WEATHER | https://openweathermap.org/api/one-call-api
-
 	LoadWeatherPanel($("#locationInput").val());
 	
 	$("#alert-icon-span").click(function() { $("#alert-panel").toggle(); });
 
-	
 	// weather auto-refresher
-
 	function autoRefreshWeather() { // update weather on a duration
 		// get settings
 		// weather location
@@ -387,17 +373,18 @@ $(document).ready(function () {
 								console.log(result.alerts[i].tags);
 								console.log("(^add me as a custom alert icon");
 
+								let name = result.alerts[i].event;
+								let sender = '<u><br>' + result.alerts[i].sender_name + '</u>';
+								let desc = '<br><span style="white-space:pre-wrap">' + result.alerts[i].description + "</span>";
+
 								if (result.alerts[i].tags.includes("Snow/Ice")) { icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Tornado")) { icon = '<i class="fa-solid fa-tornado"; style=color:indianred></i>'; } 
-								else if (result.alerts[i].tags.includes("Extreme temperature value")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:indianred></i>'; } 
+								else if (result.alerts[i].tags.includes("Extreme temperature value")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:indianred></i>'; }
+								else if (name.includes("Air Quality")) { icon = '<i class="fa-solid fa-lungs"; style=color:indianred></i>'; } 
 								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>'; }
 
-								let name = result.alerts[i].event;
-								let sender = '<u><br>' + result.alerts[i].sender_name + '</u>';
-								let desc = '<br><span style="white-space:pre-wrap">' + result.alerts[i].description + "</span>";
-								
 								alertIcons += icon;
 								alertBody += "<span style='font-size:medium'>" + icon + " " + name + "</span>" + sender + desc;
 						
