@@ -92,14 +92,15 @@
                     <hr class="my-hr mobile-hr">
                 </div>
 
-                <div id="iframe-panel" class="content-panel center-panel">
-                    <h5 style="text-align:center" id="iframe-title">Iframe test</h5>
-                    <iframe src="https://www.toonamiaftermath.com/" style="height:600px;width:800px;" title="Toonami Aftermath"></iframe>
-                
+                <div id="ettv-panel" class="content-panel center-panel" style="display:none; width:100%">
+                    <h5 style="text-align:center" id="ettv-title">ETTV</h5>
+                    <div class="iframe-container">
+                        <iframe id="ettv-iframe" class="responsive-iframe" src="https://www.toonamiaftermath.com/" title="ETTV"></iframe>
+                    </div>
                 </div>
 
                 <div id="dog-panel" class="content-panel center-panel" style="display:none">
-                    <h5 style="text-align:center" id="random-dog-title">Random Dog</h5>
+                    <h5 style="text-align:center" id="random-dog-title">Dog</h5>
                     <div style="text-align:center">
                         <select id="dog-breed-dropdown" class="bootstrap-select dog-dropdown">
                             <option value="All Breeds" selected="selected">All Breeds</option>
@@ -172,7 +173,7 @@
                         
                         </tr>
                     </table>
-                    <h6 style="text-align:center">Random Dog</h6>
+                    <h6 style="text-align:center">Dog</h6>
                     <table class="settings-table">
                         <tr>
                             <td>Remember Breed</td>
@@ -207,5 +208,6 @@
     <script type='text/javascript' src='src/links.js'></script>
     <script type='text/javascript' src='src/config.js'></script>
     <script type="text/javascript" src="src/dog.js"></script>
+    <script type="text/javascript" src="src/tv.js"></script>
     <script type="text/javascript" src="src/index.js"></script>
 </footer>

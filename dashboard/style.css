@@ -58,6 +58,14 @@ body {
 #dog-button {
     cursor: pointer;
 }
+
+#ettv-button {
+    cursor: pointer;
+}
+
+#ettv-panel {
+    max-width:800px;
+}
 #last-updated-text {
     float: right;
     font-size: small;
@@ -315,6 +323,13 @@ body {
     color:#666;
 }
 
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+  }
+
 .mobile-hr {
     display: none;
 }
@@ -330,6 +345,17 @@ body {
     line-height: 30px;
     text-align: center;
 }
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .settings-table {
     width: 100%;
     color: white;

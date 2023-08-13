@@ -1,13 +1,13 @@
-function LoadETTV() {
-    icon = 'fa-solid fa-paw " style="color:lightblue';
-			$("#random-dog-title").append(' <i class=" ' + icon + '">');
-			$("#widget-list").append('<a id="dog-button"><li><i class="fa-2x ' + icon + '"></i><br>Random Dog</li></a>');
-			$("#close-dog-button").click(function() { $("#dog-panel").hide(animSpeed); });
-			$("#dog-button").click(function() {  
-                $("#dog-panel").toggle(animSpeed); 
+function LoadETTV(animSpeed) {
+    icon = 'fa-solid fa-tv " style="color:lightblue';
+			$("#ettv-title").append(' <i class=" ' + icon + '">');
+			$("#widget-list").append('<a id="ettv-button"><li><i class="fa-2x ' + icon + '"></i><br>ETTV</li></a>');
+			$("#close-tv-button").click(function() { $("#ettv-panel").hide(animSpeed); });
+			$("#ettv-button").click(function() {  
+                $("#ettv-panel").toggle(animSpeed); 
                 $('html,body').animate({
-                    scrollTop: $("#dog-panel").offset().top
+                    scrollTop: $("#ettv-panel").offset().top
                  });
             });
-			$("#dog-button").attr("title",  "Random Dog API" );
+			$("#ettv-button").attr("title",  "ETTV" );
 }
