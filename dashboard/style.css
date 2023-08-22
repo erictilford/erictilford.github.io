@@ -34,6 +34,10 @@ body {
     cursor: pointer;
 }
 
+#alert-icon-span > i{
+    min-width: 12px;
+}
+
 #alert-window {
     border: 2px solid indianred;
     border-radius: 5px;
