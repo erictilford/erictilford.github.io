@@ -197,6 +197,15 @@ const holidayArray = [
         "type": "standard"
     },
     {
+        "holiday_name": "Lori Bday",
+        "month": 9,
+        "day_one": 8,
+        "day_two": null,
+        "day": null,
+        "emoji": "&#x1F485;",
+        "type": "standard"
+    },
+    {
         "holiday_name": "Halloween",
         "month": 10,
         "day_one": 31,
