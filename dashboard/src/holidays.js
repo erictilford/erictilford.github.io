@@ -197,6 +197,15 @@ const holidayArray = [
         "type": "standard"
     },
     {
+        "holiday_name": "Lori Bday",
+        "month": 9,
+        "day_one": 8,
+        "day_two": null,
+        "day": null,
+        "emoji": "&#x1F485;",
+        "type": "standard"
+    },
+    {
         "holiday_name": "Halloween",
         "month": 10,
         "day_one": 31,
@@ -241,6 +250,7 @@ const holidayArray = [
         "emoji": "&#129346;",
         "type": "standard"
     },
+
     // DAY / DAY NAME HOLIDAYS
     //////////////////////////
     {
@@ -506,16 +516,6 @@ const holidayArray = [
     // ONE-TIME HOLIDAYS (delete later I guess)
     ////////////////////
     {
-        "holiday_name": "AC 6",
-        "month": 8,
-        "day_one": 25,
-        "day_two": null,
-        "day": null,
-        "year": 2023,
-        "emoji": "&#129470;&#x1F916;",
-        "type": "oneTime"
-    },
-    {
         "holiday_name": "SMB Wonder",
         "month": 10,
         "day_one": 20,
@@ -536,16 +536,16 @@ const holidayArray = [
         "type": "oneTime"
     },
     {
-        "holiday_name": "Starfield",
-        "month": 9,
-        "day_one": 6,
+        "holiday_name": "Cabin Ladz",
+        "month": 11,
+        "day_one": 10,
         "day_two": null,
         "day": null,
         "year": 2023,
-        "emoji": "&#128126;",
+        "emoji": "&#x1F3D5;&#xFE0F;",
         "type": "oneTime"
     },
-    
+
 
 ]
 //console.log(checkHoliday(3,14,1));

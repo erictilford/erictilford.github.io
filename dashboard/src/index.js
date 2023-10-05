@@ -233,26 +233,29 @@ $(document).ready(function () {
 	function autoRefreshWallpaper() { // update wallpaper on a duration
 		// get settings
 		// wallpaper auto refresh
-		if (settings.wallpaperAutoRefresh != undefined) { autoRefresh = settings.wallpaperAutoRefresh } 
-		else { autoRefresh = defaultSettings.wallpaperAutoRefresh }
+		if (settings.wallpaperAutoRefresh != undefined) { wallpaperAutoRefresh = settings.wallpaperAutoRefresh } 
+		else { wallpaperAutoRefresh = defaultSettings.wallpaperAutoRefresh }
 		// -- duration
-		if (settings.wallpaperAutoRefreshDuration != undefined) { autoRefreshDuration = settings.wallpaperAutoRefreshDuration } 
-		else { autoRefreshDuration = defaultSettings.wallpaperAutoRefreshDuration }
+		if (settings.wallpaperAutoRefreshDuration != undefined) { wallpaperAutoRefreshDuration = settings.wallpaperAutoRefreshDuration } 
+		else { wallpaperAutoRefreshDuration = defaultSettings.wallpaperAutoRefreshDuration }
 
 		// refresh duration minimum - add validation and put this in the save setting function
-		if (autoRefreshDuration < 1) { // 1 minute
-			 autoRefreshDuration = 1 
+		if (wallpaperAutoRefreshDuration < 1) { // 1 minute
+			wallpaperAutoRefreshDuration = 1 
 			 console.log("Error: Wallpaper Auto Refresh Rate Invalid.");
 		}
 
-		setTimeout(wallpaperRefresherSetup, 1000 * 60 * autoRefreshDuration);
+		setTimeout(wallpaperRefresherSetup, 1000 * 60 * wallpaperAutoRefreshDuration);
 		
 		function wallpaperRefresherSetup() {
-			if (autoRefresh) { 
+			if (wallpaperAutoRefresh) { 
 				setRandomWallpaper();
+				console.log("WALLPAPER REFRESHED!!!!!");
 			}
 			autoRefreshWallpaper();
 		}
+
+		
 		
 	}
 	autoRefreshWallpaper();
@@ -290,28 +293,30 @@ $(document).ready(function () {
 		if (settings.location != null) { weatherLocation = settings.location } 
 		else { weatherLocation = defaultSettings.location }
 		// weather auto refresh
-		if (settings.weatherAutoRefresh != undefined) { autoRefresh = settings.weatherAutoRefresh } 
-		else { autoRefresh = defaultSettings.weatherAutoRefresh }
+		if (settings.weatherAutoRefresh != undefined) { weatherAutoRefresh = settings.weatherAutoRefresh } 
+		else { weatherAutoRefresh = defaultSettings.weatherAutoRefresh }
 		// -- duration
-		if (settings.weatherAutoRefreshDuration != undefined) { autoRefreshDuration = settings.weatherAutoRefreshDuration } 
-		else { autoRefreshDuration = defaultSettings.weatherAutoRefreshDuration }
+		if (settings.weatherAutoRefreshDuration != undefined) { weatherAutoRefreshDuration = settings.weatherAutoRefreshDuration } 
+		else { weatherAutoRefreshDuration = defaultSettings.weatherAutoRefreshDuration }
 
 		// prevent timing out the API (again) - add validation and put this in the save setting function
-		if (autoRefreshDuration < 1) { // 1 minute
-			 autoRefreshDuration = 1 
+		if (weatherAutoRefreshDuration < 1) { // 1 minute
+			weatherAutoRefreshDuration = 1 
 			 console.log("Error: Weather Auto Refresh Rate Invalid.");
 		}
 
-		setTimeout(weatherRefresherSetup, 1000 * 60 * autoRefreshDuration);
+		setTimeout(weatherRefresherSetup, 1000 * 60 * weatherAutoRefreshDuration);
 		
 		function weatherRefresherSetup() {
-			if (autoRefresh) { 
+			if (weatherAutoRefresh) { 
 				LoadWeatherPanel(weatherLocation); 
+				console.log("WEATHER REFRESHED!!!!!");
 				//console.log("REFRESHED");
 			}
 			autoRefreshWeather();
 		}
 		
+
 	}
 	autoRefreshWeather();
 	
