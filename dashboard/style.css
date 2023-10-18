@@ -374,6 +374,10 @@ body {
     text-align: right;
 }
 
+.trash-icon {
+    padding-left: 8px;
+}
+
 .tray-icon {
     font-size: 17px;
     line-height: 0.9;

@@ -80,6 +80,21 @@ $(document).ready(function () {
 	});
 	*/
 
+	// RECYCLING DAY
+	
+	function recyclingDay(){
+		const origin = new Date("10/15/2023");
+		let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
+		let dayDiffRemainder = daysDifference % 14;
+		console.log(dayDiffRemainder);
+		if (dayDiffRemainder == 0){
+			$("#recycling-symbol").html('<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>');
+			$("#recycling-symbol").attr("title",  "Recycling day is tomorrow" );
+		}
+	}
+	recyclingDay();
+
+
 	// SMASH TOURNEY STATUS
 	const origin = new Date("11/18/2022");
 	let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
