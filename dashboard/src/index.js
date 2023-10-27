@@ -94,6 +94,20 @@ $(document).ready(function () {
 	}
 	recyclingDay();
 
+	// BIG TRASH DAY
+
+	function bigTrashDay() {
+		const today = new Date()
+		const tomorrow = new Date(today)
+		tomorrow.setDate(tomorrow.getDate() + 1)
+		if (tomorrow.getDay() === 1 && tomorrow.getDate() <= 7) {
+			$("#big-trash-icon").html('<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>');
+			$("#big-trash-icon").attr("title",  "Recycling day is tomorrow" );
+		}
+			
+	}
+	bigTrashDay();
+
 
 	// SMASH TOURNEY STATUS
 	const origin = new Date("11/18/2022");
