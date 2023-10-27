@@ -102,7 +102,7 @@ $(document).ready(function () {
 		tomorrow.setDate(tomorrow.getDate() + 1)
 		if (tomorrow.getDay() === 1 && tomorrow.getDate() <= 7) {
 			$("#big-trash-icon").html('<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>');
-			$("#big-trash-icon").attr("title",  "Recycling day is tomorrow" );
+			$("#big-trash-icon").attr("title",  "Big Trash Day is tomorrow" );
 		}
 			
 	}
