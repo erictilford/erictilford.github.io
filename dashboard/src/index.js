@@ -86,7 +86,7 @@ $(document).ready(function () {
 		const origin = new Date("10/15/2023");
 		let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
 		let dayDiffRemainder = daysDifference % 14;
-		console.log(dayDiffRemainder);
+		console.log(dayDiffRemainder); // delete me
 		if (dayDiffRemainder == 0){
 			$("#recycling-symbol").html('<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>');
 			$("#recycling-symbol").attr("title",  "Recycling day is tomorrow" );
