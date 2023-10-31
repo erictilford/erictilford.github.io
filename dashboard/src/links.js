@@ -36,11 +36,19 @@ const links = [
         "target" : "#video-list"
     },
     {
+        "title" : "Multistre.am",
+        "url" : "https://multistre.am/",
+        "icon" : '<i class="fa-solid fa-2x fa-box fa-rotate-180" style="color:#1968aa;"></i>',
+        "target" : "#video-list"
+    },
+    /*
+    {
         "title" : "LazyGoat",
         "url" : "https://lazygoat.tv/collection/y2sk7-nrAgbzRVHhFZUsyMEpvJEd/",
         "icon" : '<i class="fa-solid fa-2x fa-table-cells-large" style="color:#FD5205;"></i>',
         "target" : "#video-list"
     },
+    */
     {
         "title" : "Adult Swim",
         "url" : "https://www.adultswim.com/streams/",
