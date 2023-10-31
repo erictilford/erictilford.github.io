@@ -96,9 +96,9 @@ const links = [
         "target" : "#tools-list"
     },
     {
-        "title" : "ChatGPT",
-        "url" : "https://chat.openai.com/",
-        "icon" : '<i class="fa-regular fa-2x fa-comments" style="color:#71a699"></i>',
+        "title" : "Connections",
+        "url" : "https://www.nytimes.com/games/connections",
+        "icon" : '<i class="fa-solid fa-2x fa-table-cells" style="color:#bc70c4"></i>',
         "target" : "#tools-list"
     },
     {
@@ -117,6 +117,12 @@ const links = [
         "title" : "Github",
         "url" : "https://github.com/erictilford/erictilford.github.io",
         "icon" : '<i class="fa-brands fa-2x fa-github" style="color:slategray"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "ChatGPT",
+        "url" : "https://chat.openai.com/",
+        "icon" : '<i class="fa-regular fa-2x fa-comments" style="color:#71a699"></i>',
         "target" : "#tools-list"
     },
     {
