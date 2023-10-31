@@ -6,6 +6,11 @@ body {
   display: none;
 }
 
+#connections-inputs {
+  display: none;
+}
+
+
 #heardle-preset-buttons {
   display:inline-flex;
 }

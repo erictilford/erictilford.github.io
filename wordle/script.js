@@ -43,6 +43,22 @@ $(document).ready(function () {
       
       $("#outputText").val(output);
     } 
+    else if ($("#connections-button").hasClass("active")) 
+    {
+      let ys = $("#ysquare-c").val();
+      let gs = $("#gsquare-c").val();
+      let bs = $("#blusquare").val();
+      let ps = $("#psquare").val();
+      let output = input.replace(/\uD83D\uDFE8/g, ys);
+      output = output.replace(/\uD83D\uDFE9/g, gs);
+      output = output.replace(/\uD83D\uDFE6/g, bs);
+      output = output.replace(/\uD83D\uDFEA/g, ps);
+      output = output.replace(/\nPuzzle /g, "");
+      //output = output.replace(/[\r\n]+https:\/\/spotify.com\/heardle/g, "");
+      //output = output.replace(/\?r=share/g, "");
+      
+      $("#outputText").val(output);
+    } 
 
     $("#outputDiv").show();
   }); 
@@ -51,14 +67,22 @@ $(document).ready(function () {
     // if text contains Wordle
     let input = $("#inputText").val();
     if (input.includes("Wordle")) {
+      $("#connections-button").removeClass("active");
       $("#heardle-button").removeClass("active");
       $("#wordle-button").addClass("active");
       showWordleInputs();
     } else if (input.includes("Heardle")) {
+      $("#connections-button").removeClass("active");
       $("#heardle-button").addClass("active");
       $("#wordle-button").removeClass("active");
       showHeardleInputs();
+    } else if (input.includes("Connections")) {
+      $("#connections-button").addClass("active");
+      $("#heardle-button").removeClass("active");
+      $("#wordle-button").removeClass("active");
+      showConnectionsInputs();
     }
+    
   });
 
   $("#outputText").click(function () {
@@ -74,19 +98,37 @@ $(document).ready(function () {
     showHeardleInputs();
   });
 
+  $("#connections-button").click(function () {
+    showConnectionsInputs();
+  });
+
   function showWordleInputs() {
+    $("#connections-inputs").hide();
     $("#heardle-inputs").hide();
     $("#wordle-inputs").show();
     $("#heardle-preset-buttons").hide();
+    $("#connections-preset-buttons").hide();
     $("#wordle-preset-buttons").show();
   }
 
   function showHeardleInputs() {
+    $("#connections-inputs").hide();
     $("#heardle-inputs").show();
     $("#wordle-inputs").hide();
     $("#heardle-preset-buttons").show();
     $("#wordle-preset-buttons").hide();
+    $("#connections-preset-buttons").hide();
   }
+
+  function showConnectionsInputs() {
+    $("#connections-inputs").show();
+    $("#heardle-inputs").hide();
+    $("#wordle-inputs").hide();
+    $("#heardle-preset-buttons").hide();
+    $("#wordle-preset-buttons").hide();
+    $("#connections-preset-buttons").show();
+  }
+
 
   function LoadPresets(buttonNumber) {
 
@@ -122,15 +164,31 @@ $(document).ready(function () {
         $("#wsquare").val('');
       }
     }
+    else if ($("#connections-button").hasClass("active")) 
+    {
+      if (localStorage.getItem("connectionsPreset"+buttonNumber)) {
+        let storedInputs = JSON.parse(localStorage.getItem("connectionsPreset"+buttonNumber));
+        $("#ysquare-c").val(storedInputs[0]);
+        $("#gsquare-c").val(storedInputs[1]);
+        $("#blusquare").val(storedInputs[2]);
+        $("#psquare").val(storedInputs[3]);
+      } else {
+        $("#ysquare-c").val('');
+        $("#gsquare-c").val('');
+        $("#blusquare").val('');
+        $("#psquare").val('');
+      }
+    }
   }
 
-  $("#wordle-preset-buttons .btn, #heardle-preset-buttons .btn").click(function () {
+  $("#wordle-preset-buttons .btn, #heardle-preset-buttons .btn, #connections-preset-buttons .btn").click(function () {
     LoadPresets($(this).find($(".label-text")).text());
   });
 
   LoadPresets(1);
 
   $("#heardle-preset-buttons").hide();
+  $("#connections-preset-buttons").hide();
 
   $("#save-preset-button").click(function () {
     // if in "wordle mode":
@@ -155,6 +213,16 @@ $(document).ready(function () {
       let ws = $("#wsquare").val();
       const inputs = [sp, bs, rs, ys, gs, ws];
       localStorage.setItem("heardlePreset"+activeButton, JSON.stringify(inputs));
+    } 
+    else if ($("#connections-button").hasClass("active")) 
+    {
+      let activeButton = $("#connections-preset-buttons .active .label-text").text();
+      let ys = $("#ysquare-c").val();
+      let gs = $("#gsquare-c").val();
+      let bs = $("#blusquare").val();
+      let ps = $("#psquare").val();
+      const inputs = [ys, gs, bs, ps];
+      localStorage.setItem("connectionsPreset"+activeButton, JSON.stringify(inputs));
     } 
   });
 

@@ -46,6 +46,9 @@
             <label class="btn btn-light" id="heardle-button">
               <input type="radio" name="options" id="option-2" autocomplete="off"> Heardle
             </label>
+            <label class="btn btn-light" id="connections-button">
+              <input type="radio" name="options" id="option-3" autocomplete="off"> Connections
+            </label>
           </div>
 
           <br><br>
@@ -86,6 +89,24 @@
             </label>
           </div>
 
+          <div id ="connections-preset-buttons" class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-light active" id="preset-11">
+              <input type="radio" name="presets" id="preset-11" autocomplete="off" checked><span class="label-text">1</span>
+            </label>
+            <label class="btn btn-light" id="preset-12">
+              <input type="radio" name="presets" id="preset-12" autocomplete="off"><span class="label-text">2</span>
+            </label>
+            <label class="btn btn-light" id="preset-13">
+              <input type="radio" name="presets" id="preset-13" autocomplete="off"><span class="label-text">3</span>
+            </label>
+            <label class="btn btn-light" id="preset-14">
+              <input type="radio" name="presets" id="preset-14" autocomplete="off"><span class="label-text">4</span>
+            </label>
+            <label class="btn btn-light" id="preset-15">
+              <input type="radio" name="presets" id="preset-15" autocomplete="off"><span class="label-text">5</span>
+            </label>
+          </div>
+
           <button class="btn btn-lg" id="save-preset-button"><i class="fa-solid fa-floppy-disk"></i></button>
 
           <br><br>
@@ -120,7 +141,21 @@
            
           </div>
 
+          <div id="connections-inputs">
 
+            <label for="ysquare-c">	&#x1F7E8; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="ysquare-c" name="ysquare-c" value=:yellow_heart:><br><br>
+           
+            <label for="gsquare-c"> &#129001; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="gsquare-c" name="gsquare-c" value=:green_heart:><br><br>
+
+            <label for="blusquare">	&#x1F7E6; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="blusquare" name="blusquare" value=:blue_heart:><br><br>
+
+            <label for="psquare">	&#x1F7EA; &#x2192;</label>
+            <input type="text" style="width: 150px;" id="psquare" name="psquare" value=:purple_heart:><br><br>
+           
+          </div>
 
           <button class="btn btn-lg" id="convert-button">Convert!</button><br><br>
         </center>
