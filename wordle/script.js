@@ -8,8 +8,7 @@ $(document).ready(function () {
     $("body").css("background-color", hueShifted);
   }, 150);
 
-  // If convert button is pressed
-  $("#convert-button").click(function () {
+  function convertInput(){
     let input = $("#inputText").val();
 
     if ($("#wordle-button").hasClass("active")) 
@@ -61,8 +60,13 @@ $(document).ready(function () {
     } 
 
     $("#outputDiv").show();
-  }); 
 
+    navigator.clipboard.writeText($("#outputText").val());
+  }
+  // If convert button is pressed
+  $("#convert-button").click(function () { convertInput() }); 
+
+  // Detect input contents
   $('#inputText').on('input', function() {
     // if text contains Wordle
     let input = $("#inputText").val();
