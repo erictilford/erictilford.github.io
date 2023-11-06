@@ -86,6 +86,7 @@ $(document).ready(function () {
       $("#wordle-button").removeClass("active");
       showConnectionsInputs();
     }
+    convertInput();
     
   });
 
