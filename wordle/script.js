@@ -134,6 +134,34 @@ $(document).ready(function () {
     $("#connections-preset-buttons").show();
   }
 
+  function InitialLoad() {
+    if (localStorage.getItem("wordlePreset1")) {
+      let storedInputs = JSON.parse(localStorage.getItem("wordlePreset1"));
+      $("#bsquare").val(storedInputs[0]);
+      $("#ysquare").val(storedInputs[1]);
+      $("#gsquare").val(storedInputs[2]);
+    }
+
+    if (localStorage.getItem("heardlePreset1")) {
+      let storedInputs = JSON.parse(localStorage.getItem("heardlePreset1"));
+      $("#speaker").val(storedInputs[0]);
+      $("#bsquare-h").val(storedInputs[1]);
+      $("#rsquare").val(storedInputs[2]);
+      $("#ysquare-h").val(storedInputs[3]);
+      $("#gsquare-h").val(storedInputs[4]);
+      $("#wsquare").val(storedInputs[5]);
+    }
+
+    if (localStorage.getItem("connectionsPreset1")) {
+      let storedInputs = JSON.parse(localStorage.getItem("connectionsPreset1"));
+      $("#ysquare-c").val(storedInputs[0]);
+      $("#gsquare-c").val(storedInputs[1]);
+      $("#blusquare").val(storedInputs[2]);
+      $("#psquare").val(storedInputs[3]);
+    }
+  }
+
+  InitialLoad();
 
   function LoadPresets(buttonNumber) {
 
@@ -190,7 +218,7 @@ $(document).ready(function () {
     LoadPresets($(this).find($(".label-text")).text());
   });
 
-  LoadPresets(1);
+  //LoadPresets(1);
 
   $("#heardle-preset-buttons").hide();
   $("#connections-preset-buttons").hide();
