@@ -493,10 +493,11 @@ body {
 }
 
 /* HEIGHT - tray positioning*/
-@media only screen and (max-height: 768px) {
+@media only screen and (max-height: 768px) and (min-width: 425px) {
 
     #main-tray {
         margin: 0;
+        padding: 5px;
     }
 
 }

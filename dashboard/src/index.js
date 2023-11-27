@@ -108,7 +108,6 @@ $(document).ready(function () {
 	}
 	bigTrashDay();
 
-
 	// SMASH TOURNEY STATUS
 	const origin = new Date("11/18/2022");
 	let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));

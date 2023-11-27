@@ -433,6 +433,16 @@ const holidayArray = [
         "type": "birthday"
     },
     {
+        "holiday_name": "Evan",
+        "month": 11,
+        "day_one": 8,
+        "day_two": null,
+        "day": null,
+        "year": 1992,
+        "emoji": "&#x1F46E;&#x200D;&#x2642;&#xFE0F;",
+        "type": "birthday"
+    },
+    {
         "holiday_name": "Adam",
         "month": 11,
         "day_one": 9,
