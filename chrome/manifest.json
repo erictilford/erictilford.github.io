@@ -24,7 +24,7 @@
     },
     "content_scripts": [
         {
-          "matches": ["https://www.toonamiaftermath.com/*"],
+          "matches": ["https://www.toonamiaftermath.com/*" , "https://www.google.com/*"],
           "js": ["content.js"]
         }
       ]
