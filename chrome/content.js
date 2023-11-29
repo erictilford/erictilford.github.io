@@ -3,7 +3,7 @@ console.log("Content Script Loaded");
 function setContainerStyles() {
     var viewContainer = document.querySelector(".view-container");
     if (viewContainer) {
-        viewContainer.style.height = "calc(100vh - 410px)";
+        viewContainer.style.height = "calc(100vh - 160px)";
         viewContainer.style.backgroundColor = "";
     }
 
