@@ -4,6 +4,7 @@ body {
     padding: 5px 10px;
     border: 2px solid antiquewhite;
     width: 210px;
+    user-select: none;
 }
 
 label {
