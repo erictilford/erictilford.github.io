@@ -1,0 +1,33 @@
+body {
+    background-color: darkslategrey;
+    color:antiquewhite;
+    padding: 5px 10px;
+    border: 2px solid antiquewhite;
+    width: 210px;
+}
+
+label {
+    margin: 0;
+}
+.align-left {
+    text-align: left;
+}
+
+
+.center {
+    text-align: center;
+}
+.center > div, .center > table /* insert any other block-level elements here */ {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checkbox {
+    background-color: green;
+    border: 1px solid #000;
+}
+.settings-table {
+    width: 100%;
+}
+
+
