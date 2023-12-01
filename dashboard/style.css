@@ -70,6 +70,12 @@ body {
 #ettv-panel {
     max-width:800px;
 }
+
+#full-moon-icon img {
+    height: 20px;
+    padding-left: 8px;
+}
+
 #last-updated-text {
     float: right;
     font-size: small;
