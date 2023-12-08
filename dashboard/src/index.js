@@ -528,7 +528,8 @@ $(document).ready(function () {
 						let moonPhase = result.daily[0].moon_phase;
 						$("#weather-extra-moon").html('<img src="assets/moonphases/' + moonPhaseInfo(moonPhase).image + '"><br>Moon Phase<br>' + moonPhaseInfo(moonPhase).text);
 						if ( moonPhaseInfo(moonPhase).text == "Full Moon" ){
-							$("#full-moon-icon").html('<img src="assets/moonphases/fullmoon.png" title="Full Moon">');
+							$("#weather-extra-moon img").addClass("moon-glow");
+							$("#full-moon-icon").html('<img src="assets/moonphases/fullmoon.png" class="moon-glow" title="Full Moon">');
 						}
 
 						// Wind direction | wind.js
