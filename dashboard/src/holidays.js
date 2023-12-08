@@ -459,7 +459,7 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "year": 1987,
-        "emoji": "&#127874;",
+        "emoji": "&#x1F3BC;",
         "type": "birthday"
     },
     {
