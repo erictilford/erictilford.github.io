@@ -504,9 +504,10 @@ $(document).ready(function () {
 						$("#weather-extra-uv").html('<i class="fa-solid fa-lg ' + uvicon + ' weather-extra-icon" style="color:' + uvcolor + '"></i><br>UV Index<br>' + uvtext + result.current.uvi);
 						
 						// Wind speed / gust
-						if ( result.current.wind_gust != undefined ) { gust = "-" + result.current.wind_gust; } 
+						let windSpeed = Math.round(result.current.wind_speed);
+						if ( result.current.wind_gust != undefined ) { gust = "-" + Math.round(result.current.wind_gust); } 
 						else { gust = ""; }
-						$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind Speed<br>' + result.current.wind_speed + gust + ' mph');
+						$("#weather-extra-wind").html('<i class="fa-solid fa-lg fa-wind weather-extra-icon" style="color:lightsteelblue"></i><br>Wind Speed<br>' + windSpeed + gust + ' mph');
 						
 						// Humidity
 						let humidity = result.current.humidity;
