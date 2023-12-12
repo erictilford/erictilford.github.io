@@ -139,6 +139,12 @@ const links = [
         "icon" : '<i class="fa-solid fa-2x fa-font-awesome" style="color:#528dd7"></i>',
         "target" : "#tools-list"
     },
+    {
+        "title" : "Mini Crossword",
+        "url" : "https://www.nytimes.com/crosswords/game/mini",
+        "icon" : '<i class="fa-solid fa-2x fa-puzzle-piece" style="color:#6493e6"></i>',
+        "target" : "#tools-list"
+    },
     // Audio
     {
         "title" : "NPR",
