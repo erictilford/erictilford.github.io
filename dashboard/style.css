@@ -19,6 +19,7 @@ body {
     max-height: 72px;
     margin: -24px 0 -16px 0;
 }
+
 /*
 #alert-expand-button {
     float: right;
@@ -34,17 +35,17 @@ body {
     cursor: pointer;
 }
 
-#alert-icon-span > i{
+#alert-icon-span>i {
     min-width: 12px;
 }
 
 #alert-window {
     border: 2px solid indianred;
     border-radius: 5px;
-    padding:5px;
+    padding: 5px;
     font-size: small;
 
-    background: rgb(0 , 0 , 0 , .9);
+    background: rgb(0, 0, 0, .9);
     position: absolute;
     max-width: calc(100% - 20px);
     left: 10px;
@@ -68,7 +69,7 @@ body {
 }
 
 #ettv-panel {
-    max-width:800px;
+    max-width: 800px;
 }
 
 #full-moon-icon img {
@@ -98,7 +99,7 @@ body {
     font-size: small;
     padding: 10px 0px;
     width: 85px;
-    
+
 }
 
 #location-text {
@@ -128,7 +129,7 @@ body {
     padding: 8px 15px 15px;
 }
 
-#panel-left{
+#panel-left {
     left: 0;
     width: 360px;
     border-radius: 0 15px 15px 0;
@@ -141,7 +142,7 @@ body {
     border: 3px solid #ffffff;
     margin: 5px 0px;
     border-radius: 10px;
-    display:none;
+    display: none;
 }
 
 #random-wallpaper-button {
@@ -176,6 +177,7 @@ body {
     font-size: medium;
     font-weight: normal;
 }
+
 /*
 #wallpaper-container {
     width: 100%;
@@ -230,10 +232,11 @@ body {
 
 #weather-hourly-table td {
     width: 20%;
-    vertical-align:top;
+    vertical-align: top;
     /*text-overflow: ellipsis;
     white-space: nowrap;*/
 }
+
 #weather-title {
     margin-bottom: 5px;
 }
@@ -249,9 +252,10 @@ body {
     float: right;
     font-size: 20px;
     line-height: 1.8;
-    cursor:default;
+    cursor: default;
     padding-left: 2px;
 }
+
 /*
 .banner-div {
     text-align: center;
@@ -278,18 +282,20 @@ body {
     border: none;
     padding-top: 5px;
 }
-.button-group-style > .btn {
+
+.button-group-style>.btn {
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
 }
-.button-group-style > label.active{
+
+.button-group-style>label.active {
     background-color: rgba(0, 0, 0, 0.2) !important;
     font-weight: bolder;
     color: white;
 }
 
 .button-style:hover {
-    background:rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .center-panel {
@@ -319,32 +325,33 @@ body {
 }
 
 .dog-dropdown {
-    color:white;
+    color: white;
     background-color: transparent;
     border-radius: 5px;
     margin-bottom: 5px;
 }
 
-.dog-dropdown > option {
-    background-color:#111111;
+.dog-dropdown>option {
+    background-color: #111111;
 }
 
-.dog-dropdown > option:disabled {
-    color:#666;
+.dog-dropdown>option:disabled {
+    color: #666;
 }
 
 .iframe-container {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 75%; /* 4:3 Aspect Ratio */
-  }
+    padding-top: 75%;
+    /* 4:3 Aspect Ratio */
+}
 
 .mobile-hr {
     display: none;
 }
 
-.moon-glow { 
+.moon-glow {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     border-radius: 50%;
 }
@@ -377,6 +384,7 @@ body {
     table-layout: fixed;
     margin-bottom: 10px;
 }
+
 .text-input {
     border-radius: 5px;
     width: 75px;
@@ -441,9 +449,10 @@ body {
 }
 */
 
+/* ? 
 @media only screen and (max-width: 768px) {
 
-    /*TABLET*/
+    
     #serugai-banner {
         display: none;
     }
@@ -452,12 +461,26 @@ body {
         display: block;
     }
 }
+*/
 
-@media only screen and (max-width: 425px) {
 
-    /* PHONE*/
+/* PHONE / Vertical TABLET */
+
+@media only screen and (min-width: 769px) {
+
+    .flex-column-reverse {
+        flex-direction: row !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 768px) {
+
+
     .container {
         padding: 0;
+        max-width: 475px;
     }
 
     #links-div>ul>a {
@@ -468,17 +491,20 @@ body {
         margin: 0;
         padding: 0 15px;
     }
+
     #panel-left {
         border-radius: 0;
-        
+
         width: 100%;
         position: unset;
     }
+
     #panel-right {
         border-radius: 0;
         width: 100%;
         position: unset;
     }
+
     #random-dog-image {
         max-width: 100%;
     }
@@ -486,12 +512,14 @@ body {
     .center-panel {
         max-width: unset;
     }
+
     .content-panel {
         border-radius: 0;
         width: 100% !important;
         position: unset;
         transform: none;
     }
+
     .mobile-hr {
         display: block;
         margin-top: 2rem;
@@ -504,7 +532,7 @@ body {
 }
 
 /* HEIGHT - tray positioning*/
-@media only screen and (max-height: 768px) and (min-width: 425px) {
+@media only screen and (max-height: 800px) and (min-width: 768px) {
 
     #main-tray {
         margin: 0;
@@ -514,15 +542,41 @@ body {
 }
 
 /*Filter styles*/
-.saturate { filter: saturate(3); }
-.grayscale { filter: grayscale(100%); }
-.contrast { filter: contrast(160%); }
-.brightness { filter: brightness(100); }
-.blur { filter: blur(3px); }
-.invert { filter: invert(100%); }
-.sepia { filter: sepia(100%); }
-.huerotate { filter: hue-rotate(180deg); }
-.rss.opacity { filter: opacity(30%); }
+.saturate {
+    filter: saturate(3);
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.contrast {
+    filter: contrast(160%);
+}
+
+.brightness {
+    filter: brightness(100);
+}
+
+.blur {
+    filter: blur(3px);
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+.sepia {
+    filter: sepia(100%);
+}
+
+.huerotate {
+    filter: hue-rotate(180deg);
+}
+
+.rss.opacity {
+    filter: opacity(30%);
+}
 
 /* Scrollbars /*
 
@@ -533,19 +587,19 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: none; 
+    background: none;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(255,255,255,0.2); 
+    background: rgb(255, 255, 255, 0.2);
 
     background: #444;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(255,255,255,0.4); 
+    background: rgb(255, 255, 255, 0.4);
     background: #666;
 }
 
@@ -561,19 +615,19 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .checkboxContainer input {
+}
+
+/* Hide the browser's default checkbox */
+.checkboxContainer input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
+}
+
+/* Create a custom checkbox */
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -582,36 +636,36 @@ body {
     background-color: rgba(0, 0, 0, 0.0);
     border-radius: 3px;
     border: 1px solid #bbb;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  /*
+}
+
+/* On mouse-over, add a grey background color */
+/*
   .checkboxContainer:hover input ~ .checkmark {
     background-color: #ccc;
   }
   */
-  
-  /* When the checkbox is checked, add a blue background */
-  /*
+
+/* When the checkbox is checked, add a blue background */
+/*
   .checkboxContainer input:checked ~ .checkmark {
     background-color: #2196F3;
   }
   */
 
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .checkboxContainer input:checked ~ .checkmark:after {
+}
+
+/* Show the checkmark when checked */
+.checkboxContainer input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .checkboxContainer .checkmark:after {
+}
+
+/* Style the checkmark/indicator */
+.checkboxContainer .checkmark:after {
     left: 7px;
     top: 0px;
     width: 8px;
@@ -621,4 +675,4 @@ body {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
