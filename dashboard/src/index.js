@@ -406,14 +406,16 @@ $(document).ready(function () {
 							let alertIcons = "";
 							let alertBody = "";
 							for (let i = 0; i < result.alerts.length; i ++){
-								console.log(result.alerts[i].tags);
-								console.log("(^add me as a custom alert icon");
 
 								let name = result.alerts[i].event;
 								let sender = '<u><br>' + result.alerts[i].sender_name + '</u>';
 								let desc = '<br><span style="white-space:pre-wrap">' + result.alerts[i].description + "</span>";
 
-								if (result.alerts[i].tags.includes("Snow/Ice")) { icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>'; } 
+								console.log(result.alerts[i].tags);
+								console.log("(^add me as a custom alert icon");
+								console.log(name);
+
+								if (result.alerts[i].tags.includes("Snow/Ice") || name.includes("Winter Storm")) { icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:indianred></i>'; } 
 								else if (result.alerts[i].tags.includes("Tornado")) { icon = '<i class="fa-solid fa-tornado"; style=color:indianred></i>'; } 
