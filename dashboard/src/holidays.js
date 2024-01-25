@@ -79,6 +79,15 @@ const holidayArray = [
         "type": "standard"
     },
     {
+        "holiday_name": "Leap Day",
+        "month": 2,
+        "day_one": 29,
+        "day_two": null,
+        "day": null,
+        "emoji": "&#x1F438;",
+        "type": "standard"
+    },
+    {
         "holiday_name": "Mario Day",
         "month": 3,
         "day_one": 10,
