@@ -145,6 +145,12 @@ const links = [
         "icon" : '<i class="fa-solid fa-2x fa-puzzle-piece" style="color:#6493e6"></i>',
         "target" : "#tools-list"
     },
+    {
+        "title" : "Bandle",
+        "url" : "https://bandle.app",
+        "icon" : '<i class="fa-solid fa-2x fa-guitar" style="color:#981520"></i>',
+        "target" : "#tools-list"
+    },
     // Audio
     {
         "title" : "NPR",

@@ -155,6 +155,9 @@ $(document).ready(function () {
 	$("#zodiac-symbol").text(zSign);
 	$("#zodiac-symbol").attr("title", zodiac(day, month) + ", " + zTitle);
 
+	// LUNAR ZODIAC
+	// *todo*
+
 	// SETTINGS
 	const settingsPanelAnimationSpeed = 300;
 
