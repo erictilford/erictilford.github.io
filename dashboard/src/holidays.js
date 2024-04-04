@@ -24,7 +24,16 @@ function checkHoliday(month, day, dayOfWeek, year) {
             if (day == holidayArray[i].day_one && month == holidayArray[i].month && year == holidayArray[i].year) {
                 holidayName = holidayArray[i].holiday_name;
             }
+        // Easter
+        } else if (holidayArray[i].type == "easter") {
+            holidayArray[i].dates.forEach(element => {
+                if (day == element.day_one && month == element.month && year == element.year) {
+                    holidayName = holidayArray[i].holiday_name;
+                }
+                
+            });
         }
+        
 
         // Adding birthday/anni year #
         if (holidayArray[i].type == "birthday") {
@@ -564,7 +573,34 @@ const holidayArray = [
         "emoji": "&#x1F3D5;&#xFE0F;",
         "type": "oneTime"
     },
-
+    // EASTER
+    {
+        "holiday_name": "Easter",
+        "dates": [
+            {"month": 4, "day_one": 20, "year": 2025},
+            {"month": 4, "day_one": 5, "year": 2026},
+            {"month": 3, "day_one": 28, "year": 2027},
+            {"month": 4, "day_one": 16, "year": 2028},
+            {"month": 4, "day_one": 1, "year": 2029},
+            {"month": 4, "day_one": 21, "year": 2030},
+            {"month": 4, "day_one": 13, "year": 2031},
+            {"month": 3, "day_one": 28, "year": 2032},
+            {"month": 4, "day_one": 17, "year": 2033},
+            {"month": 4, "day_one": 9, "year": 2034},
+            {"month": 3, "day_one": 25, "year": 2035},
+            {"month": 4, "day_one": 13, "year": 2036},
+            {"month": 4, "day_one": 5, "year": 2037},
+            {"month": 4, "day_one": 25, "year": 2038},
+            {"month": 4, "day_one": 10, "year": 2039},
+            {"month": 4, "day_one": 1, "year": 2040},
+            {"month": 4, "day_one": 21, "year": 2041},
+            {"month": 4, "day_one": 6, "year": 2042},
+            {"month": 3, "day_one": 29, "year": 2043},
+            {"month": 4, "day_one": 17, "year": 2044},
+        ],
+        "emoji": "&#x1F423;",
+        "type": "easter"
+    }
 
 ]
 //console.log(checkHoliday(3,14,1));
