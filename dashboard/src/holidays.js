@@ -152,6 +152,15 @@ const holidayArray = [
     },
     */
     {
+        "holiday_name": "Tax Day",
+        "month": 4,
+        "day_one": 15,
+        "day_two": null,
+        "day": null,
+        "emoji": "&#x1F4B8;",
+        "type": "standard"
+    },
+    {
         "holiday_name": "Earth Day",
         "month": 4,
         "day_one": 22,
