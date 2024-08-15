@@ -31,7 +31,7 @@ const links = [
     },
     {
         "title" : "Prime Video",
-        "url" : "https://www.amazon.com/gp/video/storefront",
+        "url" : "https://www.amazon.com/Amazon-Video/b/?ie=UTF8&node=2858778011&ref_=nav_cs_prime_video",
         "icon" : '<i class="fa-brands fa-2x fa-amazon" style="color:#00a8e1;"></i>',
         "target" : "#video-list"
     },
@@ -185,8 +185,8 @@ const links = [
     },
     {
         "title" : "Wellness & Longevity",
-        "url" : "https://google.com",
-        "icon" : '<i class="fa-brands fa-2x fa-wordpress" style="color:#85aeb5"></i>',
+        "url" : "https://wellnessok.com",
+        "icon" : '<i class="fa-solid fa-2x fa-syringe" style="color:#85aeb5"></i>',
         "target" : "#project-list"
     },
     {
