@@ -16,6 +16,20 @@ var data = [
     },
     */
     {
+        "recipe_name": "Chili",
+        "summary": "Classic beef & bean chili recipe for pressure cooker",
+        "ingredients": "1 lb ground beef; 16oz can chili beans, drained; 14.5oz can diced tomato; 1 white onion, diced; 1 cup chicken broth; 1&frac12; Tbs light brown sugar; 1&frac12; Tbs chili powder; 1 Tbs cumin; 1 Tbs tomato paste; 1 tsp coriander; 1 tsp paprika; 1 tsp garlic powder; 2 tsp salt; 1 tsp pepper",
+        "directions": "In pressure cooker, saut&eacute;e onion in 1 Tbs oil until translucent.*; Add ground beef and cook until browned.; Add spices, broth, tomato, and beans.; Pressure cook on beans/chili mode for 20 minutes.",
+        "notes": "*Depending on the dish, you may want to reserve some diced onion to finish.; Don't want beans? Add another lb ground beef.",
+        "tags": "Dinner",
+        "hands_on_time": "20",
+        "total_time": "40",
+        "date_added": "8/23/2024",
+        "contributor": "Eric Tilford",
+        "serves": "TBD",
+        "image": "chili.jpg"
+    },
+    {
         "recipe_name": "Pancakes",
         "summary": "Classic pancakes!",
         "ingredients": "1&frac12; cups all-purpose flour; 3&frac12; tsp baking powder; 1 Tbs sugar; &frac14; tsp salt; 1&frac14; cups milk; 3 Tbs butter, melted; 1 egg",
