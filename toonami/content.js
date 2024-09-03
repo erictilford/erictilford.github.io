@@ -40,7 +40,8 @@ document.onreadystatechange = () => {
 
     function setToonamiContainerStyles() {
 
-
+      var chatContainer = document.querySelector(".chat");
+      chatContainer.style.display = "none";
 
       
       var viewContainer = document.querySelector(".view-container");
