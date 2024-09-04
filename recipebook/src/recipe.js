@@ -1,5 +1,5 @@
 // Get the recipe ID from the URL query parameter
-alert("recipe.js loaded");
+
 const urlParams = new URLSearchParams(window.location.search);
 const recipeId = urlParams.get('id');
 
@@ -10,6 +10,11 @@ const recipe = recipes[recipeId];
 
 // Check if the recipe exists and display it
 if (recipe) {
+
+    //$("*").hide();
+    $(".recipe-title").html(recipe.recipe_name);
+    
+    /*
     const recipeContainer = document.getElementById('recipe-container');
     recipeContainer.innerHTML = `
         <h2>${recipe.recipe_name}</h2>
@@ -25,6 +30,7 @@ if (recipe) {
         <p><strong>Contributor:</strong> ${recipe.contributor}</p>
         <p><strong>Date Added:</strong> ${recipe.date_added}</p>
     `;
+    */
 } else {
     document.getElementById('recipe-container').innerHTML = '<p>Recipe not found.</p>';
 }
