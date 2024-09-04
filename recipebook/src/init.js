@@ -13,8 +13,8 @@ function init() {
       download: true,
       header: true,
       complete: function(results) {
-        var data = results.data
-        console.log(data)
+        var recipes = results.recipes
+        console.log(recipes)
       }
     })
   }
@@ -53,10 +53,10 @@ function showInfo(results) {
     };
 
     // ROW ITERATION
-    for (var recipeNumber in data) {
+    for (var recipeNumber in recipes) {
 
         // TAG GENERATION
-        var tags = data[recipeNumber].tags.split("; ");
+        var tags = recipes[recipeNumber].tags.split("; ");
         for (var tag in tags){
             if (!tagButtonNames.includes(tags[tag])){
                 tagButtonNames.push(tags[tag]);
@@ -184,7 +184,7 @@ function showInfo(results) {
 
         // CARD CONTENT
         var cardImage = document.createElement('img');
-        cardImage.src = "assets/recipes/"+data[recipeNumber].image; 
+        cardImage.src = "assets/recipes/"+recipes[recipeNumber].image; 
         cardImage.className = "card-img-top";
         newElement.appendChild(cardImage);
 
@@ -195,17 +195,17 @@ function showInfo(results) {
         // card title AKA recipe name
         var cardTitle = document.createElement('h5'); 
         cardTitle.className = "card-title unselectable";
-        cardTitle.innerHTML = data[recipeNumber].recipe_name;
+        cardTitle.innerHTML = recipes[recipeNumber].recipe_name;
         cardBody.appendChild(cardTitle);
 
         // card text AKA summary
         var cardText = document.createElement('p'); 
         cardText.className = "card-text d-none";
-        cardText.innerHTML = data[recipeNumber].summary;
+        cardText.innerHTML = recipes[recipeNumber].summary;
         cardBody.appendChild(cardText);
 
         // BADGES
-        var badges = data[recipeNumber].tags.split("; ");
+        var badges = recipes[recipeNumber].tags.split("; ");
         for (var badge in badges){
             var testBadge = document.createElement('span');
             //testBadge.onclick = function showCardsWithThisTag()  {
@@ -224,37 +224,37 @@ function showInfo(results) {
         // hands-on time
         var handsOnTime = document.createElement('div');
         handsOnTime.className = "card-hands-on-time d-none";
-        handsOnTime.innerHTML = data[recipeNumber].hands_on_time;
+        handsOnTime.innerHTML = recipes[recipeNumber].hands_on_time;
         newElement.appendChild(handsOnTime);
 
         // total time
         var totalTime = document.createElement('div');
         totalTime.className = "card-total-time d-none";
-        totalTime.innerHTML = data[recipeNumber].total_time;
+        totalTime.innerHTML = recipes[recipeNumber].total_time;
         newElement.appendChild(totalTime);
 
         // servings
         var cardServings = document.createElement('div');
         cardServings.className = "card-servings d-none";
-        cardServings.innerHTML = data[recipeNumber].serves;
+        cardServings.innerHTML = recipes[recipeNumber].serves;
         newElement.appendChild(cardServings);
         
         // ingredient list
         var cardIngredients = document.createElement('div'); 
         cardIngredients.className = "card-ingredients d-none";
-        cardIngredients.innerHTML = data[recipeNumber].ingredients;
+        cardIngredients.innerHTML = recipes[recipeNumber].ingredients;
         newElement.appendChild(cardIngredients);
 
         // direction list
         var cardDirections = document.createElement('div');
         cardDirections.className = "card-directions d-none";
-        cardDirections.innerHTML = data[recipeNumber].directions;
+        cardDirections.innerHTML = recipes[recipeNumber].directions;
         newElement.appendChild(cardDirections);
 
         // notes list
         var cardNotes = document.createElement('div');
         cardNotes.className = "card-notes d-none";
-        cardNotes.innerHTML = data[recipeNumber].notes;
+        cardNotes.innerHTML = recipes[recipeNumber].notes;
         newElement.appendChild(cardNotes);
 
         document.getElementById("cardholder").appendChild(newElement);

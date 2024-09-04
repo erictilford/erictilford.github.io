@@ -1,4 +1,4 @@
-var data = [
+var recipes = [
     /*
     {
         "recipe_name": "",
@@ -26,7 +26,7 @@ var data = [
         "total_time": "40",
         "date_added": "8/23/2024",
         "contributor": "Eric Tilford",
-        "serves": "TBD",
+        "serves": "4-6 servings",
         "image": "chili.jpg"
     },
     {
