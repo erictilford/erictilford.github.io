@@ -14,6 +14,7 @@ if (recipe) {
     noSleep.enable();
 
     //$("*").hide();
+    document.title = recipe.recipe_name + " - Recipe Book";
     $(".recipe-title").html(recipe.recipe_name);
     $(".summary").html(recipe.summary);
     $(".large-card-card-image").attr("src","./assets/recipes/"+recipe.image);
