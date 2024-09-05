@@ -18,6 +18,41 @@ if (recipe) {
     $(".recipe-title").html(recipe.recipe_name);
     $(".summary").html(recipe.summary);
     $(".large-card-card-image").attr("src","./assets/recipes/"+recipe.image);
+
+    $(".hands-on-time").html("Hands-on time: " + M2HM(recipe.hands_on_time));
+    $(".total-time").html("Total time: " + M2HM(recipe.total_time));
+    $(".servings").html("Serves: " + recipe.serves);
+
+    recipe.ingredients.forEach(ingredient => {
+        var listItem = document.createElement('li');
+        if (ingredient.startsWith("!")) {
+            listItem.innerHTML = ingredient.slice(1).trim();
+            $(listItem).attr("style", "list-style:none; font-size:large; margin-left:-20px; padding-top:5px");
+            //console.log(ingredient);
+        } else { listItem.innerHTML = ingredient; }
+        $(".ingredient-list").append(listItem);
+    });
+
+    recipe.directions.forEach(direction => {
+        var listItem = document.createElement('li');
+        listItem.innerHTML = direction;
+         $(".direction-list").append(listItem);
+    });
+
+    recipe.notes.forEach(note => {
+        var listItem = document.createElement('li');
+        listItem.innerHTML = note;
+         $(".note-list").append(listItem);
+    });
+        
+    /*
+    for (var ingredient in recipe.ingredients) {
+        var listItem = document.createElement('li');
+        listItem.innerText = ingredient;
+         $(".ingredient-list").append(listItem);
+    }
+    */
+
     /*
     const recipeContainer = document.getElementById('recipe-container');
     recipeContainer.innerHTML = `
@@ -40,4 +75,23 @@ if (recipe) {
     $("#recipe").hide();
     $(".container").html("<h1 style='color:white; text-align:center'>Recipe not found.</h1>");
     //document.getElementById('recipe-container').innerHTML = '<p>Recipe not found.</p>';
+}
+
+
+// Minutes to Hours/Minutes
+function M2HM(mins) {
+    var s = "";
+    var hours = Math.floor(mins / 60);
+    if (hours == 1) {
+        s += "1 Hour ";
+    } else if (hours >= 2) {
+        s += hours + " Hours ";
+    }
+    var minutes = mins % 60;
+    if (minutes == 1) {
+        s += "1 Minute ";
+    } else if (minutes >= 2) {
+        s += minutes + " Minutes";
+    }
+    return s;
 }

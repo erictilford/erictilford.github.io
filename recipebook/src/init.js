@@ -10,7 +10,7 @@ function showInfo(results) {
     for (var recipeNumber in recipes) {
 
         // TAG BUTTON GENERATION
-        var tags = recipes[recipeNumber].tags.split("; ");
+        var tags = recipes[recipeNumber].tags;
         for (var tag in tags){
             if (!tagButtonNames.includes(tags[tag])){
                 tagButtonNames.push(tags[tag]);
@@ -159,7 +159,7 @@ function showInfo(results) {
         cardBody.appendChild(cardText);
 
         // BADGES
-        var badges = recipes[recipeNumber].tags.split("; ");
+        var badges = recipes[recipeNumber].tags;
         for (var badge in badges){
             var testBadge = document.createElement('span');
             //testBadge.onclick = function showCardsWithThisTag()  {
