@@ -502,13 +502,13 @@ var recipes = [
         "id": "green-bean-casserole"
     },
     {
-        "recipe_name": "Jalapeño Popper Dip",
-        "summary": "A great party dip with the essence of stuffed jalapeño poppers.",
+        "recipe_name": "Jalape&ntilde;o Popper Dip",
+        "summary": "A great party dip with the essence of stuffed jalape&ntilde;o poppers.",
         "ingredients": [
             "2 (8oz) packages cream cheese, softened",
             "6-8 slices of bacon, chopped",
             "1 cup mayonnaise",
-            "4-6 jalapeño peppers, seeded and diced",
+            "4-6 jalape&ntilde;o peppers, seeded and diced",
             "1 cup shredded cheddar cheese",
             "&frac12; cup shredded mozzarella cheese",
             "&frac14; cup chopped green onion",

@@ -152,7 +152,8 @@ function showInfo(results) {
         // card title AKA recipe name
         var cardTitle = document.createElement('h5'); 
         cardTitle.className = "card-title unselectable";
-        cardTitle.innerHTML = recipes[recipeNumber].recipe_name;
+        //cardTitle.innerText = recipes[recipeNumber].recipe_name;
+        $(cardTitle).html(recipes[recipeNumber].recipe_name);
         cardBody.appendChild(cardTitle);
 
         // card text AKA summary
@@ -178,6 +179,8 @@ function showInfo(results) {
 
         // ADDING HIDDEN INFO
         
+
+        /*
         // hands-on time
         var handsOnTime = document.createElement('div');
         handsOnTime.className = "card-hands-on-time d-none";
@@ -213,6 +216,7 @@ function showInfo(results) {
         cardNotes.className = "card-notes d-none";
         cardNotes.innerHTML = recipes[recipeNumber].notes;
         newElement.appendChild(cardNotes);
+        */
 
         document.getElementById("cardholder").appendChild(newElement);
     }

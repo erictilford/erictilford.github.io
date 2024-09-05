@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://kit.fontawesome.com/ddc56dc609.js" crossorigin="anonymous"></script>
-        <!--link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css"-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="../src/NoSleep.js"></script>
-        <!--script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script-->
-        
-        <link rel="icon" href="assets/naruto.png">
-        <link rel="stylesheet" href="style.css">
 
-        <meta name="viewport" content="width=device-width, user-scalable=no">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/ddc56dc609.js" crossorigin="anonymous"></script>
+    <!--link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css"-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="../src/NoSleep.js"></script>
+    <!--script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script-->
 
-        <title>Recipe Book</title>
-    </head>
-    <body>
+    <link rel="icon" href="assets/naruto.png">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title>Recipe Book</title>
+</head>
+
+<body>
 
     <nav class="navbar sticky-top navbar-dark bg-dark">
         <div class="container">
@@ -25,87 +35,81 @@
             <form class="form-inline">
                 <i class="fas fa-tags tag-filter-toggle-btn header-icon" aria-hidden="true" title="Tag Filtering"></i>
                 <i class="fa fa-sun fa-lg light-mode-button header-icon" aria-hidden="true" title="Light/Dark Mode"></i>
-                <a target="_blank" href="https://github.com/erictilford/erictilford.github.io/tree/master/recipebook" title="GitHub">
+                <a target="_blank" href="https://github.com/erictilford/erictilford.github.io/tree/master/recipebook"
+                    title="GitHub">
                     <i class="fa fa-github fa-lg header-icon" aria-hidden="true"></i></a>
-                <!--a target="_blank" href="https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing">
-                    <i class="fa fa-table fa-lg header-icon" aria-hidden="true" style="margin-top:4px"></i></a-->
-                <!--<div class="light-mode-button"><img style="width:24px; margin-left:10px;" src="assets/sun.png"></div>
-                <a target="_blank" href="https://github.com/erictilford/erictilford.github.io/tree/master/recipebook"><img style="width:24px; margin-left:10px;" src="assets/github.png"></a>
-                <a target="_blank" href="https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing"><img style="width:24px; margin-left:10px;" src="assets/table.png"></a>-->
             </form>
-
-            
         </div>
-        
     </nav>
-    
+
     <div id="close-large-card-layer"></div>
 
-        <div id="loading-spinner">
-            <span style="display: inline-block; height:100%; vertical-align: middle"></span>
-            <img src="assets/spinner.gif" style="vertical-align:middle; width:75px">
-        </div>
+    <div id="loading-spinner">
+        <span style="display: inline-block; height:100%; vertical-align: middle"></span>
+        <img src="assets/spinner.gif" style="vertical-align:middle; width:75px">
+    </div>
 
-        <div class="container">
+    <div class="container">
 
-            <div id="large-card">
-                <div class="card full-page">
-                    <div class="x-button unselectable">x</div>
-                    <div class="row" style="margin-bottom: 15px">
-                        <div class="col-md-4">
-                            <div class="shadow-box large-card-shadow-box">
-                                <h3 class="recipe-title"></h3>
-                                <p class="summary"></p>
-                                <div class="large-card-badges"></div>
-                                <img class="large-card-card-image" src="assets/recipes/pizza.jpg">
+        <div id="large-card">
+            <div class="card full-page">
+                <div class="x-button unselectable">x</div>
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-md-4">
+                        <div class="shadow-box large-card-shadow-box">
+                            <h3 class="recipe-title"></h3>
+                            <p class="summary"></p>
+                            <div class="large-card-badges"></div>
+                            <img class="large-card-card-image" src="assets/recipes/pizza.jpg">
 
-                            </div>
-                        </div>
-                        <div class="col-md-8" style="margin-top:10px">
-                            <div class="large-card-image-frame"></div>
                         </div>
                     </div>
-                    <div class = "row middle-row shadow-box">
-                        <div class="col-md-4">
-                            <p class="hands-on-time margin-bot-5"></p>
-                        </div>
-                        <div class="col-md-4">
-                            <p class="total-time margin-bot-5"></p>
-                        </div>
-                        <div class="col-md-4">
-                            <p class="servings margin-bot-5"></p>
+                    <div class="col-md-8" style="margin-top:10px">
+                        <div class="large-card-image-frame"></div>
+                    </div>
+                </div>
+                <div class="row middle-row shadow-box">
+                    <div class="col-md-4">
+                        <p class="hands-on-time margin-bot-5"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="total-time margin-bot-5"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="servings margin-bot-5"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="shadow-box">
+                            <h5>Ingredients:</h5>
+                            <ul class="ingredient-list"></ul>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="shadow-box">
-                                <h5>Ingredients:</h5>
-                                <ul class="ingredient-list"></ul>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="shadow-box">
+                            <h5>Directions:</h5>
+                            <ol class="direction-list"></ol>
                         </div>
-                        <div class="col-md-4">
-                            <div class="shadow-box">
-                                <h5>Directions:</h5>
-                                <ol class="direction-list"></ol>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="shadow-box">
-                                <h5>Notes:</h5>
-                                <ul class="note-list"></ul>
-                            </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="shadow-box">
+                            <h5>Notes:</h5>
+                            <ul class="note-list"></ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="buttonholder"></div>
-            <div id="cardholder"></div>
-            <br>
-            <p class="footer-text">&copy; Eric Tilford MMXX-MMXXII</p>
-            <script type="text/javascript" src="src/recipes.js"></script>
-            <script type="text/javascript" src="src/init.js"></script>
-
         </div>
+        <div id="buttonholder"></div>
+        <div id="cardholder"></div>
+        <br>
+        <p class="footer-text">&copy; Eric Tilford MMXX-MMXXII</p>
+        <script type="text/javascript" src="src/recipes.js"></script>
+        <script type="text/javascript" src="src/init.js"></script>
 
-    </body>
+    </div>
+
+</body>
+
 </html>

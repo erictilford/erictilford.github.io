@@ -38,6 +38,9 @@ dl, ol, ul {
     margin-bottom: 5px;
     display:none;
 }
+#cardholder {
+    padding-top:15px;
+}
 #close-large-card-layer{
     display:none;
     position:fixed;
@@ -60,8 +63,10 @@ dl, ol, ul {
 #recipe {
     background-color: var(--secondary-color);
     color: var(--text-color);
-    width: 100%;
-    padding: 0 10px;
+    /*width: 100%;*/
+    padding: 0 15px;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 /* CLASSES */
@@ -154,7 +159,7 @@ dl, ol, ul {
 .navbar {
      border-bottom: 2px solid var(--tertiary-color);
      background-color: var(--secondary-color) !important;
-     margin-bottom: 15px;
+     /*margin-bottom: 15px;*/
  }
 .navbar-brand {
     color: var(--text-color) !important;

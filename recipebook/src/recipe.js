@@ -1,20 +1,18 @@
 // Get the recipe ID from the URL query parameter
-
 const urlParams = new URLSearchParams(window.location.search);
 const recipeId = urlParams.get('id');
 
 // Get the specific recipe from the array
-//const recipe = recipes[recipeId];
 const recipe = recipes.find(recipe => recipe.id === recipeId);
-
-var noSleep = new NoSleep();
 
 // Check if the recipe exists and display it
 if (recipe) {
 
+    // Enable noSleep (screen lock)
+    var noSleep = new NoSleep();
     noSleep.enable();
 
-    //$("*").hide();
+    // Update page contents
     document.title = recipe.recipe_name + " - Recipe Book";
     $(".recipe-title").html(recipe.recipe_name);
     $(".summary").html(recipe.summary);
@@ -39,7 +37,6 @@ if (recipe) {
         if (ingredient.startsWith("!")) {
             listItem.innerHTML = ingredient.slice(1).trim();
             $(listItem).attr("style", "list-style:none; font-size:large; margin-left:-20px; padding-top:5px");
-            //console.log(ingredient);
         } else { listItem.innerHTML = ingredient; }
         $(".ingredient-list").append(listItem);
     });
@@ -55,14 +52,6 @@ if (recipe) {
         listItem.innerHTML = note;
          $(".note-list").append(listItem);
     });
-        
-    /*
-    for (var ingredient in recipe.ingredients) {
-        var listItem = document.createElement('li');
-        listItem.innerText = ingredient;
-         $(".ingredient-list").append(listItem);
-    }
-    */
 
     /*
     const recipeContainer = document.getElementById('recipe-container');
@@ -87,7 +76,6 @@ if (recipe) {
     $(".container").html("<h1 style='color:white; text-align:center'>Recipe not found.</h1>");
     //document.getElementById('recipe-container').innerHTML = '<p>Recipe not found.</p>';
 }
-
 
 // Minutes to Hours/Minutes
 function M2HM(mins) {
