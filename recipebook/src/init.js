@@ -1,25 +1,3 @@
-//var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1kHpjMZl3TVcLbt_eNIu0k77wfSInQFHScgt5vDm51TE/edit?usp=sharing';
-/*
-function init() {
-    Tabletop.init( { key: public_spreadsheet_url,
-                    callback: showInfo,
-                    simpleSheet: true } );
-}
-*/
-
-/*
-function init() {
-    Papa.parse(public_spreadsheet_url, {
-      download: true,
-      header: true,
-      complete: function(results) {
-        var recipes = results.recipes
-        console.log(recipes)
-      }
-    })
-  }
-*/
-
 window.addEventListener('DOMContentLoaded', showInfo);
 
 function showInfo(results) {
@@ -27,30 +5,6 @@ function showInfo(results) {
     var noSleep = new NoSleep();
 
     var tagButtonNames = [];
-
-    // TAG/BADGE COLORS
-    var tagColors = {
-        "Appetizer" : "#d4b5ff",
-        "Party" : "#81ccc8",
-        "Sauce" : "#d4b5ff",
-        "Sides" : "#81ccc8",
-        "BBQ" : "#c99393",
-        "Thai" : "#83dec4",
-        "Dessert" : "#ebb7c3",
-        "Dinner" : "#f2a68f",
-        "Holiday" : "#7dc991",
-        "Japanese" : "#1594a8",
-        "Baking" : "#e0db90",
-        "Italian" : "#c99393",
-        "Tex-Mex" : "#ffc14f",
-        "Seafood" : "#81b0e3",
-        "Guides" : "#bbbbbb",
-        "Breakfast" : "#ffe3a5",
-        // OLD
-        "Vegetarian" : "#228B22",
-        "Fast Food" : "#495057",
-        "Chinese" : "#dc3545"
-    };
 
     // ROW ITERATION
     for (var recipeNumber in recipes) {
