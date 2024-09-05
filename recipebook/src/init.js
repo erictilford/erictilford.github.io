@@ -55,7 +55,7 @@ function showInfo(results) {
     // ROW ITERATION
     for (var recipeNumber in recipes) {
 
-        // TAG GENERATION
+        // TAG BUTTON GENERATION
         var tags = recipes[recipeNumber].tags.split("; ");
         for (var tag in tags){
             if (!tagButtonNames.includes(tags[tag])){

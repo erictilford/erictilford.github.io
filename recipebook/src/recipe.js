@@ -6,14 +6,17 @@ const recipeId = urlParams.get('id');
 // Get the specific recipe from the array
 const recipe = recipes[recipeId];
 
-
+var noSleep = new NoSleep();
 
 // Check if the recipe exists and display it
 if (recipe) {
 
+    noSleep.enable();
+
     //$("*").hide();
     $(".recipe-title").html(recipe.recipe_name);
-    
+    $(".summary").html(recipe.summary);
+    $(".large-card-card-image").attr("src","./assets/recipes/"+recipe.image);
     /*
     const recipeContainer = document.getElementById('recipe-container');
     recipeContainer.innerHTML = `
@@ -32,5 +35,7 @@ if (recipe) {
     `;
     */
 } else {
-    document.getElementById('recipe-container').innerHTML = '<p>Recipe not found.</p>';
+    $("#recipe").hide();
+    $(".container").html("<h1 style='color:white; text-align:center'>Recipe not found.</h1>");
+    //document.getElementById('recipe-container').innerHTML = '<p>Recipe not found.</p>';
 }

@@ -57,6 +57,13 @@ dl, ol, ul {
     text-align: center;
 }
 
+#recipe {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    width: 100%;
+    padding: 0 10px;
+}
+
 /* CLASSES */
 .badge {
     margin:0px 8px 0px 0px;
@@ -118,12 +125,16 @@ dl, ol, ul {
 .header-icon:hover {
     cursor:pointer;
 }
+.large-card-badges {
+    z-index: 1;
+    position: relative;
+}
 .large-card-card-image {
     position: absolute;
     height: 100%;
     width: calc(100% - 20px);
     top: 5px;
-    z-index: -1;
+    z-index: 0;
     border-radius: inherit;
     left: 10px;
     filter: var(--shadow-filter);
@@ -156,7 +167,17 @@ dl, ol, ul {
 }
 .recipe-title, .summary {
     color: var(--dark-text);
+    
+    z-index: 1;
+    position: relative;
 }
+/*
+.recipe-title {
+    position: relative;
+    z-index: 2;
+}
+    */
+
 .shadow-box {
     border-radius: 10px;
     background-color: var(--primary-color);
