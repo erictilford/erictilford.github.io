@@ -18,7 +18,8 @@ function showInfo(results) {
         }
 
         // C A R D S
-        var newElement = document.createElement('div');
+        var newElement = document.createElement('a');
+        $(newElement).attr("href", "recipe.html?id=" + recipes[recipeNumber].id);
         newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover small-card";
 
         // LARGE CARD

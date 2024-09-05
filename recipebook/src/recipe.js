@@ -4,7 +4,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const recipeId = urlParams.get('id');
 
 // Get the specific recipe from the array
-const recipe = recipes[recipeId];
+//const recipe = recipes[recipeId];
+const recipe = recipes.find(recipe => recipe.id === recipeId);
 
 var noSleep = new NoSleep();
 
@@ -22,6 +23,16 @@ if (recipe) {
     $(".hands-on-time").html("Hands-on time: " + M2HM(recipe.hands_on_time));
     $(".total-time").html("Total time: " + M2HM(recipe.total_time));
     $(".servings").html("Serves: " + recipe.serves);
+
+    recipe.tags.forEach(badge => {
+        if (badge !== undefined){ // no idea why this is happening
+            var testBadge = document.createElement('span');
+            testBadge.className = 'badge badge-secondary unselectable';
+            testBadge.innerHTML = badge;
+            testBadge.style.background = tagColors[badge];
+            $(".large-card-badges").append(testBadge);
+        }
+    });
 
     recipe.ingredients.forEach(ingredient => {
         var listItem = document.createElement('li');
