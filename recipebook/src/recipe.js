@@ -36,6 +36,7 @@ if (recipe) {
     `;
     */
 } else {
+    document.title = "Recipe Not Found - Recipe Book";
     $("#recipe").hide();
     $(".container").html("<h1 style='color:white; text-align:center'>Recipe not found.</h1>");
     //document.getElementById('recipe-container').innerHTML = '<p>Recipe not found.</p>';
