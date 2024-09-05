@@ -1057,5 +1057,4 @@ var recipes = [
         "image": "tomkha.jpg",
         "id": "tom-kha-gai"
     }
-
 ]

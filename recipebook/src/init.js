@@ -23,6 +23,7 @@ function showInfo(results) {
         newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover small-card";
 
         // LARGE CARD
+        /*
         newElement.onclick = function openlargeCard()
         { 
             noSleep.enable();
@@ -136,6 +137,7 @@ function showInfo(results) {
                 noteList.appendChild(note);
             }
         }
+            */
 
         // CARD CONTENT
         var cardImage = document.createElement('img');
