@@ -55,7 +55,7 @@ var recipes = [
         "ingredients": [
             "1 lb ground beef",
             "16oz can chili beans, drained",
-            "14.5oz can diced tomato",
+            "14.5oz can diced tomato, drained",
             "1 white onion, diced",
             "1 cup chicken broth",
             "1&frac12; Tbs light brown sugar",
@@ -71,7 +71,8 @@ var recipes = [
         "directions": [
             "In pressure cooker, saut&eacute;e onion in 1 Tbs oil until translucent.",
             "Add ground beef and cook until browned.",
-            "Add spices, broth, tomato, and beans.",
+            "Add spices and stir thoroughly.",
+            "Add broth, tomato, and beans.",
             "Pressure cook on beans/chili mode for 20 minutes."
         ],
         "notes": [
@@ -298,7 +299,10 @@ var recipes = [
             "1 tsp paprika",
             "&frac12; tsp salt",
             "&frac14; tsp black pepper",
-            "&frac12; cup Buffalo sauce*"
+            "&frac12; cup Buffalo sauce*",
+            "!Buffalo Sauce (&frac34; cup):",
+            "4oz hot sauce",
+            "&frac14; cup (&frac12; stick) melted butter"
         ],
         "directions": [
             "Wash and chop cauliflower into florets and pat dry.",
@@ -311,7 +315,7 @@ var recipes = [
         ],
         "notes": [
             "*Gluten-free 1:1 flour will work too, although more may be needed to achieve a batter-like consistency.",
-            "*[Buffalo Sauce]; 2 parts hot sauce (traditionally Frank's Red Hot), 1 part melted butter; For &frac34; cup Buffalo sauce:; 4oz hot sauce; &frac14; cup (&frac12; stick) melted butter"
+            "*Buffalo Sauce is 2 parts hot sauce (traditionally Frank's Red Hot) and 1 part melted butter"
         ],
         "tags": ["Appetizer", "Party"],
         "hands_on_time": "40",
