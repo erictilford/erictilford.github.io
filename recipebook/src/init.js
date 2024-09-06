@@ -2,11 +2,11 @@ window.addEventListener('DOMContentLoaded', showInfo);
 
 function showInfo(results) {
 
-    var noSleep = new NoSleep();
+    // var noSleep = new NoSleep();
 
     var tagButtonNames = [];
 
-    // ROW ITERATION
+    // RECIPE ITERATION
     for (var recipeNumber in recipes) {
 
         // TAG BUTTON GENERATION
@@ -17,7 +17,7 @@ function showInfo(results) {
             }
         }
 
-        // C A R D S
+        // CARD GENERATION
         var newElement = document.createElement('a');
         $(newElement).attr("href", "recipe.html?id=" + recipes[recipeNumber].id);
         newElement.id = "card_"+recipeNumber; newElement.className = "card blue-hover small-card";

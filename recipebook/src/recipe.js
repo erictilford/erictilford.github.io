@@ -32,6 +32,18 @@ if (recipe) {
         }
     });
 
+    var imageFrame = document.getElementsByClassName("large-card-image-frame")[0];
+    imageFrame.innerHTML = "";
+    //add for loop for multiple images here
+    var imageAnchor = document.createElement('a');
+    imageAnchor.href = "./assets/recipes/" + recipe.image;
+    imageAnchor.target = "_blank";
+    $(".large-card-image-frame").append(imageAnchor);
+    var recipeThumb = document.createElement('img');
+    recipeThumb.src = "./assets/recipes/" + recipe.image;
+    recipeThumb.className = "recipe-thumb";
+    imageAnchor.appendChild(recipeThumb);
+
     recipe.ingredients.forEach(ingredient => {
         var listItem = document.createElement('li');
         if (ingredient.startsWith("!")) {
@@ -53,23 +65,6 @@ if (recipe) {
          $(".note-list").append(listItem);
     });
 
-    /*
-    const recipeContainer = document.getElementById('recipe-container');
-    recipeContainer.innerHTML = `
-        <h2>${recipe.recipe_name}</h2>
-        <img src="${recipe.image}" alt="${recipe.recipe_name}" />
-        <p><strong>Summary:</strong> ${recipe.summary}</p>
-        <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
-        <p><strong>Directions:</strong> ${recipe.directions}</p>
-        <p><strong>Notes:</strong> ${recipe.notes}</p>
-        <p><strong>Tags:</strong> ${recipe.tags}</p>
-        <p><strong>Hands-on Time:</strong> ${recipe.hands_on_time}</p>
-        <p><strong>Total Time:</strong> ${recipe.total_time}</p>
-        <p><strong>Serves:</strong> ${recipe.serves}</p>
-        <p><strong>Contributor:</strong> ${recipe.contributor}</p>
-        <p><strong>Date Added:</strong> ${recipe.date_added}</p>
-    `;
-    */
 } else {
     document.title = "Recipe Not Found - Recipe Book";
     $("#recipe").hide();
