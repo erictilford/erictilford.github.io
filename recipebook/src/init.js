@@ -97,26 +97,6 @@ function showInfo(results) {
     }
     createButtons();
 
-    /*
-    // CLOSE LARGE CARD
-    function closeLargeCard(){ 
-        noSleep.disable();
-        document.getElementById("large-card").style.display = "none"; 
-        document.getElementById("close-large-card-layer").style.display = "none"; 
-    }
-    // attach to X BUTTON
-    document.getElementsByClassName("x-button")[0].onclick = function() { closeLargeCard() };
-    // attach to "CLICK OUTSIDE TO CLOSE" LAYER
-    document.getElementById("close-large-card-layer").onclick = function() { closeLargeCard() };
-
-    document.getElementsByClassName("tag-filter-toggle-btn")[0].onclick = function() { 
-        $("#buttonholder").toggle();
-     };
-*/
-
-
-    
-
     // HIDE LOADING SPINNER (this goes last)
     document.getElementById("loading-spinner").style.display = "none";
 }
