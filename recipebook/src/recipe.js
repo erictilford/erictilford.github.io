@@ -32,8 +32,6 @@ if (recipe) {
         }
     });
 
-    var imageFrame = document.getElementsByClassName("large-card-image-frame")[0];
-    imageFrame.innerHTML = "";
     //add for loop for multiple images here
     var imageAnchor = document.createElement('a');
     imageAnchor.href = "./assets/recipes/" + recipe.image;
