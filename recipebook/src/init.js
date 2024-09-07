@@ -94,6 +94,9 @@ function showInfo(results) {
 
             document.getElementById("buttonholder").appendChild(newButton);
         }
+        document.getElementsByClassName("tag-filter-toggle-btn")[0].onclick = function() { 
+            $("#buttonholder").toggle();
+        };
     }
     createButtons();
 
