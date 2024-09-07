@@ -56,7 +56,7 @@ var recipes = [
             "1 lb ground beef",
             "16oz can chili beans, drained",
             "14.5oz can diced tomato, drained",
-            "1 white onion, diced",
+            "1 white onion, diced, divided*",
             "1 cup chicken broth",
             "1&frac12; Tbs light brown sugar",
             "1&frac12; Tbs chili powder",
