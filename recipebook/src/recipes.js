@@ -63,19 +63,20 @@ var recipes = [
             "1 tsp ground black pepper"
         ],
         "directions": [
-            "Thoroughly mix seasoning blend with browned ground beef while cooking.*"
+            "Thoroughly mix seasoning blend with browned ground beef while cooking."
         ],
         "notes": [
-            "*This recipe is for 1 lb. ground beef."
+            "This recipe is for 1 lb. ground beef."
         ],
         "tags": [
-            "Tex-Mex"
+            "Tex-Mex",
+            "Dinner"
         ],
         "hands_on_time": "5",
         "total_time": "5",
         "date_added": "9/7/2024",
         "contributor": "Eric Tilford",
-        "serves": "per 1 lb.",
+        "serves": "1 lb.",
         "image": "taco-seasoning.jpg",
         "id": "taco-seasoning"
     },
