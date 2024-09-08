@@ -50,6 +50,36 @@ var recipes = [
     },
     */
     {
+        "recipe_name": "Taco Seasoning",
+        "summary": "Homemade seasoning blend for classic tacos",
+        "ingredients": [
+            "1 Tbs chili powder",
+            "&frac14; tsp garlic powder",
+            "&frac14; tsp onion powder",
+            "&frac14; tsp dried oregano",
+            "&frac14; tsp paprika",
+            "1&frac12; tsp ground cumin",
+            "&frac12; tsp salt",
+            "1 tsp ground black pepper"
+        ],
+        "directions": [
+            "Thoroughly mix seasoning blend with browned ground beef while cooking.*"
+        ],
+        "notes": [
+            "*This recipe is for 1 lb. ground beef."
+        ],
+        "tags": [
+            "Tex-Mex"
+        ],
+        "hands_on_time": "5",
+        "total_time": "5",
+        "date_added": "9/7/2024",
+        "contributor": "Eric Tilford",
+        "serves": "per 1 lb.",
+        "image": "taco-seasoning.jpg",
+        "id": "taco-seasoning"
+    },
+    {
         "recipe_name": "Chili",
         "summary": "Classic beef & bean chili recipe for pressure cooker",
         "ingredients": [
@@ -83,7 +113,7 @@ var recipes = [
         "hands_on_time": "20",
         "total_time": "40",
         "date_added": "8/23/2024",
-        "contributor": "Eric Tilford",
+        "contributor": "Amber Tilford",
         "serves": "4-6 servings",
         "image": "chili.jpg",
         "id": "chili"
