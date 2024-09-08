@@ -37,9 +37,7 @@ var recipes = [
         "notes": [
             ""
         ],
-        "tags": [
-            ""
-        ],
+        "tags": [""],
         "hands_on_time": "",
         "total_time": "",
         "date_added": "",
@@ -68,10 +66,7 @@ var recipes = [
         "notes": [
             "This recipe is for 1 lb. ground beef."
         ],
-        "tags": [
-            "Tex-Mex",
-            "Dinner"
-        ],
+        "tags": ["Tex-Mex", "Dinner"],
         "hands_on_time": "5",
         "total_time": "5",
         "date_added": "9/7/2024",
