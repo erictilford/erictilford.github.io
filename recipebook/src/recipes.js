@@ -48,6 +48,49 @@ var recipes = [
     },
     */
     {
+        "recipe_name": "Cinnamon Swirl Coffee Cake",
+        "summary": "Rich, buttery coffee cake with a sweet spiced walnut swirl",
+        "ingredients": [
+            "2&frac13; cups AP flour, spooned and leveled",
+            "2 cups granulated sugar",
+            "2 sticks (1 cup) room temp. unsalted butter",
+            "3 large eggs",
+            "8oz full fat sour cream",
+            "1&frac12; tsp vanilla extract",
+            "1 tsp salt",
+            "&frac12; tsp baking soda",
+            "!Cinnamon Swirl*:",
+            "1+ cup chopped walnut",
+            "3 Tbs light brown sugar",
+            "2 tsp cinnamon",
+            "2 Tbs melted butter"
+        ],
+        "directions": [
+            "Toast walnuts on baking sheet for 10 minutes at 350&deg;F.",
+            "Combine swirl ingredients and set aside.",
+            "Set oven to 300&deg;F.",
+            "Butter and flour Bundt cake pan, tap out excess flour.",
+            "In a medium bowl, whisk flour, baking soda, and salt, and set aside.",
+            "Using an electric mixer with paddle or beater attachment, combine sugar and butter, beating on medium speed until pale and fluffy (about 3 minutes).",
+            "Add the eggs one at a time, beating well after each.",
+            "On low speed, add the sour cream and vanilla (may look a bit curdled).",
+            "Gradually add the flour mix on low speed until smooth and homogenous.",
+            "Add &frac13; of the batter to the pan, then &frac12; of the swirl mixture, etc.",
+            "Bake 65-75 minutes, allow to cool for 15 minutes ONLY*"
+        ],
+        "notes": [
+            "*The brown sugar in the swirl mixture may stick to the pan, so don't overcool, and try not to bring the swirl to the edge of the pan."
+        ],
+        "tags": ["Dessert", "Breakfast", "Baking"],
+        "hands_on_time": "30",
+        "total_time": "100",
+        "date_added": "9/9/2024",
+        "contributor": "Eric Tilford",
+        "serves": "16 slices",
+        "image": "coffeecake.jpg",
+        "id": "cinnamon-swirl-coffee-cake"
+    },
+    {
         "recipe_name": "Taco Seasoning",
         "summary": "Homemade seasoning blend for classic tacos",
         "ingredients": [
