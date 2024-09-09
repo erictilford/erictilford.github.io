@@ -79,7 +79,8 @@ var recipes = [
             "Bake 65-75 minutes, allow to cool for 15 minutes ONLY*"
         ],
         "notes": [
-            "*The brown sugar in the swirl mixture may stick to the pan, so don't overcool, and try not to bring the swirl to the edge of the pan."
+            "*The brown sugar in the swirl mixture may stick to the pan, so don't overcool, and try not to bring the swirl to the edge of the pan.",
+            "You may want to increase amount of swirl mixture."
         ],
         "tags": ["Dessert", "Breakfast", "Baking"],
         "hands_on_time": "30",
