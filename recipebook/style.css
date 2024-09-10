@@ -175,10 +175,16 @@ ul {
 }
 
 .large-card-image-frame {
+    gap: 10px 0;
+    flex-wrap: wrap;
     display: flex;
     justify-content: left;
     align-items: center;
     height: 100%;
+}
+
+.large-card-image-frame > a {
+    padding-right: 15px;
 }
 
 .large-card-shadow-box {
@@ -209,7 +215,6 @@ ul {
     height: 125px;
     max-width: 100%;
     border: 3px solid var(--dark-text);
-    margin: 0 15px 0 0;
 }
 
 .recipe-title,
@@ -299,6 +304,12 @@ ul {
         width: calc(100%);
         max-height: calc(100%);
         margin: 0px 0px;
+    }
+
+    .large-card-image-frame {
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .navbar {
