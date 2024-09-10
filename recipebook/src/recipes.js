@@ -89,7 +89,7 @@ var recipes = [
             "Although the spice level is mild, you may want to omit the cayenne pepper if cooking for kids.",
             "We think a sharp <i>white</i> cheddar looks great for this recipe.",
             "To make ahead or freeze: instead of baking, let cool, cover, and refrigerate for up to 2 days or freeze for up to 3 months.",
-            "If possible, use a rotisserie chicken to make homemade broth and fresh white and dark meat."
+            "If possible, use a rotisserie chicken to make homemade broth and pulled chicken."
         ],
         "tags": ["Dinner"],
         "hands_on_time": "20",
