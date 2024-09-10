@@ -32,10 +32,7 @@ if (recipe) {
         }
     });
 
-    //add for loop for multiple images here
-    
     recipe.images.forEach(img => {
-    //});
         var imageAnchor = document.createElement('a');
         imageAnchor.href = "./assets/recipes/" + img;
         imageAnchor.target = "_blank";
