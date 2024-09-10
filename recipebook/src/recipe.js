@@ -16,7 +16,7 @@ if (recipe) {
     document.title = recipe.recipe_name + " - Recipe Book";
     $(".recipe-title").html(recipe.recipe_name);
     $(".summary").html(recipe.summary);
-    $(".large-card-card-image").attr("src","./assets/recipes/"+recipe.image);
+    $(".large-card-card-image").attr("src","./assets/recipes/"+recipe.images[0]);
 
     $(".hands-on-time").html("Hands-on time: " + M2HM(recipe.hands_on_time));
     $(".total-time").html("Total time: " + M2HM(recipe.total_time));
@@ -33,14 +33,18 @@ if (recipe) {
     });
 
     //add for loop for multiple images here
-    var imageAnchor = document.createElement('a');
-    imageAnchor.href = "./assets/recipes/" + recipe.image;
-    imageAnchor.target = "_blank";
-    $(".large-card-image-frame").append(imageAnchor);
-    var recipeThumb = document.createElement('img');
-    recipeThumb.src = "./assets/recipes/" + recipe.image;
-    recipeThumb.className = "recipe-thumb";
-    imageAnchor.appendChild(recipeThumb);
+    
+    recipe.images.forEach(img => {
+    //});
+        var imageAnchor = document.createElement('a');
+        imageAnchor.href = "./assets/recipes/" + img;
+        imageAnchor.target = "_blank";
+        $(".large-card-image-frame").append(imageAnchor);
+        var recipeThumb = document.createElement('img');
+        recipeThumb.src = "./assets/recipes/" + img;
+        recipeThumb.className = "recipe-thumb";
+        imageAnchor.appendChild(recipeThumb);
+    });
 
     recipe.ingredients.forEach(ingredient => {
         var listItem = document.createElement('li');

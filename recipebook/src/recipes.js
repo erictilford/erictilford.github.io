@@ -43,7 +43,7 @@ var recipes = [
         "date_added": "",
         "contributor": "Eric Tilford",
         "serves": "",
-        "image": "",
+        "images": ["",
         "id": ""
     },
     */
@@ -88,7 +88,7 @@ var recipes = [
         "date_added": "9/9/2024",
         "contributor": "Eric Tilford",
         "serves": "16 slices",
-        "image": "coffeecake.jpg",
+        "images": ["coffeecake.jpg", "coffeecake2.jpg"],
         "id": "cinnamon-swirl-coffee-cake"
     },
     {
@@ -116,7 +116,7 @@ var recipes = [
         "date_added": "9/7/2024",
         "contributor": "Eric Tilford",
         "serves": "1 lb.",
-        "image": "taco-seasoning.jpg",
+        "images": ["taco-seasoning.jpg"],
         "id": "taco-seasoning"
     },
     {
@@ -155,7 +155,7 @@ var recipes = [
         "date_added": "8/23/2024",
         "contributor": "Amber Tilford",
         "serves": "4-6 servings",
-        "image": "chili.jpg",
+        "images": ["chili.jpg"],
         "id": "chili"
     }, {
         "recipe_name": "Pancakes",
@@ -188,7 +188,7 @@ var recipes = [
         "date_added": "3/19/2023",
         "contributor": "Eric Tilford",
         "serves": "2 cups mix / 8 pancakes",
-        "image": "pancakes.jpg",
+        "images": ["pancakes.jpg"],
         "id": "pancakes"
     },
     {
@@ -226,7 +226,7 @@ var recipes = [
         "date_added": "3/19/2023",
         "contributor": "Eric Tilford",
         "serves": "2-3 servings",
-        "image": "baked_salmon.jpg",
+        "images": ["baked_salmon.jpg"],
         "id": "baked-salmon"
     },
     {
@@ -267,7 +267,7 @@ var recipes = [
         "date_added": "3/19/2023",
         "contributor": "Amber Tilford",
         "serves": "~4 dozen meatballs",
-        "image": "meatballs.jpg",
+        "images": ["meatballs.jpg"],
         "id": "meatballs"
     },
     {
@@ -320,7 +320,7 @@ var recipes = [
         "date_added": "5/24/2022",
         "contributor": "Eric Tilford",
         "serves": "4-6 servings",
-        "image": "tonkatsu.jpg",
+        "images": ["tonkatsu.jpg"],
         "id": "tonkatsu"
     },
     {
@@ -355,7 +355,7 @@ var recipes = [
         "date_added": "5/22/2022",
         "contributor": "Amber Tilford",
         "serves": "20-24 bites",
-        "image": "proteinballs.jpg",
+        "images": ["proteinballs.jpg"],
         "id": "protein-bites"
     },
     {
@@ -393,7 +393,7 @@ var recipes = [
         "date_added": "05/22/2022",
         "contributor": "Eric Tilford",
         "serves": "8 servings",
-        "image": "buffalocauliflower.jpg",
+        "images": ["buffalocauliflower.jpg"],
         "id": "buffalo-cauliflower"
     },
     {
@@ -429,7 +429,7 @@ var recipes = [
         "date_added": "05/09/2022",
         "contributor": "Eric Tilford",
         "serves": "See notes*",
-        "image": "waterbathcanning.jpg",
+        "images": ["waterbathcanning.jpg"],
         "id": "water-bath-canning"
     },
     {
@@ -464,7 +464,7 @@ var recipes = [
         "date_added": "05/09/2022",
         "contributor": "Eric Tilford",
         "serves": "~1 quart",
-        "image": "currychickensalad.JPG",
+        "images": ["currychickensalad.JPG"],
         "id": "curry-chicken-salad"
     },
     {
@@ -495,7 +495,7 @@ var recipes = [
         "date_added": "05/09/2022",
         "contributor": "Eric Tilford",
         "serves": "~1 quart",
-        "image": "ricepudding.jpg",
+        "images": ["ricepudding.jpg"],
         "id": "rice-pudding"
     },
     {
@@ -529,7 +529,7 @@ var recipes = [
         "date_added": "05/09/2022",
         "contributor": "Eric Tilford",
         "serves": "1 quart",
-        "image": "chickpeasalad.jpg",
+        "images": ["chickpeasalad.jpg"],
         "id": "chickpea-salad"
     },
     {
@@ -572,7 +572,7 @@ var recipes = [
         "date_added": "05/09/2022",
         "contributor": "Eric Tilford",
         "serves": "6",
-        "image": "greenbeancasserole.jpg",
+        "images": ["greenbeancasserole.jpg"],
         "id": "green-bean-casserole"
     },
     {
@@ -609,7 +609,7 @@ var recipes = [
         "date_added": "08/01/2020",
         "contributor": "Amber Tilford",
         "serves": "8 servings",
-        "image": "jalapenopopperdip.jpg",
+        "images": ["jalapenopopperdip.jpg"],
         "id": "jalapeno-popper-dip"
     },
     {
@@ -647,7 +647,7 @@ var recipes = [
         "date_added": "08/01/2020",
         "contributor": "Eric Tilford",
         "serves": "8 servings",
-        "image": "pulledpork.jpg",
+        "images": ["pulledpork.jpg"],
         "id": "pulled-pork"
     },
     {
@@ -696,7 +696,7 @@ var recipes = [
         "date_added": "07/26/2020",
         "contributor": "Amber Tilford",
         "serves": "8 servings",
-        "image": "meatloaf.jpg",
+        "images": ["meatloaf.jpg"],
         "id": "meatloaf"
     },
     {
@@ -731,7 +731,7 @@ var recipes = [
         "date_added": "07/05/2020",
         "contributor": "Eric Tilford",
         "serves": "1 quart",
-        "image": "greeksalad.jpg",
+        "images": ["greeksalad.jpg"],
         "id": "greek-salad"
     },
     {
@@ -760,7 +760,7 @@ var recipes = [
         "date_added": "07/05/2020",
         "contributor": "Eric Tilford",
         "serves": "1 quart",
-        "image": "picodegallo.jpg",
+        "images": ["picodegallo.jpg"],
         "id": "pico-de-gallo"
     },
     {
@@ -791,7 +791,7 @@ var recipes = [
         "date_added": "07/05/2020",
         "contributor": "Eric Tilford",
         "serves": "1 pint",
-        "image": "pesto.jpg",
+        "images": ["pesto.jpg"],
         "id": "pesto"
     },
     {
@@ -825,7 +825,7 @@ var recipes = [
         "date_added": "07/04/2020",
         "contributor": "Eric Tilford",
         "serves": "8-10 servings",
-        "image": "dutchovenbread.jpg",
+        "images": ["dutchovenbread.jpg"],
         "id": "dutch-oven-bread"
     },
     {
@@ -866,7 +866,7 @@ var recipes = [
         "date_added": "07/04/2020",
         "contributor": "Amber Tilford",
         "serves": "8 slices",
-        "image": "gingerbreadloaf.jpg",
+        "images": ["gingerbreadloaf.jpg"],
         "id": "gingerbread-loaf"
     },
     {
@@ -898,7 +898,7 @@ var recipes = [
         "date_added": "07/02/2020",
         "contributor": "Eric Tilford",
         "serves": "~2 quarts",
-        "image": "coleslaw.jpg",
+        "images": ["coleslaw.jpg"],
         "id": "coleslaw"
     },
     {
@@ -932,7 +932,7 @@ var recipes = [
         "date_added": "07/03/2020",
         "contributor": "Eric & Amber Tilford",
         "serves": "2 dozen cakes",
-        "image": "madeleines.jpg",
+        "images": ["madeleines.jpg"],
         "id": "madeleines"
     },
     {
@@ -973,7 +973,7 @@ var recipes = [
         "date_added": "07/03/2020",
         "contributor": "Amber Tilford",
         "serves": "12 muffins",
-        "image": "blueberrymuffins2.jpg",
+        "images": ["blueberrymuffins2.jpg"],
         "id": "blueberry-muffins"
     },
     {
@@ -1015,7 +1015,7 @@ var recipes = [
         "date_added": "07/03/2020",
         "contributor": "Eric Tilford",
         "serves": "5-6 servings",
-        "image": "redbeans.jpg",
+        "images": ["redbeans.jpg"],
         "id": "red-beans-sausage"
     },
     {
@@ -1055,7 +1055,7 @@ var recipes = [
         "date_added": "06/28/2020",
         "contributor": "Eric Tilford",
         "serves": "4-5 servings",
-        "image": "yellowcurry.jpg",
+        "images": ["yellowcurry.jpg"],
         "id": "yellow-curry"
     },
     {
@@ -1092,7 +1092,7 @@ var recipes = [
         "date_added": "06/30/2020",
         "contributor": "Justin Tilford",
         "serves": "4-5 servings",
-        "image": "mexicanChicken.jpg",
+        "images": ["mexicanChicken.jpg"],
         "id": "mexican-chicken"
     },
     {
@@ -1128,7 +1128,7 @@ var recipes = [
         "date_added": "06/30/2020",
         "contributor": "Eric Tilford",
         "serves": "4-5 servings",
-        "image": "tomkha.jpg",
+        "images": ["tomkha.jpg"],
         "id": "tom-kha-gai"
     }
 ]

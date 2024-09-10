@@ -24,7 +24,7 @@ function showInfo(results) {
 
         // CARD IMAGE
         var cardImage = document.createElement('img');
-        cardImage.src = "assets/recipes/"+recipes[recipeNumber].image; 
+        cardImage.src = "assets/recipes/" + recipes[recipeNumber].images[0];
         cardImage.className = "card-img-top";
         newElement.appendChild(cardImage);
 
