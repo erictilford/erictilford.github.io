@@ -385,6 +385,10 @@ body {
     margin-bottom: 10px;
 }
 
+.slidecontainer {
+    display:flex;
+}
+
 .text-input {
     border-radius: 5px;
     width: 75px;

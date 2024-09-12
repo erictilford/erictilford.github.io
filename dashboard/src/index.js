@@ -185,8 +185,20 @@ $(document).ready(function () {
 	$("#settings-apply-button").click(function() { SaveAndReload(); });
 
 	$("#settings-close-button").click(function() { $("#settings-panel").hide(settingsPanelAnimationSpeed); });
+
+	//var slider = document.getElementById("myRange");
+	//var output = document.getElementById("demo");
+	$("#durationLabel").html($("#hourlyDurationSlider").val());
+
+	// Update the current slider value (each time you drag the slider handle)
+	$("#hourlyDurationSlider").on('input', function() {
+        $("#durationLabel").html($(this).val());
+
+    });
 	
-	//var tempDisplay;
+
+
+	var tempDisplay;
 
 	function LoadSettings() {
 		// JSON settings!
@@ -448,8 +460,10 @@ $(document).ready(function () {
 						}
 
 						// Hourly
+						let columnQuantity = 6;
+						let duration = 3;
 						let hourlyColumns = "";
-						for (let i = 3; i < 18; i += 3){
+						for (let i = duration; i < duration * (columnQuantity + 1); i += duration){
 							let hourlyUTC = new Date(result.hourly[i].dt * 1000);
 							let pt = prettyTime(hourlyUTC);
 							let time = pt.hour + " " + pt.ampm;
