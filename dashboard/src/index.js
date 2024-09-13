@@ -209,7 +209,8 @@ $(document).ready(function () {
 			weatherAutoRefresh : false,
 			weatherAutoRefreshDuration : 30,
 			wallpaperAutoRefresh : false,
-			wallpaperAutoRefreshDuration : 5
+			wallpaperAutoRefreshDuration : 5,
+			hourlyInterval: 3
 		}
 
 		settings = {};
@@ -244,6 +245,14 @@ $(document).ready(function () {
 		// -- duration
 		if (settings.wallpaperAutoRefreshDuration != null) { $("#wallpaperRefreshDurationInput").val(settings.wallpaperAutoRefreshDuration); } 
 		else { $("#wallpaperRefreshDurationInput").val(defaultSettings.wallpaperAutoRefreshDuration); }
+		// -- hourly interval
+		if (settings.hourlyInterval != null) { 
+			$("#hourlyDurationSlider").val(settings.hourlyInterval); 
+			$("#durationLabel").html(settings.hourlyInterval);
+		} else { 
+			$("#hourlyDurationSlider").val(defaultSettings.hourlyInterval); 
+			$("#durationLabel").html(defaultSettings.hourlyInterval);
+		}
 
 	}
 	LoadSettings();
@@ -261,7 +270,8 @@ $(document).ready(function () {
 			weatherAutoRefresh : $("#weatherAutoRefreshCheckox").is(":checked"),
 			weatherAutoRefreshDuration : $("#weatherRefreshDurationInput").val(),
 			wallpaperAutoRefresh : $("#wallpaperAutoRefreshCheckox").is(":checked"),
-			wallpaperAutoRefreshDuration : $("#wallpaperRefreshDurationInput").val()
+			wallpaperAutoRefreshDuration : $("#wallpaperRefreshDurationInput").val(),
+			hourlyInterval : $("#hourlyDurationSlider").val()
 		}
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
@@ -461,7 +471,7 @@ $(document).ready(function () {
 
 						// Hourly
 						let columnQuantity = 6;
-						let duration = 3;
+						let duration = parseInt($("#hourlyDurationSlider").val());
 						let hourlyColumns = "";
 						for (let i = duration; i < duration * (columnQuantity + 1); i += duration){
 							let hourlyUTC = new Date(result.hourly[i].dt * 1000);
