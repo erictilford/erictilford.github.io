@@ -290,7 +290,7 @@ $(document).ready(function () {
 	autoRefreshWallpaper();
 
 	// ETTV | tv.js | 
-	LoadETTV(settingsPanelAnimationSpeed);
+	//LoadETTV(settingsPanelAnimationSpeed);
 
 	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: fix "mix" bug, load dog on open option
 	LoadDogAPI(settingsPanelAnimationSpeed);
