@@ -71,17 +71,7 @@ $(document).ready(function () {
     $("#random-wallpaper-button").click(function() { setRandomWallpaper() });
 	$("#random-wallpaper-button").attr("title",  "Random Wallpaper" );
 
-	/* This breaks the City Name input functionality
-	$(document).on('keypress', function(e) {
-		var code = e.keyCode || e.which;
-		if (code == 119 ) { // W
-		  setRandomWallpaper();
-		}
-	});
-	*/
-
 	// RECYCLING DAY
-	
 	function recyclingDay(){
 		const origin = new Date("10/15/2023");
 		let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
@@ -95,7 +85,6 @@ $(document).ready(function () {
 	recyclingDay();
 
 	// BIG TRASH DAY
-
 	function bigTrashDay() {
 		const today = new Date()
 		const tomorrow = new Date(today)
@@ -103,40 +92,43 @@ $(document).ready(function () {
 		if (tomorrow.getDay() === 1 && tomorrow.getDate() <= 7) {
 			$("#big-trash-icon").html('<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>');
 			$("#big-trash-icon").attr("title",  "Big Trash Day is tomorrow" );
-		}
-			
+		}	
 	}
 	bigTrashDay();
 
 	// SMASH TOURNEY STATUS
-	const origin = new Date("11/18/2022");
-	let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
-	let dayDiffRemainder = daysDifference % 4;
-
-	if (dayDiffRemainder == 2 || dayDiffRemainder == 3) {
-		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-person-rays tray-icon" style="color:#ff7b4a"></i>');
-		if (dayDiffRemainder == 2) {
-			let twoDays =  new Date();
-			twoDays.setDate(d.getDate() + 2);
-			$("#smash-tourney").attr("title", "1v1 tourney ends: \n" + dayNames[twoDays.getDay()] + " (2 days)");
-		}
-		else if (dayDiffRemainder == 3) {
-			$("#smash-tourney").attr("title",  "1v1 tourney ends: \nTomorrow" );
-		}
-		
-	} 
-	else if (dayDiffRemainder == 0 || dayDiffRemainder == 1) {
-
-		$("#smash-tourney").html('<i class="fa-solid fa-sm fa-users-slash tray-icon" style="color:#146ebe"></i>');
-		if (dayDiffRemainder == 0) {
-			let twoDays =  new Date();
-			twoDays.setDate(d.getDate() + 2);
-			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n" + dayNames[twoDays.getDay()] + " (2 days)");
-		}
-		else if (dayDiffRemainder == 1) {
-			$("#smash-tourney").attr("title",  "Next 1v1 tourney: \nTomorrow");
+	function smashTourney(){
+		$("#smash-tourney").show();
+		const origin = new Date("11/18/2022");
+		let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
+		let dayDiffRemainder = daysDifference % 4;
+	
+		if (dayDiffRemainder == 2 || dayDiffRemainder == 3) {
+			$("#smash-tourney").html('<i class="fa-solid fa-sm fa-person-rays tray-icon" style="color:#ff7b4a"></i>');
+			if (dayDiffRemainder == 2) {
+				let twoDays =  new Date();
+				twoDays.setDate(d.getDate() + 2);
+				$("#smash-tourney").attr("title", "1v1 tourney ends: \n" + dayNames[twoDays.getDay()] + " (2 days)");
+			}
+			else if (dayDiffRemainder == 3) {
+				$("#smash-tourney").attr("title",  "1v1 tourney ends: \nTomorrow" );
+			}
+			
+		} 
+		else if (dayDiffRemainder == 0 || dayDiffRemainder == 1) {
+	
+			$("#smash-tourney").html('<i class="fa-solid fa-sm fa-users-slash tray-icon" style="color:#146ebe"></i>');
+			if (dayDiffRemainder == 0) {
+				let twoDays =  new Date();
+				twoDays.setDate(d.getDate() + 2);
+				$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n" + dayNames[twoDays.getDay()] + " (2 days)");
+			}
+			else if (dayDiffRemainder == 1) {
+				$("#smash-tourney").attr("title",  "Next 1v1 tourney: \nTomorrow");
+			}
 		}
 	}
+	//smashTourney();
 
 	// ZODIAC
 	const zodiacSymbols = {
@@ -172,31 +164,16 @@ $(document).ready(function () {
 		});
 	});
 	$("#settings-button").attr("title",  "Settings" );
-	
-	/* This breaks the City Name input functionality
-	$(document).on('keypress', function(e) {
-		var code = e.keyCode || e.which; //console.log(code);
-		if (code == 115 ) { // S
-			$("#settings-panel").toggle(settingsPanelAnimationSpeed);
-		}
-	});
-	*/
 
 	$("#settings-apply-button").click(function() { SaveAndReload(); });
 
 	$("#settings-close-button").click(function() { $("#settings-panel").hide(settingsPanelAnimationSpeed); });
 
-	//var slider = document.getElementById("myRange");
-	//var output = document.getElementById("demo");
+	// updating hourly interval slider value
 	$("#durationLabel").html($("#hourlyDurationSlider").val());
-
-	// Update the current slider value (each time you drag the slider handle)
 	$("#hourlyDurationSlider").on('input', function() {
         $("#durationLabel").html($(this).val());
-
     });
-	
-
 
 	var tempDisplay;
 
@@ -210,7 +187,7 @@ $(document).ready(function () {
 			weatherAutoRefreshDuration : 30,
 			wallpaperAutoRefresh : false,
 			wallpaperAutoRefreshDuration : 5,
-			hourlyInterval: 3
+			hourlyInterval: 2
 		}
 
 		settings = {};
@@ -256,7 +233,6 @@ $(document).ready(function () {
 
 	}
 	LoadSettings();
-	//console.log(settings);
 
 	function SaveSettings () {
 
@@ -312,21 +288,6 @@ $(document).ready(function () {
 		
 	}
 	autoRefreshWallpaper();
-
-	/*
-	function AccessSetting(position) {
-		return settings[position];
-	}
-	*/
-
-	/*
-	function ValidateZip(){
-		{
-			var ex = /^[0-9]{5}$/;
-			return ex.test($("#zipInput").val()); returns T/F
-		}
-	}
-	*/
 
 	// ETTV | tv.js | 
 	LoadETTV(settingsPanelAnimationSpeed);
@@ -626,14 +587,6 @@ $(document).ready(function () {
 				console.log(error);
 				$("#temp-text").html("<p>Failed to Load Location Data</p>");
 			}
-			
 		});
 	}
-	 
-	
 });
-
-// YYYY/MM/DD Format
-	//var output = d.getFullYear() + '/' +
-	//    ((''+month).length<2 ? '0' : '') + monthLong + '/' +
-	//    ((''+day).length<2 ? '0' : '') + day;

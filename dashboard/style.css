@@ -158,6 +158,9 @@ body {
     width: 300px;
 }
 
+#smash-tourney {
+    display:none;
+}
 
 /*
 #serugai-banner {
