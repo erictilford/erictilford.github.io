@@ -183,12 +183,14 @@ const links = [
         "icon" : '<i class="fa-solid fa-2x fa-book-skull" style="color:cornflowerblue"></i>',
         "target" : "#project-list"
     },
+    /*
     {
         "title" : "Wellness & Longevity",
         "url" : "https://wellnessok.com",
         "icon" : '<i class="fa-solid fa-2x fa-syringe" style="color:#85aeb5"></i>',
         "target" : "#project-list"
     },
+    */
     {
         "title" : "Wordle Slackmojifier",
         "url" : "https://erictilford.github.io/wordle",
