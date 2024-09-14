@@ -563,6 +563,27 @@ const holidayArray = [
     // ONE-TIME HOLIDAYS (delete later I guess)
     ////////////////////
     {
+        "holiday_name": "Survivor 47",
+        "month": 9,
+        "day_one": 19,
+        "day_two": null,
+        "day": null,
+        "year": 2024,
+        "emoji": "&#x1F3DD;&#xFE0F;",
+        "type": "oneTime"
+    },
+    {
+        "holiday_name": "Terry ",
+        "month": 9,
+        "day_one": 24,
+        "day_two": null,
+        "day": null,
+        "year": 2024,
+        "emoji": "&#x1F9E2;",
+        "type": "oneTime"
+    },
+    /*
+    {
         "holiday_name": "SMB Wonder",
         "month": 10,
         "day_one": 20,
@@ -592,6 +613,8 @@ const holidayArray = [
         "emoji": "&#x1F3D5;&#xFE0F;",
         "type": "oneTime"
     },
+    */
+
     // EASTER
     {
         "holiday_name": "Easter",
