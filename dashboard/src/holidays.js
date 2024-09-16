@@ -82,9 +82,6 @@ function checkHoliday(month, day, dayOfWeek, year) {
     return holidays;
 }
 
-
-
-
 const holidayArray = [
     // NORMAL HOLIDAYS
     //////////////////
