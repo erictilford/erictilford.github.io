@@ -1,3 +1,33 @@
+function listHolidays(){
+    let currentYear = new Date().getFullYear();
+    let date = new Date(currentYear, 0, 1);
+    for (let i = 0; date.getFullYear() === currentYear; i++) {
+        if (date.getDate() == 1) {
+            //console.log(date.getMonth());
+        }
+        let holidays = checkHoliday(date.getMonth() + 1, date.getDate(), date.getDay(), date.getFullYear());
+        for (let i = 0; i < holidays.length; i++) {
+            $("#holiday-body").append('<div>' + holidays[i] + '</div>');
+            //console.log(holidays[i]);
+        }
+        date.setDate(date.getDate() + 1);
+    }
+}
+
+function LoadHolidayButton(animSpeed) {
+    icon = 'fa-solid fa-calendar-days " style="color:darkcyan';
+    $("#holiday-title").append(' <i class=" ' + icon + '">');
+    $("#widget-list").append('<a id="holiday-button"><li><i class="fa-2x ' + icon + '"></i><br>Holidays</li></a>');
+    $("#close-tv-button").click(function() { $("#holiday-panel").hide(animSpeed); });
+    $("#holiday-button").click(function() {  
+        $("#holiday-panel").toggle(animSpeed); 
+        $('html,body').animate({
+            scrollTop: $("#holiday-panel").offset().top
+            });
+    });
+    $("#holiday-button").attr("title",  "Holiday List" );
+}
+
 function checkHoliday(month, day, dayOfWeek, year) {
     let holidays = [];
     for (let i = 0; i < holidayArray.length; i++) {
@@ -29,19 +59,14 @@ function checkHoliday(month, day, dayOfWeek, year) {
             holidayArray[i].dates.forEach(element => {
                 if (day == element.day_one && month == element.month && year == element.year) {
                     holidayName = holidayArray[i].holiday_name;
-                }
-                
+                }   
             });
         }
-        
 
         // Adding birthday/anni year #
         if (holidayArray[i].type == "birthday") {
             if (holidayName && holidayArray[i].year) {
-                //console.log("current year = " + year);
-                //console.log("holiday year = " + holidayArray[i].year);
                 holidayNumberText = " #" + (year - holidayArray[i].year);
-                //holidayEmoji = " " + holidayArray[i].emoji;
             }
         }
         
@@ -56,6 +81,9 @@ function checkHoliday(month, day, dayOfWeek, year) {
     }
     return holidays;
 }
+
+
+
 
 const holidayArray = [
     // NORMAL HOLIDAYS
@@ -646,3 +674,5 @@ const holidayArray = [
 
 ]
 //console.log(checkHoliday(3,14,1));
+
+listHolidays();

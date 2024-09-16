@@ -77,6 +77,10 @@ body {
     margin-left: 8px;
 }
 
+#holiday-button {
+    cursor: pointer;
+}
+
 #last-updated-text {
     float: right;
     font-size: small;
