@@ -9,7 +9,7 @@ function isLastDayOfMonth(date) {
 
 let holidayYear = new Date().getFullYear();
 
-function holidayIcon() { return 'fa-solid fa-gifts" style="color:lightcoral' } 
+function holidayIcon() { return 'fa-solid fa-gifts" style="color:#d577b3' } 
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
