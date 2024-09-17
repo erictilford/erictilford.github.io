@@ -678,6 +678,7 @@ const holidayArray = [
     {
         "holiday_name": "Easter",
         "dates": [
+            {"month": 3, "day_one": 31, "year": 2024},
             {"month": 4, "day_one": 20, "year": 2025},
             {"month": 4, "day_one": 5, "year": 2026},
             {"month": 3, "day_one": 28, "year": 2027},
