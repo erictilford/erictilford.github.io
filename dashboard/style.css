@@ -346,6 +346,11 @@ body {
     color: #666;
 }
 
+.holiday-table {
+    color:white;
+    margin-bottom: 5px;
+}
+
 .iframe-container {
     position: relative;
     overflow: hidden;

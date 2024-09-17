@@ -1,17 +1,43 @@
-function listHolidays(){
-    let currentYear = new Date().getFullYear();
-    let date = new Date(currentYear, 0, 1);
-    for (let i = 0; date.getFullYear() === currentYear; i++) {
+function isLastDayOfMonth(date) {
+    // Get the current day
+    const today = date.getDate();
+    
+    // Create a new date object for the next day
+    const nextDay = new Date(date);
+    nextDay.setDate(today + 1);
+    
+    // Check if the next day is in a different month
+    return nextDay.getMonth() !== date.getMonth();
+}
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+function listHolidays(year){
+    //let currentYear = new Date().getFullYear();
+    let date = new Date(year, 0, 1);
+    let str = "";
+    for (let i = 0; date.getFullYear() === year; i++) {
         if (date.getDate() == 1) {
-            //console.log(date.getMonth());
+            //if (date.getMonth() != 0) {
+            //    str += "</table>";
+            //}
+            str += "<table class='holiday-table'><tbody>";
+            str += "<tr><th colspan='2'>" + monthNames[date.getMonth()] + "</th></tr>";
         }
         let holidays = checkHoliday(date.getMonth() + 1, date.getDate(), date.getDay(), date.getFullYear());
         for (let i = 0; i < holidays.length; i++) {
-            $("#holiday-body").append('<div>' + holidays[i] + '</div>');
+            str += "<tr>";
+            str += '<td style="text-align:right; padding: 0 10px">' + date.getDate() + '</td>';
+            str += '<td>' + holidays[i] + '</td>';
+            str += "</tr>";
             //console.log(holidays[i]);
         }
+        if (isLastDayOfMonth(date)) { str += "</tbody></table>" }
         date.setDate(date.getDate() + 1);
     }
+    $("#holiday-body").append(str);
 }
 
 function LoadHolidayButton(animSpeed) {
@@ -495,6 +521,16 @@ const holidayArray = [
         "type": "birthday"
     },
     {
+        "holiday_name": "Otto",
+        "month": 10,
+        "day_one": 6,
+        "day_two": null,
+        "day": null,
+        "year": 2020,
+        "emoji": "&#x1F9B4;",
+        "type": "birthday"
+    },
+    {
         "holiday_name": "Evan",
         "month": 11,
         "day_one": 8,
@@ -672,4 +708,4 @@ const holidayArray = [
 ]
 //console.log(checkHoliday(3,14,1));
 
-listHolidays();
+listHolidays(new Date().getFullYear()); 
