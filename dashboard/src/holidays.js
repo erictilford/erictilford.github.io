@@ -1,28 +1,24 @@
 function isLastDayOfMonth(date) {
-    // Get the current day
-    const today = date.getDate();
+    const today = date.getDate(); // Get the current day
     
-    // Create a new date object for the next day
-    const nextDay = new Date(date);
+    const nextDay = new Date(date); // Create a new date object for the next day
     nextDay.setDate(today + 1);
     
-    // Check if the next day is in a different month
-    return nextDay.getMonth() !== date.getMonth();
+    return nextDay.getMonth() !== date.getMonth(); // Check if the next day is in a different month
 }
+
+icon = 'fa-solid fa-calendar-days" style="color:darkcyan';
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
 
 function listHolidays(year){
-    //let currentYear = new Date().getFullYear();
+    $("#holiday-title").html(year + ' Holidays <i class="' + icon + '">');
     let date = new Date(year, 0, 1);
     let str = "";
     for (let i = 0; date.getFullYear() === year; i++) {
         if (date.getDate() == 1) {
-            //if (date.getMonth() != 0) {
-            //    str += "</table>";
-            //}
             str += "<table class='holiday-table'><tbody>";
             str += "<tr><th colspan='2'>" + monthNames[date.getMonth()] + "</th></tr>";
         }
@@ -32,7 +28,6 @@ function listHolidays(year){
             str += '<td style="text-align:right; padding: 0 10px">' + date.getDate() + '</td>';
             str += '<td>' + holidays[i] + '</td>';
             str += "</tr>";
-            //console.log(holidays[i]);
         }
         if (isLastDayOfMonth(date)) { str += "</tbody></table>" }
         date.setDate(date.getDate() + 1);
@@ -41,8 +36,7 @@ function listHolidays(year){
 }
 
 function LoadHolidayButton(animSpeed) {
-    icon = 'fa-solid fa-calendar-days " style="color:darkcyan';
-    $("#holiday-title").append(' <i class=" ' + icon + '">');
+    icon = 'fa-solid fa-calendar-days" style="color:darkcyan';
     $("#widget-list").append('<a id="holiday-button"><li><i class="fa-2x ' + icon + '"></i><br>Holidays</li></a>');
     $("#close-tv-button").click(function() { $("#holiday-panel").hide(animSpeed); });
     $("#holiday-button").click(function() {  
@@ -706,6 +700,5 @@ const holidayArray = [
     }
 
 ]
-//console.log(checkHoliday(3,14,1));
 
 listHolidays(new Date().getFullYear()); 
