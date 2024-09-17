@@ -77,6 +77,12 @@ body {
     margin-left: 8px;
 }
 
+#holiday-body {
+    column-count: 3;
+    column-gap: 2em;
+    -webkit-column-gap: 2em;
+}
+
 #holiday-button {
     cursor: pointer;
 }
@@ -349,6 +355,9 @@ body {
 .holiday-table {
     color:white;
     margin-bottom: 5px;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 .iframe-container {
@@ -507,6 +516,27 @@ body {
 }
 */
 
+/* Holiday list columns */
+@media only screen and (max-width: 1440px) {
+    #holiday-body {
+        column-count: 2;
+    }
+}
+@media only screen and (max-width: 1280px) {
+    #holiday-body {
+        column-count: 1;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #holiday-body {
+        column-count: 2;
+    }
+}
+@media only screen and (max-width: 440px) {
+    #holiday-body {
+        column-count: 1;
+    }
+}
 
 /* PHONE / Vertical TABLET */
 

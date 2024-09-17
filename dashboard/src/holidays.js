@@ -7,14 +7,14 @@ function isLastDayOfMonth(date) {
     return nextDay.getMonth() !== date.getMonth(); // Check if the next day is in a different month
 }
 
-icon = 'fa-solid fa-calendar-days" style="color:darkcyan';
+function holidayIcon() { return 'fa-solid fa-gifts" style="color:lightcoral' } 
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
 
 function listHolidays(year){
-    $("#holiday-title").html(year + ' Holidays <i class="' + icon + '">');
+    $("#holiday-title").html(year + ' Holidays <i class="' + holidayIcon() + '">');
     let date = new Date(year, 0, 1);
     let str = "";
     for (let i = 0; date.getFullYear() === year; i++) {
@@ -24,10 +24,13 @@ function listHolidays(year){
         }
         let holidays = checkHoliday(date.getMonth() + 1, date.getDate(), date.getDay(), date.getFullYear());
         for (let i = 0; i < holidays.length; i++) {
-            str += "<tr>";
-            str += '<td style="text-align:right; padding: 0 10px">' + date.getDate() + '</td>';
-            str += '<td>' + holidays[i] + '</td>';
-            str += "</tr>";
+            str += "<tr>"
+            if (i == 0) {
+                str += '<td style="text-align:right; padding: 0 10px">' + date.getDate() + '</td>';
+            } else {
+                str += "<td></td>";
+            }
+            str += '<td>' + holidays[i] + '</td></tr>';
         }
         if (isLastDayOfMonth(date)) { str += "</tbody></table>" }
         date.setDate(date.getDate() + 1);
@@ -36,8 +39,9 @@ function listHolidays(year){
 }
 
 function LoadHolidayButton(animSpeed) {
-    icon = 'fa-solid fa-calendar-days" style="color:darkcyan';
-    $("#widget-list").append('<a id="holiday-button"><li><i class="fa-2x ' + icon + '"></i><br>Holidays</li></a>');
+    //let daIcon = icon;
+    //icon = 'fa-solid fa-calendar-days" style="color:darkcyan';
+    $("#widget-list").append('<a id="holiday-button"><li><i class="fa-2x ' + holidayIcon() + '"></i><br>Holidays</li></a>');
     $("#close-tv-button").click(function() { $("#holiday-panel").hide(animSpeed); });
     $("#holiday-button").click(function() {  
         $("#holiday-panel").toggle(animSpeed); 
