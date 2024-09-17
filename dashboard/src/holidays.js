@@ -634,7 +634,7 @@ const holidayArray = [
         "emoji": "	&#127856;"
     },
     */
-    // ONE-TIME HOLIDAYS (delete later I guess)
+    // ONE-TIME HOLIDAYS
     ////////////////////
     {
         "holiday_name": "Survivor 47",
@@ -656,7 +656,6 @@ const holidayArray = [
         "emoji": "&#x1F9E2;",
         "type": "oneTime"
     },
-    /*
     {
         "holiday_name": "SMB Wonder",
         "month": 10,
@@ -687,7 +686,6 @@ const holidayArray = [
         "emoji": "&#x1F3D5;&#xFE0F;",
         "type": "oneTime"
     },
-    */
 
     // EASTER
     {
