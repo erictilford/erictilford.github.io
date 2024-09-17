@@ -80,10 +80,6 @@ body {
     -webkit-column-gap: 2em;
 }
 
-#holiday-button {
-    cursor: pointer;
-}
-
 #last-updated-text {
     float: right;
     font-size: small;
@@ -150,14 +146,6 @@ body {
     margin: 5px 0px;
     border-radius: 10px;
     display: none;
-}
-
-#random-wallpaper-button {
-    cursor: pointer;
-}
-
-#settings-button {
-    cursor: pointer;
 }
 
 #settings-panel {

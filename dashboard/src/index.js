@@ -67,7 +67,7 @@ $(document).ready(function () {
 	updateClock();
 
 	// RANDOM WALLPAPER BUTTON
-	$("#random-wallpaper-button").html('<i class="fa-regular fa-sm fa-image tray-icon" style="color:lightblue"></i>');
+	$("#random-wallpaper-button").html('<i class="fa-regular fa-sm fa-image tray-icon pointer" style="color:lightblue"></i>');
     $("#random-wallpaper-button").click(function() { setRandomWallpaper() });
 	$("#random-wallpaper-button").attr("title",  "Random Wallpaper" );
 
@@ -155,7 +155,7 @@ $(document).ready(function () {
 	icon = 'fa-solid fa-gear" style="color:lightgray';
 	$("#settings-title").append(' <i class=" ' + icon + '">');
 
-	$("#settings-button").html('<i class=" fa-sm tray-icon ' + icon + '"></i>');
+	$("#settings-button").html('<i class="pointer fa-sm tray-icon ' + icon + '"></i>');
     $("#settings-button").click(function() { 
 		$("#settings-panel").toggle(settingsPanelAnimationSpeed); 
 		$('html,body').animate({
