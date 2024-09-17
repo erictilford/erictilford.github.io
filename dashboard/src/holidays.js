@@ -7,6 +7,8 @@ function isLastDayOfMonth(date) {
     return nextDay.getMonth() !== date.getMonth(); // Check if the next day is in a different month
 }
 
+let holidayYear = new Date().getFullYear();
+
 function holidayIcon() { return 'fa-solid fa-gifts" style="color:lightcoral' } 
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -14,7 +16,10 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 ];
 
 function listHolidays(year){
-    $("#holiday-title").html(year + ' Holidays <i class="' + holidayIcon() + '">');
+    $("#holiday-body").html("");
+    const leftArrow = '<i class="fa-solid fa-caret-left pointer" id="leftHolidayArrow"></i>'
+    const rightArrow = '<i class="fa-solid fa-caret-right pointer" id="rightHolidayArrow"></i>'
+    $("#holiday-title").html(leftArrow + " " + year + ' Holidays <i class="' + holidayIcon() + '"></i> ' + rightArrow);
     let date = new Date(year, 0, 1);
     let str = "";
     for (let i = 0; date.getFullYear() === year; i++) {
@@ -36,13 +41,21 @@ function listHolidays(year){
         date.setDate(date.getDate() + 1);
     }
     $("#holiday-body").append(str);
+    $("#leftHolidayArrow").click(function() {  
+        holidayYear--;
+        listHolidays(holidayYear);
+    });
+    $("#rightHolidayArrow").click(function() {  
+        holidayYear++;
+        listHolidays(holidayYear);
+    });
 }
 
 function LoadHolidayButton(animSpeed) {
     //let daIcon = icon;
     //icon = 'fa-solid fa-calendar-days" style="color:darkcyan';
-    $("#widget-list").append('<a id="holiday-button"><li><i class="fa-2x ' + holidayIcon() + '"></i><br>Holidays</li></a>');
-    $("#close-tv-button").click(function() { $("#holiday-panel").hide(animSpeed); });
+    $("#widget-list").append('<a id="holiday-button" class="pointer"><li><i class="fa-2x ' + holidayIcon() + '"></i><br>Holidays</li></a>');
+    $("#close-holiday-button").click(function() { $("#holiday-panel").hide(animSpeed); });
     $("#holiday-button").click(function() {  
         $("#holiday-panel").toggle(animSpeed); 
         $('html,body').animate({
@@ -61,7 +74,9 @@ function checkHoliday(month, day, dayOfWeek, year) {
         // Standard and birthday/anni holidays
         if (holidayArray[i].type == "standard" || holidayArray[i].type == "birthday") {
             if (day == holidayArray[i].day_one && month == holidayArray[i].month) {
-                holidayName = holidayArray[i].holiday_name;
+                if (!(holidayArray[i].year && year < holidayArray[i].year)) {
+                    holidayName = holidayArray[i].holiday_name;
+                } // only show bday type if year exists and is not in the past
             }
         // Day Name holidays
         } else if (holidayArray[i].type == "dayName") {
@@ -408,7 +423,7 @@ const holidayArray = [
         "day_one": 8,
         "day_two": 14,
         "day": 1,
-        "emoji": "&#127993;",
+        "emoji": "",
         "type": "dayName"
     },
     {
@@ -706,4 +721,4 @@ const holidayArray = [
 
 ]
 
-listHolidays(new Date().getFullYear()); 
+listHolidays(holidayYear); 

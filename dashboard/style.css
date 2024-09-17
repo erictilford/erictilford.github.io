@@ -60,12 +60,9 @@ body {
     font-size: 70%;
 }
 
-#dog-button {
-    cursor: pointer;
-}
-
-#ettv-button {
-    cursor: pointer;
+#close-holiday-button {
+    display: block;
+    margin: auto;
 }
 
 #ettv-panel {
@@ -387,6 +384,10 @@ body {
     width: 50px;
     line-height: 30px;
     text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .responsive-iframe {
