@@ -505,7 +505,7 @@ $(document).ready(function () {
 						if (dewpoint < 60) { dewpointColor = "aliceblue"; dewpointIcon = "fa-temperature-empty"; dewpointText = "Pleasant"}
 						else if (dewpoint >= 60 && dewpoint < 65) { dewpointColor = "khaki"; dewpointIcon = "fa-temperature-quarter"; dewpointText = "Sticky"}
 						else if (dewpoint >= 65 && dewpoint < 70) { dewpointColor = "goldenrod"; dewpointIcon = "fa-temperature-half"; dewpointText = "Uncomfortable"}
-						else if (dewpoint >= 70 && dewpoint < 75) { dewpointColor = "orangered"; dewpointIcon = "fa-temperature-three-quarters"; dewpointText = "Opressive"}
+						else if (dewpoint >= 70 && dewpoint < 75) { dewpointColor = "orangered"; dewpointIcon = "fa-temperature-three-quarters"; dewpointText = "Oppressive"}
 						else if (dewpoint >= 75) { dewpointColor = "crimson"; dewpointIcon = "fa-temperature-full"; dewpointText = "Miserable"}
 						$("#weather-extra-dewpoint").html('<i class="fa-solid fa-lg ' + dewpointIcon + ' weather-extra-icon" style="color:' + dewpointColor + '"></i><br>Dewpoint<br>' + dewpoint + "&deg; | " + dewpointText);
 
