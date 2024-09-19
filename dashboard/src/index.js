@@ -1,5 +1,21 @@
-
 $(document).ready(function () {
+
+	// LOADING DOTS
+	let loadingDotInterval;
+
+	function startDotAnimation() {
+		let dotCount = 0;
+	
+		loadingDotInterval = setInterval(function() {
+			$('#dots').text('.'.repeat(dotCount));
+			dotCount = (dotCount + 1) % 4;
+		}, 1000);
+	}
+
+	function stopDotAnimation() {
+		clearInterval(loadingDotInterval);
+	}
+	startDotAnimation();
 
 	// WALLPAPERS | config.js
 	function setRandomWallpaper(){ 
@@ -569,6 +585,7 @@ $(document).ready(function () {
 						let riseSetIcon = "fa-solid fa-clock";
 						$("#weather-extra-sun").html('<i class="fa-lg ' + riseSetIcon + ' weather-extra-icon" style="color:lightgoldenrodyellow"></i><br>Sunrise | Sunset<br>' + riseSetText);
 
+						stopDotAnimation();
 					},
 					error: function (error) {
 						console.log(error);
