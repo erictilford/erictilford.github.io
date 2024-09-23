@@ -1,3 +1,64 @@
+//EQUINOX / SOLSTICE
+function calculateEquinoxSolstice(year) {
+    const Y = (year - 2000) / 1000.0;
+    
+    // Calculate Julian Dates of the four main astronomical events
+    const springEquinoxJD = 2451623.80984 + 365242.37404 * Y + 0.05169 * Y * Y - 0.00411 * Y * Y * Y - 0.00057 * Y * Y * Y * Y;
+    const summerSolsticeJD = 2451716.56767 + 365241.62603 * Y + 0.00325 * Y * Y + 0.00888 * Y * Y * Y - 0.00030 * Y * Y * Y * Y;
+    const autumnEquinoxJD = 2451810.21715 + 365242.01767 * Y - 0.11575 * Y * Y + 0.00337 * Y * Y * Y - 0.00078 * Y * Y * Y * Y;
+    const winterSolsticeJD = 2451900.05952 + 365242.74049 * Y - 0.06223 * Y * Y - 0.00823 * Y * Y * Y + 0.00032 * Y * Y * Y * Y;
+
+    // Convert Julian Date to Gregorian date
+    return {
+        springEquinox: jdToDate(springEquinoxJD),
+        summerSolstice: jdToDate(summerSolsticeJD),
+        autumnEquinox: jdToDate(autumnEquinoxJD),
+        winterSolstice: jdToDate(winterSolsticeJD)
+    };
+}
+
+// Convert Julian Date to Gregorian Date (returns an object with day, month, year)
+function jdToDate(jd) {
+    jd = jd + 0.5;
+    const Z = Math.floor(jd);
+    const F = jd - Z;
+    let A = Z;
+    
+    if (Z >= 2299161) {
+        const alpha = Math.floor((Z - 1867216.25) / 36524.25);
+        A = Z + 1 + alpha - Math.floor(alpha / 4);
+    }
+    
+    const B = A + 1524;
+    const C = Math.floor((B - 122.1) / 365.25);
+    const D = Math.floor(365.25 * C);
+    const E = Math.floor((B - D) / 30.6001);
+    
+    const day = B - D - Math.floor(30.6001 * E) + F;
+    const month = (E < 14) ? E - 1 : E - 13;
+    const year = (month > 2) ? C - 4716 : C - 4715;
+    
+    return { day: Math.floor(day), month: month, year: year };
+}
+
+// Check if a given date matches an equinox or solstice
+function isEquinoxOrSolstice(day, month, year) {
+    const events = calculateEquinoxSolstice(year);
+
+    // Compare the given date to the equinox and solstice dates
+    if (day === events.springEquinox.day && month === events.springEquinox.month) {
+        return "Spring Equinox &#x1F338;";
+    } else if (day === events.summerSolstice.day && month === events.summerSolstice.month) {
+        return "Summer Solstice &#x1F3D6;&#xFE0F;";
+    } else if (day === events.autumnEquinox.day && month === events.autumnEquinox.month) {
+        return "Autumn Equinox &#x1F342;";
+    } else if (day === events.winterSolstice.day && month === events.winterSolstice.month) {
+        return "Winter Solstice &#x26C4;";
+    }
+}
+
+////////////////////////
+
 function isLastDayOfMonth(date) {
     const today = date.getDate(); // Get the current day
     
@@ -118,10 +179,12 @@ function checkHoliday(month, day, dayOfWeek, year) {
             holidays.push(holidayName + holidayNumberText + holidayEmoji);
         }
 
-        if( isEquinoxOrSolstice(day, month, year) != null ) {
-            holidays.push( isEquinoxOrSolstice(day, month, year) );
-        }
     }
+
+    if( isEquinoxOrSolstice(day, month, year) != null ) {
+        holidays.push( isEquinoxOrSolstice(day, month, year) );
+    }
+
     return holidays;
 }
 
