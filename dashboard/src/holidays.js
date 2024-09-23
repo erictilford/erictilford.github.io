@@ -117,6 +117,10 @@ function checkHoliday(month, day, dayOfWeek, year) {
         if (holidayName) {
             holidays.push(holidayName + holidayNumberText + holidayEmoji);
         }
+
+        if( isEquinoxOrSolstice(day, month, year) != null ) {
+            holidays.push( isEquinoxOrSolstice(day, month, year) );
+        }
     }
     return holidays;
 }
