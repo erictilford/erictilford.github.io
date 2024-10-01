@@ -704,6 +704,16 @@ const holidayArray = [
     // ONE-TIME HOLIDAYS
     ////////////////////
     {
+        "holiday_name": "Election Day",
+        "month": 11,
+        "day_one": 5,
+        "day_two": null,
+        "day": null,
+        "year": 2024,
+        "emoji": "&#x1F5F3;&#xFE0F;",
+        "type": "oneTime"
+    },
+    {
         "holiday_name": "Survivor 47",
         "month": 9,
         "day_one": 19,
