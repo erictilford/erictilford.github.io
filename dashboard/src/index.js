@@ -163,7 +163,7 @@ $(document).ready(function () {
 	$("#zodiac-symbol").attr("title", zodiac(day, month) + ", " + zTitle);
 
 	// LUNAR ZODIAC
-	// *todo*
+	
 
 	// SETTINGS
 	const settingsPanelAnimationSpeed = 300;
@@ -590,12 +590,14 @@ $(document).ready(function () {
 					error: function (error) {
 						console.log(error);
 						$("#temp-text").html("<p>Failed to Load Weather Data</p>");
+						stopDotAnimation();
 					}
 				});
 			},
 			error: function (error) {
 				console.log(error);
 				$("#temp-text").html("<p>Failed to Load Location Data</p>");
+				stopDotAnimation();
 			}
 		});
 	}

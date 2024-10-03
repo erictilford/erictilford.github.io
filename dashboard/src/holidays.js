@@ -161,6 +161,14 @@ function checkHoliday(month, day, dayOfWeek, year) {
                     holidayName = holidayArray[i].holiday_name;
                 }   
             });
+        // Lunar New Year
+        } else if (holidayArray[i].type == "lunar") {
+            holidayArray[i].dates.forEach(element => {
+                if (day == element.day_one && month == element.month && year == element.year) {
+                    //holidayName = "Lunar New Year ";
+                    holidayName = "Year of the " + element.animal + " ";
+                }   
+            });
         }
 
         // Adding birthday/anni year #
@@ -170,8 +178,15 @@ function checkHoliday(month, day, dayOfWeek, year) {
             }
         }
         
+        if (holidayArray[i].type == "lunar") {
+            holidayArray[i].dates.forEach(element => {
+                if (day == element.day_one && month == element.month && year == element.year) {
+                    holidayEmoji = element.emoji;
+                }   
+            });
+        }
         // Adding Emoji
-        if (holidayName && holidayArray[i].emoji) {
+        else if (holidayName && holidayArray[i].emoji) {
             holidayEmoji = " " + holidayArray[i].emoji;
         }
         
@@ -792,6 +807,44 @@ const holidayArray = [
         ],
         "emoji": "&#x1F423;",
         "type": "easter"
+    },
+
+    // LUNAR NEW YEAR DATES
+    {
+        "holiday_name": "Lunar New Year",
+        "dates": [
+            { "year": 2024, "month": 2, "day_one": 10, "animal": "Dragon", "emoji": "&#x1F409;" },
+            { "year": 2025, "month": 1, "day_one": 29, "animal": "Snake", "emoji": "&#x1F40D;" },
+            { "year": 2026, "month": 2, "day_one": 17, "animal": "Horse", "emoji": "&#x1F40E;" },
+            { "year": 2027, "month": 2, "day_one": 6, "animal": "Goat", "emoji": "&#x1F410;" },
+            { "year": 2028, "month": 1, "day_one": 26, "animal": "Monkey", "emoji": "&#x1F412;" },
+            { "year": 2029, "month": 2, "day_one": 13, "animal": "Rooster", "emoji": "&#x1F413;" },
+            { "year": 2030, "month": 2, "day_one": 3, "animal": "Dog", "emoji": "&#x1F415;" },
+            { "year": 2031, "month": 1, "day_one": 23, "animal": "Pig", "emoji": "&#x1F416;" },
+            { "year": 2032, "month": 2, "day_one": 11, "animal": "Rat", "emoji": "&#x1F400;" },
+            { "year": 2033, "month": 1, "day_one": 31, "animal": "Ox", "emoji": "&#x1F402;" },
+            { "year": 2034, "month": 2, "day_one": 19, "animal": "Tiger", "emoji": "&#x1F405;" },
+            { "year": 2035, "month": 2, "day_one": 8, "animal": "Rabbit", "emoji": "&#x1F407;" },
+            { "year": 2036, "month": 1, "day_one": 28, "animal": "Dragon", "emoji": "&#x1F409;" },
+            { "year": 2037, "month": 2, "day_one": 15, "animal": "Snake", "emoji": "&#x1F40D;" },
+            { "year": 2038, "month": 2, "day_one": 4, "animal": "Horse", "emoji": "&#x1F40E;" },
+            { "year": 2039, "month": 1, "day_one": 24, "animal": "Goat", "emoji": "&#x1F410;" },
+            { "year": 2040, "month": 2, "day_one": 12, "animal": "Monkey", "emoji": "&#x1F412;" },
+            { "year": 2041, "month": 2, "day_one": 1, "animal": "Rooster", "emoji": "&#x1F413;" },
+            { "year": 2042, "month": 1, "day_one": 22, "animal": "Dog", "emoji": "&#x1F415;" },
+            { "year": 2043, "month": 2, "day_one": 10, "animal": "Pig", "emoji": "&#x1F416;" },
+            { "year": 2044, "month": 1, "day_one": 30, "animal": "Rat", "emoji": "&#x1F400;" },
+            { "year": 2045, "month": 2, "day_one": 17, "animal": "Ox", "emoji": "&#x1F402;" },
+            { "year": 2046, "month": 2, "day_one": 6, "animal": "Tiger", "emoji": "&#x1F405;" },
+            { "year": 2047, "month": 1, "day_one": 26, "animal": "Rabbit", "emoji": "&#x1F407;" },
+            { "year": 2048, "month": 2, "day_one": 14, "animal": "Dragon", "emoji": "&#x1F409;" },
+            { "year": 2049, "month": 2, "day_one": 2, "animal": "Snake", "emoji": "&#x1F40D;" },
+            { "year": 2050, "month": 1, "day_one": 23, "animal": "Horse", "emoji": "&#x1F40E;" },
+            { "year": 2051, "month": 2, "day_one": 11, "animal": "Goat", "emoji": "&#x1F410;" },
+            { "year": 2052, "month": 2, "day_one": 1, "animal": "Monkey", "emoji": "&#x1F412;" },
+            { "year": 2053, "month": 1, "day_one": 20, "animal": "Rooster", "emoji": "&#x1F413;" }
+        ],
+        "type": "lunar"
     }
 
 ]
