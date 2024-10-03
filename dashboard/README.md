@@ -8,16 +8,9 @@ A project by Eric Tilford
 
 - [ ] Holiday theming
 - [ ] Update wallpapers
-- [ ] One-time holidays/events (Easter, etc.)
 - [ ] Statistics
-- [ ] API Credits / Info
-- [X] Update readme TODO
-- [X] Settings
-- [X] Random Dog API
 - Weather
-  - [X] Alerts
   - [ ] Yesterday
-  - [ ] Auto-refresh setting
   - [ ] Custom icons
     - https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2
 
@@ -29,29 +22,37 @@ A project by Eric Tilford
 - UV index icon color based on level
 - Precipication icons opacity based on % chance
 - Wind speed & direction
-- Humidity & Air Pressure
+- Humidity & Dewpoint
+- Air Pressure
 - Moon phases
 - Air quality index
-- Cloudiness, Sunrise / Sunset
+- Sunrise / Sunset
+- (Cloudiness also available)
 
 ### Holidays
 - Holiday bank including birthdays & anniversaries
 - Holiday name appears under date text
 - Will also replace day name in 8-day
+- Holidays button shows all holidays for given year
 
 ### Zodiac
 - Zodiac icon displays current Astrological sign
 - Tooltip includes name, nickname
+- Lunar (Chinese) Zodiac in holidays list and tray icon
 
 ### Links
 
 ### Random Wallpaper Button
 
+### Random Dog API
+- Random dog image
+- Filter by breed, sub-breed
+
 ### Settings
 - Weather
   - Location Name
   - Temperature display (decimal)
-
-### Random Dog API
-- Random dog image
-- Filter by breed, sub-breed
+  - Auto-Refresh
+  - Hourly Interval
+- Wallpaper auto-refresh
+- Remember dog breed
