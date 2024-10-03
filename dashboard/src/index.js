@@ -163,7 +163,22 @@ $(document).ready(function () {
 	$("#zodiac-symbol").attr("title", zodiac(day, month) + ", " + zTitle);
 
 	// LUNAR ZODIAC
-	
+	function setLunarIcon() {
+		const lunarNewYearDates = holidayArray.find(holiday => holiday.holiday_name === "Lunar New Year")?.dates;
+		for (let date of lunarNewYearDates) {
+			const newYearDate = new Date(date.year, date.month - 1, date.day_one);
+			if (newYearDate <= d) {
+				recentLunar = date;
+			} else {
+				nextLunar = date;
+				break;
+			}
+		}
+		$("#lunar-symbol").html(recentLunar.emoji);
+		const nextText = "\nNext: " + nextLunar.month + "/" + nextLunar.day_one + "/" + nextLunar.year + " (" + nextLunar.animal + ")";
+		$("#lunar-symbol").attr("title", "Year of the " + recentLunar.animal + nextText );
+	}
+	setLunarIcon();
 
 	// SETTINGS
 	const settingsPanelAnimationSpeed = 300;

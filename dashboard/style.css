@@ -246,14 +246,6 @@ body {
 }
 
 
-#zodiac-symbol {
-    float: right;
-    font-size: 20px;
-    line-height: 1.8;
-    cursor: default;
-    padding-left: 2px;
-}
-
 /*
 .banner-div {
     text-align: center;
@@ -477,6 +469,14 @@ body {
 
 .weather-icon-column {
     width: 50px;
+}
+
+.zodiac-icon {
+    float: right;
+    font-size: 20px;
+    line-height: 1.8;
+    cursor: default;
+    padding-left: 2px;
 }
 
 /* MEDIA CALLS */
