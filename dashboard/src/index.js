@@ -112,34 +112,31 @@ $(document).ready(function () {
 	bigTrashDay();
 
 	// SMASH TOURNEY STATUS
-	function smashTourney(){
+	function smashTourney() {
 		$("#smash-tourney").show();
 		const origin = new Date("11/18/2022");
 		let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
 		let dayDiffRemainder = daysDifference % 4;
-	
+
 		if (dayDiffRemainder == 2 || dayDiffRemainder == 3) {
 			$("#smash-tourney").html('<i class="fa-solid fa-sm fa-person-rays tray-icon" style="color:#ff7b4a"></i>');
 			if (dayDiffRemainder == 2) {
-				let twoDays =  new Date();
+				let twoDays = new Date();
 				twoDays.setDate(d.getDate() + 2);
 				$("#smash-tourney").attr("title", "1v1 tourney ends: \n" + dayNames[twoDays.getDay()] + " (2 days)");
 			}
 			else if (dayDiffRemainder == 3) {
-				$("#smash-tourney").attr("title",  "1v1 tourney ends: \nTomorrow" );
+				$("#smash-tourney").attr("title", "1v1 tourney ends: \nTomorrow");
 			}
-			
-		} 
-		else if (dayDiffRemainder == 0 || dayDiffRemainder == 1) {
-	
+		} else if (dayDiffRemainder == 0 || dayDiffRemainder == 1) {
 			$("#smash-tourney").html('<i class="fa-solid fa-sm fa-users-slash tray-icon" style="color:#146ebe"></i>');
 			if (dayDiffRemainder == 0) {
-				let twoDays =  new Date();
+				let twoDays = new Date();
 				twoDays.setDate(d.getDate() + 2);
-				$("#smash-tourney").attr("title",  "Next 1v1 tourney: \n" + dayNames[twoDays.getDay()] + " (2 days)");
+				$("#smash-tourney").attr("title", "Next 1v1 tourney: \n" + dayNames[twoDays.getDay()] + " (2 days)");
 			}
 			else if (dayDiffRemainder == 1) {
-				$("#smash-tourney").attr("title",  "Next 1v1 tourney: \nTomorrow");
+				$("#smash-tourney").attr("title", "Next 1v1 tourney: \nTomorrow");
 			}
 		}
 	}
