@@ -13,6 +13,7 @@ $(document).ready(function () {
 	}
 
 	function stopDotAnimation() {
+		$('#dots').text("");
 		clearInterval(loadingDotInterval);
 	}
 	startDotAnimation();
