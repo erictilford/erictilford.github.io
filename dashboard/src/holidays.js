@@ -676,7 +676,7 @@ const holidayArray = [
         "type": "birthday"
     },
     {
-        "holiday_name": "ET",
+        "holiday_name": "ET/JT",
         "month": 7,
         "day_one": 17,
         "day_two": null,
@@ -685,6 +685,7 @@ const holidayArray = [
         "emoji": "&#127874;",
         "type": "birthday"
     },
+    /*
     {
         "holiday_name": "JT",
         "month": 7,
@@ -695,6 +696,7 @@ const holidayArray = [
         "emoji": "&#127874;",
         "type": "birthday"
     },
+    */
     {
         "holiday_name": "Evie",
         "month": 3,
@@ -738,6 +740,7 @@ const holidayArray = [
         "emoji": "&#x1F3DD;&#xFE0F;",
         "type": "oneTime"
     },
+    /*
     {
         "holiday_name": "Terry ",
         "month": 9,
@@ -748,6 +751,7 @@ const holidayArray = [
         "emoji": "&#x1F9E2;",
         "type": "oneTime"
     },
+    */
     {
         "holiday_name": "SMB Wonder",
         "month": 10,
