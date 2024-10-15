@@ -413,6 +413,7 @@ $(document).ready(function () {
 							$("#alert-panel").show();
 							let alertIcons = "";
 							let alertBody = "";
+							let alertColor = 'indianred';
 							for (let i = 0; i < result.alerts.length; i ++){
 
 								let name = result.alerts[i].event;
@@ -423,17 +424,17 @@ $(document).ready(function () {
 								console.log("(^add me as a custom alert icon");
 								console.log(name);
 
-								if (result.alerts[i].tags.includes("Snow/Ice") || name.includes("Winter Storm")) { icon = '<i class="fa-solid fa-snowflake"; style=color:indianred></i>'; } 
-								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:indianred></i>'; } 
-								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:indianred></i>'; } 
-								else if (result.alerts[i].tags.includes("Tornado")) { icon = '<i class="fa-solid fa-tornado"; style=color:indianred></i>'; } 
-								else if (result.alerts[i].tags.includes("Extreme temperature value")) { icon = '<i class="fa-solid fa-temperature-full"; style=color:indianred></i>'; }
-								else if (name.includes("Air Quality")) { icon = '<i class="fa-solid fa-lungs"; style=color:indianred></i>'; } 
-								else if (name.includes("Flood")) { icon = '<i class="fa-solid fa-house-flood-water"; style=color:indianred></i>'; } 
-								else if (name.includes("Fog")) { icon = '<i class="fa-solid fa-smog"; style=color:indianred></i>'; }
-								else if (name.includes("Frost")) { icon = '<i class="fa-solid fa-icicles"; style=color:indianred></i>'; } 
-								else if (name.includes("Heat Advisory") || name.includes("Excessive Heat")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:indianred></i>'; } 
-								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:indianred></i>'; }
+								if (result.alerts[i].tags.includes("Snow/Ice") || name.includes("Winter Storm")) { icon = '<i class="fa-solid fa-snowflake"; style=color:' + alertColor + '></i>'; } 
+								else if (result.alerts[i].tags.includes("Wind")) { icon = '<i class="fa-solid fa-wind"; style=color:' + alertColor + '></i>'; } 
+								else if (result.alerts[i].tags.includes("Thunderstorm")) { icon = '<i class="fa-solid fa-cloud-bolt"; style=color:' + alertColor + '></i>'; } 
+								else if (result.alerts[i].tags.includes("Tornado")) { icon = '<i class="fa-solid fa-tornado"; style=color:' + alertColor + '></i>'; } 
+								else if (result.alerts[i].tags.includes("Extreme temperature value")) { icon = '<i class="fa-solid fa-temperature-full"; style=color:' + alertColor + '></i>'; }
+								else if (name.includes("Air Quality")) { icon = '<i class="fa-solid fa-lungs"; style=color:' + alertColor + '></i>'; } 
+								else if (name.includes("Flood")) { icon = '<i class="fa-solid fa-house-flood-water"; style=color:' + alertColor + '></i>'; } 
+								else if (name.includes("Fog")) { icon = '<i class="fa-solid fa-smog"; style=color:' + alertColor + '></i>'; }
+								else if (name.includes("Frost")) { icon = '<i class="fa-solid fa-icicles"; style=color:' + alertColor + '></i>'; } 
+								else if (name.includes("Heat Advisory") || name.includes("Excessive Heat")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:' + alertColor + '></i>'; } 
+								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:' + alertColor + '></i>'; }
 
 								alertIcons += icon;
 								alertBody += "<span style='font-size:medium'>" + icon + " " + name + "</span>" + sender + desc;
