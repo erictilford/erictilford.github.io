@@ -230,7 +230,7 @@ const holidayArray = [
         "day_one": 14,
         "day_two": null,
         "day": null,
-        "emoji": "&hearts;",
+        "emoji": "&#x1F49D;",
         "type": "standard"
     },
     {
@@ -248,7 +248,7 @@ const holidayArray = [
         "day_one": 10,
         "day_two": null,
         "day": null,
-        "emoji": null,
+        "emoji": "&#x1F344;",
         "type": "standard"
     },
     {
@@ -266,7 +266,7 @@ const holidayArray = [
         "day_one": 14,
         "day_two": null,
         "day": null,
-        "emoji": null,
+        "emoji": "&#x1F967;",
         "type": "standard"
     },
     {
@@ -553,7 +553,7 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "year": 1957,
-        "emoji": "&#127874;",
+        "emoji": "&#x1F3B8;",
         "type": "birthday"
     },
     {
@@ -602,7 +602,7 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "year": 2020,
-        "emoji": "&hearts;",
+        "emoji": "&#x1F495;",
         "type": "birthday"
     },
     {
@@ -642,7 +642,7 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "year": 1989,
-        "emoji": "&#127874;",
+        "emoji": "&#x1F982;",
         "type": "birthday"
     },
     {
@@ -682,7 +682,7 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "year": 1987,
-        "emoji": "&#127874;",
+        "emoji": "&#x1F93C;&#x200D;&#x2642;&#xFE0F;",
         "type": "birthday"
     },
     /*
