@@ -371,7 +371,7 @@ $(document).ready(function () {
 				let long = Math.round(result[0].lon * 100) / 100;
 
 				$.ajax({
-					url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&lang=en&units=imperial&appid=" + wKey,
+					url: "https://api.openweathermap.org/data/3.0/onecall?lat=" + lat + "&lon=" + long + "&lang=en&units=imperial&appid=" + wKey,
 					type: "GET",
 					success: function (result) {
 
@@ -582,6 +582,7 @@ $(document).ready(function () {
 								$("#weather-extra-aqi").attr("title",  title);
 							},
 							error: function (error) {
+								console.log("FAILED to load air pollution data.");
 								console.log(error);
 							}
 						});
