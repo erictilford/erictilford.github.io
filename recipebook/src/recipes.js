@@ -1079,6 +1079,7 @@ var recipes = [
             "2 lb chicken breast*",
             "1 yellow onion, roughly chopped",
             "~1 lb potatoes, peeled / chopped*",
+            "4-5 carrots, chopped",
             "1.5 (13.5 oz) cans coconut milk",
             "3 Tbs brown sugar",
             "4-5 cloves garlic, chopped",
@@ -1088,7 +1089,6 @@ var recipes = [
             "&frac12; tsp coriander",
             "2 tsp salt",
             "2 tsp crushed red pepper",
-            "4-5 carrots, chopped",
             "cilantro, scallions, and/or lime to finish"
         ],
         "directions": [
