@@ -432,7 +432,7 @@ $(document).ready(function () {
 								else if (name.includes("Air Quality")) { icon = '<i class="fa-solid fa-lungs"; style=color:' + alertColor + '></i>'; } 
 								else if (name.includes("Flood")) { icon = '<i class="fa-solid fa-house-flood-water"; style=color:' + alertColor + '></i>'; } 
 								else if (name.includes("Fog")) { icon = '<i class="fa-solid fa-smog"; style=color:' + alertColor + '></i>'; }
-								else if (name.includes("Frost")) { icon = '<i class="fa-solid fa-icicles"; style=color:' + alertColor + '></i>'; } 
+								else if (name.includes("Frost") || name.includes("Freeze")) { icon = '<i class="fa-solid fa-icicles"; style=color:' + alertColor + '></i>'; } 
 								else if (name.includes("Heat Advisory") || name.includes("Excessive Heat")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:' + alertColor + '></i>'; } 
 								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:' + alertColor + '></i>'; }
 
