@@ -97,11 +97,11 @@ $(document).ready(function () {
 			$("#recycling-symbol").html('<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>');
 			$("#recycling-symbol").attr("title",  "Recycling day is tomorrow" );
 		}
-		if (dayDiffRemainder == 1){
+		else if (dayDiffRemainder == 1){
 			$("#recycling-symbol").html('<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>');
 			$("#recycling-symbol").attr("title",  "Recycling day is Monday" );
 		}
-		if (dayDiffRemainder == 13){
+		else if (dayDiffRemainder == 13){
 			$("#recycling-symbol").html('<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>');
 			$("#recycling-symbol").attr("title",  "Recycling day today" );
 		}
