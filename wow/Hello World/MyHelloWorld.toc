@@ -1,0 +1,6 @@
+## Interface: 30401
+## Title: My Hello World Addon
+## Notes: A simple addon that says "Hello, World!" in the chat.
+## Author: YourName
+## Version: 1.0
+MyHelloWorld.lua
