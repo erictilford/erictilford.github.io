@@ -95,15 +95,15 @@ $(document).ready(function () {
 		let dayDiffRemainder = daysDifference % 14;
 		if (dayDiffRemainder == 0){
 			$("#recycling-symbol").html('<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>');
-			$("#recycling-symbol").attr("title",  "Recycling day is tomorrow" );
+			$("#recycling-symbol").attr("title",  "Recycling Day is tomorrow" );
 		}
 		else if (dayDiffRemainder == 1){
 			$("#recycling-symbol").html('<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>');
-			$("#recycling-symbol").attr("title",  "Recycling day is Monday" );
+			$("#recycling-symbol").attr("title",  "Recycling Day is today" );
 		}
 		else if (dayDiffRemainder == 13){
 			$("#recycling-symbol").html('<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>');
-			$("#recycling-symbol").attr("title",  "Recycling day today" );
+			$("#recycling-symbol").attr("title",  "Recycling Day is Monday" );
 		}
 
 	}
@@ -111,12 +111,20 @@ $(document).ready(function () {
 
 	// BIG TRASH DAY
 	function bigTrashDay() {
-		const today = new Date()
-		const tomorrow = new Date(today)
-		tomorrow.setDate(tomorrow.getDate() + 1)
-		if (tomorrow.getDay() === 1 && tomorrow.getDate() <= 7) {
+		const today = new Date();
+		const tomorrow = new Date(today);
+		const DATomorrow = new Date(today);
+		tomorrow.setDate(tomorrow.getDate() + 1);
+		DATomorrow.setDate(tomorrow.getDate() + 2);
+		if (tomorrow.getDay() === 1 && tomorrow.getDate() <= 7) { // If tomorrow is 1st Mon. of month
 			$("#big-trash-icon").html('<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>');
 			$("#big-trash-icon").attr("title",  "Big Trash Day is tomorrow" );
+		} else if (today.getDay() === 1 && today.getDate() <= 7) { // If today is...
+			$("#big-trash-icon").html('<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>');
+			$("#big-trash-icon").attr("title",  "Big Trash Day is today" );
+		} else if (DATomorrow.getDay() === 1 && DATomorrow.getDate() <= 7) { // If day after tomorrow is...
+			$("#big-trash-icon").html('<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>');
+			$("#big-trash-icon").attr("title",  "Big Trash Day is Monday" );
 		}	
 	}
 	bigTrashDay();
