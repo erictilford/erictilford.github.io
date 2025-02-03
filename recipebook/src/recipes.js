@@ -48,6 +48,43 @@ var recipes = [
     },
     */
     {
+        "recipe_name": "Sloppy Joes",
+        "summary": 'More formally known as "Untidy Josephs".',
+        "ingredients": [
+            "1 lb. ground beef",
+            "1 small onion, finely chopped",
+            "1&frac12; green bell pepper, chopped",
+            "2 cloves garlic, minced",
+            "1 cup tomato sauce",
+            "&frac14; cup ketchup",
+            "1 Tbs brown sugar",
+            "1 tsp Worcestershire sauce",
+            "1 tsp mustard (optional)",
+            "1/2 tsp salt",
+            "1/4 tsp black pepper",
+            "Hamburger buns"
+        ],
+        "directions": [
+            "Brown the ground beef in a non-stick skillet over medium heat until excess liquid evaporates.",
+            "Add the onion, bell pepper, and garlic to skillet, cooking until softened, ~5 minutes.",
+            "Stir in the remaining ingredients* and let the mixture simmer for 10-15 minutes, stirring occasionally.",
+            "Serve Sloppy Joes on hamburger buns and enjoy."
+        ],
+        "notes": [
+            "*Don't stir in the hamburger buns.",
+            "Try adding cheese or pickles!"
+        ],
+        "tags": ["Dinner"],
+        "hands_on_time": "45",
+        "total_time": "45",
+        "date_added": "2/2/2025",
+        "contributor": "Eric Tilford",
+        "source": "ChatGPT",
+        "serves": "6-8 servings",
+        "images": ["sloppyjoes.jpg"],
+        "id": "sloppy-joes"
+    },
+    {
         "recipe_name": "Broccoli Cheddar Chicken Casserole",
         "summary": "A casserole for the soul.",
         "ingredients": [
