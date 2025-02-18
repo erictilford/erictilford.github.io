@@ -13,5 +13,5 @@ function LoadRNG(animSpeed) {
 
             $("#d6-button").append('<i class="fa-solid fa-dice-six fa-3x">');
             $("#d20-button").append('<i class="fa-solid fa-dice-d20 fa-3x">');
-
+            
 }
