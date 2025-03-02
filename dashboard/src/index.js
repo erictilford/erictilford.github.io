@@ -114,8 +114,8 @@ $(document).ready(function () {
 		const today = new Date();
 		const tomorrow = new Date(today);
 		const DATomorrow = new Date(today);
-		tomorrow.setDate(tomorrow.getDate() + 1);
-		DATomorrow.setDate(tomorrow.getDate() + 2);
+		tomorrow.setDate(today.getDate() + 1);
+		DATomorrow.setDate(today.getDate() + 2);
 		const icon = '<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>';
 		if (tomorrow.getDay() === 1 && tomorrow.getDate() <= 7) { // If tomorrow is 1st Mon. of month
 			$("#big-trash-icon").html(icon);
