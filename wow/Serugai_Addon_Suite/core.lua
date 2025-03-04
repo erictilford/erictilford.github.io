@@ -37,7 +37,7 @@ local clr = "46d0c6"
 local hspeed = "|cff" .. clr .. "/speed|r: Prints target or player's current speed."
 local hnaked = "|cff" .. clr .. "/naked|r: Shows target or player without clothes."
 local hpoker = "|cff" .. clr .. "/poker|r: Prints a random poker hand."
-local hrainbow = "|cff" .. clr .. "/rainbow|r <|cff" .. clr .. "text|r>: Prints input text in " .. RainbowText("RAINBOW COLORS") .. "!"
+local hrainbow = "|cff" .. clr .. "/rainbow|r <|cff" .. clr .. "text|r>: Prints text in " .. RainbowText("RAINBOW COLORS") .. "!"
 
 
 -- LOADING MSG
@@ -162,10 +162,10 @@ SlashCmdList["RAINBOW"] = RainbowCommandHandler
 
 
 -- ROLLS
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("CHAT_MSG_SYSTEM")
+local rollFrame = CreateFrame("Frame")
+rollFrame:RegisterEvent("CHAT_MSG_SYSTEM")
 
-frame:SetScript("OnEvent", function(self, event, message)
+rollFrame:SetScript("OnEvent", function(self, event, message)
     local player, roll, min, max = message:match("(%S+) rolls (%d+) %((%d+)-(%d+)%)")
     if player and tonumber(roll) == 100 then
         print(player .. " rolled a perfect 100!")
@@ -173,6 +173,53 @@ frame:SetScript("OnEvent", function(self, event, message)
 end)
 
 
+-- REPLACE DEATH SOUND
+local levelUpFrame = CreateFrame("Frame")
+levelUpFrame:RegisterEvent("PLAYER_LEVEL_UP")
 
+levelUpFrame:SetScript("OnEvent", function(self, event, ...)
+    if event == "PLAYER_LEVEL_UP" then
+        local soundPath = "Interface\\AddOns\\Serugai_Addon_Suite\\audio\\ff7.mp3"
+        
+        if C_File and C_File.Exists and not C_File.Exists(soundPath) then -- delete this check later
+            print("[Serugai_Addon_Suite] Error: Level-up sound file not found at " .. soundPath)
+            return
+        end
+        
+        PlaySoundFile(soundPath, "Master")
+        
+        -- Stop the default level-up sound // this isn't working currently
+        MuteSoundFile(888) -- 888 is the ID for the default level-up sound
+    end
+end)
+
+
+-- ADDON OPTIONS
+local function CreateMyAddonOptions()
+    local panel = CreateFrame("Frame")
+    panel.name = "MyAddon"  -- Name in the Interface Options
+
+    -- Create the checkbox
+    local checkbox = CreateFrame("CheckButton", "MyAddonCheckbox", panel, "ChatConfigCheckButtonTemplate")
+    checkbox:SetPoint("TOPLEFT", 16, -16)
+    checkbox.Text:SetText("Enable Feature")  -- Checkbox label
+
+    -- Function to save checkbox state
+    checkbox:SetScript("OnClick", function(self)
+        MyAddonDB.enableFeature = self:GetChecked()
+    end)
+
+    -- Load the saved state when the panel is opened
+    panel:SetScript("OnShow", function()
+        checkbox:SetChecked(MyAddonDB.enableFeature)
+    end)
+
+    -- Add to Interface Options
+    InterfaceOptions_AddCategory(panel)
+    print("SUCCESS")
+end
+
+-- Call the function when the addon is loaded
+CreateMyAddonOptions()
 
 

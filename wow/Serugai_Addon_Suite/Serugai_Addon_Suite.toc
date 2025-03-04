@@ -1,4 +1,5 @@
 ## Interface: 110000
 ## Title: |TInterface/Addons/Serugai_Addon_Suite/Images/Glorp:16|t Serugai Addon Suite
+## SavedVariables: MyAddonDB
 core.lua
 
