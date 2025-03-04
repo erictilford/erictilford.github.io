@@ -126,6 +126,7 @@ function LoadHolidayButton(animSpeed) {
     $("#holiday-button").attr("title",  "Holiday List" );
 }
 
+
 function checkHoliday(month, day, dayOfWeek, year) {
     let holidays = [];
     for (let i = 0; i < holidayArray.length; i++) {
@@ -155,7 +156,7 @@ function checkHoliday(month, day, dayOfWeek, year) {
                 holidayName = holidayArray[i].holiday_name;
             }
         // Easter
-        } else if (holidayArray[i].type == "easter") {
+        } else if (holidayArray[i].type == "easter" || holidayArray[i].type == "mardiGras") {
             holidayArray[i].dates.forEach(element => {
                 if (day == element.day_one && month == element.month && year == element.year) {
                     holidayName = holidayArray[i].holiday_name;
@@ -863,4 +864,36 @@ const holidayArray = [
 
 ]
 
+// Add Mardi Gras dates from Easter 
+function addMardiGrasDates() {
+    // Find the Easter entry
+    let easterEntry = holidayArray.find(h => h.type === "easter");
+    if (!easterEntry) return;
+
+    // Calculate Mardi Gras dates
+    let mardiGrasDates = easterEntry.dates.map(date => {
+        let easterDate = new Date(date.year, date.month - 1, date.day_one);
+        let mardiGrasDate = new Date(easterDate);
+        mardiGrasDate.setDate(easterDate.getDate() - 47);
+
+        return {
+            month: mardiGrasDate.getMonth() + 1,
+            day_one: mardiGrasDate.getDate(),
+            year: mardiGrasDate.getFullYear()
+        };
+    });
+
+    // Create the new Mardi Gras entry
+    let mardiGrasEntry = {
+        "holiday_name": "Mardi Gras",
+        "dates": mardiGrasDates,
+        "emoji": "&#x269C;&#xFE0F;",
+        "type": "mardiGras"
+    };
+
+    holidayArray.push(mardiGrasEntry);
+}
+addMardiGrasDates();
+
+//////////////////////
 listHolidays(holidayYear); 
