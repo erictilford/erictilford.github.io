@@ -870,7 +870,7 @@ function addMardiGrasDates() {
     let easterEntry = holidayArray.find(h => h.type === "easter");
     if (!easterEntry) return;
 
-    // Calculate Mardi Gras dates
+    // Calculate Mardi Gras dates (Easter -47 days)
     let mardiGrasDates = easterEntry.dates.map(date => {
         let easterDate = new Date(date.year, date.month - 1, date.day_one);
         let mardiGrasDate = new Date(easterDate);
