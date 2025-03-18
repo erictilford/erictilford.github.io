@@ -53,7 +53,7 @@ var recipes = [
         "ingredients": [
             "1 lb. ground beef",
             "1 small onion, finely chopped",
-            "1&frac12; green bell pepper, chopped",
+            "&frac12; green bell pepper, chopped",
             "2 cloves garlic, minced",
             "1 cup tomato sauce",
             "&frac14; cup ketchup",
