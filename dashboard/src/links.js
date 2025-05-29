@@ -147,7 +147,7 @@ const links = [
     },
     {
         "title" : "Bandle",
-        "url" : "https://bandle.app",
+        "url" : "https://bandle.app/daily",
         "icon" : '<i class="fa-solid fa-2x fa-guitar" style="color:#981520"></i>',
         "target" : "#tools-list"
     },
