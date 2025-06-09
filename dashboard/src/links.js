@@ -157,6 +157,12 @@ const links = [
         "icon" : '<i class="fa-solid fa-2x fa-map-location-dot" style="color:#db5049"></i>',
         "target" : "#tools-list"
     },
+    {
+        "title" : "Scryfall",
+        "url" : "https://scryfall.com/",
+        "icon" : '<i class="fa-solid fa-2x fa-id-card" style="color:#a04b9a"></i>',
+        "target" : "#tools-list"
+    },
     // Audio
     {
         "title" : "NPR",
