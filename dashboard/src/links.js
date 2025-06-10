@@ -207,7 +207,7 @@ const links = [
         "title" : "Github",
         "url" : "https://github.com/erictilford/erictilford.github.io",
         "icon" : '<i class="fa-brands fa-2x fa-github" style="color:slategray"></i>',
-        "target" : "#tools-list"
+        "target" : "#project-list"
     },
     // games
     // - skribbl
