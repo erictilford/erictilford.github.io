@@ -122,9 +122,9 @@ const links = [
         "target" : "#tools-list"
     },
     {
-        "title" : "Github",
-        "url" : "https://github.com/erictilford/erictilford.github.io",
-        "icon" : '<i class="fa-brands fa-2x fa-github" style="color:slategray"></i>',
+        "title" : "Scryfall",
+        "url" : "https://scryfall.com/",
+        "icon" : '<i class="fa-solid fa-2x fa-id-card" style="color:#a04b9a"></i>',
         "target" : "#tools-list"
     },
     {
@@ -155,12 +155,6 @@ const links = [
         "title" : "Timeguessr",
         "url" : "https://timeguessr.com/",
         "icon" : '<i class="fa-solid fa-2x fa-map-location-dot" style="color:#db5049"></i>',
-        "target" : "#tools-list"
-    },
-    {
-        "title" : "Scryfall",
-        "url" : "https://scryfall.com/",
-        "icon" : '<i class="fa-solid fa-2x fa-id-card" style="color:#a04b9a"></i>',
         "target" : "#tools-list"
     },
     // Audio
@@ -209,7 +203,12 @@ const links = [
         "icon" : '<i class="fa-solid fa-2x fa-icons" style="color:orchid"></i>',
         "target" : "#project-list"
     },
-
+    {
+        "title" : "Github",
+        "url" : "https://github.com/erictilford/erictilford.github.io",
+        "icon" : '<i class="fa-brands fa-2x fa-github" style="color:slategray"></i>',
+        "target" : "#tools-list"
+    },
     // games
     // - skribbl
     // - wordle
