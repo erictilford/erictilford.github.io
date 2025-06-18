@@ -361,6 +361,7 @@ const holidayArray = [
         "emoji": "&#127878;",
         "type": "standard"
     },
+    /*
     {
         "holiday_name": "Bastille Day",
         "month": 7,
@@ -370,6 +371,7 @@ const holidayArray = [
         "emoji": "	&#129366;",
         "type": "standard"
     },
+    */
     {
         "holiday_name": "Lori Bday",
         "month": 9,
