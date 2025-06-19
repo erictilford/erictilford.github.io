@@ -493,6 +493,7 @@ const holidayArray = [
         "emoji": "&#127970;",
         "type": "dayName"
     },
+    /*
     {
         "holiday_name": "Grandparents Day", // Sunday after Labor Day
         "month": 9,
@@ -502,6 +503,7 @@ const holidayArray = [
         "emoji": "	&#128117;",
         "type": "dayName"
     },
+    */
     {
         "holiday_name": "Indigenous People's Day", // Second Monday in Oct. / F Columbus
         "month": 10,
