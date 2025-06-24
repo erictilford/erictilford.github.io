@@ -1,34 +1,9 @@
-
-
+/* Root styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #c3d5dd !important;
-}
-
-
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-}
-.btn {
-    background: #35424a !important;
-}
-
-.container {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 2em;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 footer {
@@ -40,20 +15,117 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* ID styles */
+#generate-password {
+    display: block;
+    margin: 0 auto;
+}
+
+
 #password-list {
     margin-top: 1em;
     display: flex;
     flex-direction: column;
     gap: 0.5em;
 }
+
+#slider-value,
+#number-slider-value {
+    font-weight: bold;
+    color: #35424a;
+}
+
+/* Class styles */
+.btn {
+    background: #35424a !important;
+    border: none; /* Remove border */
+    color: #ffffff;
+    box-shadow: none; /* Remove shadow */
+}
+
+.btn:focus {
+    outline: none; /* Remove focus outline */
+    background: #c3d5dd; /* Light blue background */
+    color: #35424a; /* Text color for contrast */
+}
+
+.container {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 .password-item {
     padding: 0.5em 1em;
     background: #c3ced5;
     border-radius: 4px;
     font-family: monospace;
     font-size: 1.2em;
+    text-align: center;
     transition: background 0.2s;
 }
+
 .password-item:hover {
     background: #e0e0e0;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #35424a;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.slider:hover {
+    background: #2a3a40;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #c3ced5;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #c3ced5;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.settings-item {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 0.5em; /* Add spacing between label and slider */
+    margin-bottom: .5em; /* Add vertical spacing between settings items */
+}
+
+.settings-item label {
+    flex: 1; /* Allow the label to take up more space */
+    white-space: nowrap; /* Prevent text wrapping */
 }
