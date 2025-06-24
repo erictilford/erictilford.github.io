@@ -1,28 +1,40 @@
 $(document).ready(function () {
     const DEFAULT_LENGTH = 8;
     const DEFAULT_NUMBER = 5;
+    const DEFAULT_OMIT_SIMILAR = true;
 
-    // Load saved password length and number of passwords from localStorage or use defaults
+    // Load saved password length, number of passwords, and omit similar from localStorage or use defaults
     const savedLength = localStorage.getItem("passwordLength");
     const savedNumber = localStorage.getItem("numberOfPasswords");
+    const savedOmitSimilar = localStorage.getItem("omitSimilar");
     const initialLength = savedLength ? parseInt(savedLength, 10) : DEFAULT_LENGTH;
     const initialNumber = savedNumber ? parseInt(savedNumber, 10) : DEFAULT_NUMBER;
+    const initialOmitSimilar = savedOmitSimilar !== null ? (savedOmitSimilar === "true") : DEFAULT_OMIT_SIMILAR;
 
     // Set the sliders and displayed values to the initial values
     $("#length-slider").val(initialLength);
     $("#slider-value").text(initialLength);
     $("#number-slider").val(initialNumber);
     $("#number-slider-value").text(initialNumber);
+    $("#omit-similar").prop("checked", initialOmitSimilar);
 
     function generateSecurePassword(length) {
         if (length < 8) {
             throw new Error("Password length should be at least 8 characters for security.");
         }
 
-        const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        const lower = "abcdefghijklmnopqrstuvwxyz";
-        const numbers = "0123456789";
-        const special = "@%!#$?";
+        let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let lower = "abcdefghijklmnopqrstuvwxyz";
+        let numbers = "0123456789";
+        let special = "@%!#$?";
+        let omitSimilar = $("#omit-similar").prop("checked");
+
+        if (omitSimilar) {
+            upper = upper.replace(/[OILS]/g, "");
+            lower = lower.replace(/[l]/g, "");
+            numbers = numbers.replace(/[015]/g, "");
+        }
+
         const all = upper + lower + numbers + special;
 
         const hasRepeatsOrSequences = (str) => {
@@ -43,6 +55,9 @@ $(document).ready(function () {
             numbers[Math.floor(Math.random() * numbers.length)],
             special[Math.floor(Math.random() * special.length)]
         ];
+
+        // Remove undefined if any character set is empty (e.g., all numbers omitted)
+        guaranteed = guaranteed.filter(Boolean);
 
         while (true) {
             let remainingLength = length - guaranteed.length;
@@ -98,17 +113,19 @@ $(document).ready(function () {
     $("#length-slider").on("input", function () {
         const newLength = $(this).val();
         $("#slider-value").text(newLength);
-
-        // Save the new length to localStorage
         localStorage.setItem("passwordLength", newLength);
     });
 
     $("#number-slider").on("input", function () {
         const newNumber = $(this).val();
         $("#number-slider-value").text(newNumber);
-
-        // Save the new number to localStorage
         localStorage.setItem("numberOfPasswords", newNumber);
+    });
+
+    $("#omit-similar").on("change", function () {
+        const omit = $(this).prop("checked");
+        localStorage.setItem("omitSimilar", omit);
+        displayPasswords();
     });
 
     displayPasswords();
@@ -122,12 +139,10 @@ $(document).ready(function () {
         slider.style.background = `linear-gradient(to right, #35424a ${percentage}%, #c3ced5 ${percentage}%)`;
     }
 
-    // Attach the function to all sliders with the "slider" class
     $(".slider").on("input", function () {
         updateSliderBackground(this);
     });
 
-    // Initialize the background for all sliders on page load
     $(".slider").each(function () {
         updateSliderBackground(this);
     });

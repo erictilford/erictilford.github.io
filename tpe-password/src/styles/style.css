@@ -122,10 +122,41 @@ h1 {
     display: flex;
     align-items: center; /* Align items vertically */
     gap: 0.5em; /* Add spacing between label and slider */
-    margin-bottom: .5em; /* Add vertical spacing between settings items */
 }
 
 .settings-item label {
     flex: 1; /* Allow the label to take up more space */
     white-space: nowrap; /* Prevent text wrapping */
+}
+
+.form-check-input[type="checkbox"] {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: #c3ced5;      /* switched: now light */
+    border: 2px solid #c3ced5;      /* switched: now light */
+    border-radius: 0.25em;
+    transition: background 0.2s, border-color 0.2s;
+    box-shadow: none;
+}
+
+.form-check-input[type="checkbox"]:checked {
+    background-color: #35424a;      /* switched: now dark */
+    border-color: #c3ced5;          /* switched: now light */
+}
+
+.form-check-input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem #35424a80; /* switched: now dark with opacity */
+}
+
+#omit-similar-container .form-check {
+    display: flex;
+    align-items: center; /* Vertically center checkbox and label */
+    gap: 0.5em;
+    margin-bottom: 0;
+}
+
+#omit-similar-container .form-check-input {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
