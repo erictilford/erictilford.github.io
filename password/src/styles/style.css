@@ -149,14 +149,14 @@ h1 {
     box-shadow: 0 0 0 0.2rem #35424a80; /* switched: now dark with opacity */
 }
 
-#omit-similar-container .form-check {
+.form-check.flex-align-center {
     display: flex;
-    align-items: center; /* Vertically center checkbox and label */
+    align-items: center;
     gap: 0.5em;
     margin-bottom: 0;
 }
 
-#omit-similar-container .form-check-input {
+.form-check.flex-align-center .form-check-input {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
