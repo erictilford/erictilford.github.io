@@ -2,14 +2,17 @@ $(document).ready(function () {
     const DEFAULT_LENGTH = 8;
     const DEFAULT_NUMBER = 5;
     const DEFAULT_OMIT_SIMILAR = true;
+    const DEFAULT_OMIT_UNDESIRABLE = true;
 
     // Load saved password length, number of passwords, and omit similar from localStorage or use defaults
     const savedLength = localStorage.getItem("passwordLength");
     const savedNumber = localStorage.getItem("numberOfPasswords");
     const savedOmitSimilar = localStorage.getItem("omitSimilar");
+    const savedOmitUndesirable = localStorage.getItem("omitUndesirable");
     const initialLength = savedLength ? parseInt(savedLength, 10) : DEFAULT_LENGTH;
     const initialNumber = savedNumber ? parseInt(savedNumber, 10) : DEFAULT_NUMBER;
     const initialOmitSimilar = savedOmitSimilar !== null ? (savedOmitSimilar === "true") : DEFAULT_OMIT_SIMILAR;
+    const initialOmitUndesirable = savedOmitUndesirable !== null ? (savedOmitUndesirable === "true") : DEFAULT_OMIT_UNDESIRABLE;
 
     // Set the sliders and displayed values to the initial values
     $("#length-slider").val(initialLength);
@@ -17,6 +20,7 @@ $(document).ready(function () {
     $("#number-slider").val(initialNumber);
     $("#number-slider-value").text(initialNumber);
     $("#omit-similar").prop("checked", initialOmitSimilar);
+    $("#omit-undesirable").prop("checked", initialOmitUndesirable);
 
     function generateSecurePassword(length) {
         if (length < 8) {
@@ -26,13 +30,18 @@ $(document).ready(function () {
         let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let lower = "abcdefghijklmnopqrstuvwxyz";
         let numbers = "0123456789";
-        let special = "@%!#$?";
+        let special = "@%+!#$^?:.(){}[]~-_";
         let omitSimilar = $("#omit-similar").prop("checked");
+        let omitUndesirable = $("#omit-undesirable").prop("checked");
 
         if (omitSimilar) {
-            upper = upper.replace(/[OILS]/g, "");
+            upper = upper.replace(/[OIS]/g, "");
             lower = lower.replace(/[l]/g, "");
             numbers = numbers.replace(/[015]/g, "");
+        }
+        if (omitUndesirable) {
+            // Remove ^ : . ( ) { } [ ] ~ from special characters
+            special = special.replace(/[\^:\.\(\)\{\}\[\]~]/g, "");
         }
 
         const all = upper + lower + numbers + special;
@@ -114,17 +123,25 @@ $(document).ready(function () {
         const newLength = $(this).val();
         $("#slider-value").text(newLength);
         localStorage.setItem("passwordLength", newLength);
+        displayPasswords(); // Add this line
     });
 
     $("#number-slider").on("input", function () {
         const newNumber = $(this).val();
         $("#number-slider-value").text(newNumber);
         localStorage.setItem("numberOfPasswords", newNumber);
+        displayPasswords(); // Add this line
     });
 
     $("#omit-similar").on("change", function () {
         const omit = $(this).prop("checked");
         localStorage.setItem("omitSimilar", omit);
+        displayPasswords();
+    });
+
+    $("#omit-undesirable").on("change", function () {
+        const omit = $(this).prop("checked");
+        localStorage.setItem("omitUndesirable", omit);
         displayPasswords();
     });
 

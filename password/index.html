@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <h2>TPE Password Generator <i class="fa-solid fa-key fa-2xs"></i></h2>
+        <h2>Password Generator <i class="fa-solid fa-key fa-2xs"></i></h2>
     </header>
     <div class="container">
         <main>
@@ -38,7 +38,15 @@
                             <div class="form-check mt-2">
                                 <input class="form-check-input" type="checkbox" id="omit-similar" checked>
                                 <label class="form-check-label" for="omit-similar">
-                                    Omit similar-looking characters (O/0, I/l/1, 5/S)
+                                    Omit similar-looking characters: <small class="text-muted">(O/0, I/l/1, 5/S)</small>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="settings-item" id="omit-undesirable-container">
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" id="omit-undesirable" checked>
+                                <label class="form-check-label" for="omit-undesirable">
+                                    Omit "undesirable" special characters <small class="text-muted">(^:.(){}[]~-)</small>
                                 </label>
                             </div>
                         </div>
@@ -52,7 +60,7 @@
                         <li>At least one uppercase letter</li>
                         <li>At least one lowercase letter</li>
                         <li>At least one number</li>
-                        <li>At least one special character (@%!#$?)</li>
+                        <li>At least one special character <small class="text-muted">(@%+!#$^?:.(){}[]~-_)</small></li>
                         <li>No repeating or sequential characters</li>
                         <li>No dictionary words*</li>
                     </ul>
