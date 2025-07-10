@@ -736,6 +736,16 @@ const holidayArray = [
     // ONE-TIME HOLIDAYS
     ////////////////////
     {
+        "holiday_name": "FF Tactics",
+        "month": 9,
+        "day_one": 30,
+        "day_two": null,
+        "day": null,
+        "year": 2025,
+        "emoji": "&#x1F6E1;&#xFE0F;",
+        "type": "oneTime"
+    },
+    {
         "holiday_name": "Election Day",
         "month": 11,
         "day_one": 5,
