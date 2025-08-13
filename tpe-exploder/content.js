@@ -20,7 +20,7 @@ window.onload = function() {
   timerDiv.style.fontFamily = 'monospace';
   timerDiv.style.zIndex = '9999';
   document.body.appendChild(timerDiv);
-  console.log("WTAF");
+  console.log("WTF");
 
   // Timer logic
   let startSeconds = 15 * 60;
