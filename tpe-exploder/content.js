@@ -30,11 +30,16 @@ window.onload = function() {
     return n < 10 ? '0' + n : n;
   }
 
+  // Store the original title
+  const originalTitle = document.title;
+
   function updateTimer() {
     const min = Math.floor(Math.abs(seconds) / 60);
     const sec = Math.abs(seconds) % 60;
     const sign = seconds < 0 ? '-' : '';
-    timerDiv.textContent = `${sign}${pad(min)}:${pad(sec)}`;
+    const timerText = `${sign}${pad(min)}:${pad(sec)}`;
+    timerDiv.textContent = timerText;
+    document.title = `⏱️ ${timerText} | ${originalTitle}`;
   }
 
   updateTimer();
