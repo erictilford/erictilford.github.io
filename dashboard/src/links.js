@@ -97,12 +97,12 @@ const links = [
         "icon" : '<i class="fa-solid fa-2x fa-swatchbook" style="color:lightseagreen"></i>',
         "target" : "#tools-list"
     },
-    {
+    /*{
         "title" : "Pixlr X",
         "url" : "https://pixlr.com/x/",
         "icon" : '<i class="fa-solid fa-2x fa-palette" style="color:bisque"></i>',
         "target" : "#tools-list"
-    },
+    },*/
     {
         "title" : "Connections",
         "url" : "https://www.nytimes.com/games/connections",
@@ -155,6 +155,12 @@ const links = [
         "title" : "Timeguessr",
         "url" : "https://timeguessr.com/",
         "icon" : '<i class="fa-solid fa-2x fa-map-location-dot" style="color:#db5049"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "catfishing",
+        "url" : "https://catfishing.net/",
+        "icon" : '<i class="fa-solid fa-2x fa-fish-fins" style="color:#fbbf24"></i>',
         "target" : "#tools-list"
     },
     // Audio
