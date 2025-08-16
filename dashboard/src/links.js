@@ -80,12 +80,6 @@ const links = [
         "target" : "#tools-list"
     },
     {
-        "title" : "Wordle",
-        "url" : "https://www.nytimes.com/games/wordle/index.html",
-        "icon" : '<i class="fa-solid fa-2x fa-w" style="color:#69a662"></i>',
-        "target" : "#tools-list"
-    },
-    {
         "title" : "Codepen",
         "url" : "https://codepen.io/",
         "icon" : '<i class="fa-brands fa-2x fa-codepen" style="color:#dddddd"></i>',
@@ -140,6 +134,18 @@ const links = [
         "target" : "#tools-list"
     },
     {
+        "title" : "Timeguessr",
+        "url" : "https://timeguessr.com/",
+        "icon" : '<i class="fa-solid fa-2x fa-map-location-dot" style="color:#db5049"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Wordle",
+        "url" : "https://www.nytimes.com/games/wordle/index.html",
+        "icon" : '<i class="fa-solid fa-2x fa-w" style="color:#69a662"></i>',
+        "target" : "#tools-list"
+    },
+    {
         "title" : "Mini-Cross",
         "url" : "https://www.nytimes.com/crosswords/game/mini",
         "icon" : '<i class="fa-solid fa-2x fa-puzzle-piece" style="color:#6493e6"></i>',
@@ -149,12 +155,6 @@ const links = [
         "title" : "Bandle",
         "url" : "https://bandle.app/daily",
         "icon" : '<i class="fa-solid fa-2x fa-guitar" style="color:#981520"></i>',
-        "target" : "#tools-list"
-    },
-    {
-        "title" : "Timeguessr",
-        "url" : "https://timeguessr.com/",
-        "icon" : '<i class="fa-solid fa-2x fa-map-location-dot" style="color:#db5049"></i>',
         "target" : "#tools-list"
     },
     {
