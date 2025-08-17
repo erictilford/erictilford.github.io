@@ -98,12 +98,6 @@ const links = [
         "target" : "#tools-list"
     },*/
     {
-        "title" : "Connections",
-        "url" : "https://www.nytimes.com/games/connections",
-        "icon" : '<i class="fa-solid fa-2x fa-table-cells" style="color:#bc70c4"></i>',
-        "target" : "#tools-list"
-    },
-    {
         "title" : "Codewars",
         "url" : "https://www.codewars.com/dashboard",
         "icon" : '<i class="fa-solid fa-2x fa-laptop-code" style="color:#b1361e"></i>',
@@ -143,6 +137,12 @@ const links = [
         "title" : "Wordle",
         "url" : "https://www.nytimes.com/games/wordle/index.html",
         "icon" : '<i class="fa-solid fa-2x fa-w" style="color:#69a662"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Connections",
+        "url" : "https://www.nytimes.com/games/connections",
+        "icon" : '<i class="fa-solid fa-2x fa-table-cells" style="color:#bc70c4"></i>',
         "target" : "#tools-list"
     },
     {
