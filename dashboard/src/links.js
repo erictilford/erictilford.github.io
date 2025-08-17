@@ -215,8 +215,4 @@ const links = [
         "icon" : '<i class="fa-brands fa-2x fa-github" style="color:slategray"></i>',
         "target" : "#project-list"
     },
-    // games
-    // - skribbl
-    // - wordle
-    // - wos.gg
 ]
