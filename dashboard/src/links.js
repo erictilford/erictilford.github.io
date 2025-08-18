@@ -221,4 +221,5 @@ const links = [
         "icon" : '<i class="fa-brands fa-2x fa-github" style="color:slategray"></i>',
         "target" : "#project-list"
     },
+    // +Password Generator?
 ]
