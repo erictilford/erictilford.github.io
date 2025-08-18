@@ -85,12 +85,12 @@ const links = [
         "icon" : '<i class="fa-brands fa-2x fa-codepen" style="color:#dddddd"></i>',
         "target" : "#tools-list"
     },
-    {
+    /*{
         "title" : "Coolors",
         "url" : "https://coolors.co/generate",
         "icon" : '<i class="fa-solid fa-2x fa-swatchbook" style="color:lightseagreen"></i>',
         "target" : "#tools-list"
-    },
+    },*/
     /*{
         "title" : "Pixlr X",
         "url" : "https://pixlr.com/x/",
@@ -158,9 +158,15 @@ const links = [
         "target" : "#tools-list"
     },
     {
-        "title" : "catfishing",
+        "title" : "Catfishing",
         "url" : "https://catfishing.net/",
         "icon" : '<i class="fa-solid fa-2x fa-fish-fins" style="color:#fbbf24"></i>',
+        "target" : "#tools-list"
+    },
+    {
+        "title" : "Scrandle",
+        "url" : "https://scrandle.com/",
+        "icon" : '<i class="fa-solid fa-2x fa-hotdog" style="color:#ce9864"></i>',
         "target" : "#tools-list"
     },
     // Audio
