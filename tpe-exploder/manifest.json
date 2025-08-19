@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "ET's TPE Exploder :)",
-    "version": "1.0",
-    "description": "Explodes the tiny, cramped expand boxes found in TPE.",
+    "name": "ET's TPE Enhancer",
+    "version": "2.0",
+    "description": "Explodes the tiny, cramped expand windows found in TPE, and more!",
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
