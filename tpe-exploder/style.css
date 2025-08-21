@@ -1,19 +1,25 @@
 /* Environment label styles */
 .env-label {
   position: sticky;
-  top: 0;
-  left: 0;
+  top: 12px;
+  left: 12px;
   font-weight: bold;
-  padding: 8px 20px;
-  font-size: 1.2em;
+  padding: 4px 16px;
+  font-size: 1.5em;
   z-index: 10000;
-  border-bottom-right-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  background: rgba(0,0,0,0.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 24px;
+  margin: 0;
 }
 .env-label.prod {
-  background: #188929;
+  color: #43e043;
 }
 .env-label.uat {
-  background: #e1694b;
+  color: #ff7043;
 }

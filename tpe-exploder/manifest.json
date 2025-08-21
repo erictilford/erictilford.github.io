@@ -25,7 +25,8 @@
     "content_scripts": [
         {
           "matches": ["https://tpe2admin-ok.cdc.nicusa.com/*" , "https://tpe2admin-uat.cdc.nicusa.com/*"],
-          "js": ["content.js"]
+          "js": ["content.js"],
+          "css": ["style.css"]
         }
       ]
   }

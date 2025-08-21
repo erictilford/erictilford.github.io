@@ -31,5 +31,5 @@ window.onload = function() {
     document.body.prepend(uatLabel);
   }
 
-  console.log("SUCCESS");
+  console.log("BAZINGA");
 };
