@@ -1,0 +1,19 @@
+/* Environment label styles */
+.env-label {
+  position: sticky;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  padding: 8px 20px;
+  font-size: 1.2em;
+  z-index: 10000;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  color: #fff;
+}
+.env-label.prod {
+  background: #188929;
+}
+.env-label.uat {
+  background: #e1694b;
+}
