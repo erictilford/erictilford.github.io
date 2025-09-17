@@ -99,9 +99,9 @@ body {
 }
 
 #links-div>ul>a {
-    font-size: small;
+    font-size: medium;
     padding: 10px 0px;
-    width: 85px;
+    width: 50%;
 
 }
 
