@@ -333,16 +333,16 @@ $(document).ready(function () {
 	autoRefreshWallpaper();
 
 	// RNG | rng.js
-	LoadRNG(settingsPanelAnimationSpeed);
+	// LoadRNG(settingsPanelAnimationSpeed);
 
 	// ETTV | tv.js | 
 	//LoadETTV(settingsPanelAnimationSpeed);
 
-	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: fix "mix" bug, load dog on open option
-	LoadDogAPI(settingsPanelAnimationSpeed);
-
 	// Holiday List | holidays.js | 
 	LoadHolidayButton(settingsPanelAnimationSpeed);
+
+	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: fix "mix" bug, load dog on open option
+	LoadDogAPI(settingsPanelAnimationSpeed);
 
 	// WEATHER | https://openweathermap.org/api/one-call-api
 	LoadWeatherPanel($("#locationInput").val());

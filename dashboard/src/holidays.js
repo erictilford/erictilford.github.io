@@ -115,7 +115,7 @@ function listHolidays(year){
 function LoadHolidayButton(animSpeed) {
     //let daIcon = icon;
     //icon = 'fa-solid fa-calendar-days" style="color:darkcyan';
-    $("#widget-list").append('<a id="holiday-button" class="pointer"><li><i class="fa-2x ' + holidayIcon() + '"></i><br>Holidays</li></a>');
+    $("#widget-list").append('<a id="holiday-button" class="pointer"><li><i class="fa-md ' + holidayIcon() + '"></i> Holidays</li></a>');
     $("#close-holiday-button").click(function() { $("#holiday-panel").hide(animSpeed); });
     $("#holiday-button").click(function() {  
         $("#holiday-panel").toggle(animSpeed); 

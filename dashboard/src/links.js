@@ -1,5 +1,5 @@
 // Define a variable for the icon size
-const iconSize = "fa-lg";
+const iconSize = "fa-md";
 
 const links = [
     {
@@ -58,12 +58,14 @@ const links = [
         "icon" : `<i class="fa-solid ${iconSize} fa-water-ladder" style="color:#eeeeee;"></i>`,
         "target" : "#video-list"
     },
+    /*
     {
         "title" : "Crunchyroll",
         "url" : "https://www.crunchyroll.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-eye" style="color:#f47521;"></i>`,
         "target" : "#video-list"
     },
+    */
     {
         "title" : "Gmail",
         "url" : "https://mail.google.com/mail/u/0/#inbox",
@@ -216,6 +218,12 @@ const links = [
         "title" : "Wordle Slackmojifier",
         "url" : "https://erictilford.github.io/wordle",
         "icon" : `<i class="fa-solid ${iconSize} fa-icons" style="color:orchid"></i>`,
+        "target" : "#project-list"
+    },
+    {
+        "title" : "PW Generator",
+        "url" : "https://erictilford.github.io/password",
+        "icon" : `<i class="fa-solid ${iconSize} fa-key" style="color:#f7c964"></i>`,
         "target" : "#project-list"
     },
     {
