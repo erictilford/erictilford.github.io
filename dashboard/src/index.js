@@ -29,7 +29,7 @@ $(document).ready(function () {
 	// LINKS | config.js
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
-		const li = '<a href=' + link.url + ' target="_self"><li>' + link.icon + /*'<br>' +*/ " "+ link.title + '</li>';
+		const li = '<a href=' + link.url + ' target="_self"><li>' + link.icon + '<br>' + link.title + '</li>';
 		$(link.target).append(li);
 	}
 
@@ -338,11 +338,11 @@ $(document).ready(function () {
 	// ETTV | tv.js | 
 	//LoadETTV(settingsPanelAnimationSpeed);
 
-	// Holiday List | holidays.js | 
-	LoadHolidayButton(settingsPanelAnimationSpeed);
-
 	// DOGS | https://dog.ceo/dog-api/ | dog.js | todo: fix "mix" bug, load dog on open option
 	LoadDogAPI(settingsPanelAnimationSpeed);
+
+	// Holiday List | holidays.js | 
+	LoadHolidayButton(settingsPanelAnimationSpeed);
 
 	// WEATHER | https://openweathermap.org/api/one-call-api
 	LoadWeatherPanel($("#locationInput").val());
@@ -478,7 +478,7 @@ $(document).ready(function () {
 						}
 
 						// Hourly
-						let columnQuantity = 6;
+						let columnQuantity = Math.floor(47 / $("#hourlyDurationSlider").val()); // max = 47 (hours)
 						let duration = parseInt($("#hourlyDurationSlider").val());
 						let hourlyColumns = "";
 						for (let i = duration; i < duration * (columnQuantity + 1); i += duration){

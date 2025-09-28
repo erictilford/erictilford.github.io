@@ -88,20 +88,21 @@ body {
 }
 
 #links-div>ul {
+    margin-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
-    /*text-align: center;*/
+    text-align: center;
     list-style-type: none;
-    padding-left: 20px;
+    padding-left: 10px;
     margin-left: -20px;
-    /*padding-top: 5px;
-    padding-bottom: 5px;*/
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #links-div>ul>a {
-    font-size: medium;
-    padding: 4px 0px;
-    width: 50%;
+    font-size: small;
+    padding: 10px 0px;
+    width: 85px;
 
 }
 
@@ -219,7 +220,36 @@ body {
     padding-bottom: 100px;
 }
 
+#weather-hourly-container {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent; /* Darker thumb, transparent track */
+}
+
+#weather-hourly-container::-webkit-scrollbar {
+    height: 5px; /* Thin scrollbar */
+}
+
+#weather-hourly-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Darker scrollbar thumb */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+#weather-hourly-container::-webkit-scrollbar-track {
+    background: transparent; /* Transparent scrollbar track */
+}
+
+#weather-hourly-container::-webkit-scrollbar-button {
+    display: none; /* Hide scrollbar arrows */
+}
+
 #weather-hourly-table {
+    display: inline-block; /* Ensure table stays inline for scrolling */
     width: 100%;
     color: white;
     table-layout: fixed;
@@ -233,6 +263,14 @@ body {
     vertical-align: top;
     /*text-overflow: ellipsis;
     white-space: nowrap;*/
+}
+
+.hourly-weather {
+    display: inline-block;
+    width: 100px; /* Adjust width as needed */
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #ddd;
 }
 
 #weather-title {
@@ -554,7 +592,7 @@ body {
     }
 
     #links-div>ul>a {
-        width: 33.3%;
+        width: 25%;
     }
 
     #main-tray {
