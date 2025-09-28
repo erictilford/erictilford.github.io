@@ -187,13 +187,13 @@ var recipes = [
         "summary": "Homemade seasoning blend for classic tacos",
         "ingredients": [
             "1 Tbs chili powder",
+            "&frac12; tsp ground cumin",
             "&frac14; tsp garlic powder",
             "&frac14; tsp onion powder",
             "&frac14; tsp dried oregano",
             "&frac14; tsp paprika",
-            "1&frac12; tsp ground cumin",
             "&frac12; tsp salt",
-            "1 tsp ground black pepper"
+            "&frac14; tsp ground black pepper"
         ],
         "directions": [
             "Thoroughly mix seasoning blend with browned ground beef while cooking."
