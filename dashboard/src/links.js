@@ -1,5 +1,5 @@
 // Define a variable for the icon size
-const iconSize = "fa-md";
+const iconSize = "fa-2x";
 
 const links = [
     {
