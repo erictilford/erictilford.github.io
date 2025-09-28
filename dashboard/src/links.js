@@ -194,10 +194,18 @@ const links = [
         "target" : "#video-list"
     },
     // Projects
+    /*
     {
         "title" : "Home",
         "url" : "https://erictilford.github.io",
         "icon" : `<i class="fa-solid ${iconSize} fa-house-chimney-user" style="color:lightblue"></i>`,
+        "target" : "#project-list"
+    },
+    */
+    {
+        "title" : "Github",
+        "url" : "https://github.com/erictilford/erictilford.github.io",
+        "icon" : `<i class="fa-brands ${iconSize} fa-github" style="color:slategray"></i>`,
         "target" : "#project-list"
     },
     {
@@ -224,12 +232,6 @@ const links = [
         "title" : "PW Generator",
         "url" : "https://erictilford.github.io/password",
         "icon" : `<i class="fa-solid ${iconSize} fa-key" style="color:#f7c964"></i>`,
-        "target" : "#project-list"
-    },
-    {
-        "title" : "Github",
-        "url" : "https://github.com/erictilford/erictilford.github.io",
-        "icon" : `<i class="fa-brands ${iconSize} fa-github" style="color:slategray"></i>`,
         "target" : "#project-list"
     },
     // +Password Generator?
