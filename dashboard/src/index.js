@@ -478,7 +478,7 @@ $(document).ready(function () {
 						}
 
 						// Hourly
-						let columnQuantity = 6;
+						let columnQuantity = Math.floor(47 / $("#hourlyDurationSlider").val()); // max = 47 (hours)
 						let duration = parseInt($("#hourlyDurationSlider").val());
 						let hourlyColumns = "";
 						for (let i = duration; i < duration * (columnQuantity + 1); i += duration){

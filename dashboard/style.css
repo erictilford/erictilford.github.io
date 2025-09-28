@@ -219,7 +219,36 @@ body {
     padding-bottom: 100px;
 }
 
+#weather-hourly-container {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent; /* Darker thumb, transparent track */
+}
+
+#weather-hourly-container::-webkit-scrollbar {
+    height: 5px; /* Thin scrollbar */
+}
+
+#weather-hourly-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3); /* Darker scrollbar thumb */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+#weather-hourly-container::-webkit-scrollbar-track {
+    background: transparent; /* Transparent scrollbar track */
+}
+
+#weather-hourly-container::-webkit-scrollbar-button {
+    display: none; /* Hide scrollbar arrows */
+}
+
 #weather-hourly-table {
+    display: inline-block; /* Ensure table stays inline for scrolling */
     width: 100%;
     color: white;
     table-layout: fixed;
@@ -233,6 +262,14 @@ body {
     vertical-align: top;
     /*text-overflow: ellipsis;
     white-space: nowrap;*/
+}
+
+.hourly-weather {
+    display: inline-block;
+    width: 100px; /* Adjust width as needed */
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #ddd;
 }
 
 #weather-title {
