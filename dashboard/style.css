@@ -88,6 +88,7 @@ body {
 }
 
 #links-div>ul {
+    margin-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;

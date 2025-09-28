@@ -58,12 +58,14 @@ const links = [
         "icon" : `<i class="fa-solid ${iconSize} fa-water-ladder" style="color:#eeeeee;"></i>`,
         "target" : "#video-list"
     },
+    /*
     {
         "title" : "Crunchyroll",
         "url" : "https://www.crunchyroll.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-eye" style="color:#f47521;"></i>`,
         "target" : "#video-list"
     },
+    */
     {
         "title" : "Gmail",
         "url" : "https://mail.google.com/mail/u/0/#inbox",
@@ -104,7 +106,7 @@ const links = [
         "title" : "Codewars",
         "url" : "https://www.codewars.com/dashboard",
         "icon" : `<i class="fa-solid ${iconSize} fa-laptop-code" style="color:#b1361e"></i>`,
-        "target" : "#tools-list"
+        "target" : "#games-list"
     },
     {
         "title" : "Duolingo",
@@ -134,43 +136,43 @@ const links = [
         "title" : "Timeguessr",
         "url" : "https://timeguessr.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-map-location-dot" style="color:#db5049"></i>`,
-        "target" : "#tools-list"
+        "target" : "#games-list"
     },
     {
         "title" : "Wordle",
         "url" : "https://www.nytimes.com/games/wordle/index.html",
         "icon" : `<i class="fa-solid ${iconSize} fa-w" style="color:#69a662"></i>`,
-        "target" : "#tools-list"
+        "target" : "#games-list"
     },
     {
         "title" : "Connections",
         "url" : "https://www.nytimes.com/games/connections",
         "icon" : `<i class="fa-solid ${iconSize} fa-table-cells" style="color:#bc70c4"></i>`,
-        "target" : "#tools-list"
+        "target" : "#games-list"
     },
     {
         "title" : "Mini-Cross",
         "url" : "https://www.nytimes.com/crosswords/game/mini",
         "icon" : `<i class="fa-solid ${iconSize} fa-puzzle-piece" style="color:#6493e6"></i>`,
-        "target" : "#tools-list"
+        "target" : "#games-list"
     },
     {
         "title" : "Bandle",
         "url" : "https://bandle.app/daily",
         "icon" : `<i class="fa-solid ${iconSize} fa-guitar" style="color:#981520"></i>`,
-        "target" : "#tools-list"
+        "target" : "#games-list"
     },
     {
         "title" : "Catfishing",
         "url" : "https://catfishing.net/",
         "icon" : `<i class="fa-solid ${iconSize} fa-fish-fins" style="color:#fbbf24"></i>`,
-        "target" : "#tools-list"
+        "target" : "#games-list"
     },
     {
         "title" : "Scrandle",
         "url" : "https://scrandle.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-hotdog" style="color:#ce9864"></i>`,
-        "target" : "#tools-list"
+        "target" : "#games-list"
     },
     // Audio
     {

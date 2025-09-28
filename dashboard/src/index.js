@@ -333,7 +333,7 @@ $(document).ready(function () {
 	autoRefreshWallpaper();
 
 	// RNG | rng.js
-	LoadRNG(settingsPanelAnimationSpeed);
+	// LoadRNG(settingsPanelAnimationSpeed);
 
 	// ETTV | tv.js | 
 	//LoadETTV(settingsPanelAnimationSpeed);
