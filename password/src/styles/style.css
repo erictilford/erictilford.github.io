@@ -69,6 +69,9 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+.nowrap {
+    white-space: nowrap;
+}
 
 .password-item {
     padding: 0.5em 1em;
@@ -126,8 +129,8 @@ h1 {
 
 .settings-item label {
     flex: 1; /* Allow the label to take up more space */
-    white-space: nowrap; /* Prevent text wrapping */
 }
+
 
 .form-check-input[type="checkbox"] {
     width: 1.3em;
