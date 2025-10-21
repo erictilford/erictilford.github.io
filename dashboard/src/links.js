@@ -152,7 +152,7 @@ const links = [
     },
     {
         "title" : "Mini-Cross",
-        "url" : "https://www.nytimes.com/crosswords/game/mini",
+        "url" : "https://www.seattletimes.com/games-crossword-mini/",
         "icon" : `<i class="fa-solid ${iconSize} fa-puzzle-piece" style="color:#6493e6"></i>`,
         "target" : "#games-list"
     },
