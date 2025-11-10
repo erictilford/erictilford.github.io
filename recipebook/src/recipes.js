@@ -269,7 +269,10 @@ var recipes = [
             "Cook 2-3 minutes per side until golden brown."
         ],
         "notes": [
-            "A pancake is the opposite of a pot pie."
+            "A pancake is the opposite of a pot pie.",
+            "Don't overmix the batter; lumps are okay. Overmixing develops gluten and makes pancakes dense.",
+            "Let the batter rest for 5-10 minutes to allow flour to hydrate for fluffier pancakes.",
+            "Cook on medium heat to allow inside to cook and fluff up before outside browns."
         ],
         "tags": [
             "Breakfast"
