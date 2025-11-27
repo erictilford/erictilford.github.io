@@ -54,7 +54,10 @@ if (recipe) {
 
     recipe.directions.forEach(direction => {
         var listItem = document.createElement('li');
-        listItem.innerHTML = direction;
+        if (direction.startsWith("!")) {
+            listItem.innerHTML = direction.slice(1).trim();
+            $(listItem).attr("style", "list-style:none; font-size:large; margin-left:-20px; padding-top:5px");
+        } else { listItem.innerHTML = direction; }
          $(".direction-list").append(listItem);
     });
 
