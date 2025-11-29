@@ -16,7 +16,7 @@ if (recipe) {
     document.title = recipe.recipe_name + " - Recipe Book";
     $(".recipe-title").html(recipe.recipe_name);
     $(".summary").html(recipe.summary);
-    $(".large-card-card-image").attr("src","./assets/recipes/"+recipe.images[0]);
+    $(".large-card-card-image").attr("src","./assets/recipes/thumbnails/"+recipe.images[0]);
 
     $(".hands-on-time").html("Hands-on time: " + M2HM(recipe.hands_on_time));
     $(".total-time").html("Total time: " + M2HM(recipe.total_time));
@@ -38,7 +38,7 @@ if (recipe) {
         imageAnchor.target = "_blank";
         $(".large-card-image-frame").append(imageAnchor);
         var recipeThumb = document.createElement('img');
-        recipeThumb.src = "./assets/recipes/" + img;
+        recipeThumb.src = "./assets/recipes/thumbnails/" + img;
         recipeThumb.className = "recipe-thumb";
         imageAnchor.appendChild(recipeThumb);
     });
