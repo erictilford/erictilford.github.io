@@ -81,7 +81,13 @@ var recipes = [
             "Cut into gingerbread men or cookie shapes. Reroll trimmings for additional cookies. Place cookies &frac12\" apart on prepared baking sheets.",
             "Preheat oven to 325&deg;F. Bake cookies plain, or press raisins and/or cinnamon candies into cookies for decoration if desired.",
             "Bake for 14 minutes or until cookies are puffed and slightly darker around edges. Cool 1 minute on baking sheets, remove to wire racks to cool completely.",
-            "Decorate cookies with Royal Icing by first outlining shapes, then filling with icing. Apply candy decoration if desired. Let icing harden at least 1 hour."
+            "Decorate cookies with Royal Icing by first outlining shapes, then filling with icing. Apply candy decoration if desired. Let icing harden at least 1 hour.",
+            "!Royal Icing:",
+            "Combine ingredients (minus food coloring) in a large bowl",
+            "Beat at medium speed with electric mixer 5-6 minutes or until firm enough to pipe, but still of spreading consistency.",
+            "If necessary, add a few drops of additional water to achieve desired consistency.",
+            "Divide icing into small bowls, and tint each by dipping a toothpick into paste food coloring and stirring into icing. Icing dries quickly; keep covered.",
+            "Spoon icing into ziplock bags, and snip off a small corner to pipe onto cookies."
 
         ],
         "notes": [
