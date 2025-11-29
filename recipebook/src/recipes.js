@@ -48,6 +48,56 @@ var recipes = [
     },
     */
     {
+        "recipe_name": "Gingerbread Cookies",
+        "summary": 'Classic gingerbread man cookie recipe with royal icing.',
+        "ingredients": [
+            "&frac14 cup granulated sugar",
+            "&frac14 cup firmly packed dark brown sugar",
+            "&frac12 cup molasses*",
+            "2 tsp ground ginger",
+            "1 tsp ground allspice",
+            "1 tsp ground cinnamon",
+            "1 tsp ground cloves",
+            "2 tsp baking soda",
+            "&frac12 cup unsalted butter, cut into pieces",
+            "1 large egg, lightly beaten",
+            "3 cups all-purpose flour",
+            "&frac14 tsp salt",
+            "Parchment Paper",
+            "!Royal Icing:",
+            "1 (16 oz) package powdered sugar",
+            "3 Tbs meringue powder",
+            "&frac12 cup lukewarm water",
+            "Paste food coloring (optional)"
+
+
+        ],
+        "directions": [
+            "Combine the first 7 ingredients in a 3-qt. saucepan. Bring to a boil over medium heat, stirring occasionally.",
+            "Remove pan from heat; stir in baking soda. Transfer to a mixing bowl.",
+            "Add butter and egg, beating at medium speed with an electric mixer until smooth. Gradually stir in flour and salt, beating just until blended.",
+            "Shape dough into a ball and divide in half. Flatten each half into round disks. wrap in plastic wrap and chill at least 1 hour or until firm.",
+            "Line several large baking sheets with parchment paper. Roll out dough, one section at a time, to &frac14\" thickness on a floured surface.",
+            "Cut into gingerbread men or cookie shapes. Reroll trimmings for additional cookies. Place cookies &frac12\" apart on prepared baking sheets.",
+            "Preheat oven to 325&deg;F. Bake cookies plain, or press raisins and/or cinnamon candies into cookies for decoration if desired.",
+            "Bake for 14 minutes or until cookies are puffed and slightly darker around edges. Cool 1 minute on baking sheets, remove to wire racks to cool completely.",
+            "Decorate cookies with Royal Icing by first outlining shapes, then filling with icing. Apply candy decoration if desired. Let icing harden at least 1 hour."
+
+        ],
+        "notes": [
+            "Grandma's (brand) molasses is a must.",
+            "Try adding cheese or pickles!"
+        ],
+        "tags": ["Dinner"],
+        "hands_on_time": "80",
+        "total_time": "130",
+        "date_added": "2/2/2025",
+        "contributor": "Eric Tilford",
+        "source": "ChatGPT",
+        "serves": "6-8 servings",
+        "images": ["sloppyjoes.jpg"],
+        "id": "sloppy-joes"
+    },{
         "recipe_name": "Sloppy Joes",
         "summary": 'More formally known as "Untidy Josephs".',
         "ingredients": [
