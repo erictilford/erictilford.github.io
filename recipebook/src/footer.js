@@ -1,5 +1,5 @@
-/*
+
 const currentYear = new Date().getFullYear();
-$(".footer-text").html("&copy; Eric Tilford 2020-" + currentYear);
-*/
-$(".footer-text").html("&copy; Eric Tilford 2020");
+$(".footer-text").html("&copy; Eric Tilford " + currentYear);
+
+// $(".footer-text").html("&copy; Eric Tilford 2025");

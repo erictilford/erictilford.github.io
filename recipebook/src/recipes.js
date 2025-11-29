@@ -49,7 +49,7 @@ var recipes = [
     */
     {
         "recipe_name": "Gingerbread Cookies",
-        "summary": 'Classic gingerbread man cookie recipe with royal icing.',
+        "summary": 'Classic gingerbread men cookies with royal icing.',
         "ingredients": [
             "&frac14 cup granulated sugar",
             "&frac14 cup firmly packed dark brown sugar",
@@ -91,8 +91,8 @@ var recipes = [
 
         ],
         "notes": [
-            "Grandma's (brand) molasses is a must.",
-            "Winner of the 2024 The Metro work Christmas Party dessert contest!"
+            "Winner of the 2024 The Metro work Christmas Party dessert contest!",
+            "Grandma's Molasses is a must."
         ],
         "tags": ["Holiday", "Dessert", "Baking"],
         "hands_on_time": "80",
@@ -100,7 +100,7 @@ var recipes = [
         "date_added": "11/28/2025",
         "contributor": "Amber Tilford",
         "source": "2011 Southern Living Christmas Cookbook",
-        "serves": "6-8 servings",
+        "serves": "16 Gingerbread Men",
         "images": ["gingerbread-cookies.jpg"],
         "id": "gingerbread-cookies"
     },{
