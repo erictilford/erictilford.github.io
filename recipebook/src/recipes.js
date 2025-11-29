@@ -64,13 +64,13 @@ var recipes = [
             "3 cups all-purpose flour",
             "&frac14 tsp salt",
             "Parchment Paper",
+            "&frac14 cup red cinnamon candies (optional)",
+            "&frac14 cup raisins (optional)",
             "!Royal Icing:",
             "1 (16 oz) package powdered sugar",
             "3 Tbs meringue powder",
             "&frac12 cup lukewarm water",
             "Paste food coloring (optional)"
-
-
         ],
         "directions": [
             "Combine the first 7 ingredients in a 3-qt. saucepan. Bring to a boil over medium heat, stirring occasionally.",
@@ -92,17 +92,17 @@ var recipes = [
         ],
         "notes": [
             "Grandma's (brand) molasses is a must.",
-            "Try adding cheese or pickles!"
+            "Winner of the 2024 The Metro work Christmas Party dessert contest!"
         ],
-        "tags": ["Dinner"],
+        "tags": ["Holiday", "Dessert", "Baking"],
         "hands_on_time": "80",
         "total_time": "130",
-        "date_added": "2/2/2025",
-        "contributor": "Eric Tilford",
-        "source": "ChatGPT",
+        "date_added": "11/28/2025",
+        "contributor": "Amber Tilford",
+        "source": "2011 Southern Living Christmas Cookbook",
         "serves": "6-8 servings",
-        "images": ["sloppyjoes.jpg"],
-        "id": "sloppy-joes"
+        "images": ["gingerbread-cookies.jpg"],
+        "id": "gingerbread-cookies"
     },{
         "recipe_name": "Sloppy Joes",
         "summary": 'More formally known as "Untidy Josephs".',
