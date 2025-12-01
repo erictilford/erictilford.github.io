@@ -614,7 +614,7 @@ var recipes = [
         "date_added": "05/09/2022",
         "contributor": "Eric Tilford",
         "serves": "~1 quart",
-        "images": ["currychickensalad.JPG"],
+        "images": ["currychickensalad.jpg"],
         "id": "curry-chicken-salad"
     },
     {
