@@ -23,15 +23,9 @@ $(document).ready(function () {
 		let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 		document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
 		// $("#wallpaper-container").css("background-image", "url('assets/backgrounds/" + randomWallpaper + "')");  
-    }
+	}
 	setRandomWallpaper();
 
-	// LINKS | config.js
-	for (let i = 0; i < links.length; i++) {
-		const link = links[i];
-		const li = '<a href=' + link.url + ' target="_self"><li>' + link.icon + '<br>' + link.title + '</li>';
-		$(link.target).append(li);
-	}
 
 	// DATE
 	const d = new Date();
@@ -233,7 +227,8 @@ $(document).ready(function () {
 			weatherAutoRefreshDuration : 30,
 			wallpaperAutoRefresh : false,
 			wallpaperAutoRefreshDuration : 5,
-			hourlyInterval: 2
+			hourlyInterval: 2,
+			privateMode : true
 		}
 
 		settings = {};
@@ -276,6 +271,9 @@ $(document).ready(function () {
 			$("#hourlyDurationSlider").val(defaultSettings.hourlyInterval); 
 			$("#durationLabel").html(defaultSettings.hourlyInterval);
 		}
+		// private mode
+		if (settings.privateMode != undefined) { $("#privateModeCheckbox").prop("checked", settings.privateMode) } 
+		else { $("#privateModeCheckbox").prop("checked", defaultSettings.privateMode) }
 
 	}
 	LoadSettings();
@@ -293,7 +291,8 @@ $(document).ready(function () {
 			weatherAutoRefreshDuration : $("#weatherRefreshDurationInput").val(),
 			wallpaperAutoRefresh : $("#wallpaperAutoRefreshCheckox").is(":checked"),
 			wallpaperAutoRefreshDuration : $("#wallpaperRefreshDurationInput").val(),
-			hourlyInterval : $("#hourlyDurationSlider").val()
+			hourlyInterval : $("#hourlyDurationSlider").val(),
+			privateMode : $("#privateModeCheckbox").is(":checked")
 		}
 		// localStorage only supports strings. Use JSON.stringify() and JSON.parse() for arrays.
 		localStorage.setItem("settings", JSON.stringify(settings));
@@ -303,6 +302,23 @@ $(document).ready(function () {
 		SaveSettings();
 		LoadWeatherPanel($("#locationInput").val());
 	}
+
+
+	// LINKS | config.js
+	for (let i = 0; i < links.length; i++) {
+		const link = links[i];
+		const isPrivateMode = $("#privateModeCheckbox").is(":checked");
+
+		const li = '<a href=' + link.url + ' target="_self"><li>' + link.icon + '<br>' + link.title + '</li>';
+
+		console.log("Private Mode: " + isPrivateMode + " | Link Private: " + link.private);
+		if (!isPrivateMode || (isPrivateMode && !link.private)) { 
+			
+		$(link.target).append(li);
+		}
+
+	}
+
 
 	// wallpaper auto-refresher
 	function autoRefreshWallpaper() { // update wallpaper on a duration

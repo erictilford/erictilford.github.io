@@ -137,7 +137,7 @@ const links = [
         "url" : "https://scryfall.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-id-card" style="color:#a04b9a"></i>`,
         "target" : "#tools-list",
-        "private" : false
+        "private" : true
     },
     {
         "title" : "ChatGPT",

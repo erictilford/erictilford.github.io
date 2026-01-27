@@ -424,6 +424,9 @@ body {
     table-layout: fixed;
     margin-bottom: 10px;
 }
+.settings-table tr {
+    min-height: 29px;
+}
 
 .slidecontainer {
     display:flex;
