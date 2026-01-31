@@ -129,10 +129,26 @@ function LoadHolidayButton(animSpeed) {
 
 function checkHoliday(month, day, dayOfWeek, year) {
     let holidays = [];
+    const privateMode = $("#privateModeCheckbox").is(":checked");
+    console.log("Private mode: " + privateMode);
+
     for (let i = 0; i < holidayArray.length; i++) {
         let holidayName = "";
         let holidayNumberText = "";
         let holidayEmoji = "";
+
+
+        //debugging missing private field?
+        if (holidayArray[i].private!= true && holidayArray[i].private!= false) {
+            console.log(holidayArray[i].holiday_name + " missing private field");
+        }
+
+        
+        if (privateMode==true && holidayArray[i].private==true) {
+            continue; // Skip this holiday
+        }
+        
+
         // Standard and birthday/anni holidays
         if (holidayArray[i].type == "standard" || holidayArray[i].type == "birthday") {
             if (day == holidayArray[i].day_one && month == holidayArray[i].month) {
@@ -214,7 +230,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#128197;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Groundhog Day",
@@ -223,7 +240,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#128063;&#65039;",
-        "type": "standard"
+        "type": "standard",
+        "private": true
     },
     {
         "holiday_name": "Valentine's Day",
@@ -232,7 +250,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#x1F49D;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Leap Day",
@@ -241,7 +260,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#x1F438;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Mario Day",
@@ -250,7 +270,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#x1F344;",
-        "type": "standard"
+        "type": "standard",
+        "private": true
     },
     {
         "holiday_name": "311 Day",
@@ -259,7 +280,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": null,
-        "type": "standard"
+        "type": "standard",
+        "private": true
     },
     {
         "holiday_name": "&Pi; Day",
@@ -268,7 +290,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#x1F967;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "St. Patrick's Day",
@@ -277,7 +300,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127808;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "April Fools' Day",
@@ -286,7 +310,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127183;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     /*
     {
@@ -305,7 +330,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#x1F4B8;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Earth Day",
@@ -314,7 +340,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127758;",
-        "type": "standard"
+        "type": "standard",
+        "private": true
     },
     {
         "holiday_name": "Star Wars Day",
@@ -323,7 +350,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#10024;",
-        "type": "standard"
+        "type": "standard",
+        "private": true
     },
     {
         "holiday_name": "Cinco de Mayo",
@@ -332,7 +360,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127790;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Flag Day",
@@ -341,7 +370,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127988;&#8205;&#9760;&#65039;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Juneteenth",
@@ -350,7 +380,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#9994;&#127999;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "July 4<sup>th</sup>",
@@ -359,7 +390,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127878;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     /*
     {
@@ -379,7 +411,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#x1F485;",
-        "type": "standard"
+        "type": "standard",
+        "private": true
     },
     {
         "holiday_name": "Halloween",
@@ -388,7 +421,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127875;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Veterans' Day",
@@ -397,7 +431,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127894;&#65039;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Christmas Eve",
@@ -406,7 +441,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127877;&#127995;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "Christmas Day",
@@ -415,7 +451,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127876;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
     {
         "holiday_name": "New Year's Eve",
@@ -424,7 +461,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#129346;",
-        "type": "standard"
+        "type": "standard",
+        "private": false
     },
 
     // DAY / DAY NAME HOLIDAYS
@@ -436,8 +474,8 @@ const holidayArray = [
         "day_two": 21,
         "day": 1,
         "emoji": null,
-        "type": "dayName"
-        
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "Presidents' Day", // Third Monday in Feb.
@@ -446,7 +484,8 @@ const holidayArray = [
         "day_two": 21,
         "day": 1,
         "emoji": null,
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "DST Begins", // Second Sunday in March
@@ -455,7 +494,8 @@ const holidayArray = [
         "day_two": 14,
         "day": 0,
         "emoji": "&#9193;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "Mothers' Day", // Second Sunday in May
@@ -464,7 +504,8 @@ const holidayArray = [
         "day_two": 14,
         "day": 0,
         "emoji": "&#128144;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "Memorial Day", // Last Monday in May
@@ -473,7 +514,8 @@ const holidayArray = [
         "day_two": 31,
         "day": 1,
         "emoji": "&#128367;&#65039;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "Fathers' Day", // Third Sunday in June
@@ -482,7 +524,8 @@ const holidayArray = [
         "day_two": 21,
         "day": 0,
         "emoji": "&#128104;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "Labor Day", // First Monday in Sep.
@@ -491,7 +534,8 @@ const holidayArray = [
         "day_two": 7,
         "day": 1,
         "emoji": "&#127970;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     /*
     {
@@ -511,7 +555,8 @@ const holidayArray = [
         "day_two": 14,
         "day": 1,
         "emoji": "",
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "DST Ends", // First Sunday in Nov.
@@ -520,7 +565,8 @@ const holidayArray = [
         "day_two": 7,
         "day": 0,
         "emoji": "&#9194;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "Thanksgiving", // Fourth Thursday in Nov.
@@ -529,7 +575,8 @@ const holidayArray = [
         "day_two": 28,
         "day": 4,
         "emoji": "&#129411;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": false
     },
     {
         "holiday_name": "Friday the 13<sup>th</sup>",
@@ -538,7 +585,8 @@ const holidayArray = [
         "day_two": null,
         "day": 5,
         "emoji": "&#128298;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": true
     },
     {
         "holiday_name": "Thursday the 20<sup>th</sup>",
@@ -547,7 +595,8 @@ const holidayArray = [
         "day_two": null,
         "day": 4,
         "emoji": "&#127908;",
-        "type": "dayName"
+        "type": "dayName",
+        "private": true
     },
     // BIRTHDAYS
     ////////////
@@ -559,7 +608,8 @@ const holidayArray = [
         "day": null,
         "year": 1957,
         "emoji": "&#x1F3B8;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Xavier",
@@ -569,7 +619,8 @@ const holidayArray = [
         "day": null,
         "year": 2022,
         "emoji": "&#129473;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Christina",
@@ -579,7 +630,8 @@ const holidayArray = [
         "day": null,
         "year": 1988,
         "emoji": "&#129473;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Debbie",
@@ -588,7 +640,8 @@ const holidayArray = [
         "day_two": null,
         "day": null,
         "emoji": "&#127874;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Charli",
@@ -598,7 +651,8 @@ const holidayArray = [
         "day": null,
         "year": 2018,
         "emoji": "&#129473;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Anniversary",
@@ -608,7 +662,8 @@ const holidayArray = [
         "day": null,
         "year": 2020,
         "emoji": "&#x1F495;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Ian",
@@ -618,7 +673,8 @@ const holidayArray = [
         "day": null,
         "year": 2024,
         "emoji": "&#129473;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Otto",
@@ -628,7 +684,8 @@ const holidayArray = [
         "day": null,
         "year": 2020,
         "emoji": "&#x1F9B4;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "DMB Incident",
@@ -638,7 +695,8 @@ const holidayArray = [
         "day": null,
         "year": 2004,
         "emoji": "&#x1F68C;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Evan",
@@ -648,7 +706,8 @@ const holidayArray = [
         "day": null,
         "year": 1992,
         "emoji": "&#x1F46E;&#x200D;&#x2642;&#xFE0F;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Adam",
@@ -658,7 +717,8 @@ const holidayArray = [
         "day": null,
         "year": 1989,
         "emoji": "&#x1F982;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Cal",
@@ -668,7 +728,8 @@ const holidayArray = [
         "day": null,
         "year": 1987,
         "emoji": "&#x1F3BC;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Tim",
@@ -678,7 +739,8 @@ const holidayArray = [
         "day": null,
         "year": 1987,
         "emoji": "&#128104;&#127995;&#8205;&#9992;&#65039;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "Amber",
@@ -688,7 +750,8 @@ const holidayArray = [
         "day": null,
         "year": 1984,
         "emoji": "	&#127856;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     {
         "holiday_name": "ET/JT",
@@ -698,7 +761,8 @@ const holidayArray = [
         "day": null,
         "year": 1987,
         "emoji": "&#x1F93C;&#x200D;&#x2642;&#xFE0F;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     /*
     {
@@ -720,7 +784,8 @@ const holidayArray = [
         "day": null,
         "year": 2022,
         "emoji": "&#127856;",
-        "type": "birthday"
+        "type": "birthday",
+        "private": true
     },
     /*
     {
@@ -743,7 +808,8 @@ const holidayArray = [
         "day": null,
         "year": 2025,
         "emoji": "&#x1F6E1;&#xFE0F;",
-        "type": "oneTime"
+        "type": "oneTime",
+        "private": true
     },
     {
         "holiday_name": "Election Day",
@@ -753,7 +819,8 @@ const holidayArray = [
         "day": null,
         "year": 2024,
         "emoji": "&#x1F5F3;&#xFE0F;",
-        "type": "oneTime"
+        "type": "oneTime",
+        "private": true
     },
     {
         "holiday_name": "Survivor 47",
@@ -763,7 +830,8 @@ const holidayArray = [
         "day": null,
         "year": 2024,
         "emoji": "&#x1F3DD;&#xFE0F;",
-        "type": "oneTime"
+        "type": "oneTime",
+        "private": true
     },
     /*
     {
@@ -785,7 +853,8 @@ const holidayArray = [
         "day": null,
         "year": 2023,
         "emoji": "&#11088;",
-        "type": "oneTime"
+        "type": "oneTime",
+        "private": true
     },
     {
         "holiday_name": "Mario RPG",
@@ -795,7 +864,8 @@ const holidayArray = [
         "day": null,
         "year": 2023,
         "emoji": "&#128176;",
-        "type": "oneTime"
+        "type": "oneTime",
+        "private": true
     },
     {
         "holiday_name": "Cabin Ladz",
@@ -805,7 +875,8 @@ const holidayArray = [
         "day": null,
         "year": 2023,
         "emoji": "&#x1F3D5;&#xFE0F;",
-        "type": "oneTime"
+        "type": "oneTime",
+        "private": true
     },
 
     // EASTER
@@ -835,7 +906,8 @@ const holidayArray = [
             {"month": 4, "day_one": 17, "year": 2044},
         ],
         "emoji": "&#x1F423;",
-        "type": "easter"
+        "type": "easter",
+        "private": false
     },
 
     // LUNAR NEW YEAR DATES
@@ -873,7 +945,8 @@ const holidayArray = [
             { "year": 2052, "month": 2, "day_one": 1, "animal": "Monkey", "emoji": "&#x1F412;" },
             { "year": 2053, "month": 1, "day_one": 20, "animal": "Rooster", "emoji": "&#x1F413;" }
         ],
-        "type": "lunar"
+        "type": "lunar",
+        "private": false
     }
 
 ]
@@ -900,7 +973,8 @@ function addMardiGrasDates() {
         "holiday_name": "Mardi Gras",
         "dates": mardiGrasDates,
         "emoji": "&#x269C;&#xFE0F;",
-        "type": "mardiGras"
+        "type": "mardiGras",
+        "private": false
     };
 
     holidayArray.push(mardiGrasEntry);
@@ -909,4 +983,4 @@ addMardiGrasDates();
 
 
 // PRINT HOLIDAYS TO 7-DAY
-listHolidays(holidayYear); 
+listHolidays(holidayYear);

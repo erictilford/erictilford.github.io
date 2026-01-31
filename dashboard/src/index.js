@@ -111,7 +111,7 @@ $(document).ready(function () {
 		tomorrow.setDate(today.getDate() + 1);
 		DATomorrow.setDate(today.getDate() + 2);
 		const icon = '<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>';
-		if (tomorrow.getDay() === 1 && tomorrow.getDate() <= 7) { // If tomorrow is 1st Mon. of month
+		if (tomorrow.getDay() === 3 && tomorrow.getDate() <= 7) { // If tomorrow is 1st Mon. of month
 			$("#big-trash-icon").html(icon);
 			$("#big-trash-icon").attr("title",  "Big Trash Day is tomorrow" );
 		} else if (today.getDay() === 1 && today.getDate() <= 7) { // If today is...
@@ -308,15 +308,10 @@ $(document).ready(function () {
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
 		const isPrivateMode = $("#privateModeCheckbox").is(":checked");
-
 		const li = '<a href=' + link.url + ' target="_self"><li>' + link.icon + '<br>' + link.title + '</li>';
-
-		console.log("Private Mode: " + isPrivateMode + " | Link Private: " + link.private);
 		if (!isPrivateMode || (isPrivateMode && !link.private)) { 
-			
-		$(link.target).append(li);
+			$(link.target).append(li);
 		}
-
 	}
 
 
