@@ -143,11 +143,11 @@ function checkHoliday(month, day, dayOfWeek, year) {
             console.log(holidayArray[i].holiday_name + " missing private field");
         }
 
-        
+        /* DEBUGGING PRIVATE MODE FOR HOLIDAY WIDGET
         if (privateMode==true && holidayArray[i].private==true) {
             continue; // Skip this holiday
         }
-        
+        */
 
         // Standard and birthday/anni holidays
         if (holidayArray[i].type == "standard" || holidayArray[i].type == "birthday") {
