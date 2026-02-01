@@ -114,12 +114,12 @@ $(document).ready(function () {
 		if (tomorrow.getDay() === 3 && tomorrow.getDate() <= 7) { // If tomorrow is 1st Mon. of month
 			$("#big-trash-icon").html(icon);
 			$("#big-trash-icon").attr("title",  "Big Trash Day is tomorrow" );
-		} else if (today.getDay() === 1 && today.getDate() <= 7) { // If today is...
+		} else if (today.getDay() === 3 && today.getDate() <= 7) { // If today is...
 			$("#big-trash-icon").html(icon);
 			$("#big-trash-icon").attr("title",  "Big Trash Day is today" );
-		} else if (DATomorrow.getDay() === 1 && DATomorrow.getDate() <= 7) { // If day after tomorrow is...
+		} else if (DATomorrow.getDay() === 3 && DATomorrow.getDate() <= 7) { // If day after tomorrow is...
 			$("#big-trash-icon").html(icon);
-			$("#big-trash-icon").attr("title",  "Big Trash Day is Monday" );
+			$("#big-trash-icon").attr("title",  "Big Trash Day is Wednesday" );
 		}	
 	}
 	bigTrashDay();
