@@ -97,14 +97,14 @@ const links = [
         "target" : "#tools-list",
         "private" : false
     },
-    {
+    /*{
         "title" : "Codepen",
         "url" : "https://codepen.io/",
         "icon" : `<i class="fa-brands ${iconSize} fa-codepen" style="color:#dddddd"></i>`,
         "target" : "#tools-list",
         "private" : false
     },
-    /*{
+    {
         "title" : "Coolors",
         "url" : "https://coolors.co/generate",
         "icon" : `<i class="fa-solid ${iconSize} fa-swatchbook" style="color:lightseagreen"></i>`,
@@ -117,14 +117,14 @@ const links = [
         "icon" : `<i class="fa-solid ${iconSize} fa-palette" style="color:bisque"></i>`,
         "target" : "#tools-list",
         "private" : false
-    },*/
+    },
     {
         "title" : "Codewars",
         "url" : "https://www.codewars.com/dashboard",
         "icon" : `<i class="fa-solid ${iconSize} fa-laptop-code" style="color:#b1361e"></i>`,
         "target" : "#games-list",
         "private" : false
-    },
+    },*/
     {
         "title" : "Duolingo",
         "url" : "https://www.duolingo.com/",
@@ -199,6 +199,13 @@ const links = [
         "title" : "Scrandle",
         "url" : "https://scrandle.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-hotdog" style="color:#ce9864"></i>`,
+        "target" : "#games-list",
+        "private" : false
+    },
+    {
+        "title" : "Golf",
+        "url" : "https://kindahardgolf.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-golf-ball-tee" style="color:#e9ebee"></i>`,
         "target" : "#games-list",
         "private" : false
     },
