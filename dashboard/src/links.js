@@ -231,6 +231,16 @@ const links = [
         "target" : "#video-list",
         "private" : false
     },
+    {
+        "title" : "Cineby",
+        "url" : "https://www.cineby.gd/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-clapperboard" style="color:#cb0e0e"></i>`,
+        "target" : "#video-list",
+        "private" : false
+    },
+
+
+    
     // Projects
     /*
     {
