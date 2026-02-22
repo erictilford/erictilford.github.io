@@ -15,7 +15,16 @@ $(document).ready(function () {
     let tbody = $("#myTable tbody");
     commanders.forEach(commander => {
         let row = "<tr>";
-        row += `<td>${commander.commander}</td>`;
+
+        // Replace mana symbols with their respective images
+        let commanderName = commander.commander
+            .replace(":u:", `<img src="assets/manau.png" alt="Blue Mana" class="mana-symbol">`)
+            .replace(":b:", `<img src="assets/manab.png" alt="Black Mana" class="mana-symbol">`)
+            .replace(":r:", `<img src="assets/manar.png" alt="Red Mana" class="mana-symbol">`)
+            .replace(":g:", `<img src="assets/manag.png" alt="Green Mana" class="mana-symbol">`)
+            .replace(":w:", `<img src="assets/manaw.png" alt="White Mana" class="mana-symbol">`);
+
+        row += `<td>${commanderName}</td>`;
         row += `<td>${commander.edhrecrank}</td>`;
         row += `<td>${commander.owner}</td>`;
         //row += `<td>${commander.type}</td>`;
@@ -25,8 +34,6 @@ $(document).ready(function () {
     });
 
     // Initialize DataTable
-    // let table = new DataTable('#myTable');
-
     $(document).ready(function() {
         $('#myTable').DataTable({
             "pageLength": 50

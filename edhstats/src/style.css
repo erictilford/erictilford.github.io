@@ -2,3 +2,10 @@ html.dark body{
     background-color: #212529;
     color: #dae0e7;
 }
+
+.mana-symbol {
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    margin: 0px 1px 2px;
+}
