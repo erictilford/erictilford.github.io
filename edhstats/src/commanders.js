@@ -1,4 +1,5 @@
-const headers = ["Commander", "EDHREC#", "Owner"/*, "Type", "Status"*/];
+
+const headers = ["Commander", "EDHREC#", "Owner", "Type", "Status"];
 
 const commanders = [
     // ERIC
@@ -32,7 +33,7 @@ const commanders = [
     },
     {
         "commander": "Dhalsim, Pliable Pacifist :w::g:",
-        "edhrecrank": "1,001",
+        "edhrecrank": "1,005",
         "owner": "Eric",
         "type": "Constructed",
         "status": "Unowned"
@@ -94,6 +95,20 @@ const commanders = [
         "owner": "Justin",
         "type": "Constructed",
         "status": "Unowned"
+    },
+    {
+        "commander": "Shiko and Narset, Unified :w::u::r:",
+        "edhrecrank": "310",
+        "owner": "Justin",
+        "type": "Unmodified",
+        "status": "Owned"
+    },
+    {
+        "commander": "Zurgo, Thunder's Decree :w::r::b:",
+        "edhrecrank": "310",
+        "owner": "Justin",
+        "type": "Unmodified",
+        "status": "Owned"
     },
     {
         "commander": "Zangief, the Red Cyclone :b::r::g:",

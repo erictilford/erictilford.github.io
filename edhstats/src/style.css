@@ -9,3 +9,11 @@ html.dark body{
     vertical-align: middle;
     margin: 0px 1px 2px;
 }
+
+#settings-icon {
+    cursor: pointer;
+}
+
+#settings-pane {
+    animation: 3s fadeIn ease-in-out;
+}
