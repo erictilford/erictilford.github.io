@@ -18,12 +18,18 @@ $(document).ready(function () {
         row += `<td>${commander.commander}</td>`;
         row += `<td>${commander.edhrecrank}</td>`;
         row += `<td>${commander.owner}</td>`;
-        row += `<td>${commander.type}</td>`;
-        row += `<td>${commander.status}</td>`;
+        //row += `<td>${commander.type}</td>`;
+        //row += `<td>${commander.status}</td>`;
         row += "</tr>";
         tbody.append(row);
     });
 
     // Initialize DataTable
-    let table = new DataTable('#myTable');
+    // let table = new DataTable('#myTable');
+
+    $(document).ready(function() {
+        $('#myTable').DataTable({
+            "pageLength": 50
+        });
+    });
 });
