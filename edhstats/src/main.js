@@ -25,8 +25,11 @@ $(document).ready(function () {
         // Clear thead and tbody before building the table
         let thead = $("#myTable thead");
         let tbody = $("#myTable tbody");
+        let colgroup = $("#myTable colgroup");
         thead.empty();
         tbody.empty();
+        colgroup.empty();
+
 
         // Add headers to the thead of #myTable
         let headerRow = "<tr>";
