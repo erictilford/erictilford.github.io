@@ -22,6 +22,9 @@ $(document).ready(function () {
 
     function BuildTable() {
 
+    
+
+
         // Clear thead and tbody before building the table
         let thead = $("#myTable thead");
         let tbody = $("#myTable tbody");
@@ -29,6 +32,8 @@ $(document).ready(function () {
         thead.empty();
         tbody.empty();
         colgroup.empty();
+
+
 
 
         // Add headers to the thead of #myTable
@@ -75,8 +80,9 @@ $(document).ready(function () {
 
     // Initialize DataTable
     $(document).ready(function () {
+        
         $('#myTable').DataTable({
-            "pageLength": 50
+            "pageLength": 25
         });
     });
 

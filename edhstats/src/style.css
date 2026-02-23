@@ -17,3 +17,13 @@ html.dark body{
 #settings-pane {
     animation: 3s fadeIn ease-in-out;
 }
+
+
+
+@media only screen and (max-width: 768px) {
+
+    #myTable {
+        width: calc(100% + 30px);
+        margin: 0 -15px;
+    }
+}
