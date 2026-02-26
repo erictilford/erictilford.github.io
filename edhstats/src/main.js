@@ -51,14 +51,18 @@ $(document).ready(function () {
             let row = "<tr>";
 
             // Replace mana symbols with their respective images
-            let commanderName = commander.commander
+            
+
+            row += `<td>${commander.commander}</td>`;
+
+            let color = commander.color
                 .replace(":u:", `<img src="assets/manau.png" alt="Blue Mana" class="mana-symbol">`)
                 .replace(":b:", `<img src="assets/manab.png" alt="Black Mana" class="mana-symbol">`)
                 .replace(":r:", `<img src="assets/manar.png" alt="Red Mana" class="mana-symbol">`)
                 .replace(":g:", `<img src="assets/manag.png" alt="Green Mana" class="mana-symbol">`)
                 .replace(":w:", `<img src="assets/manaw.png" alt="White Mana" class="mana-symbol">`);
 
-            row += `<td>${commanderName}</td>`;
+            row += `<td>${color}</td>`;
             row += `<td>${commander.edhrecrank}</td>`;
 
             if ( $("#settings-checkbox-2").is(":checked") ) {
