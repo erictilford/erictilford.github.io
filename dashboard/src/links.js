@@ -140,6 +140,13 @@ const links = [
         "private" : true
     },
     {
+        "title" : "Moxfield",
+        "url" : "https://moxfield.com/decks/personal",
+        "icon" : `<i class="fa-solid ${iconSize} fa-dice-d20" style="color:#f05c8d"></i>`,
+        "target" : "#tools-list",
+        "private" : true
+    },
+    {
         "title" : "ChatGPT",
         "url" : "https://chat.openai.com/",
         "icon" : `<i class="fa-regular ${iconSize} fa-comments" style="color:#71a699"></i>`,
