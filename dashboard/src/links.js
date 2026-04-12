@@ -124,14 +124,14 @@ const links = [
         "icon" : `<i class="fa-solid ${iconSize} fa-laptop-code" style="color:#b1361e"></i>`,
         "target" : "#games-list",
         "private" : false
-    },*/
+    },
     {
         "title" : "Duolingo",
         "url" : "https://www.duolingo.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-feather" style="color:#54ae43"></i>`,
         "target" : "#tools-list",
         "private" : false
-    },
+    },*/
     {
         "title" : "Scryfall",
         "url" : "https://scryfall.com/",
@@ -151,7 +151,7 @@ const links = [
         "url" : "https://chat.openai.com/",
         "icon" : `<i class="fa-regular ${iconSize} fa-comments" style="color:#71a699"></i>`,
         "target" : "#tools-list",
-        "private" : false
+        "private" : true
     },
     {
         "title" : "Font Awesome",
