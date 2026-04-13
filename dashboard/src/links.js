@@ -91,6 +91,13 @@ const links = [
         "private" : false
     },
     {
+        "title" : "ChatGPT",
+        "url" : "https://chat.openai.com/",
+        "icon" : `<i class="fa-regular ${iconSize} fa-comments" style="color:#71a699"></i>`,
+        "target" : "#tools-list",
+        "private" : true
+    },
+    {
         "title" : "Reddit",
         "url" : "https://old.reddit.com",
         "icon" : `<i class="fa-brands ${iconSize} fa-reddit-alien" style="color:orangered"></i>`,
@@ -143,13 +150,6 @@ const links = [
         "title" : "Moxfield",
         "url" : "https://moxfield.com/decks/personal",
         "icon" : `<i class="fa-solid ${iconSize} fa-dice-d20" style="color:#f05c8d"></i>`,
-        "target" : "#tools-list",
-        "private" : true
-    },
-    {
-        "title" : "ChatGPT",
-        "url" : "https://chat.openai.com/",
-        "icon" : `<i class="fa-regular ${iconSize} fa-comments" style="color:#71a699"></i>`,
         "target" : "#tools-list",
         "private" : true
     },
