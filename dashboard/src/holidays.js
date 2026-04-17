@@ -130,7 +130,7 @@ function LoadHolidayButton(animSpeed) {
 function checkHoliday(month, day, dayOfWeek, year) {
     let holidays = [];
     const privateMode = $("#privateModeCheckbox").is(":checked");
-    console.log("Private mode: " + privateMode);
+    // console.log("Private mode: " + privateMode);
 
     for (let i = 0; i < holidayArray.length; i++) {
         let holidayName = "";
