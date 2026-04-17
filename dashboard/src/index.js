@@ -343,6 +343,9 @@ $(document).ready(function () {
 	}
 	autoRefreshWallpaper();
 
+	// SUMO | sumo.js
+	LoadSumo(settingsPanelAnimationSpeed);
+
 	// RNG | rng.js
 	// LoadRNG(settingsPanelAnimationSpeed);
 
