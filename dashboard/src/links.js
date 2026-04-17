@@ -141,7 +141,7 @@ const links = [
     },*/
     {
         "title" : "Scryfall",
-        "url" : "https://scryfall.com/",
+        "url" : "https://aprilfools.scryfall.com/2026",
         "icon" : `<i class="fa-solid ${iconSize} fa-id-card" style="color:#a04b9a"></i>`,
         "target" : "#tools-list",
         "private" : true
