@@ -18,13 +18,29 @@ $(document).ready(function () {
 	}
 	startDotAnimation();
 
+	// Create background layers
+	$('body').prepend('<div id="bg-layer-1" class="bg-layer"></div>');
+	$('body').prepend('<div id="bg-layer-2" class="bg-layer"></div>');
+	let currentBg = 1;
+
+	// Initial wallpaper
+	let initialWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
+	$('#bg-layer-1').css('background-image', "url('assets/backgrounds/" + initialWallpaper + "')");
+	$('#bg-layer-1').css('opacity', '1');
+
 	// WALLPAPERS | config.js
 	function setRandomWallpaper(){ 
 		let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
-		document.body.style.backgroundImage = "url('assets/backgrounds/" + randomWallpaper + "')";
-		// $("#wallpaper-container").css("background-image", "url('assets/backgrounds/" + randomWallpaper + "')");  
+		let img = new Image();
+		img.onload = function() {
+			let newBg = currentBg === 1 ? 2 : 1;
+			$('#bg-layer-' + newBg).css('background-image', "url('assets/backgrounds/" + randomWallpaper + "')");
+			$('#bg-layer-' + newBg).css('opacity', '1');
+			$('#bg-layer-' + currentBg).css('opacity', '0');
+			currentBg = newBg;
+		};
+		img.src = 'assets/backgrounds/' + randomWallpaper;
 	}
-	setRandomWallpaper();
 
 
 	// DATE

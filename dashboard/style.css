@@ -8,6 +8,7 @@ a:hover {
 }
 
 body {
+    background-color:#17191a;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -786,4 +787,19 @@ body {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
