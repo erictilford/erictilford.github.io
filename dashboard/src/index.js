@@ -18,6 +18,9 @@ $(document).ready(function () {
 	}
 	startDotAnimation();
 
+	
+	// WALLPAPERS | config.js
+
 	// Create background layers
 	$('body').prepend('<div id="bg-layer-1" class="bg-layer"></div>');
 	$('body').prepend('<div id="bg-layer-2" class="bg-layer"></div>');
@@ -28,7 +31,6 @@ $(document).ready(function () {
 	$('#bg-layer-1').css('background-image', "url('assets/backgrounds/" + initialWallpaper + "')");
 	$('#bg-layer-1').css('opacity', '1');
 
-	// WALLPAPERS | config.js
 	function setRandomWallpaper(){ 
 		let randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
 		let img = new Image();
