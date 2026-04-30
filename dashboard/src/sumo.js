@@ -144,21 +144,58 @@ const BASHO_DATES = [
     },
 ]
 
-
-function getBashoStatus() {
+function getBashoID() {
     const now = new Date();
     
+    // Check if we're currently in a basho
+    for (const basho of BASHO_DATES) {
+        const start = new Date(basho.year, basho.month - 1, basho.first_day);
+        const end = new Date(basho.year, basho.month - 1, basho.last_day);
+        
+        if (now >= start && now <= end) {
+            return `${basho.year}${String(basho.month).padStart(2, '0')}`;
+        }
+    }
+    
+    // Not in a basho, find the previous one
+    let prevBasho = null;
+    let maxDiff = -Infinity;
+    
+    for (const basho of BASHO_DATES) {
+        const end = new Date(basho.year, basho.month - 1, basho.last_day);
+        if (end < now) {
+            const diff = now - end;
+            if (diff > maxDiff) {
+                maxDiff = diff;
+                prevBasho = basho;
+            }
+        }
+    }
+    
+    if (prevBasho) {
+        return `${prevBasho.year}${String(prevBasho.month).padStart(2, '0')}`;
+    }
+    
+    return null;
+}
+
+function setSumoText() {
+    const now = new Date();
+    
+    // Check if we're currently in a basho
     for (const basho of BASHO_DATES) {
         const start = new Date(basho.year, basho.month - 1, basho.first_day);
         const end = new Date(basho.year, basho.month - 1, basho.last_day);
         
         if (now >= start && now <= end) {
             const dayOfBasho = Math.floor((now - start) / (1000 * 60 * 60 * 24)) + 1;
-            return `Currently in ${basho.month}/${basho.year} basho, day ${dayOfBasho}`;
+            const bashoInfo = BASHO_MONTHS.find(m => m.month === basho.month);
+            $("#sumo-text").html(`Day ${dayOfBasho} of basho:<br>${bashoInfo.name} / ${bashoInfo.jp_name_kana}`);
+            return;
         }
     }
     
-    // Not in basho, find next
+    // Not in a basho, find next and display days until
     let nextBasho = null;
     let minDiff = Infinity;
     
@@ -175,37 +212,16 @@ function getBashoStatus() {
     
     if (nextBasho) {
         const daysUntil = Math.ceil(minDiff / (1000 * 60 * 60 * 24));
-        return `Next basho starts in ${daysUntil} days (${nextBasho.month}/${nextBasho.first_day}/${nextBasho.year})`;
+        const bashoInfo = BASHO_MONTHS.find(m => m.month === nextBasho.month);
+        $("#sumo-text").html(`${daysUntil} days until next basho<br>Next basho: ${bashoInfo.name} / ${bashoInfo.jp_name_kana}`);
     } else {
-        return "No upcoming bashos found";
+        $("#sumo-text").text("No upcoming bashos found");
     }
 }
 
-async function fetchBasho(bashoId) { // https://www.sumo-api.com/api-guide
-  const url = `https://sumo-api.com/api/basho/${encodeURIComponent(bashoId)}`;
+setSumoText();
 
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status} ${response.statusText}`);
-    }
+//TODO - make a big function called buildSumoPanel that calls setSumoText and also builds the rest of the panel with info about the current basho, etc.
 
-    const data = await response.json();
-    console.log("Basho result:", data);
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch basho:", error);
-  }
-}
 
-// Replace with the actual bashoId you want (YYYYMM)
-fetchBasho(202603).then(data => {
-    // $("#sumo-body-div").text(data.yusho);
-    console.log(data.yusho);
-});
 
-console.log(fetchBasho(202603).yusho);
-
-// console.log(getBashoStatus());
-
-$("#sumo-text").text(getBashoStatus());

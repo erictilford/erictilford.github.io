@@ -159,6 +159,9 @@ body {
     display:none;
 }
 
+#sumo-text {
+    text-align: center;
+}
 /*
 #serugai-banner {
     margin: -20px -50px 0;
