@@ -221,7 +221,7 @@ $(document).ready(function () {
 		// JSON settings!
 		defaultSettings = {
 			location: "Oklahoma City",
-			tempFormat: 1,
+			tempFormat: 0,
 			rememberBreed : true,
 			weatherAutoRefresh : false,
 			weatherAutoRefreshDuration : 30,

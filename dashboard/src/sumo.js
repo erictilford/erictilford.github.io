@@ -192,14 +192,20 @@ async function fetchBasho(bashoId) { // https://www.sumo-api.com/api-guide
 
     const data = await response.json();
     console.log("Basho result:", data);
+    return data;
   } catch (error) {
     console.error("Failed to fetch basho:", error);
   }
 }
 
 // Replace with the actual bashoId you want (YYYYMM)
-// fetchBasho(202603);
+fetchBasho(202603).then(data => {
+    // $("#sumo-body-div").text(data.yusho);
+    console.log(data.yusho);
+});
 
-console.log(getBashoStatus());
+console.log(fetchBasho(202603).yusho);
+
+// console.log(getBashoStatus());
 
 $("#sumo-text").text(getBashoStatus());
