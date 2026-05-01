@@ -159,14 +159,14 @@ function getBashoID() {
     
     // Not in a basho, find the previous one
     let prevBasho = null;
-    let maxDiff = -Infinity;
+    let minDiff = Infinity;
     
     for (const basho of BASHO_DATES) {
         const end = new Date(basho.year, basho.month - 1, basho.last_day);
         if (end < now) {
             const diff = now - end;
-            if (diff > maxDiff) {
-                maxDiff = diff;
+            if (diff < minDiff) {
+                minDiff = diff;
                 prevBasho = basho;
             }
         }
@@ -229,14 +229,57 @@ function setSumoText() {
     if (nextBasho) {
         const daysUntil = Math.ceil(minDiff / (1000 * 60 * 60 * 24));
         const bashoInfo = BASHO_MONTHS.find(m => m.month === nextBasho.month);
-        $("#sumo-text").html(`${daysUntil} days until next basho<br>Next basho: ${bashoInfo.name} / ${bashoInfo.jp_name_kana}`);
+        $("#sumo-text").html(`
+            <strong style="font-size: 1.2em;">${daysUntil}</strong> days until next basho:<br>
+            ${bashoInfo.name} / ${bashoInfo.jp_name_kana}<br>
+        `);
     } else {
         $("#sumo-text").text("No upcoming bashos found");
     }
 }
 
-function setSumoBody() {
-    // placeholder for future sumo panel body content
+async function setSumoBody() {
+    const bashoID = getBashoID();
+    console.log(bashoID);
+    const basho = await getBasho(bashoID);  // ← execution pauses here
+    // ↓ This doesn't run until getBasho() completes and returns data
+    // console.log("Basho data received:", basho);
+    // console.log("Yusho:", basho.yusho);
+    let html = "";
+
+    // Add tournament title
+    const year = bashoID.slice(0, 4);
+    const month = parseInt(bashoID.slice(4, 6));
+    const bashoInfo = BASHO_MONTHS.find(m => m.month === month);
+    html += `<h5 style="text-align:center">${bashoInfo.name} ${year}</h5>`;
+
+    // Build yusho winners HTML
+    html+= '<h6>Yusho Winners</h6>';
+    if (basho && basho.yusho && basho.yusho.length > 0) {
+        basho.yusho.forEach(winner => {
+            html += `<div>${winner.type}: ${winner.shikonaEn} ${winner.shikonaJp}</div>`;
+        });
+    } else {
+        html += '<div>No yusho data available</div>';
+    }
+    html += "<br>";
+    
+    // Build special prizes HTML
+    html += '<h6>Special Prizes</h6>';
+    if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) {
+        basho.specialPrizes.forEach(prize => {
+            html += `<div>${prize.type}: ${prize.shikonaEn} ${prize.shikonaJp}</div>`;
+        });
+    } else {
+        html += '<div>No special prizes data available</div>';
+    }
+    html += "<br>";
+
+    // Outstanding Performance Prize (Shukun-shō - 殊勲賞):
+    // Fighting Spirit Prize (Kantō-shō - 敢闘賞):
+    // Technique Prize (Ginō-shō - 技能賞):
+    
+    $("#sumo-body").html(html);
 }
 
 function buildSumoPanel() {
