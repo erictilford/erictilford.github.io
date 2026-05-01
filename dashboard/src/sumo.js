@@ -179,6 +179,22 @@ function getBashoID() {
     return null;
 }
 
+async function getBasho(bashoID) {
+    const url = `https://sumo-api.com/api/basho/${encodeURIComponent(bashoID)}`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log("Basho result:", data);
+        return data;
+    } catch (error) {
+        console.error("Failed to fetch basho:", error);
+    }
+}
+
 function setSumoText() {
     const now = new Date();
     
@@ -219,9 +235,17 @@ function setSumoText() {
     }
 }
 
-setSumoText();
+function setSumoBody() {
+    // placeholder for future sumo panel body content
+}
 
-//TODO - make a big function called buildSumoPanel that calls setSumoText and also builds the rest of the panel with info about the current basho, etc.
+function buildSumoPanel() {
+    setSumoText();
+    setSumoBody();
+}
+
+buildSumoPanel();
+
 
 
 

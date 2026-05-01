@@ -354,7 +354,6 @@ $(document).ready(function () {
 		function wallpaperRefresherSetup() {
 			if (wallpaperAutoRefresh) { 
 				setRandomWallpaper();
-				console.log("WALLPAPER REFRESHED!!!!!");
 			}
 			autoRefreshWallpaper();
 		}
