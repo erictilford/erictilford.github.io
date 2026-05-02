@@ -195,6 +195,22 @@ async function getBasho(bashoID) {
     }
 }
 
+async function getBanzuke(bashoID, division) {
+    const url = `https://sumo-api.com/api/basho/${encodeURIComponent(bashoID)}/banzuke/${encodeURIComponent(division)}`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log(`${division} Banzuke:`, data);
+        return data;
+    } catch (error) {
+        console.error("Failed to fetch banzuke:", error);
+    }
+}
+
 function setSumoText() {
     const now = new Date();
     
@@ -240,7 +256,7 @@ function setSumoText() {
 
 async function setSumoBody() {
     const bashoID = getBashoID();
-    console.log(bashoID);
+    // console.log(bashoID);
     const basho = await getBasho(bashoID);  // ← execution pauses here
     // ↓ This doesn't run until getBasho() completes and returns data
     // console.log("Basho data received:", basho);
@@ -254,7 +270,7 @@ async function setSumoBody() {
     html += `<h5 style="text-align:center">${bashoInfo.name} ${year}</h5>`;
 
     // Build yusho winners HTML
-    html+= '<h6>Yusho Winners</h6>';
+    html+= '<h5>Yusho Winners</h5>';
     if (basho && basho.yusho && basho.yusho.length > 0) {
         basho.yusho.forEach(winner => {
             html += `<div>${winner.type}: ${winner.shikonaEn} ${winner.shikonaJp}</div>`;
@@ -265,7 +281,7 @@ async function setSumoBody() {
     html += "<br>";
     
     // Build special prizes HTML
-    html += '<h6>Special Prizes</h6>';
+    html += '<h5>Special Prizes</h5>';
     if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) {
         basho.specialPrizes.forEach(prize => {
             html += `<div>${prize.type}: ${prize.shikonaEn} ${prize.shikonaJp}</div>`;
@@ -278,7 +294,65 @@ async function setSumoBody() {
     // Outstanding Performance Prize (Shukun-shō - 殊勲賞):
     // Fighting Spirit Prize (Kantō-shō - 敢闘賞):
     // Technique Prize (Ginō-shō - 技能賞):
+
+    const division = "Makuuchi";  // You can change this to "juryo", "makushita", etc. as needed
+    const banzuke = await getBanzuke(bashoID, division);
+    // console.log(`${division} Banzuke data received:`, banzuke);
+
+    // Build Standings
+    html += `<h5>${division} Standings</h5>`;
+    html += `<table style="border-collapse: collapse; border: none; color:white;">`;
     
+    if (banzuke && banzuke.east && banzuke.west) {
+        const allRikishi = [...banzuke.east, ...banzuke.west];
+        if (allRikishi.length > 0) {
+            // Sort all rikishi by wins desc, then losses asc
+            allRikishi.sort((a, b) => {
+                if (b.wins !== a.wins) return b.wins - a.wins;
+                return a.losses - b.losses;
+            });
+            // Group by wins
+            const groups = new Map();
+            for (const r of allRikishi) {
+                if (!groups.has(r.wins)) groups.set(r.wins, []);
+                groups.get(r.wins).push(r);
+            }
+            // Get top win counts
+            const topCount = 3;
+            const circleMargin = '0.2em';  // Control spacing between circles
+            const sortedWins = Array.from(groups.keys()).sort((a, b) => b - a).slice(0, topCount);
+            for (const win of sortedWins) {
+                const rikishi = groups.get(win);
+                const bestLosses = rikishi[0].losses;
+                const leaders = rikishi.filter(r => r.losses === bestLosses);
+                const record = `${win}-${bestLosses}${leaders[0].absences > 0 ? `-${leaders[0].absences}` : ''}`;
+                html += `<tr><td>${record}</td><td></td></tr>`;
+                leaders.forEach(r => {
+                    let shapes = '';
+                    if (r.record && r.record.length > 0) {
+                        r.record.forEach(match => {
+                            if (match.result === 'win' || match.result === 'fusen win') {
+                                shapes += `●`;
+                            } else if (match.result === 'loss' || match.result === 'fusen loss') {
+                                shapes += `○`;
+                            } else if (match.result === 'absent') {
+                                shapes += `–`;
+                            }
+                            // TODO: tooltip with opponent and kimarite, maybe day
+                            // also, represent win or loss by fusen with different shapes/colors??
+                        });
+                        html += `<tr><td>${r.shikonaEn}</td><td style="font-family: monospace; font-size:xx-large; letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
+                    }
+                });
+            }
+        } else {
+            html += '<tr><td>No standings data available</td></tr>';
+        }
+    } else {
+        html += '<tr><td>No banzuke data available</td></tr>';
+    }
+    
+    html += `</table>`;
     $("#sumo-body").html(html);
 }
 
