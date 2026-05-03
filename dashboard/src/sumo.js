@@ -301,6 +301,8 @@ async function setSumoBody() {
 
     // Build Standings
     html += `<h5>${division} Standings</h5>`;
+    // PUT THIS IN CSS AND SHARE IT WITH THE WEATHER SCROLLBAR
+    html += `<div style="overflow-x: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">`; 
     html += `<table style="border-collapse: collapse; border: none; color:white;">`;
     
     if (banzuke && banzuke.east && banzuke.west) {
@@ -363,7 +365,8 @@ async function setSumoBody() {
         html += '<tr><td>No banzuke data available</td></tr>';
     }
     
-    html += `</table>`;
+    html += `</table></div>`;
+
     $("#sumo-body").html(html);
 }
 
@@ -374,6 +377,6 @@ function buildSumoPanel() {
 
 buildSumoPanel();
 
-
+// TODO: English Kimarite names
 
 

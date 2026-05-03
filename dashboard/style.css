@@ -425,6 +425,7 @@ body {
 .result-circle {
     font-family: monospace; 
     font-size:xx-large; 
+    padding-left: 5px;
 }
 .settings-table {
     width: 100%;
