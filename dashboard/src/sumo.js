@@ -326,7 +326,8 @@ async function setSumoBody() {
                 const bestLosses = rikishi[0].losses;
                 const leaders = rikishi.filter(r => r.losses === bestLosses);
                 const record = `${win}-${bestLosses}${leaders[0].absences > 0 ? `-${leaders[0].absences}` : ''}`;
-                html += `<tr><td>${record}</td><td></td></tr>`;
+                html += `<tr><td><b>${record}</b></td><td></td></tr>`;
+                // win/loss circles with tooltips
                 leaders.forEach(r => {
                     let shapes = '';
                     if (r.record && r.record.length > 0) {
@@ -335,22 +336,23 @@ async function setSumoBody() {
                             let title = '';
                             if (match.result === 'win' || match.result === 'fusen win') {
                                 shape = '●';
-                                title = 'WIN';
                             } else if (match.result === 'loss' || match.result === 'fusen loss') {
                                 shape = '○';
-                                title = 'LOSS';
                             } else if (match.result === 'absent') {
                                 shape = '–';
-                                title = 'Absent';
                             }
+                            const RESULT = match.result.toUpperCase();
+                            title = RESULT;
+                            
                             if (match.opponentShikonaEn || match.kimarite) {
                                 const opponent = match.opponentShikonaEn ? match.opponentShikonaEn : 'Unknown';
                                 const kimarite = match.kimarite ? match.kimarite : 'Unknown';
-                                title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${kimarite}`;
+                                const Kimarite = kimarite.charAt(0).toUpperCase() + kimarite.slice(1);
+                                title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${Kimarite}`;
                             }
                             shapes += `<span title="${title}" style="cursor: help;">${shape}</span>`;
                         });
-                        html += `<tr><td>${r.shikonaEn}</td><td style="font-family: monospace; font-size:xx-large; letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
+                        html += `<tr><td>${r.shikonaEn}</td><td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
                     }
                 });
             }

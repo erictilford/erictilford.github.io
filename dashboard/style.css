@@ -422,6 +422,10 @@ body {
     height: 100%;
 }
 
+.result-circle {
+    font-family: monospace; 
+    font-size:xx-large; 
+}
 .settings-table {
     width: 100%;
     color: white;
@@ -643,6 +647,13 @@ body {
 
     .tray-icon {
         line-height: 0.8;
+    }
+}
+
+/* VERTICAL PHONE */
+@media only screen and (max-width: 375px) {
+    .result-circle {
+        font-size: x-large;
     }
 }
 
