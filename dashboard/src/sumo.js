@@ -319,7 +319,7 @@ async function setSumoBody() {
             }
             // Get top win counts
             const topCount = 3;
-            const circleMargin = '0.2em';  // Control spacing between circles
+            const circleMargin = '0.05em';  // Control spacing between circles
             const sortedWins = Array.from(groups.keys()).sort((a, b) => b - a).slice(0, topCount);
             for (const win of sortedWins) {
                 const rikishi = groups.get(win);
@@ -330,16 +330,25 @@ async function setSumoBody() {
                 leaders.forEach(r => {
                     let shapes = '';
                     if (r.record && r.record.length > 0) {
-                        r.record.forEach(match => {
+                        r.record.forEach((match, index) => {
+                            let shape = '';
+                            let title = '';
                             if (match.result === 'win' || match.result === 'fusen win') {
-                                shapes += `●`;
+                                shape = '●';
+                                title = 'WIN';
                             } else if (match.result === 'loss' || match.result === 'fusen loss') {
-                                shapes += `○`;
+                                shape = '○';
+                                title = 'LOSS';
                             } else if (match.result === 'absent') {
-                                shapes += `–`;
+                                shape = '–';
+                                title = 'Absent';
                             }
-                            // TODO: tooltip with opponent and kimarite, maybe day
-                            // also, represent win or loss by fusen with different shapes/colors??
+                            if (match.opponentShikonaEn || match.kimarite) {
+                                const opponent = match.opponentShikonaEn ? match.opponentShikonaEn : 'Unknown';
+                                const kimarite = match.kimarite ? match.kimarite : 'Unknown';
+                                title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${kimarite}`;
+                            }
+                            shapes += `<span title="${title}" style="cursor: help;">${shape}</span>`;
                         });
                         html += `<tr><td>${r.shikonaEn}</td><td style="font-family: monospace; font-size:xx-large; letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
                     }
