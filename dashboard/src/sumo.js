@@ -275,7 +275,7 @@ async function setSumoBody() {
     html+= '<h5>Yusho Winners</h5>';
     if (basho && basho.yusho && basho.yusho.length > 0) {
         basho.yusho.forEach(winner => {
-            html += `<div>${winner.type}: ${winner.shikonaEn} ${winner.shikonaJp}</div>`;
+            html += `<div>${winner.type}: ${winner.shikonaEn}</div>`; // ${winner.shikonaJp}
         });
     } else {
         html += '<div>No yusho data available</div>';
@@ -286,7 +286,7 @@ async function setSumoBody() {
     html += '<h5>Special Prizes</h5>';
     if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) {
         basho.specialPrizes.forEach(prize => {
-            html += `<div>${prize.type}: ${prize.shikonaEn} ${prize.shikonaJp}</div>`;
+            html += `<div>${prize.type}: ${prize.shikonaEn}</div>`; // ${prize.shikonaJp}
         });
     } else {
         html += '<div>No special prizes data available</div>';
