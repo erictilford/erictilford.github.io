@@ -270,6 +270,8 @@ async function setSumoBody() {
     html += `<h5 style="text-align:center">${bashoInfo.name} ${year}</h5>`;
 
     // Build yusho winners HTML
+    html+= `<div class="row">`;
+    html+= `<div class="col-md-6" style="padding-bottom: 10px;">`;
     html+= '<h5>Yusho Winners</h5>';
     if (basho && basho.yusho && basho.yusho.length > 0) {
         basho.yusho.forEach(winner => {
@@ -289,6 +291,7 @@ async function setSumoBody() {
     } else {
         html += '<div>No special prizes data available</div>';
     }
+    html += "</div>";  // Close left column
     html += "<br>";
 
     // Outstanding Performance Prize (Shukun-shō - 殊勲賞):
@@ -300,6 +303,7 @@ async function setSumoBody() {
     // console.log(`${division} Banzuke data received:`, banzuke);
 
     // Build Standings
+    html += `<div class="col-md-6" style="padding-bottom: 10px;">`;
     html += `<h5>${division} Standings</h5>`;
     // PUT THIS IN CSS AND SHARE IT WITH THE WEATHER SCROLLBAR
     html += `<div style="overflow-x: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">`; 
@@ -365,7 +369,7 @@ async function setSumoBody() {
         html += '<tr><td>No banzuke data available</td></tr>';
     }
     
-    html += `</table></div>`;
+    html += `</table></div></div>`;
 
     $("#sumo-body").html(html);
 }
