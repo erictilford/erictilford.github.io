@@ -271,7 +271,7 @@ async function setSumoBody() {
 
     // Build yusho winners HTML
     html+= `<div class="row">`;
-    html+= `<div class="col-md-6" style="padding-bottom: 10px;">`;
+    html+= `<div style="padding: 0 10px 20px;">`;
     html+= '<h5>Yusho Winners</h5>';
     if (basho && basho.yusho && basho.yusho.length > 0) {
         basho.yusho.forEach(winner => {
@@ -303,7 +303,7 @@ async function setSumoBody() {
     // console.log(`${division} Banzuke data received:`, banzuke);
 
     // Build Standings
-    html += `<div class="col-md-6" style="padding-bottom: 10px;">`;
+    html += `<div style="padding: 0 10px 20px;">`;
     html += `<h5>${division} Standings</h5>`;
     // PUT THIS IN CSS AND SHARE IT WITH THE WEATHER SCROLLBAR
     html += `<div style="overflow-x: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">`; 
