@@ -332,6 +332,7 @@ body {
 
 .center-panel {
     max-width: calc(100% - 730px);
+    min-width: 300px;
     left: 50%;
     transform: translate(-50%, 0);
     padding: 15px;
@@ -631,6 +632,7 @@ body {
 
     .center-panel {
         max-width: unset;
+        min-width: unset;
     }
 
     .content-panel {

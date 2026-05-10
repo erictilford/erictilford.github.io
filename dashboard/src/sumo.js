@@ -269,29 +269,25 @@ async function setSumoBody() {
     const bashoInfo = BASHO_MONTHS.find(m => m.month === month);
     html += `<h5 style="text-align:center">${bashoInfo.name} ${year}</h5>`;
 
-    // Build yusho winners HTML
     html+= `<div class="row">`;
-    html+= `<div style="padding: 0 10px 20px;">`;
-    html+= '<h5>Yusho Winners</h5>';
+    // Build yusho winners HTML
     if (basho && basho.yusho && basho.yusho.length > 0) {
+        html+= `<div style="padding: 0 10px 20px;">`;
+        html+= '<h5>Yusho Winners</h5>';
         basho.yusho.forEach(winner => {
             html += `<div>${winner.type}: ${winner.shikonaEn}</div>`; // ${winner.shikonaJp}
         });
-    } else {
-        html += '<div>No yusho data available</div>';
     }
     html += "<br>";
     
     // Build special prizes HTML
-    html += '<h5>Special Prizes</h5>';
     if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) {
+        html += '<h5>Special Prizes</h5>';
         basho.specialPrizes.forEach(prize => {
             html += `<div>${prize.type}: ${prize.shikonaEn}</div>`; // ${prize.shikonaJp}
         });
-    } else {
-        html += '<div>No special prizes data available</div>';
+        html += "</div>";
     }
-    html += "</div>";  // Close left column
     html += "<br>";
 
     // Outstanding Performance Prize (Shukun-shō - 殊勲賞):
