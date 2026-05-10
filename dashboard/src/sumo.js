@@ -144,6 +144,31 @@ const BASHO_DATES = [
     },
 ]
 
+const KIMARITE_NAMES = {
+    "yorikiri": "Frontal Force Out",
+    "oshidashi": "Frontal Push Out",
+    "hatakikomi": "Slap Down",
+    "hikiotoshi": "Pull Down",
+    "tsuppari": "Thrusting Attack",
+    "uwatenage": "Overarm Throw",
+    "shitatehineri": "Underarm Twist Down",
+    "kotenage": "Armbreaker Throw",
+    "yori taoshi": "Force Out and Down",
+    "sotogake": "Outer Leg Trip",
+    "tsukiotoshi": "Thrust Down",
+    "kawazugake": "Hooking Back Inside Leg Trip",
+    "ashitori": "Leg Grab",
+    "katasukashi": "Under-Shoulder Swing Down",
+    "okuridashi": "Rear Push Out",
+    "uwatedashinage": "Overarm Pull Down",
+    "hikiwake": "Draw",
+    "ketaguri": "Inside Leg Trip",
+    "kibisu gaeshi": "Heel Trip",
+    "sukuinage": "Scoop Throw",
+    "tsukidashi": "Thrust Out",
+    "abisetaoshi": "Backward Force Down"
+}
+
 function getBashoID() {
     const now = new Date();
     
@@ -349,8 +374,9 @@ async function setSumoBody() {
                             if (match.opponentShikonaEn || match.kimarite) {
                                 const opponent = match.opponentShikonaEn ? match.opponentShikonaEn : 'Unknown';
                                 const kimarite = match.kimarite ? match.kimarite : 'Unknown';
+                                const kimariteEn = KIMARITE_NAMES[kimarite] || "Unknown";
                                 const Kimarite = kimarite.charAt(0).toUpperCase() + kimarite.slice(1);
-                                title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${Kimarite}`;
+                                title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${Kimarite} (${kimariteEn})`;
                             }
                             shapes += `<span title="${title}" style="cursor: help;">${shape}</span>`;
                         });
