@@ -166,7 +166,8 @@ const KIMARITE_NAMES = {
     "kibisu gaeshi": "Heel Trip",
     "sukuinage": "Scoop Throw",
     "tsukidashi": "Thrust Out",
-    "abisetaoshi": "Backward Force Down"
+    "abisetaoshi": "Backward Force Down",
+    "fusen" : "Default"
 }
 
 function getBashoID() {
@@ -324,11 +325,11 @@ async function setSumoBody() {
     // console.log(`${division} Banzuke data received:`, banzuke);
 
     // Build Standings
-    html += `<div style="padding: 0 10px 20px;">`;
+    html += `<div style="text-align: center; padding: 0 5px">`; // Center the standings section>;
     html += `<h5>${division} Standings</h5>`;
     // PUT THIS IN CSS AND SHARE IT WITH THE WEATHER SCROLLBAR
-    html += `<div style="overflow-x: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">`; 
-    html += `<table style="border-collapse: collapse; border: none; color:white;">`;
+    // html += `<div style="overflow-x: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">`; 
+    // html += `<table style="border-collapse: collapse; border: none; color:white;">`;
     
     if (banzuke && banzuke.east && banzuke.west) {
         const allRikishi = [...banzuke.east, ...banzuke.west];
@@ -345,7 +346,7 @@ async function setSumoBody() {
                 groups.get(r.wins).push(r);
             }
             // Get top win counts
-            const topCount = 3;
+            const topCount = 100;
             const circleMargin = '0.05em';  // Control spacing between circles
             const sortedWins = Array.from(groups.keys()).sort((a, b) => b - a).slice(0, topCount);
             for (const win of sortedWins) {
@@ -353,7 +354,9 @@ async function setSumoBody() {
                 const bestLosses = rikishi[0].losses;
                 const leaders = rikishi.filter(r => r.losses === bestLosses);
                 const record = `${win}-${bestLosses}${leaders[0].absences > 0 ? `-${leaders[0].absences}` : ''}`;
-                html += `<tr><td><b>${record}</b></td><td></td></tr>`;
+                // html += `<tr><td><b>${record}</b></td><td></td></tr>`;
+                html += `<table class="holiday-table" style="display: inline-table; margin: 0 5px 10px;">`; // Add table for each record group
+                html += `<tr><td colspan="2" style="text-align:center; font-weight:bold; ">${record}</td></tr>`;
                 // win/loss circles with tooltips
                 leaders.forEach(r => {
                     let shapes = '';
@@ -391,7 +394,7 @@ async function setSumoBody() {
         html += '<tr><td>No banzuke data available</td></tr>';
     }
     
-    html += `</table></div></div>`;
+    html += `</div>`; // </table></div>
 
     $("#sumo-body").html(html);
 }
