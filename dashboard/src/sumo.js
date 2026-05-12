@@ -303,8 +303,8 @@ async function setSumoBody() {
         basho.yusho.forEach(winner => {
             html += `<div>${winner.type}: ${winner.shikonaEn}</div>`; // ${winner.shikonaJp}
         });
+        html += "<br>";
     }
-    html += "<br>";
     
     // Build special prizes HTML
     if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) {
@@ -313,8 +313,8 @@ async function setSumoBody() {
             html += `<div>${prize.type}: ${prize.shikonaEn}</div>`; // ${prize.shikonaJp}
         });
         html += "</div>";
+        html += "<br>";
     }
-    html += "<br>";
 
     // Outstanding Performance Prize (Shukun-shō - 殊勲賞):
     // Fighting Spirit Prize (Kantō-shō - 敢闘賞):
@@ -406,6 +406,5 @@ function buildSumoPanel() {
 
 buildSumoPanel();
 
-// TODO: English Kimarite names
-
+// TODO: Create Rikishi tooltip: Name, JPName, Rank (Head-to-Head records would be amazing but might be too much for now)
 
