@@ -325,7 +325,7 @@ async function setSumoBody() {
     // console.log(`${division} Banzuke data received:`, banzuke);
 
     // Build Standings
-    html += `<div style="text-align: center; padding: 0 5px">`; // Center the standings section>;
+    html += `<div style="text-align: center;">`; // Center the standings section>;
     html += `<h5>${division} Standings</h5>`;
     // PUT THIS IN CSS AND SHARE IT WITH THE WEATHER SCROLLBAR
     // html += `<div style="overflow-x: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">`; 
@@ -355,7 +355,7 @@ async function setSumoBody() {
                 const leaders = rikishi.filter(r => r.losses === bestLosses);
                 const record = `${win}-${bestLosses}${leaders[0].absences > 0 ? `-${leaders[0].absences}` : ''}`;
                 // html += `<tr><td><b>${record}</b></td><td></td></tr>`;
-                html += `<table class="holiday-table" style="display: inline-table; margin: 0 5px 10px;">`; // Add table for each record group
+                html += `<table class="holiday-table" style="display: inline-table; margin: 0 10px 10px;">`; // Add table for each record group
                 html += `<tr><td colspan="2" style="text-align:center; font-weight:bold; ">${record}</td></tr>`;
                 // win/loss circles with tooltips
                 leaders.forEach(r => {
