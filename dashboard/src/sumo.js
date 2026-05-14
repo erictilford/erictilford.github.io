@@ -417,3 +417,5 @@ buildSumoPanel();
 
 // TODO: Create Rikishi tooltip: Name, JPName, Rank (Head-to-Head records would be amazing but might be too much for now)
 
+// TODO: Use Holidays as an example for formatting
+// This uses column-count to determine an amount of columns 
