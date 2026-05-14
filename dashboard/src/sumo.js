@@ -167,7 +167,9 @@ const KIMARITE_NAMES = {
     "sukuinage": "Scoop Throw",
     "tsukidashi": "Thrust Out",
     "abisetaoshi": "Backward Force Down",
-    "fusen" : "Default"
+    "fusen" : "Default",
+    "shitatenage": "Underarm Throw",
+    "oshitaoshi": "Push Down",
 }
 
 function getBashoID() {
@@ -280,124 +282,131 @@ function setSumoText() {
     }
 }
 
-async function setSumoBody() {
-    const bashoID = getBashoID();
-    // console.log(bashoID);
-    const basho = await getBasho(bashoID);  // ← execution pauses here
-    // ↓ This doesn't run until getBasho() completes and returns data
-    // console.log("Basho data received:", basho);
-    // console.log("Yusho:", basho.yusho);
-    let html = "";
+async function setSumoBody() { 
+  const bashoID = getBashoID(); 
+  const basho = await getBasho(bashoID); 
+  
+  let html = ""; 
+  const year = bashoID.slice(0, 4); 
+  const month = parseInt(bashoID.slice(4, 6)); 
+  const bashoInfo = BASHO_MONTHS.find(m => m.month === month); 
+  
+  html += `<h5 style="text-align:center">${bashoInfo.name} ${year}</h5>`; 
+  html += `<div class="row">`; 
+  
+  // Build yusho winners HTML 
+  if (basho && basho.yusho && basho.yusho.length > 0) { 
+    html += `<div style="padding: 0 10px 20px;">`; 
+    html += '<h5>Yusho Winners</h5>'; 
+    basho.yusho.forEach(winner => { 
+      html += `<div>${winner.type}: ${winner.shikonaEn}</div>`; 
+    }); 
+    html += "<br>"; 
+  } 
+  
+  // Build special prizes HTML 
+  if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) { 
+    html += '<h5>Special Prizes</h5>'; 
+    basho.specialPrizes.forEach(prize => { 
+      html += `<div>${prize.type}: ${prize.shikonaEn}</div>`; 
+    }); 
+    html += "</div>"; 
+    html += "<br>"; 
+  } 
 
-    // Add tournament title
-    const year = bashoID.slice(0, 4);
-    const month = parseInt(bashoID.slice(4, 6));
-    const bashoInfo = BASHO_MONTHS.find(m => m.month === month);
-    html += `<h5 style="text-align:center">${bashoInfo.name} ${year}</h5>`;
-
-    html+= `<div class="row">`;
-    // Build yusho winners HTML
-    if (basho && basho.yusho && basho.yusho.length > 0) {
-        html+= `<div style="padding: 0 10px 20px;">`;
-        html+= '<h5>Yusho Winners</h5>';
-        basho.yusho.forEach(winner => {
-            html += `<div>${winner.type}: ${winner.shikonaEn}</div>`; // ${winner.shikonaJp}
-        });
-        html += "<br>";
-    }
+  const division = "Makuuchi"; 
+  const banzuke = await getBanzuke(bashoID, division); 
+  
+  // Build Standings 
+  html += `<div style="text-align: center;">`; 
+  html += `<h5>${division} Standings</h5>`; 
+  
+  if (banzuke && banzuke.east && banzuke.west) { 
+    const allRikishi = [...banzuke.east, ...banzuke.west]; 
     
-    // Build special prizes HTML
-    if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) {
-        html += '<h5>Special Prizes</h5>';
-        basho.specialPrizes.forEach(prize => {
-            html += `<div>${prize.type}: ${prize.shikonaEn}</div>`; // ${prize.shikonaJp}
-        });
-        html += "</div>";
-        html += "<br>";
-    }
+    if (allRikishi.length > 0) { 
+      // Group strictly by number of wins (handles 0 wins safely)
+      const groups = new Map(); 
+      
+      for (const r of allRikishi) {
+        // Enforce integer fallback if wins value is missing or undefined
+        const winCount = parseInt(r.wins, 10) || 0; 
+        
+        // Calculate this individual rikishi's precise record string format
+        const losses = parseInt(r.losses, 10) || 0;
+        const absences = parseInt(r.absences, 10) || 0;
+        r.computedRecordString = `${winCount}-${losses}${absences > 0 ? `-${absences}` : ''}`;
 
-    // Outstanding Performance Prize (Shukun-shō - 殊勲賞):
-    // Fighting Spirit Prize (Kantō-shō - 敢闘賞):
-    // Technique Prize (Ginō-shō - 技能賞):
-
-    const division = "Makuuchi";  // You can change this to "juryo", "makushita", etc. as needed
-    const banzuke = await getBanzuke(bashoID, division);
-    // console.log(`${division} Banzuke data received:`, banzuke);
-
-    // Build Standings
-    html += `<div style="text-align: center;">`; // Center the standings section>;
-    html += `<h5>${division} Standings</h5>`;
-    // PUT THIS IN CSS AND SHARE IT WITH THE WEATHER SCROLLBAR
-    // html += `<div style="overflow-x: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0.3) transparent;">`; 
-    // html += `<table style="border-collapse: collapse; border: none; color:white;">`;
-    
-    if (banzuke && banzuke.east && banzuke.west) {
-        const allRikishi = [...banzuke.east, ...banzuke.west];
-        if (allRikishi.length > 0) {
-            // Sort all rikishi by wins desc, then losses asc
-            allRikishi.sort((a, b) => {
-                if (b.wins !== a.wins) return b.wins - a.wins;
-                return a.losses - b.losses;
-            });
-            // Group by wins
-            const groups = new Map();
-            for (const r of allRikishi) {
-                if (!groups.has(r.wins)) groups.set(r.wins, []);
-                groups.get(r.wins).push(r);
-            }
-            // Get top win counts
-            const topCount = 100;
-            const circleMargin = '0.05em';  // Control spacing between circles
-            const sortedWins = Array.from(groups.keys()).sort((a, b) => b - a).slice(0, topCount);
-            for (const win of sortedWins) {
-                const rikishi = groups.get(win);
-                const bestLosses = rikishi[0].losses;
-                const leaders = rikishi.filter(r => r.losses === bestLosses);
-                const record = `${win}-${bestLosses}${leaders[0].absences > 0 ? `-${leaders[0].absences}` : ''}`;
-                // html += `<tr><td><b>${record}</b></td><td></td></tr>`;
-                html += `<table class="holiday-table" style="display: inline-table; margin: 0 10px 10px;">`; // Add table for each record group
-                html += `<tr><td colspan="2" style="text-align:center; font-weight:bold; ">${record}</td></tr>`;
-                // win/loss circles with tooltips
-                leaders.forEach(r => {
-                    let shapes = '';
-                    if (r.record && r.record.length > 0) {
-                        r.record.forEach((match, index) => {
-                            let shape = '';
-                            let title = '';
-                            if (match.result === 'win' || match.result === 'fusen win') {
-                                shape = '●';
-                            } else if (match.result === 'loss' || match.result === 'fusen loss') {
-                                shape = '○';
-                            } else if (match.result === 'absent') {
-                                shape = '–';
-                            }
-                            const RESULT = match.result.toUpperCase();
-                            title = RESULT;
-                            
-                            if (match.opponentShikonaEn || match.kimarite) {
-                                const opponent = match.opponentShikonaEn ? match.opponentShikonaEn : 'Unknown';
-                                const kimarite = match.kimarite ? match.kimarite : 'Unknown';
-                                const kimariteEn = KIMARITE_NAMES[kimarite] || "Unknown";
-                                const Kimarite = kimarite.charAt(0).toUpperCase() + kimarite.slice(1);
-                                title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${Kimarite} (${kimariteEn})`;
-                            }
-                            shapes += `<span title="${title}" style="cursor: help;">${shape}</span>`;
-                        });
-                        html += `<tr><td>${r.shikonaEn}</td><td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
-                    }
-                });
-            }
-        } else {
-            html += '<tr><td>No standings data available</td></tr>';
+        if (!groups.has(winCount)) {
+          groups.set(winCount, []);
         }
-    } else {
-        html += '<tr><td>No banzuke data available</td></tr>';
-    }
-    
-    html += `</div>`; // </table></div>
+        groups.get(winCount).push(r); 
+      } 
+      
+      const circleMargin = '0.05em'; 
+      // Sort win counts descending (highest wins down to 0 wins)
+      const sortedWins = Array.from(groups.keys()).sort((a, b) => b - a); 
+      
+      for (const win of sortedWins) { 
+        const rikishiInGroup = groups.get(win); 
+        
+        // Sort wrestlers inside this win tier by losses ascending
+        rikishiInGroup.sort((a, b) => (parseInt(a.losses, 10) || 0) - (parseInt(b.losses, 10) || 0));
 
-    $("#sumo-body").html(html);
+        // Gather all distinct record strings within this win bracket (e.g. ['2-3', '2-2-1'])
+        const uniqueRecordStrings = [...new Set(rikishiInGroup.map(r => r.computedRecordString))];
+        // Combine them into a single header string separated by a slash
+        const headerLabel = uniqueRecordStrings.join(' / ');
+
+        // Render one combined table for this specific win tier
+        html += `<table class="holiday-table" style="display: inline-table; margin: 0 10px 10px;">`; 
+        html += `<tr><td colspan="2" style="text-align:center; font-weight:bold;">${headerLabel}</td></tr>`; 
+        
+        // Render all matching wrestlers right underneath the combined header
+        rikishiInGroup.forEach(r => { 
+          let shapes = ''; 
+          if (r.record && r.record.length > 0) { 
+            r.record.forEach((match, index) => { 
+              let shape = ''; 
+              let title = ''; 
+              if (match.result === 'win' || match.result === 'fusen win') { 
+                shape = '●'; 
+              } else if (match.result === 'loss' || match.result === 'fusen loss') { 
+                shape = '○'; 
+              } else if (match.result === 'absent') { 
+                shape = '–'; 
+              } 
+              
+              const RESULT = match.result.toUpperCase(); 
+              title = RESULT; 
+              
+              if (match.opponentShikonaEn || match.kimarite) { 
+                const opponent = match.opponentShikonaEn ? match.opponentShikonaEn : 'Unknown'; 
+                const kimarite = match.kimarite ? match.kimarite : 'Unknown'; 
+                const kimariteEn = KIMARITE_NAMES[kimarite] || "Unknown"; 
+                const Kimarite = kimarite.charAt(0).toUpperCase() + kimarite.slice(1); 
+                title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${Kimarite} (${kimariteEn})`; 
+              } 
+              shapes += `<span title="${title}" style="cursor: help;">${shape}</span>`; 
+            }); 
+            
+            html += `<tr><td>${r.shikonaEn}</td><td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td></tr>`; 
+          } 
+        }); 
+        
+        html += `</table>`;
+      } 
+    } else { 
+      html += '<div>No standings data available</div>'; 
+    } 
+  } else { 
+    html += '<div>No banzuke data available</div>'; 
+  } 
+  
+  html += `</div>`; // Close row div
+  $("#sumo-body").html(html); 
 }
+
 
 function buildSumoPanel() {
     setSumoText();
