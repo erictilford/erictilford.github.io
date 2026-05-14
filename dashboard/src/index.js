@@ -215,15 +215,28 @@ $(document).ready(function () {
 	$("#settings-title").append(' <i class=" ' + icon + '">');
 
 	$("#settings-button").html('<i class="pointer fa-sm tray-icon ' + icon + '"></i>');
-    $("#settings-button").click(function() { 
-		$("#settings-panel").toggle(settingsPanelAnimationSpeed); 
-		$('html,body').animate({
-			scrollTop: $("#dog-panel").offset().top
-		});
-	});
-	$("#settings-button").attr("title",  "Settings" );
+	$("#settings-button").click(function () {
+		const $panel = $("#settings-panel");
+		const isOpen = $panel.is(":visible");
 
-	$("#settings-apply-button").click(function() { SaveAndReload(); });
+		if (isOpen) {
+			// If it's already open, simply close it
+			$panel.slideUp(settingsPanelAnimationSpeed);
+		} else {
+			// If it's closed, shut all other central panels first, then open this one
+			$(".center-panel").not($panel).slideUp(0); // Instantly hide other panels without animation
+
+			$panel.slideDown(settingsPanelAnimationSpeed, function () {
+				// Smooth scroll happens AFTER the open animation completes for accuracy
+				$('html, body').animate({
+					scrollTop: $panel.offset().top
+				}, settingsPanelAnimationSpeed);
+			});
+		}
+	});
+	$("#settings-button").attr("title", "Settings");
+
+	$("#settings-apply-button").click(function () { SaveAndReload(); });
 
 	$("#settings-close-button").click(function() { $("#settings-panel").hide(settingsPanelAnimationSpeed); });
 

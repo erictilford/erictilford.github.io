@@ -7,16 +7,29 @@ function LoadDogAPI(animSpeed) {
 			icon = 'fa-solid fa-paw " style="color:lightblue';
 			$("#random-dog-title").append(' <i class=" ' + icon + '">');
 			$("#widget-list").append('<a id="dog-button" class="pointer"><li><i class="fa-2x ' + icon + '"></i><br>Dog</li></a>');
-			$("#close-dog-button").click(function() { $("#dog-panel").hide(animSpeed); });
-			$("#dog-button").click(function() {  
-                $("#dog-panel").toggle(animSpeed); 
-                $('html,body').animate({
-                    scrollTop: $("#dog-panel").offset().top
-                 });
-            });
-			$("#dog-button").attr("title",  "Random Dog API" );
+			$("#close-dog-button").click(function () { $("#dog-panel").hide(animSpeed); });
+			$("#dog-button").click(function () {
+				const $panel = $("#dog-panel");
+				const isOpen = $panel.is(":visible");
 
-			for ( var j in result.message) { // Get breeds
+				if (isOpen) {
+					// If it's already open, simply close it
+					$panel.slideUp(animSpeed);
+				} else {
+					// If it's closed, shut all other central panels first, then open this one
+					$(".center-panel").not($panel).slideUp(0); // Instantly hide other panels without animation (use animSpeed if you want them to animate)
+
+					$panel.slideDown(animSpeed, function () {
+						// Smooth scroll happens AFTER the open animation completes for accuracy
+						$('html, body').animate({
+							scrollTop: $panel.offset().top
+						}, animSpeed);
+					});
+				}
+			});
+			$("#dog-button").attr("title", "Random Dog API");
+
+			for (var j in result.message) { // Get breeds
 				let name = j.charAt(0).toUpperCase() + j.slice(1); // capitalize
 				$("#dog-breed-dropdown").append(' <option value="' + name + '">' + name + '</option>'); // add option
 			}

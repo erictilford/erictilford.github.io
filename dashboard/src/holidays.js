@@ -116,14 +116,27 @@ function LoadHolidayButton(animSpeed) {
     //let daIcon = icon;
     //icon = 'fa-solid fa-calendar-days" style="color:darkcyan';
     $("#widget-list").append('<a id="holiday-button" class="pointer"><li><i class="fa-2x ' + holidayIcon() + '"></i> Holidays</li></a>');
-    $("#close-holiday-button").click(function() { $("#holiday-panel").hide(animSpeed); });
-    $("#holiday-button").click(function() {  
-        $("#holiday-panel").toggle(animSpeed); 
-        $('html,body').animate({
-            scrollTop: $("#holiday-panel").offset().top
+    $("#close-holiday-button").click(function () { $("#holiday-panel").hide(animSpeed); });
+    $("#holiday-button").click(function () {
+        const $panel = $("#holiday-panel");
+        const isOpen = $panel.is(":visible");
+
+        if (isOpen) {
+            // If it's already open, simply close it
+            $panel.slideUp(animSpeed);
+        } else {
+            // If it's closed, shut all other central panels first, then open this one
+            $(".center-panel").not($panel).slideUp(0); // Instantly hide other panels without animation (use animSpeed if you want them to animate)
+
+            $panel.slideDown(animSpeed, function () {
+                // Smooth scroll happens AFTER the open animation completes for accuracy
+                $('html, body').animate({
+                    scrollTop: $panel.offset().top
+                }, animSpeed);
             });
+        }
     });
-    $("#holiday-button").attr("title",  "Holiday List" );
+    $("#holiday-button").attr("title", "Holiday List");
 }
 
 

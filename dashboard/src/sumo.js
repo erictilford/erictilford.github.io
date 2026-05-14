@@ -2,13 +2,27 @@ function LoadSumo(animSpeed) {
     icon = 'fa-solid fa-torii-gate " style="color:#b10041';
     $("#sumo-title").append(' <i class=" ' + icon + '">');
     $("#widget-list").append('<a id="sumo-button" class="pointer"><li><i class="fa-2x ' + icon + '"></i><br>Sumo</li></a>');
-    $("#close-sumo-button").click(function() { $("#sumo-panel").hide(animSpeed); });
-    $("#sumo-button").click(function() {  
-        $("#sumo-panel").toggle(animSpeed); 
-        $('html,body').animate({
-            scrollTop: $("#sumo-panel").offset().top
+    $("#close-sumo-button").click(function () { $("#sumo-panel").hide(animSpeed); });
+    $("#sumo-button").click(function () {
+        const $panel = $("#sumo-panel");
+        const isOpen = $panel.is(":visible");
+
+        if (isOpen) {
+            // If it's already open, simply close it
+            $panel.slideUp(animSpeed);
+        } else {
+            // If it's closed, shut all other central panels first, then open this one
+            $(".center-panel").not($panel).slideUp(0); // Instantly hide other panels without animation (use animSpeed if you want them to animate)
+
+            $panel.slideDown(animSpeed, function () {
+                // Smooth scroll happens AFTER the open animation completes for accuracy
+                $('html, body').animate({
+                    scrollTop: $panel.offset().top
+                }, animSpeed);
             });
+        }
     });
+
     $("#sumo-button").attr("title",  "Sumo" );  
 }
 
