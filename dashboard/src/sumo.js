@@ -429,8 +429,11 @@ async function setSumoBody() {
                             }
                             shapes += `<span title="${title}" style="cursor: help;">${shape}</span>`;
                         });
+                        
+                        shikonaTitle = r.shikonaEn + " (" + r.shikonaJp + ")\nRank: " + r.rank + "\nRecord: " + r.computedRecordString;
+                        shikonaSpan = `<span title="${shikonaTitle}" style="cursor: help;">${r.shikonaEn}</span>`;
 
-                        html += `<tr><td>${r.shikonaEn}</td><td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
+                        html += `<tr><td>${shikonaSpan}</td><td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
                     }
                 });
 
@@ -455,7 +458,9 @@ function buildSumoPanel() {
 
 buildSumoPanel();
 
-// TODO: Create Rikishi tooltip: Name, JPName, Rank (Head-to-Head records would be amazing but might be too much for now)
+// TODO: Head-to-head records in tooltip?
+
+// TODO: Measurements in tooltip??
 
 // TODO: Use Holidays as an example for formatting?????
 // This uses column-count to determine an amount of columns
