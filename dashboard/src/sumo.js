@@ -374,8 +374,6 @@ async function setSumoBody() {
 
             for (const win of sortedWins) {
                 const rikishiInGroup = groups.get(win);
-
-                // --- CHANGE HERE ---
                 // Sort wrestlers inside this win tier by absences ascending (fewest first)
                 // If absences are equal, sort by losses ascending (fewer losses first)
                 rikishiInGroup.sort((a, b) => {
@@ -386,7 +384,6 @@ async function setSumoBody() {
                     }
                     return (parseInt(a.losses, 10) || 0) - (parseInt(b.losses, 10) || 0);
                 });
-                // ------------------
 
                 // Gather all distinct record strings within this win bracket (e.g. ['2-3', '2-2-1'])
                 const uniqueRecordStrings = [
@@ -460,5 +457,5 @@ buildSumoPanel();
 
 // TODO: Create Rikishi tooltip: Name, JPName, Rank (Head-to-Head records would be amazing but might be too much for now)
 
-// TODO: Use Holidays as an example for formatting
+// TODO: Use Holidays as an example for formatting?????
 // This uses column-count to determine an amount of columns
