@@ -560,5 +560,4 @@ buildSumoPanel();
 
 // TODO: Measurements in tooltip??
 
-// TODO: Use Holidays as an example for formatting?????
-// This uses column-count to determine an amount of columns
+// TODO: Space out Standings similarly to Yusho Winners / Special Prizes section
