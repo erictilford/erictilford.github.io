@@ -256,6 +256,34 @@ const KIMARITE_NAMES = {
 
 };
 
+const SPECIAL_PRIZES = [
+    {
+        type: "Shukun-sho",
+        pretty: "Shukun-shō",
+        description: "Awarded to a wrestler who defeats a Yokozuna (Grand Champion) or Ōzeki (Champion) during the tournament, often playing a decisive role in the championship race.",
+        name: "Outstanding Performance Prize",
+        jp_name: "殊勲賞"
+    },
+    {
+        type: "Kanto-sho",
+        pretty: "Kantō-shō",
+        description: "Awarded to a wrestler who fights tenaciously, gives their absolute best in every bout, and fights through adversity. It is also very common for debutants in the top division who achieve double-digit wins to earn this prize.",
+        name: "Fighting Spirit Prize",
+        jp_name: "敢闘賞"
+    },
+    {
+        type: "Gino-sho",
+        pretty: "Ginō-shō",
+        description: "Awarded to a wrestler who demonstrates the most skillful kimarite (winning techniques) or utilizes the widest variety of skillful moves.",
+        name: "Technique Prize",
+        jp_name: "技能賞"
+    },
+    {
+        requirements: "What's Needed to Win\nTo be considered for a special prize, a wrestler must meet several strict conditions:\n• Rank Requirement: The wrestler must be ranked below Ōzeki (i.e., Sekiwake, Komusubi, or Maegashira).\n• Majority of Wins (Kachi-koshi): The wrestler must finish the 15-day tournament with a winning record (8 wins or more).\n• Panel Decision: Prize winners are chosen by a judging committee and members of the press covering the tournament.\n• Conditional Last Match: Some awards are conditional, meaning the wrestler may need to win their final match on Day 15 to secure the prize.\n• No Guarantees: These prizes do not have to be awarded if no one meets the criteria. Conversely, multiple wrestlers can win the exact same prize in a single tournament."
+    }
+
+];
+
 function getBashoID() {
     const now = new Date();
 
@@ -378,27 +406,36 @@ async function setSumoBody() {
     const bashoInfo = BASHO_MONTHS.find((m) => m.month === month);
 
     html += `<h5 style="text-align:center">${bashoInfo.name} ${year}</h5>`;
-    html += `<div class="row">`;
+    html += `<div class="row" style="display: flex; gap: 20px; justify-content: space-evenly; flex-wrap: wrap; padding-bottom: 10px;">`;
 
     // Build yusho winners HTML
     if (basho && basho.yusho && basho.yusho.length > 0) {
-        html += `<div style="padding: 0 10px 20px;">`;
+        html += `<div style="padding: 0 10px;">`;
         html += "<h5>Yusho Winners</h5>";
         basho.yusho.forEach((winner) => {
             html += `<div>${winner.type}: ${winner.shikonaEn}</div>`;
         });
-        html += "<br>";
+        html += `</div>`;
     }
 
     // Build special prizes HTML
     if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) {
-        html += "<h5>Special Prizes</h5>";
+        html += `<div style="padding: 0 10px;">`;
+        const specialPrizesRequirements = SPECIAL_PRIZES.find((p) => p.requirements)?.requirements || "No requirements available";
+        html += `<h5><span title="${specialPrizesRequirements}" style="cursor: help;">Special Prizes</span></h5>`;
         basho.specialPrizes.forEach((prize) => {
-            html += `<div>${prize.type}: ${prize.shikonaEn}</div>`;
+            prizeInfo = SPECIAL_PRIZES.find((p) => p.type === prize.type);
+            prizeName = prizeInfo?.name || prize.type;
+            prizePretty = prizeInfo?.pretty || prize.type;
+            prizeJpName = prizeInfo?.jp_name || prize.type;
+            prizeDescription = prizeInfo?.description || "No description available";
+            tooltipText = `${prizeName} / ${prizePretty} (${prizeJpName}):\n${prizeDescription}`;
+            html += `<div><span title="${tooltipText}" style="cursor: help;">${prizeName}</span>: ${prize.shikonaEn}</div>`;
         });
-        html += "</div>";
-        html += "<br>";
+        html += `</div>`;
     }
+
+    html += `</div>`; // Close row div
 
     const division = "Makuuchi";
     const banzuke = await getBanzuke(bashoID, division);
@@ -507,7 +544,7 @@ async function setSumoBody() {
         html += "<div>No banzuke data available</div>";
     }
 
-    html += `</div>`; // Close row div
+    html += `</div>`; // Close standings div
     $("#sumo-body").html(html);
 }
 
