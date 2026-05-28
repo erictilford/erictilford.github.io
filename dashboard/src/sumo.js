@@ -441,8 +441,8 @@ async function setSumoBody() {
     const banzuke = await getBanzuke(bashoID, division);
 
     // Build Standings
-    html += `<div style="text-align: center;">`;
-    html += `<h5>${division} Standings</h5>`;
+    html += `<div class="sumo-standings">`;
+    html += `<h5 style="width:100%; text-align:center;">${division} Standings</h5>`;
 
     if (banzuke && banzuke.east && banzuke.west) {
         const allRikishi = [...banzuke.east, ...banzuke.west];
@@ -491,7 +491,7 @@ async function setSumoBody() {
                 const headerLabel = uniqueRecordStrings.join(" / ");
 
                 // Render one combined table for this specific win tier
-                html += `<table class="holiday-table" style="display: inline-table; margin: 0 10px 10px;">`;
+                html += `<table class="holiday-table">`;
                 html += `<tr><td colspan="2" style="text-align:center; font-weight:bold;">${headerLabel}</td></tr>`;
 
                 // Render all matching wrestlers right underneath the combined header

@@ -474,8 +474,22 @@ body {
     gap: 20px;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     text-align: center;
+}
+.sumo-standings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+.sumo-standings h5 {
+    flex: 1 1 100%;
+}
+.sumo-standings .holiday-table {
+    margin-bottom: 10px;
 }
 .text-input {
     border-radius: 5px;
