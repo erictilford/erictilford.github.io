@@ -469,7 +469,14 @@ body {
     background: #dadada;
     cursor: pointer;
 }
-
+.sumo-section {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    text-align: center;
+}
 .text-input {
     border-radius: 5px;
     width: 75px;

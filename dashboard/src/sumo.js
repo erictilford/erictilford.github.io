@@ -406,7 +406,7 @@ async function setSumoBody() {
     const bashoInfo = BASHO_MONTHS.find((m) => m.month === month);
 
     html += `<h5 style="text-align:center">${bashoInfo.name} ${year}</h5>`;
-    html += `<div class="row" style="display: flex; gap: 20px; justify-content: space-evenly; flex-wrap: wrap; padding-bottom: 10px;">`;
+    html += `<div class="row sumo-section">`;
 
     // Build yusho winners HTML
     if (basho && basho.yusho && basho.yusho.length > 0) {
