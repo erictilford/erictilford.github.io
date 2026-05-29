@@ -559,5 +559,6 @@ buildSumoPanel();
 // TODO: Head-to-head records in tooltip?
 
 // TODO: Measurements in tooltip??
+// Get measurements and more using https://sumo-api.com/api/rikishis?shikonaEn=Ura
 
 // TODO: Space out Standings similarly to Yusho Winners / Special Prizes section
