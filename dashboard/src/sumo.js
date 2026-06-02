@@ -1,3 +1,5 @@
+let sumoDataLoaded = false;
+
 function LoadSumo(animSpeed) {
     icon = 'fa-solid fa-torii-gate " style="color:#b10041';
     $("#sumo-title").append(' <i class=" ' + icon + '">');
@@ -9,7 +11,7 @@ function LoadSumo(animSpeed) {
     $("#close-sumo-button").click(function () {
         $("#sumo-panel").hide(animSpeed);
     });
-    $("#sumo-button").click(function () {
+    $("#sumo-button").click(async function () {
         const $panel = $("#sumo-panel");
         const isOpen = $panel.is(":visible");
 
@@ -19,6 +21,17 @@ function LoadSumo(animSpeed) {
         } else {
             // If it's closed, shut all other central panels first, then open this one
             $(".center-panel").not($panel).slideUp(0); // Instantly hide other panels without animation (use animSpeed if you want them to animate)
+
+            // Lazy-load text and body the first time the panel is opened to avoid unnecessary API calls
+            if (!sumoDataLoaded) {
+                try {
+                    await setSumoText();
+                    await setSumoBody();
+                } catch (e) {
+                    console.error("Failed to load sumo data on demand:", e);
+                }
+                sumoDataLoaded = true;
+            }
 
             $panel.slideDown(animSpeed, function () {
                 // Smooth scroll happens AFTER the open animation completes for accuracy
@@ -352,6 +365,22 @@ async function getBanzuke(bashoID, division) {
     }
 }
 
+async function getMeasurements(rikishi) {
+    const url = `https://sumo-api.com/api/rikishis?shikonaEn=${encodeURIComponent(rikishi)}`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log("Measurements (", rikishi, "):", data);
+        return data;
+    } catch (error) {
+        console.error("Failed to fetch measurements (", rikishi, "):", error);
+    }
+}
+
 function setSumoText() {
     const now = new Date();
 
@@ -448,6 +477,11 @@ async function setSumoBody() {
     if (banzuke && banzuke.east && banzuke.west) {
         const allRikishi = [...banzuke.east, ...banzuke.west];
 
+        const measurementEntries = await Promise.all(
+            allRikishi.map(async (r) => [r.shikonaEn, await getMeasurements(r.shikonaEn)])
+        );
+        const measurementsByShikona = Object.fromEntries(measurementEntries);
+
         if (allRikishi.length > 0) {
             // Group strictly by number of wins (handles 0 wins safely)
             const groups = new Map();
@@ -497,6 +531,10 @@ async function setSumoBody() {
 
                 // Render all matching wrestlers right underneath the combined header
                 rikishiInGroup.forEach((r) => {
+                    const m = measurementsByShikona[r.shikonaEn];
+                    if (m) {
+                        console.log("Measurements for", r.shikonaEn, ":", m);
+                    }
                     let shapes = "";
                     if (r.record && r.record.length > 0) {
                         r.record.forEach((match, index) => {
@@ -530,7 +568,10 @@ async function setSumoBody() {
                         });
                         
                         shikonaTitle = r.shikonaEn + " (" + r.shikonaJp + ")\nRank: " + r.rank + "\nRecord: " + r.computedRecordString;
-                        shikonaSpan = `<span title="${shikonaTitle}" style="cursor: help;">${r.shikonaEn}</span>`;
+                        const height = m.records[0]?.height ? `${m.records[0].height} cm` : "Unknown";
+                        const weight = m.records[0]?.weight ? `${m.records[0].weight} kg` : "Unknown";
+                        shikonaMeasurements = "\nHeight: " + height + "\nWeight: " + weight;
+                        shikonaSpan = `<span title="${shikonaTitle}${shikonaMeasurements}" style="cursor: help;">${r.shikonaEn}</span>`;
 
                         html += `<tr><td>${shikonaSpan}</td><td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
                     }
@@ -550,16 +591,10 @@ async function setSumoBody() {
 }
 
 
-function buildSumoPanel() {
-    setSumoText();
-    setSumoBody();
-}
-
-buildSumoPanel();
-
 // TODO: Head-to-head records in tooltip?
 
-// TODO: Measurements in tooltip??
-// Get measurements and more using https://sumo-api.com/api/rikishis?shikonaEn=Ura
+// TODO: Measurements in tooltip
+// Get remaining stats from measurements
+// Write metric to SI functions, get age function
 
 // TODO: Space out Standings similarly to Yusho Winners / Special Prizes section
