@@ -214,6 +214,7 @@ const KIMARITE_NAMES = {
     "oshitaoshi": "Push Down",
     "sabaori": "Forward Tree-Breaking Crush",
     "sakatottari": "Counter Armlock Throw",
+    "shitatedashinage": "Underarm Pull Down",
     "shitatehineri": "Underarm Twist Down",
     "shitatenage": "Underarm Throw",
     "shumokuzori": "Bell-Hammer Backwards Body Drop",
@@ -521,8 +522,8 @@ async function setSumoBody() {
                                     : "Unknown";
                                 const kimarite = match.kimarite ? match.kimarite : "Unknown";
                                 const kimariteEn = KIMARITE_NAMES[kimarite] || "Unknown";
-                                const Kimarite =
-                                    kimarite.charAt(0).toUpperCase() + kimarite.slice(1);
+                                if (kimariteEn === "Unknown") { console.warn(`Unknown kimarite code: ${kimarite}`); }
+                                const Kimarite = kimarite.charAt(0).toUpperCase() + kimarite.slice(1);
                                 title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${Kimarite} (${kimariteEn})`;
                             }
                             shapes += `<span title="${title}" style="cursor: help;">${shape}</span>`;
