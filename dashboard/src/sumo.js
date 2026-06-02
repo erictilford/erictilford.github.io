@@ -250,7 +250,7 @@ const KIMARITE_NAMES = {
     "waridashi": "Upper-Arm Force Out",
     "watashikomi": "Thigh Grabbing Push Down",
     "yobimodoshi": "Pulling Body Slam",
-    "yori taoshi": "Force Out and Down",
+    "yoritaoshi": "Frontal Crush Out",
     "yorikiri": "Frontal Force Out",
     "zubaneri": "Head-Pivot Twist Down"
 
