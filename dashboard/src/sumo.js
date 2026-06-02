@@ -410,7 +410,7 @@ async function setSumoBody() {
 
     // Build yusho winners HTML
     if (basho && basho.yusho && basho.yusho.length > 0) {
-        html += `<div style="padding: 0 10px;">`;
+        html += `<div style="padding: 0 10px 10px;">`;
         html += "<h5>Yusho Winners</h5>";
         basho.yusho.forEach((winner) => {
             html += `<div>${winner.type}: ${winner.shikonaEn}</div>`;
@@ -420,7 +420,7 @@ async function setSumoBody() {
 
     // Build special prizes HTML
     if (basho && basho.specialPrizes && basho.specialPrizes.length > 0) {
-        html += `<div style="padding: 0 10px;">`;
+        html += `<div style="padding: 0 10px 10px;">`;
         const specialPrizesRequirements = SPECIAL_PRIZES.find((p) => p.requirements)?.requirements || "No requirements available";
         html += `<h5><span title="${specialPrizesRequirements}" style="cursor: help;">Special Prizes</span></h5>`;
         basho.specialPrizes.forEach((prize) => {
