@@ -51,42 +51,42 @@ function LoadSumo(animSpeed) {
 const BASHO_MONTHS = [
     {
         month: 1,
-        name: "January Tournament",
+        name: "January Basho",
         jp_name: "Hatsu Basho",
         jp_name_kana: "初場所",
         nickname: "New Year Basho",
     },
     {
         month: 3,
-        name: "March Tournament",
+        name: "March Basho",
         jp_name: "Haru Basho",
         jp_name_kana: "春場所",
         nickname: "Spring Basho",
     },
     {
         month: 5,
-        name: "May Tournament",
+        name: "May Basho",
         jp_name: "Natsu Basho",
         jp_name_kana: "夏場所",
         nickname: "Summer Basho",
     },
     {
         month: 7,
-        name: "July Tournament",
+        name: "July Basho",
         jp_name: "Nagoya Basho",
         jp_name_kana: "名古屋場所",
         nickname: "Summer Basho",
     },
     {
         month: 9,
-        name: "September Tournament",
+        name: "September Basho",
         jp_name: "Aki Basho",
         jp_name_kana: "秋場所",
         nickname: "Autumn Basho",
     },
     {
         month: 11,
-        name: "November Tournament",
+        name: "November Basho",
         jp_name: "Kyushu Basho",
         jp_name_kana: "九州場所",
         nickname: "Autumn Basho",
@@ -381,6 +381,75 @@ async function getMeasurements(rikishi) {
     }
 }
 
+function kgs2lbs(kg) {
+  const lbs = Math.round((kg * 2.20462) * 10) / 10;
+  return `${lbs} lbs`;
+}
+
+function cms2ftins(cm) {
+  const totalInches = cm / 2.54;
+  let feet = Math.floor(totalInches / 12);
+  let inches = Math.round(totalInches % 12);
+  
+  // Edge case: handle 12 inches rounding up to the next foot
+  if (inches === 12) {
+    feet += 1;
+    inches = 0;
+  }
+  
+  return `${feet}'${inches}"`;
+}
+
+function parseUtcDate(input) {
+  if (!input) {
+    return null;
+  }
+
+  let normalized = String(input).trim();
+
+  if (/^\d{8}$/.test(normalized)) {
+    normalized = `${normalized.slice(0, 4)}-${normalized.slice(4, 6)}-${normalized.slice(6, 8)}T00:00:00Z`;
+  } else if (/^\d{4}-\d{2}-\d{2}$/.test(normalized)) {
+    normalized = `${normalized}T00:00:00Z`;
+  } else if (/^\d{4}-\d{2}-\d{2}T.*$/.test(normalized) && !normalized.endsWith("Z")) {
+    normalized += "Z";
+  }
+
+  const date = new Date(normalized);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function getAgeFromUtcBirthdate(birthDate) {
+  const date = parseUtcDate(birthDate);
+  if (!date) {
+    return null;
+  }
+
+  const now = new Date();
+  const yearDiff = now.getUTCFullYear() - date.getUTCFullYear();
+  const monthDiff = now.getUTCMonth() - date.getUTCMonth();
+  const dayDiff = now.getUTCDate() - date.getUTCDate();
+  let age = yearDiff;
+
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    age -= 1;
+  }
+
+  return age;
+}
+
+function formatUtcBirthdate(birthDate) {
+  const date = parseUtcDate(birthDate);
+  if (!date) {
+    return null;
+  }
+
+  const day = date.getUTCDate();
+  const month = date.getUTCMonth() + 1;
+  const year = date.getUTCFullYear();
+  return `${month}.${day}.${year}`;
+}
+
 function setSumoText() {
     const now = new Date();
 
@@ -568,11 +637,36 @@ async function setSumoBody() {
                         });
                         
                         shikonaTitle = r.shikonaEn + " (" + r.shikonaJp + ")\nRank: " + r.rank + "\nRecord: " + r.computedRecordString;
-                        const height = m.records[0]?.height ? `${m.records[0].height} cm` : "Unknown";
-                        const weight = m.records[0]?.weight ? `${m.records[0].weight} kg` : "Unknown";
-                        shikonaMeasurements = "\nHeight: " + height + "\nWeight: " + weight;
-                        shikonaSpan = `<span title="${shikonaTitle}${shikonaMeasurements}" style="cursor: help;">${r.shikonaEn}</span>`;
+                        
+                        const birthDate = m.records[0]?.birthDate;
+                        const birthDateLabel = birthDate ? formatUtcBirthdate(birthDate) : null;
+                        const birthAge = birthDate && getAgeFromUtcBirthdate(birthDate);
+                        if (birthDateLabel !== null && birthAge !== null) {
+                            shikonaTitle += `\nAge: ${birthAge} (${birthDateLabel})`;
+                        }
+                        
+                        const rawHeight = m.records[0]?.height;
+                        const rawWeight = m.records[0]?.weight;
+                        const height = rawHeight ? `${rawHeight} cm` : "Unknown";
+                        const weight = rawWeight ? `${rawWeight} kg` : "Unknown";
+                        const heightFeet = rawHeight ? cms2ftins(Number(rawHeight)).replace(/"/g, '&quot;') : "Unknown";
+                        const weightLbs = rawWeight ? kgs2lbs(Number(rawWeight)) : "Unknown";
+                        shikonaTitle += `\nHeight: ${height} (${heightFeet})\nWeight: ${weight} (${weightLbs})`;
+                        
+                        const heya = m.records[0]?.heya || "Unknown";
+                        shikonaTitle += `\nStable: ${heya}`;
 
+                        const debutBashoID = m.records[0]?.debut;
+                        const debutInfo = debutBashoID && debutBashoID.length >= 6
+                            ? BASHO_MONTHS.find((b) => b.month === parseInt(debutBashoID.slice(4, 6), 10))
+                            : null;
+                        const debutLabel = debutInfo ? `${debutInfo.name} ${debutBashoID.slice(0, 4)}` : "Unknown debut";
+                        shikonaTitle += `\nDebut: ${debutLabel}`;
+
+                        const shusshin = m.records[0]?.shusshin || "Unknown";
+                        shikonaTitle += `\nBirthplace: ${shusshin}`;
+
+                        shikonaSpan = `<span title="${shikonaTitle}" style="cursor: help;">${r.shikonaEn}</span>`;
                         html += `<tr><td>${shikonaSpan}</td><td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
                     }
                 });
