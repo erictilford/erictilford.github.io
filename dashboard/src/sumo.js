@@ -599,16 +599,17 @@ async function setSumoBody() {
                 html += `<tr><td colspan="2" style="text-align:center; font-weight:bold;">${headerLabel}</td></tr>`;
 
                 // Render all matching wrestlers right underneath the combined header
-                rikishiInGroup.forEach((r) => {
+                rikishiInGroup.forEach((r, rikishiIndex) => {
                     const m = measurementsByShikona[r.shikonaEn];
                     if (m) {
                         console.log("Measurements for", r.shikonaEn, ":", m);
                     }
                     let shapes = "";
+                    let dayResults = []; // Store day-by-day results for details
+                    
                     if (r.record && r.record.length > 0) {
                         r.record.forEach((match, index) => {
                             let shape = "";
-                            let title = "";
                             if (match.result === "win" || match.result === "fusen win") {
                                 shape = "●";
                             } else if (
@@ -620,54 +621,124 @@ async function setSumoBody() {
                                 shape = "–";
                             }
 
-                            const RESULT = match.result.toUpperCase();
-                            title = RESULT;
+                            shapes += `<span>${shape}</span>`;
 
-                            if (match.opponentShikonaEn || match.kimarite) {
-                                const opponent = match.opponentShikonaEn
-                                    ? match.opponentShikonaEn
-                                    : "Unknown";
-                                const kimarite = match.kimarite ? match.kimarite : "Unknown";
-                                const kimariteEn = KIMARITE_NAMES[kimarite] || "Unknown";
-                                if (kimariteEn === "Unknown") { console.warn(`Unknown kimarite code: ${kimarite}`); }
-                                const Kimarite = kimarite.charAt(0).toUpperCase() + kimarite.slice(1);
-                                title = `${title}\nDay ${index + 1}\nvs. ${opponent}\n${Kimarite} (${kimariteEn})`;
+                            // Store day result for details panel
+                            const opponent = match.opponentShikonaEn ? match.opponentShikonaEn : "Unknown";
+                            const rawKimarite = match.kimarite;
+                            const kimarite = rawKimarite ? String(rawKimarite).trim() : null;
+                            const normalizedKimarite = kimarite
+                                ? kimarite.toLowerCase().replace(/[_\s]+/g, ' ').replace(/[^a-z ]/g, '')
+                                : null;
+                            let kimariteEn = normalizedKimarite ? KIMARITE_NAMES[normalizedKimarite] : null;
+                            if (!kimariteEn && kimarite) {
+                                console.warn(`Unknown kimarite code: ${kimarite}`);
+                                kimariteEn = "Unknown";
                             }
-                            shapes += `<span title="${title}" style="cursor: help;">${shape}</span>`;
+                            dayResults.push({
+                                day: index + 1,
+                                circle: shape,
+                                opponent: opponent,
+                                kimarite: kimarite || "Unknown",
+                                kimariteEn: kimariteEn || "Unknown",
+                            });
                         });
                         
-                        shikonaTitle = r.shikonaEn + " (" + r.shikonaJp + ")\nRank: " + r.rank + "\nRecord: " + r.computedRecordString;
+                        // Build main info for details panel
+                        let shikonaInfo = {
+                            name: r.shikonaEn,
+                            nameJp: r.shikonaJp,
+                            rank: r.rank,
+                            record: r.computedRecordString,
+                            age: null,
+                            birthDate: null,
+                            height: "Unknown",
+                            heightFeet: "Unknown",
+                            weight: "Unknown",
+                            weightLbs: "Unknown",
+                            stable: "Unknown",
+                            debut: "Unknown debut",
+                            birthplace: "Unknown"
+                        };
                         
                         const birthDate = m.records[0]?.birthDate;
                         const birthDateLabel = birthDate ? formatUtcBirthdate(birthDate) : null;
                         const birthAge = birthDate && getAgeFromUtcBirthdate(birthDate);
                         if (birthDateLabel !== null && birthAge !== null) {
-                            shikonaTitle += `\nAge: ${birthAge} (${birthDateLabel})`;
+                            shikonaInfo.age = birthAge;
+                            shikonaInfo.birthDate = birthDateLabel;
                         }
                         
                         const rawHeight = m.records[0]?.height;
                         const rawWeight = m.records[0]?.weight;
-                        const height = rawHeight ? `${rawHeight} cm` : "Unknown";
-                        const weight = rawWeight ? `${rawWeight} kg` : "Unknown";
-                        const heightFeet = rawHeight ? cms2ftins(Number(rawHeight)).replace(/"/g, '&quot;') : "Unknown";
-                        const weightLbs = rawWeight ? kgs2lbs(Number(rawWeight)) : "Unknown";
-                        shikonaTitle += `\nHeight: ${height} (${heightFeet})\nWeight: ${weight} (${weightLbs})`;
+                        if (rawHeight) {
+                            shikonaInfo.height = `${rawHeight} cm`;
+                            shikonaInfo.heightFeet = cms2ftins(Number(rawHeight));
+                        }
+                        if (rawWeight) {
+                            shikonaInfo.weight = `${rawWeight} kg`;
+                            shikonaInfo.weightLbs = kgs2lbs(Number(rawWeight));
+                        }
                         
                         const heya = m.records[0]?.heya || "Unknown";
-                        shikonaTitle += `\nStable: ${heya}`;
+                        shikonaInfo.stable = heya;
 
                         const debutBashoID = m.records[0]?.debut;
                         const debutInfo = debutBashoID && debutBashoID.length >= 6
                             ? BASHO_MONTHS.find((b) => b.month === parseInt(debutBashoID.slice(4, 6), 10))
                             : null;
                         const debutLabel = debutInfo ? `${debutInfo.name} ${debutBashoID.slice(0, 4)}` : "Unknown debut";
-                        shikonaTitle += `\nDebut: ${debutLabel}`;
+                        shikonaInfo.debut = debutLabel;
 
                         const shusshin = m.records[0]?.shusshin || "Unknown";
-                        shikonaTitle += `\nBirthplace: ${shusshin}`;
+                        shikonaInfo.birthplace = shusshin;
 
-                        shikonaSpan = `<span title="${shikonaTitle}" style="cursor: help;">${r.shikonaEn}</span>`;
-                        html += `<tr><td>${shikonaSpan}</td><td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td></tr>`;
+                        // Create unique ID for this rikishi row
+                        const rowId = `rikishi-${win}-${rikishiIndex}-${r.shikonaEn.replace(/\s+/g, '-')}`;
+                        
+                        // Main clickable row
+                        html += `<tr class="clickable-rikishi" id="${rowId}" style="cursor: pointer;">`;
+                        html += `<td>${r.shikonaEn}</td>`;
+                        html += `<td class="result-circle" style="letter-spacing: ${circleMargin};">${shapes}</td>`;
+                        html += `</tr>`;
+                        
+                        // Details row (hidden by default)
+                        html += `<tr class="rikishi-details" id="${rowId}-details" style="display: none;">`;
+                        html += `<td colspan="2"><div style="padding: 5px 0 10px;">`;
+                        
+                        // Info section
+                        html += `<div>`;
+                        html += `<div><strong>${shikonaInfo.name}</strong> <span>(${shikonaInfo.nameJp})</span></div>`;
+                        html += `<div>Rank: ${shikonaInfo.rank}</div>`;
+                        html += `<div>Record: ${shikonaInfo.record}</div>`;
+                        if (shikonaInfo.age !== null) {
+                            html += `<div>Age: ${shikonaInfo.age} (${shikonaInfo.birthDate})</div>`;
+                        }
+                        html += `<div>Height: ${shikonaInfo.height} (${shikonaInfo.heightFeet})</div>`;
+                        html += `<div>Weight: ${shikonaInfo.weight} (${shikonaInfo.weightLbs})</div>`;
+                        html += `<div>Stable: ${shikonaInfo.stable}</div>`;
+                        html += `<div>Debut: ${shikonaInfo.debut}</div>`;
+                        html += `<div>Birthplace: ${shikonaInfo.birthplace}</div>`;
+                        html += `</div>`;
+                        
+                        // Results section (two-column table: Day | Details)
+                        if (dayResults.length > 0) {
+                            html += `<div style="padding-top: 10px;">`;
+                            html += `<strong>Results:</strong>`;
+                            html += `<table class="rikishi-results-table" style="color: white;"><tbody>`;
+                            dayResults.forEach((result) => {
+                                const capitalizedKimarite = result.kimarite && result.kimarite !== "Unknown" ? result.kimarite.charAt(0).toUpperCase() + result.kimarite.slice(1) : result.kimarite || "Unknown";
+                                html += `<tr>`;
+                                html += `<td>Day ${result.day}:</td>`;
+                                html += `<td><span class="result-circle">${result.circle}</span> vs. ${result.opponent} (${capitalizedKimarite}
+                                <span class="result-kimarite-en">${result.kimariteEn}</span>)</td>`;
+                                html += `</tr>`;
+                            });
+                            html += `</tbody></table></div>`;
+                        }
+                        
+                        html += `</div></td>`;
+                        html += `</tr>`;
                     }
                 });
 
@@ -682,6 +753,13 @@ async function setSumoBody() {
 
     html += `</div>`; // Close standings div
     $("#sumo-body").html(html);
+    
+    // Add click handler for clickable rikishi rows
+    $("#sumo-body").off("click", ".clickable-rikishi").on("click", ".clickable-rikishi", function() {
+        const rowId = $(this).attr("id");
+        const detailsRow = $(`#${rowId}-details`);
+        detailsRow.slideToggle(300);
+    });
 }
 
 

@@ -678,6 +678,13 @@ body {
     }
 }
 
+/* RESULTS - HIDE ENGLISH KIMARITE ON SMALL SCREENS */
+@media only screen and (max-width: 500px) {
+    .result-kimarite-en {
+        display: none;
+    }
+}
+
 /* HEIGHT - tray positioning*/
 @media only screen and (max-height: 800px) and (min-width: 768px) {
 
