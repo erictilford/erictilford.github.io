@@ -762,11 +762,6 @@ async function setSumoBody() {
     });
 }
 
+// TODO:
+// - Head-to-head records in tooltip?
 
-// TODO: Head-to-head records in tooltip?
-
-// TODO: Measurements in tooltip
-// Get remaining stats from measurements
-// Write metric to SI functions, get age function
-
-// TODO: Space out Standings similarly to Yusho Winners / Special Prizes section
