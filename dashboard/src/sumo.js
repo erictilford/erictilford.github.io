@@ -488,7 +488,7 @@ function setSumoText() {
         const bashoInfo = BASHO_MONTHS.find((m) => m.month === nextBasho.month);
         $("#sumo-text").html(`
             <strong style="font-size: 1.2em;">${daysUntil}</strong> days until next basho:<br>
-            ${bashoInfo.name} / ${bashoInfo.jp_name_kana}<br>
+            ${bashoInfo.name} <span style="opacity: 0.5">(${bashoInfo.jp_name_kana})</span><br>
         `);
     } else {
         $("#sumo-text").text("No upcoming bashos found");
@@ -708,7 +708,7 @@ async function setSumoBody() {
                         
                         // Info section
                         html += `<div>`;
-                        html += `<div><strong>${shikonaInfo.name}</strong> <span>(${shikonaInfo.nameJp})</span></div>`;
+                        html += `<div><strong>${shikonaInfo.name}</strong> <span style="opacity: 0.5">(${shikonaInfo.nameJp})</span></div>`;
                         html += `<div>Rank: ${shikonaInfo.rank}</div>`;
                         html += `<div>Record: ${shikonaInfo.record}</div>`;
                         if (shikonaInfo.age !== null) {
@@ -731,7 +731,7 @@ async function setSumoBody() {
                                 html += `<tr>`;
                                 html += `<td>Day ${result.day}:</td>`;
                                 html += `<td><span class="result-circle">${result.circle}</span> ${result.opponent} (${capitalizedKimarite}
-                                <span class="result-kimarite-en">${result.kimariteEn}</span>)</td>`;
+                                <span class="result-kimarite-en">- ${result.kimariteEn}</span>)</td>`;
                                 html += `</tr>`;
                             });
                             html += `</tbody></table></div>`;
