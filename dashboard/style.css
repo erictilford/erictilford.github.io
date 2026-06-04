@@ -481,6 +481,8 @@ body {
     justify-content: space-evenly;
     align-items: flex-start;
     padding-bottom: 10px;
+    margin: 0 -5px;
+    gap: 0 5px;
 }
 .sumo-standings h5 {
     flex: 1 1 100%;
