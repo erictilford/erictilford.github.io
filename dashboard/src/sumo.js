@@ -730,8 +730,7 @@ async function setSumoBody() {
                                 const capitalizedKimarite = result.kimarite && result.kimarite !== "Unknown" ? result.kimarite.charAt(0).toUpperCase() + result.kimarite.slice(1) : result.kimarite || "Unknown";
                                 html += `<tr>`;
                                 html += `<td>Day ${result.day}:</td>`;
-                                html += `<td><span class="result-circle">${result.circle}</span> ${result.opponent} (${capitalizedKimarite}
-                                <span class="result-kimarite-en">- ${result.kimariteEn}</span>)</td>`;
+                                html += `<td><span class="result-circle">${result.circle}</span> ${result.opponent} (${capitalizedKimarite}<span class="result-kimarite-en"> - ${result.kimariteEn}</span>)</td>`;
                                 html += `</tr>`;
                             });
                             html += `</tbody></table></div>`;
