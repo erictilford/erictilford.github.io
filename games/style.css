@@ -1,0 +1,56 @@
+body {
+    background-color: #6a8297;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding: 20px 0;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 20px;
+    width: min(100%, 720px);
+}
+
+@media (max-width: 768px) {
+    .icon-grid {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        width: min(100%, 560px);
+    }
+}
+
+.icon-card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    padding: 24px 12px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.icon-card i {
+    display: block;
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+}
+
+.icon-card span {
+    display: block;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
