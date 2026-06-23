@@ -161,6 +161,13 @@ const links = [
         "private" : false
     },
     {
+        "title" : "Github",
+        "url" : "https://github.com/erictilford/erictilford.github.io",
+        "icon" : `<i class="fa-brands ${iconSize} fa-github" style="color:slategray"></i>`,
+        "target" : "#tools-list",
+        "private" : false
+    },
+    {
         "title" : "Timeguessr",
         "url" : "https://timeguessr.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-map-location-dot" style="color:#db5049"></i>`,
@@ -258,10 +265,11 @@ const links = [
         "private" : false
     },
     */
+   
     {
-        "title" : "Github",
-        "url" : "https://github.com/erictilford/erictilford.github.io",
-        "icon" : `<i class="fa-brands ${iconSize} fa-github" style="color:slategray"></i>`,
+        "title" : "Games",
+        "url" : "https://erictilford.github.io/games",
+        "icon" : `<i class="${iconSize} fa-gamepad fa-solid" style="color:slategray"></i>`,
         "target" : "#project-list",
         "private" : false
     },
