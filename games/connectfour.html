@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connect Four</title>
+  <link rel="icon" href="assets/images/oliverpixel-export.png">
+  <script src="https://kit.fontawesome.com/ddc56dc609.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="src/connectfour.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Connect Four</h1>
+        <p class="status" id="status">Red goes first</p>
+      </div>
+      <div class="actions">
+        <button id="restart" class="btn">Restart</button>
+        <button id="undo" class="btn">Undo</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="board" id="board" aria-label="Connect Four board"></div>
+      <div class="guide">Click or tap a column to drop a disc.</div>
+    </main>
+  </div>
+
+  <script src="src/connectfour.js"></script>
+</body>
+</html>

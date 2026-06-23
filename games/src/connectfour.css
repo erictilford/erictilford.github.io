@@ -1,0 +1,148 @@
+:root {
+    --bg: #6a8297;
+    --panel: #35424a;
+    --red: #ff6b6b;
+    --yellow: #ffd86b;
+    --text: #ffffff;
+    --board: #22303f
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+    background: var(--bg);
+    color: var(--text)
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px
+}
+
+.wrap {
+    width: min(640px, 100%);
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+    padding: 24px
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 18px
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0
+}
+
+.status {
+    margin: 4px 0 0;
+    color: rgba(255, 255, 255, .88);
+    font-size: .96rem
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap
+}
+
+.btn {
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .12);
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all .18s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, .14);
+    transform: translateY(-1px)
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 12px;
+    background: var(--board);
+    border-radius: 18px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08)
+}
+
+.column {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    cursor: pointer
+}
+
+.slot {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    box-shadow: inset 0 5px 12px rgba(0, 0, 0, .25);
+    position: relative;
+}
+
+.slot::before {
+    content: '';
+    position: absolute;
+    inset: 12%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .12);
+}
+
+.slot.red::before {
+    background: var(--red)
+}
+
+.slot.yellow::before {
+    background: var(--yellow)
+}
+
+.slot.red::after,
+.slot.yellow::after {
+    content: '';
+    position: absolute;
+    inset: 22%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .12)
+}
+
+.guide {
+    margin-top: 16px;
+    color: rgba(255, 255, 255, .8);
+    font-size: .95rem
+}
+
+@media(max-width:520px) {
+    .wrap {
+        padding: 18px
+    }
+
+    .board {
+        gap: 8px;
+        padding: 10px
+    }
+
+    .column {
+        gap: 8px
+    }
+
+    .btn {
+        flex: 1 1 140px
+    }
+}
