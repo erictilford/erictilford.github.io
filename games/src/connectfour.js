@@ -11,12 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let winner = null;
   const history = [];
 
+  const DROP_SPEED_MS = 800;
   const directions = [
     { r: 0, c: 1 },
     { r: 1, c: 0 },
     { r: 1, c: 1 },
     { r: 1, c: -1 }
   ];
+
+  const DISC_INSET = 0.12;
+  let isDropping = false;
 
   function createBoard() {
     boardEl.innerHTML = '';
@@ -55,15 +59,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function dropDisc(col) {
-    if (winner) return;
+    if (winner || isDropping) return;
     const row = [...board].reverse().findIndex((rowArr) => rowArr[col] === null);
     if (row === -1) return;
     const actualRow = ROWS - 1 - row;
-    board[actualRow][col] = current;
-    history.push({ row: actualRow, col, player: current });
-    winner = checkWinner(actualRow, col);
-    if (!winner) current = current === 'red' ? 'yellow' : 'red';
-    render();
+    animateDrop(actualRow, col, current);
+  }
+
+  function animateDrop(row, col, player) {
+    isDropping = true;
+    const columnEl = boardEl.querySelector(`.column[data-col="${col}"]`);
+    const targetSlot = columnEl.querySelector(`.slot[data-row="${row}"]`);
+    const boardRect = boardEl.getBoundingClientRect();
+    const slotRect = targetSlot.getBoundingClientRect();
+    const pieceSize = slotRect.width * (1 - 2 * DISC_INSET);
+    const drop = document.createElement('div');
+    drop.className = `drop-disc ${player}`;
+    drop.style.width = `${pieceSize}px`;
+    drop.style.height = `${pieceSize}px`;
+    drop.style.left = `${slotRect.left - boardRect.left + slotRect.width * DISC_INSET}px`;
+    drop.style.top = `0px`;
+    drop.style.transform = `translateY(0)`;
+    boardEl.appendChild(drop);
+
+    drop.style.transition = `transform ${DROP_SPEED_MS}ms cubic-bezier(.3, 0, .2, 1)`;
+    requestAnimationFrame(() => {
+      const targetY = slotRect.top - boardRect.top + slotRect.height * DISC_INSET;
+      drop.style.transform = `translateY(${targetY}px)`;
+    });
+
+    drop.addEventListener('transitionend', () => {
+      drop.remove();
+      board[row][col] = player;
+      history.push({ row, col, player });
+      winner = checkWinner(row, col);
+      if (!winner) current = current === 'red' ? 'yellow' : 'red';
+      isDropping = false;
+      render();
+    }, { once: true });
   }
 
   function checkWinner(row, col) {

@@ -79,7 +79,49 @@ header h1 {
     padding: 12px;
     background: var(--board);
     border-radius: 18px;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08)
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+    position: relative;
+    overflow: hidden;
+}
+
+.drop-disc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc((100% - 60px) / 7);
+    height: calc((100% - 50px) / 6);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+    transform: translateY(0);
+    transition: transform 280ms cubic-bezier(.3, 0, .2, 1);
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.drop-disc::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .12);
+}
+
+.drop-disc::after {
+    content: '';
+    position: absolute;
+    inset: 12%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .12);
+}
+
+.drop-disc.red::before {
+    background: var(--red);
+}
+
+.drop-disc.yellow::before {
+    background: var(--yellow);
 }
 
 .column {
@@ -106,11 +148,11 @@ header h1 {
 }
 
 .slot.red::before {
-    background: var(--red)
+    background: var(--red);
 }
 
 .slot.yellow::before {
-    background: var(--yellow)
+    background: var(--yellow);
 }
 
 .slot.red::after,
@@ -119,7 +161,7 @@ header h1 {
     position: absolute;
     inset: 22%;
     border-radius: 50%;
-    background: rgba(0, 0, 0, .12)
+    background: rgba(0, 0, 0, .12);
 }
 
 .guide {
