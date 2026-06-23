@@ -32,6 +32,10 @@ header {
 }
 
 .icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 18px;
@@ -39,12 +43,32 @@ header {
     text-align: center;
     color: #ffffff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    will-change: transform;
+    cursor: pointer;
+}
+
+.icon-card:focus {
+    outline: 3px solid rgba(143,211,199,0.18);
+    outline-offset: 4px;
+}
+
+.icon-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 30px rgba(0,0,0,0.22);
+    background: rgba(255,255,255,0.16);
+}
+
+.icon-card:active {
+    transform: translateY(-2px) scale(.995);
 }
 
 .icon-card i {
     display: block;
     font-size: 2.4rem;
     margin-bottom: 14px;
+    transition: transform 160ms ease, color 160ms ease;
 }
 
 .icon-card span {
@@ -52,5 +76,15 @@ header {
     font-size: 0.95rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    opacity: 0.85;
+    opacity: 0.95;
+}
+
+.icon-card:hover i { transform: translateY(-4px); }
+
+/* Ensure anchor-like cards never show default link color/underline or mobile tap highlight */
+.icon-card, .icon-card:link, .icon-card:visited, .icon-card:hover, .icon-card:active, .icon-card:focus {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
