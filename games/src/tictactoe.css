@@ -1,32 +1,19 @@
 :root {
-    --bg: #6a8297;
-    --card: #35424a;
     --accent: #8fd3c7;
-    --text: #fff
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial
-}
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px
+    --card: #35424a;
+    --text: #ffffff;
 }
 
 .wrap {
-    width: min(560px, 100%);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
     border-radius: 14px;
     padding: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .2)
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tictactoe-wrap,
+.game-page .tictactoe-wrap {
+    width: min(500px, 100%);
 }
 
 header {
@@ -49,8 +36,8 @@ header h1 {
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin: 14px 0
+    gap: 10px;
+    margin: 12px 0;
 }
 
 .cell {
@@ -60,21 +47,31 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.4rem;
+    font-size: 0;
     cursor: pointer;
-    transition: transform .08s ease
+    transition: transform .08s ease;
+}
+
+.cell i {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(3.2rem, 9vw, 5rem);
+    line-height: 1;
 }
 
 .cell:active {
-    transform: scale(.98)
+    transform: scale(.98);
 }
 
-.cell.x {
-    color: #ffb86b
+.cell.x i {
+    color: #ffb86b;
 }
 
-.cell.o {
-    color: #8fd3c7
+.cell.o i {
+    color: #8fd3c7;
 }
 
 .controls {

@@ -17,9 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function render() {
 		cells.forEach((cell, i) => {
-			cell.textContent = board[i] || '';
-			cell.classList.toggle('x', board[i] === 'X');
-			cell.classList.toggle('o', board[i] === 'O');
+			const symbol = board[i];
+			if (symbol === 'X') {
+				cell.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+			} else if (symbol === 'O') {
+				cell.innerHTML = '<i class="fa-solid fa-o" aria-hidden="true"></i>';
+			} else {
+				cell.textContent = '';
+			}
+			cell.classList.toggle('x', symbol === 'X');
+			cell.classList.toggle('o', symbol === 'O');
 		});
 		if (winner) {
 			statusEl.textContent = winner === 'draw' ? "It's a draw" : `Player ${winner} wins`;

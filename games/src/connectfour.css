@@ -1,35 +1,15 @@
 :root {
-    --bg: #6a8297;
-    --panel: #35424a;
+    --board: #22303f;
     --red: #ff6b6b;
     --yellow: #ffd86b;
-    --text: #ffffff;
-    --board: #22303f
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
-    background: var(--bg);
-    color: var(--text)
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px
 }
 
 .wrap {
     width: min(640px, 100%);
-    background: rgba(255, 255, 255, .04);
-    border: 1px solid rgba(255, 255, 255, .1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 18px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
-    padding: 24px
+    padding: 24px;
 }
 
 header {

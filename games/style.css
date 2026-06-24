@@ -1,9 +1,62 @@
-body {
-    background-color: #6a8297;
+:root {
+    --games-bg: #6a8297;
+    --games-panel: #35424a;
+    --games-text: #ffffff;
+    --games-border: rgba(255, 255, 255, 0.12);
+    --games-border-strong: rgba(255, 255, 255, 0.18);
+    --games-panel-soft: rgba(255, 255, 255, 0.04);
+    --games-board: #22303f;
+    --text: var(--games-text);
+    --board: var(--games-board);
 }
 
-header {
-    background: #35424a;
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--games-bg);
+    color: var(--games-text);
+}
+
+body {
+    padding: 0;
+}
+
+body.game-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.game-page .wrap {
+    width: min(640px, 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--games-border);
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 180ms ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
+}
+
+.status {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.96rem;
+}
+
+body > header {
+    background: var(--games-panel);
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
@@ -37,7 +90,7 @@ header {
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid var(--games-border-strong);
     border-radius: 18px;
     padding: 24px 12px;
     text-align: center;
@@ -50,14 +103,14 @@ header {
 }
 
 .icon-card:focus {
-    outline: 3px solid rgba(143,211,199,0.18);
+    outline: 3px solid rgba(143, 211, 199, 0.18);
     outline-offset: 4px;
 }
 
 .icon-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 30px rgba(0,0,0,0.22);
-    background: rgba(255,255,255,0.16);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.22);
+    background: rgba(255, 255, 255, 0.16);
 }
 
 .icon-card:active {
@@ -79,10 +132,16 @@ header {
     opacity: 0.95;
 }
 
-.icon-card:hover i { transform: translateY(-4px); }
+.icon-card:hover i {
+    transform: translateY(-4px);
+}
 
-/* Ensure anchor-like cards never show default link color/underline or mobile tap highlight */
-.icon-card, .icon-card:link, .icon-card:visited, .icon-card:hover, .icon-card:active, .icon-card:focus {
+.icon-card,
+.icon-card:link,
+.icon-card:visited,
+.icon-card:hover,
+.icon-card:active,
+.icon-card:focus {
     color: #ffffff !important;
     text-decoration: none !important;
     -webkit-tap-highlight-color: transparent;
