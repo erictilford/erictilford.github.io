@@ -30,7 +30,27 @@ header h1 {
 
 .status {
     font-size: 0.95rem;
-    opacity: .9
+    opacity: .9;
+    display: inline-flex;
+    align-items: center;
+    /* gap: 0.35rem; */
+}
+
+.status i {
+    font-size: 1.4rem;
+    padding-right: 2px;
+    height: 1.4em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status .x-icon {
+    color: #ffb86b;
+}
+
+.status .o-icon {
+    color: #8fd3c7;
 }
 
 .board {

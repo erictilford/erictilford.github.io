@@ -15,13 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
 		[0,4,8],[2,4,6]
 	];
 
+	function getStatusIcon(symbol) {
+		if (symbol === 'X') return '<i class="fa-solid fa-xmark x-icon" aria-hidden="true"></i>';
+		if (symbol === 'O') return '<i class="fa-solid fa-o o-icon" aria-hidden="true"></i>';
+		return '';
+	}
+
 	function render() {
 		cells.forEach((cell, i) => {
 			const symbol = board[i];
 			if (symbol === 'X') {
-				cell.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+				cell.innerHTML = '<i class="fa-solid fa-xmark x-icon" aria-hidden="true"></i>';
 			} else if (symbol === 'O') {
-				cell.innerHTML = '<i class="fa-solid fa-o" aria-hidden="true"></i>';
+				cell.innerHTML = '<i class="fa-solid fa-o o-icon" aria-hidden="true"></i>';
 			} else {
 				cell.textContent = '';
 			}
@@ -29,9 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			cell.classList.toggle('o', symbol === 'O');
 		});
 		if (winner) {
-			statusEl.textContent = winner === 'draw' ? "It's a draw" : `Player ${winner} wins`;
+			if (winner === 'draw') {
+				statusEl.textContent = "It's a draw";
+			} else {
+				statusEl.innerHTML = `${getStatusIcon(winner)} wins!`;
+			}
 		} else {
-			statusEl.textContent = `Player ${current}'s turn`;
+			statusEl.innerHTML = `${getStatusIcon(current)}'s turn`;
 		}
 	}
 
