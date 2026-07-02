@@ -246,9 +246,9 @@ const links = [
         "private" : false
     },
     {
-        "title" : "Cineby",
-        "url" : "https://www.cineby.gd/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-clapperboard" style="color:#cb0e0e"></i>`,
+        "title" : "FMHY",
+        "url" : "https://fmhy.pages.dev/video",
+        "icon" : `<i class="fa-solid ${iconSize} fa-clapperboard" style="color:#50a3a9"></i>`,
         "target" : "#video-list",
         "private" : false
     },
