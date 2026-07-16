@@ -753,9 +753,11 @@ async function setSumoBody() {
                                         ? result.kimarite.charAt(0).toUpperCase() + result.kimarite.slice(1)
                                         : result.kimarite || "Unknown";
                                     const displayKimarite = normalizedKimarite === "Absent" ? "Absent" : normalizedKimarite;
-                                    detailText = displayKimarite === result.kimariteEn || result.kimariteEn === "Absent"
+                                    const hasEnglishKimarite = Boolean(result.kimariteEn && result.kimariteEn !== "Absent" && result.kimariteEn !== "Unknown");
+
+                                    detailText = displayKimarite === result.kimariteEn || !hasEnglishKimarite
                                         ? displayKimarite
-                                        : `${displayKimarite}${result.kimariteEn ? ` - ${result.kimariteEn}` : ""}`;
+                                        : `${displayKimarite}<span class="result-kimarite-en"> - ${result.kimariteEn}</span>`;
                                 }
 
                                 html += `<tr>`;
