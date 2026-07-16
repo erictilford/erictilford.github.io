@@ -606,10 +606,12 @@ async function setSumoBody() {
                     }
                     let shapes = "";
                     let dayResults = []; // Store day-by-day results for details
+                    let pendingDayShown = false;
                     
                     if (r.record && r.record.length > 0) {
                         r.record.forEach((match, index) => {
                             let shape = "";
+                            const hasResult = match.result === "win" || match.result === "fusen win" || match.result === "loss" || match.result === "fusen loss" || match.result === "absent";
                             if (match.result === "win" || match.result === "fusen win") {
                                 shape = "●";
                             } else if (
@@ -635,13 +637,21 @@ async function setSumoBody() {
                                 console.warn(`Unknown kimarite code: ${kimarite}`);
                                 kimariteEn = "Unknown";
                             }
-                            dayResults.push({
-                                day: index + 1,
-                                circle: shape,
-                                opponent: opponent,
-                                kimarite: kimarite || "Unknown",
-                                kimariteEn: kimariteEn || "Unknown",
-                            });
+
+                            const shouldShowPendingDay = !hasResult && !kimarite && !pendingDayShown;
+                            if (hasResult || kimarite || shouldShowPendingDay) {
+                                dayResults.push({
+                                    day: index + 1,
+                                    circle: shape,
+                                    opponent: opponent,
+                                    kimarite: hasResult || kimarite ? (kimarite || "Unknown") : "TBD",
+                                    kimariteEn: hasResult || kimarite ? (kimariteEn || "Unknown") : "TBD",
+                                });
+                            }
+
+                            if (!hasResult && !kimarite) {
+                                pendingDayShown = true;
+                            }
                         });
                         
                         // Build main info for details panel
@@ -691,7 +701,12 @@ async function setSumoBody() {
                         shikonaInfo.debut = debutLabel;
 
                         const shusshin = m.records[0]?.shusshin || "Unknown";
-                        shikonaInfo.birthplace = shusshin;
+                        shikonaInfo.birthplace = shusshin
+                            .split(",")
+                            .map((part) => part.trim())
+                            .filter(Boolean)
+                            .reverse()
+                            .join(", ");
 
                         // Create unique ID for this rikishi row
                         const rowId = `rikishi-${win}-${rikishiIndex}-${r.shikonaEn.replace(/\s+/g, '-')}`;
@@ -727,10 +742,11 @@ async function setSumoBody() {
                             html += `<strong>Results:</strong>`;
                             html += `<table class="rikishi-results-table" style="color: white;"><tbody>`;
                             dayResults.forEach((result) => {
-                                const capitalizedKimarite = result.kimarite && result.kimarite !== "Unknown" ? result.kimarite.charAt(0).toUpperCase() + result.kimarite.slice(1) : result.kimarite || "Unknown";
+                                const normalizedKimarite = result.kimarite && result.kimarite !== "Unknown" ? result.kimarite.charAt(0).toUpperCase() + result.kimarite.slice(1) : result.kimarite || "Unknown";
+                                const kimariteText = normalizedKimarite === result.kimariteEn ? normalizedKimarite : `${normalizedKimarite}${result.kimariteEn ? ` - ${result.kimariteEn}` : ""}`;
                                 html += `<tr>`;
                                 html += `<td>Day ${result.day}:</td>`;
-                                html += `<td><span class="result-circle">${result.circle}</span> ${result.opponent} (${capitalizedKimarite}<span class="result-kimarite-en"> - ${result.kimariteEn}</span>)</td>`;
+                                html += `<td><span class="result-circle">${result.circle}</span> ${result.opponent} (${kimariteText})</td>`;
                                 html += `</tr>`;
                             });
                             html += `</tbody></table></div>`;
