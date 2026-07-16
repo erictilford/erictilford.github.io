@@ -640,12 +640,13 @@ async function setSumoBody() {
 
                             const shouldShowPendingDay = !hasResult && !kimarite && !pendingDayShown;
                             if (hasResult || kimarite || shouldShowPendingDay) {
+                                const isAbsent = match.result === "absent";
                                 dayResults.push({
                                     day: index + 1,
                                     circle: shape,
                                     opponent: opponent,
-                                    kimarite: hasResult || kimarite ? (kimarite || "Unknown") : "TBD",
-                                    kimariteEn: hasResult || kimarite ? (kimariteEn || "Unknown") : "TBD",
+                                    kimarite: hasResult || kimarite ? (kimarite || (isAbsent ? "Absent" : "Unknown")) : "TBD",
+                                    kimariteEn: hasResult || kimarite ? (kimariteEn || (isAbsent ? "Absent" : "Unknown")) : "TBD",
                                 });
                             }
 
@@ -742,11 +743,28 @@ async function setSumoBody() {
                             html += `<strong>Results:</strong>`;
                             html += `<table class="rikishi-results-table" style="color: white;"><tbody>`;
                             dayResults.forEach((result) => {
-                                const normalizedKimarite = result.kimarite && result.kimarite !== "Unknown" ? result.kimarite.charAt(0).toUpperCase() + result.kimarite.slice(1) : result.kimarite || "Unknown";
-                                const kimariteText = normalizedKimarite === result.kimariteEn ? normalizedKimarite : `${normalizedKimarite}${result.kimariteEn ? ` - ${result.kimariteEn}` : ""}`;
+                                const isAbsentResult = result.kimarite === "Absent" || result.kimariteEn === "Absent" || result.circle === "–";
+                                let detailText = "";
+
+                                if (isAbsentResult) {
+                                    detailText = "Absent";
+                                } else {
+                                    const normalizedKimarite = result.kimarite && result.kimarite !== "Unknown"
+                                        ? result.kimarite.charAt(0).toUpperCase() + result.kimarite.slice(1)
+                                        : result.kimarite || "Unknown";
+                                    const displayKimarite = normalizedKimarite === "Absent" ? "Absent" : normalizedKimarite;
+                                    detailText = displayKimarite === result.kimariteEn || result.kimariteEn === "Absent"
+                                        ? displayKimarite
+                                        : `${displayKimarite}${result.kimariteEn ? ` - ${result.kimariteEn}` : ""}`;
+                                }
+
                                 html += `<tr>`;
                                 html += `<td>Day ${result.day}:</td>`;
-                                html += `<td><span class="result-circle">${result.circle}</span> ${result.opponent} (${kimariteText})</td>`;
+                                if (isAbsentResult) {
+                                    html += `<td><span class="result-circle">${result.circle}</span> ${detailText}</td>`;
+                                } else {
+                                    html += `<td><span class="result-circle">${result.circle}</span> ${result.opponent}${detailText ? ` (${detailText})` : ""}</td>`;
+                                }
                                 html += `</tr>`;
                             });
                             html += `</tbody></table></div>`;
