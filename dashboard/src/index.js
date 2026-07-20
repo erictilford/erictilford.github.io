@@ -500,7 +500,7 @@ $(document).ready(function () {
 								else if (name.includes("Red Flag")) { icon = '<i class="fa-solid fa-flag"; style=color:' + alertColor + '></i>'; }
 								else if (name.includes("Fire")) { icon = '<i class="fa-solid fa-fire"; style=color:' + alertColor + '></i>'; }
 								else if (name.includes("Frost") || name.includes("Freeze") || name.includes("Cold")) { icon = '<i class="fa-solid fa-icicles"; style=color:' + alertColor + '></i>'; } 
-								else if (name.includes("Heat Advisory") || name.includes("Excessive Heat")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:' + alertColor + '></i>'; } 
+								else if (name.includes("Heat Advisory") || name.includes("Excessive Heat") || name.includes("Heat Warning")) { icon = '<i class="fa-solid fa-temperature-half"; style=color:' + alertColor + '></i>'; } 
 								else { icon = '<i class="fa-solid fa-circle-exclamation"; style=color:' + alertColor + '></i>'; }
 
 								alertIcons += icon;
