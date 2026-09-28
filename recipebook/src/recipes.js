@@ -275,15 +275,15 @@ var recipes = [
             "14.5oz can diced tomato, drained",
             "1 white onion, diced, divided*",
             "1 cup chicken broth",
-            "1&frac12; Tbs light brown sugar",
+            "2 Tbs light brown sugar",
             "1&frac12; Tbs chili powder",
             "1 Tbs cumin",
             "1 Tbs tomato paste",
             "1 tsp coriander",
             "1 tsp paprika",
             "1 tsp garlic powder",
-            "2 tsp salt",
-            "1 tsp pepper"
+            "1 tsp salt",
+            "&frac12; tsp pepper"
         ],
         "directions": [
             "In pressure cooker, saut&eacute;e onion in 1 Tbs oil until translucent.",
