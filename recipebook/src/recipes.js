@@ -331,10 +331,11 @@ var recipes = [
             "Add ground beef and cook until browned.",
             "Add spices and stir thoroughly.",
             "Add broth, tomato, and beans.",
-            "Pressure cook on beans/chili mode for 20 minutes."
+            "Pressure cook on beans/chili mode for 20 minutes.",
+            "(Optional) Cook on slow cook for 30+ minutes to thicken."
         ],
         "notes": [
-            "*Depending on the dish, you may want to reserve some diced onion to finish.", 
+            "*Cook half the onion and reserve the rest for topping.", 
             "Don't want beans? Add another lb ground beef."
         ],
         "tags": ["Dinner"],
