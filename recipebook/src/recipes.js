@@ -86,7 +86,7 @@ var recipes = [
         "contributor": "Amber Tilford",
         "source": "Unknown Website",
         "serves": "1 loaf",
-        "images": ["pumpkin-bread.png"],
+        "images": ["pumpkin-bread.png","pumpkin-bread-2.png"],
         "id": "pumpkin-bread"
     },{
         "recipe_name": "Gingerbread Cookies",
