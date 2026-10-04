@@ -48,6 +48,47 @@ var recipes = [
     },
     */
     {
+        "recipe_name": "Pumpkin Bread",
+        "summary": 'A moist and flavorful bread packed with pumpkin and warm spices.',
+        "ingredients": [
+            "1&frac12; cups all-purpose flour",
+            "1 cup pumpkin purée",
+            "2 eggs",
+            "1&frac12; sticks butter at room temperature*",
+            "1 cup light brown sugar*",
+            "1 Tbs maple syrup (optional)",
+            "1 tsp baking powder",
+            "1 tsp baking soda",
+            "1&frac12; tsp ground cinnamon",
+            "&frac12; tsp ground ginger",
+            "&frac14; tsp ground nutmeg",
+            "1 tsp salt*"
+        ],
+        "directions": [
+            "Preheat oven to 350&deg;F.",
+            "Grease a 9x5\" loaf pan.*",
+            "Cream butter and sugar together until well combined.",
+            "Add pumpkin, eggs, and maple syrup and mix until smooth.",
+            "In a separate bowl, combine flour, baking powder, baking soda, cinnamon, ginger, nutmeg, and salt.",
+            "Slowly add dry ingredients to wet ingredients, mixing until just combined.",
+            "Pour batter into prepared loaf pan and bake for 40-50 minutes, or until a toothpick inserted in the center comes out clean.",
+            "Allow to cool in the pan for 5-10 minutes, then transfer to a wire rack to cool completely."
+        ],
+        "notes": [
+            "More brown sugar optional.",
+            "Use only &frac12; tsp salt if using salted butter.",
+            "Makes about 12 regular muffins (30 minutes), 24 mini muffins (22 minutes), or 48 micro muffins (18 minutes)."
+        ],
+        "tags": ["Holiday", "Dessert", "Baking"],
+        "hands_on_time": "30",
+        "total_time": "80",
+        "date_added": "10/4/2026",
+        "contributor": "Amber Tilford",
+        "source": "Unknown Website",
+        "serves": "1 loaf",
+        "images": ["pumpkin-bread.png"],
+        "id": "pumpkin-bread"
+    },{
         "recipe_name": "Gingerbread Cookies",
         "summary": 'Classic gingerbread men cookies with royal icing.',
         "ingredients": [
