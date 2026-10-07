@@ -4,7 +4,9 @@ function LoadSumo(animSpeed) {
     icon = 'fa-solid fa-torii-gate " style="color:#b10041';
     $("#sumo-title").append(' <i class=" ' + icon + '">');
     $("#widget-list").append(
-        '<a id="sumo-button" class="pointer"><li><i class="fa-2x ' +
+        '<a id="sumo-button" class="pointer"><li><i class="' +
+        LINK_ICON_SIZE +
+        ' ' +
         icon +
         '"></i><br>Sumo</li></a>',
     );
@@ -799,4 +801,3 @@ async function setSumoBody() {
 
 // TODO:
 // - Head-to-head records in tooltip?
-
