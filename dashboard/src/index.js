@@ -525,8 +525,14 @@ $(document).ready(function () {
 						let columnQuantity = Math.floor(47 / $("#hourlyDurationSlider").val()); // max = 47 (hours)
 						let duration = parseInt($("#hourlyDurationSlider").val());
 						let hourlyColumns = "";
+						let previousDayIndex = null;
 						for (let i = duration; i < duration * (columnQuantity + 1); i += duration){
 							let hourlyUTC = new Date(result.hourly[i].dt * 1000);
+							let currentDayIndex = hourlyUTC.getDay();
+							if (previousDayIndex !== null && currentDayIndex !== previousDayIndex) {
+								let dayLabel = dayNames[currentDayIndex].slice(0, 3).toUpperCase();
+								hourlyColumns += "<td class='hourly-day-label'><span>" + dayLabel.split("").join("<br>") + "</span></td>";
+							}
 							let pt = prettyTime(hourlyUTC);
 							let time = pt.hour + " " + pt.ampm;
 							let icon = "<img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.hourly[i].weather[0].icon + ".png' title='" + result.hourly[i].weather[0].description + "'></img>";
@@ -536,6 +542,7 @@ $(document).ready(function () {
 							}
 							let temp = OneDec(result.hourly[i].temp) + "°";
 							hourlyColumns += "<td>" + time + "<br>" + icon + "<br>" + temp + "<br>" + pop + "</td>"; 
+							previousDayIndex = currentDayIndex;
 						}
 						$("#weather-hourly-table").html("<tr>" + hourlyColumns + "</tr>");
 						

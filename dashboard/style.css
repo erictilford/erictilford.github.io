@@ -269,6 +269,29 @@ body {
     white-space: nowrap;*/
 }
 
+.hourly-day-label {
+    width: 18px;
+    padding: 0 2px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.hourly-day-label span {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.2;
+    white-space: normal;
+    vertical-align: middle;
+    margin: auto;
+}
+
+#weather-hourly-table td.hourly-day-label {
+    vertical-align: middle;
+    height: 100%;
+}
+
 .hourly-weather {
     display: inline-block;
     width: 100px; /* Adjust width as needed */
