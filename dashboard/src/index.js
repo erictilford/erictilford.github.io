@@ -105,7 +105,7 @@ $(document).ready(function () {
 		const origin = new Date("10/15/2023");
 		let daysDifference = Math.floor((d.getTime() - origin.getTime()) / (1000 * 3600 * 24));
 		let dayDiffRemainder = daysDifference % 14;
-		const icon = '<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon" style="color:#5cb209"></i>';
+		const icon = '<i class="fa-solid fa-sm fa-recycle tray-icon trash-icon help" style="color:#5cb209"></i>';
 		if (dayDiffRemainder == 0){
 			$("#recycling-symbol").html(icon);
 			$("#recycling-symbol").attr("title",  "Recycling Day is tomorrow" );
@@ -128,7 +128,7 @@ $(document).ready(function () {
 		const DATomorrow = new Date(today);
 		tomorrow.setDate(today.getDate() + 1);
 		DATomorrow.setDate(today.getDate() + 2);
-		const icon = '<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon" style="color:#a0bddb"></i>';
+		const icon = '<i class="fa-solid fa-sm fa-dumpster tray-icon trash-icon help" style="color:#a0bddb"></i>';
 		if (tomorrow.getDay() === 3 && tomorrow.getDate() <= 7) { // If tomorrow is 1st Mon. of month
 			$("#big-trash-icon").html(icon);
 			$("#big-trash-icon").attr("title",  "Big Trash Day is tomorrow" );
@@ -535,7 +535,7 @@ $(document).ready(function () {
 							}
 							let pt = prettyTime(hourlyUTC);
 							let time = pt.hour + " " + pt.ampm;
-							let icon = "<img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.hourly[i].weather[0].icon + ".png' title='" + result.hourly[i].weather[0].description + "'></img>";
+							let icon = "<img class='weather-icon help' src='https://openweathermap.org/img/wn/" + result.hourly[i].weather[0].icon + ".png' title='" + result.hourly[i].weather[0].description + "'></img>";
 							let pop = "";
 							if (result.hourly[i].pop != 0) {
 								pop = "<i style='filter: opacity(" + (result.hourly[i].pop) + ");' class='fa-solid fa-droplet'></i> " + OneDec(result.hourly[i].pop * 100) + "%";
@@ -565,7 +565,7 @@ $(document).ready(function () {
 								}
 							}
 							const dayname = "<td class='day-name' valign='center'>" + dayName + "</td>";
-							const icon = "<td class='weather-icon-column'><img class='weather-icon' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></td>";
+							const icon = "<td class='weather-icon-column'><img class='weather-icon help' src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png' title='" + result.daily[i].weather[0].description + "'></td>";
 							const high = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.max) + "°</td>";
 							const low = "<td class='daily-temp'>" + OneDec(result.daily[i].temp.min) + "°</td>";
 							let pop = "";

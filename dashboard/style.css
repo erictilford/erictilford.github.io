@@ -395,10 +395,6 @@ body {
     color: #666;
 }
 
-.help {
-    cursor: help;
-}
-
 .holiday-table {
     color:white;
     margin-bottom: 5px;
@@ -575,6 +571,10 @@ body {
     line-height: 1.8;
     cursor: default;
     padding-left: 2px;
+}
+
+.help {
+    cursor: help;
 }
 
 /* MEDIA CALLS */
