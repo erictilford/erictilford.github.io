@@ -167,60 +167,104 @@ const links = [
         "target" : "#tools-list",
         "private" : false
     },
+    // GAMES
     {
-        "title" : "Timeguessr",
-        "url" : "https://timeguessr.com/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-map-location-dot" style="color:#db5049"></i>`,
+        "title" : "Learned League",
+        "url" : "https://www.learnedleague.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-bahai" style="color:#7773ff"></i>`,
         "target" : "#games-list",
         "private" : false
     },
+    {
+        "title" : "Tetris",
+        "url" : "https://tetris.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-table-cells-large" style="color:#0760bb"></i>`,
+        "target" : "#games-list",
+        "private" : false
+    },
+    {
+        "title" : "Super Monkey Ball",
+        "url" : "https://monkeyball-online.pages.dev/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-circle-half-stroke" style="color:#ff5161; transform: rotate(225deg);"></i>`,
+        "target" : "#games-list",
+        "private" : false
+    },
+    // DLEs
     {
         "title" : "Wordle",
         "url" : "https://www.nytimes.com/games/wordle/index.html",
         "icon" : `<i class="fa-solid ${iconSize} fa-w" style="color:#69a662"></i>`,
-        "target" : "#games-list",
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "Timeguessr",
+        "url" : "https://timeguessr.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-map-location-dot" style="color:#db5049"></i>`,
+        "target" : "#dles-list",
         "private" : false
     },
     {
         "title" : "Connections",
-        "url" : "https://www.nytimes.com/games/connections",
+        "url" : "https://www.nytimes.com/dles/connections",
         "icon" : `<i class="fa-solid ${iconSize} fa-table-cells" style="color:#bc70c4"></i>`,
-        "target" : "#games-list",
+        "target" : "#dles-list",
         "private" : false
     },
     {
         "title" : "Mini-Cross",
-        "url" : "https://www.seattletimes.com/games-crossword-mini/",
+        "url" : "https://www.seattletimes.com/dles-crossword-mini/",
         "icon" : `<i class="fa-solid ${iconSize} fa-puzzle-piece" style="color:#6493e6"></i>`,
-        "target" : "#games-list",
+        "target" : "#dles-list",
         "private" : false
     },
     {
         "title" : "Bandle",
         "url" : "https://bandle.app/daily",
         "icon" : `<i class="fa-solid ${iconSize} fa-guitar" style="color:#981520"></i>`,
-        "target" : "#games-list",
+        "target" : "#dles-list",
         "private" : false
     },
     {
         "title" : "Catfishing",
         "url" : "https://catfishing.net/",
         "icon" : `<i class="fa-solid ${iconSize} fa-fish-fins" style="color:#fbbf24"></i>`,
-        "target" : "#games-list",
+        "target" : "#dles-list",
         "private" : false
     },
     {
         "title" : "Scrandle",
         "url" : "https://scrandle.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-hotdog" style="color:#ce9864"></i>`,
-        "target" : "#games-list",
+        "target" : "#dles-list",
         "private" : false
     },
     {
         "title" : "Golf",
         "url" : "https://kindahardgolf.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-golf-ball-tee" style="color:#e9ebee"></i>`,
-        "target" : "#games-list",
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "Thrice",
+        "url" : "https://thrice.geekswhodrink.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-dice-three" style="color:#e9ebee"></i>`,
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "The Daily Dozen",
+        "url" : "https://thrice.geekswhodrink.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-table-cells" style="color:#c200c2"></i>`,
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "Krillion",
+        "url" : "https://krillion.io/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-shrimp" style="color:#f2134b"></i>`,
+        "target" : "#dles-list",
         "private" : false
     },
     // Audio
