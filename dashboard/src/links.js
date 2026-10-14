@@ -177,8 +177,8 @@ const links = [
     },
     {
         "title" : "Tetris",
-        "url" : "https://tetris.com/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-table-cells-large" style="color:#0760bb"></i>`,
+        "url" : "https://play.tetris.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-table-cells-large" style="color:#c10029"></i>`,
         "target" : "#games-list",
         "private" : false
     },
@@ -186,6 +186,13 @@ const links = [
         "title" : "Super Monkey Ball",
         "url" : "https://monkeyball-online.pages.dev/",
         "icon" : `<i class="fa-solid ${iconSize} fa-circle-half-stroke" style="color:#ff5161; transform: rotate(225deg);"></i>`,
+        "target" : "#games-list",
+        "private" : false
+    },
+    {
+        "title" : "PolyTrack",
+        "url" : "https://www.kodub.com/apps/polytrack",
+        "icon" : `<i class="fa-solid ${iconSize} fa-car-side" style="color:#4b64cb"></i>`,
         "target" : "#games-list",
         "private" : false
     },
@@ -254,7 +261,7 @@ const links = [
         "private" : false
     },
     {
-        "title" : "The Daily Dozen",
+        "title" : "Daily Dozen",
         "url" : "https://dailydozentrivia.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-chair" style="color:#a73ba7"></i>`,
         "target" : "#dles-list",
@@ -271,6 +278,27 @@ const links = [
         "title" : "Amountle",
         "url" : "https://www.amountle.dev/",
         "icon" : `<i class="fa-solid ${iconSize} fa-bucket" style="color:#3276cc"></i>`,
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "Stackdle",
+        "url" : "https://www.stackdle.dev/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-cubes-stacked" style="color:#5ee3ab"></i>`,
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "Fermi.gg",
+        "url" : "https://fermi.gg/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-calculator" style="color:#ff5e3a"></i>`,
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "Size It Up",
+        "url" : "https://magnitudle.com/size-it-up",
+        "icon" : `<i class="fa-solid ${iconSize} fa-ruler-vertical" style="color:#f14d4c"></i>`,
         "target" : "#dles-list",
         "private" : false
     },
