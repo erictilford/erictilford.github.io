@@ -255,8 +255,8 @@ const links = [
     },
     {
         "title" : "The Daily Dozen",
-        "url" : "https://thrice.geekswhodrink.com/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-table-cells" style="color:#c200c2"></i>`,
+        "url" : "https://dailydozentrivia.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-chair" style="color:#c200c2"></i>`,
         "target" : "#dles-list",
         "private" : false
     },
@@ -264,6 +264,13 @@ const links = [
         "title" : "Krillion",
         "url" : "https://krillion.io/",
         "icon" : `<i class="fa-solid ${iconSize} fa-shrimp" style="color:#f2134b"></i>`,
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "Amountle",
+        "url" : "https://www.amountle.dev/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-bucket" style="color:#3276cc"></i>`,
         "target" : "#dles-list",
         "private" : false
     },
