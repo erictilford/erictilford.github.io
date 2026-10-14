@@ -256,7 +256,7 @@ const links = [
     {
         "title" : "The Daily Dozen",
         "url" : "https://dailydozentrivia.com/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-chair" style="color:#c200c2"></i>`,
+        "icon" : `<i class="fa-solid ${iconSize} fa-chair" style="color:#a73ba7"></i>`,
         "target" : "#dles-list",
         "private" : false
     },
