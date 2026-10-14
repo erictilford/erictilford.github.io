@@ -339,12 +339,30 @@ $(document).ready(function () {
 	for (let i = 0; i < links.length; i++) {
 		const link = links[i];
 		const isPrivateMode = $("#privateModeCheckbox").is(":checked");
-		const li = '<a href=' + link.url + ' target="_self"><li>' + link.icon + '<br>' + link.title + '</li>';
+		const idAttr = link.id ? ' id="' + link.id + '"' : '';
+		const li = '<a' + idAttr + ' href=' + link.url + ' target="_self"><li>' + link.icon + '<br>' + link.title + '</li>';
 		if (!isPrivateMode || (isPrivateMode && !link.private)) { 
 			$(link.target).append(li);
 		}
 	}
 
+	const $dlesToggle = $("#dles-toggle");
+	const $dlesList = $("#dles-list");
+	const dlesStateKey = "dashboard-dles-open";
+	if ($dlesToggle.length) {
+		const isDlesOpen = localStorage.getItem(dlesStateKey) === "true";
+		if (isDlesOpen) {
+			$dlesList.show();
+		} else {
+			$dlesList.hide();
+		}
+		$dlesToggle.on("click", function (event) {
+			event.preventDefault();
+			const shouldOpen = !$dlesList.is(":visible");
+			$dlesList.fadeToggle(180);
+			localStorage.setItem(dlesStateKey, String(shouldOpen));
+		});
+	}
 
 	// wallpaper auto-refresher
 	function autoRefreshWallpaper() { // update wallpaper on a duration

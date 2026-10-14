@@ -2,24 +2,40 @@
 const iconSize = LINK_ICON_SIZE;
 
 const links = [
+    // FAVES
     {
-        "title" : "Toonami",
-        "url" : "https://www.toonamiaftermath.com",
-        "icon" : `<i class="fa-solid ${iconSize} fa-meteor" style="color:mediumaquamarine"></i>`,
-        "target" : "#video-list",
+        "title" : "L. League",
+        "url" : "https://www.learnedleague.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-bahai" style="color:#7773ff"></i>`,
+        "target" : "#faves-list",
         "private" : false
     },
     {
         "title" : "Twitch",
         "url" : "https://www.twitch.tv/directory/following/live",
         "icon" : `<i class="fa-brands ${iconSize} fa-twitch" style="color:#a970ff"></i>`,
-        "target" : "#video-list",
+        "target" : "#faves-list",
         "private" : false
     },
     {
         "title" : "YouTube",
         "url" : "https://www.youtube.com",
         "icon" : `<i class="fa-brands ${iconSize} fa-youtube" style="color:red;"></i>`,
+        "target" : "#faves-list",
+        "private" : false
+    },
+    {
+        "title" : "reddit",
+        "url" : "https://old.reddit.com",
+        "icon" : `<i class="fa-brands ${iconSize} fa-reddit-alien" style="color:orangered"></i>`,
+        "target" : "#faves-list",
+        "private" : true
+    },
+    // VIDS
+    {
+        "title" : "Toonami",
+        "url" : "https://www.toonamiaftermath.com",
+        "icon" : `<i class="fa-solid ${iconSize} fa-meteor" style="color:mediumaquamarine"></i>`,
         "target" : "#video-list",
         "private" : false
     },
@@ -63,7 +79,7 @@ const links = [
     {
         "title" : "Adult Swim",
         "url" : "https://www.adultswim.com/streams/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-water-ladder" style="color:#eeeeee;"></i>`,
+        "icon" : `<i class="fa-solid ${iconSize} fa-water-ladder" style="color:#a0a7af"></i>`,
         "target" : "#video-list",
         "private" : false
     },
@@ -95,12 +111,12 @@ const links = [
         "url" : "https://chat.openai.com/",
         "icon" : `<i class="fa-regular ${iconSize} fa-comments" style="color:#71a699"></i>`,
         "target" : "#tools-list",
-        "private" : true
+        "private" : false
     },
     {
-        "title" : "Reddit",
-        "url" : "https://old.reddit.com",
-        "icon" : `<i class="fa-brands ${iconSize} fa-reddit-alien" style="color:orangered"></i>`,
+        "title" : "Font Awesome",
+        "url" : "https://fontawesome.com/search?o=r&m=free",
+        "icon" : `<i class="fa-solid ${iconSize} fa-font-awesome" style="color:#528dd7"></i>`,
         "target" : "#tools-list",
         "private" : false
     },
@@ -154,11 +170,11 @@ const links = [
         "private" : true
     },
     {
-        "title" : "Font Awesome",
-        "url" : "https://fontawesome.com/search?o=r&m=free",
-        "icon" : `<i class="fa-solid ${iconSize} fa-font-awesome" style="color:#528dd7"></i>`,
+        "title" : "Mana Pool",
+        "url" : "https://moxfield.com/decks/personal",
+        "icon" : `<i class="fa-solid ${iconSize} fa-cube" style="color:#0092ff"></i>`,
         "target" : "#tools-list",
-        "private" : false
+        "private" : true
     },
     {
         "title" : "Github",
@@ -167,14 +183,29 @@ const links = [
         "target" : "#tools-list",
         "private" : false
     },
-    // GAMES
+    // Audio
     {
-        "title" : "Learned League",
-        "url" : "https://www.learnedleague.com/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-bahai" style="color:#7773ff"></i>`,
-        "target" : "#games-list",
+        "title" : "NPR",
+        "url" : "https://www.npr.org",
+        "icon" : `<i class="fa-solid ${iconSize} fa-microphone-lines" style="color:lightslategray"></i>`,
+        "target" : "#video-list",
         "private" : false
     },
+    {
+        "title" : "Classical",
+        "url" : "https://theclassicalstation.org/listen/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-music" style="color:sandybrown"></i>`,
+        "target" : "#video-list",
+        "private" : false
+    },
+    {
+        "title" : "Work Music",
+        "url" : "https://www.youtube.com/playlist?list=PLWx-JvCYWQuE1BfLAhIaVMCK4GrVYRotC",
+        "icon" : `<i class="fa-brands ${iconSize} fa-youtube-square" style="color:#cb0e0e"></i>`,
+        "target" : "#video-list",
+        "private" : false
+    },
+    // GAMES
     {
         "title" : "Tetris",
         "url" : "https://play.tetris.com/",
@@ -183,7 +214,7 @@ const links = [
         "private" : false
     },
     {
-        "title" : "Super Monkey Ball",
+        "title" : "Monkey Ball",
         "url" : "https://monkeyball-online.pages.dev/",
         "icon" : `<i class="fa-solid ${iconSize} fa-circle-half-stroke" style="color:#ff5161; transform: rotate(225deg);"></i>`,
         "target" : "#games-list",
@@ -193,6 +224,14 @@ const links = [
         "title" : "PolyTrack",
         "url" : "https://www.kodub.com/apps/polytrack",
         "icon" : `<i class="fa-solid ${iconSize} fa-car-side" style="color:#4b64cb"></i>`,
+        "target" : "#games-list",
+        "private" : false
+    },
+    {
+        "title" : "DLEs",
+        "id" : "dles-toggle",
+        "url" : "#",
+        "icon" : `<i class="fa-solid ${iconSize} fa-calendar-day" style="color:#72bfb9"></i>`,
         "target" : "#games-list",
         "private" : false
     },
@@ -247,9 +286,9 @@ const links = [
         "private" : false
     },
     {
-        "title" : "Golf",
+        "title" : "KH Golf",
         "url" : "https://kindahardgolf.com/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-golf-ball-tee" style="color:#e9ebee"></i>`,
+        "icon" : `<i class="fa-solid ${iconSize} fa-flag" style="color:#e84537"></i>`,
         "target" : "#dles-list",
         "private" : false
     },
@@ -275,14 +314,14 @@ const links = [
         "private" : false
     },
     {
-        "title" : "Amountle",
+        "title" : "amountle",
         "url" : "https://www.amountle.dev/",
         "icon" : `<i class="fa-solid ${iconSize} fa-bucket" style="color:#3276cc"></i>`,
         "target" : "#dles-list",
         "private" : false
     },
     {
-        "title" : "Stackdle",
+        "title" : "stackdle",
         "url" : "https://www.stackdle.dev/",
         "icon" : `<i class="fa-solid ${iconSize} fa-cubes-stacked" style="color:#5ee3ab"></i>`,
         "target" : "#dles-list",
@@ -302,26 +341,18 @@ const links = [
         "target" : "#dles-list",
         "private" : false
     },
-    // Audio
     {
-        "title" : "NPR",
-        "url" : "https://www.npr.org",
-        "icon" : `<i class="fa-solid ${iconSize} fa-microphone-lines" style="color:lightslategray"></i>`,
-        "target" : "#video-list",
+        "title" : "FoodGuessr",
+        "url" : "https://foodguessr.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-utensils" style="color:#95a2b3"></i>`,
+        "target" : "#dles-list",
         "private" : false
     },
     {
-        "title" : "Classical",
-        "url" : "https://theclassicalstation.org/listen/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-music" style="color:sandybrown"></i>`,
-        "target" : "#video-list",
-        "private" : false
-    },
-    {
-        "title" : "Work Music",
-        "url" : "https://www.youtube.com/playlist?list=PLWx-JvCYWQuE1BfLAhIaVMCK4GrVYRotC",
-        "icon" : `<i class="fa-brands ${iconSize} fa-youtube-square" style="color:#cb0e0e"></i>`,
-        "target" : "#video-list",
+        "title" : "puttsies",
+        "url" : "https://puttsies.dev/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-golf-ball-tee" style="color:#e9ebee"></i>`,
+        "target" : "#dles-list",
         "private" : false
     },
     /*

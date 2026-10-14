@@ -65,6 +65,9 @@ body {
     display: block;
     margin: auto;
 }
+#dles-list {
+    display: none;
+}
 
 #ettv-panel {
     max-width: 800px;
@@ -649,6 +652,10 @@ body {
     .container {
         padding: 0;
         max-width: 475px;
+    }
+    
+    #dles-list {
+        display: flex;
     }
 
     #links-div>ul>a {
