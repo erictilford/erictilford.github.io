@@ -259,7 +259,7 @@ const links = [
     },
     {
         "title" : "Mini-Cross",
-        "url" : "https://www.seattletimes.com/dles-crossword-mini/",
+        "url" : "https://www.seattletimes.com/games-crossword-mini/",
         "icon" : `<i class="fa-solid ${iconSize} fa-puzzle-piece" style="color:#6493e6"></i>`,
         "target" : "#dles-list",
         "private" : false
