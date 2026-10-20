@@ -171,7 +171,7 @@ const links = [
     },
     {
         "title" : "Mana Pool",
-        "url" : "https://moxfield.com/decks/personal",
+        "url" : "https://manapool.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-cube" style="color:#0092ff"></i>`,
         "target" : "#tools-list",
         "private" : true
