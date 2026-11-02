@@ -351,7 +351,9 @@ $(document).ready(function () {
 	if ($dlesToggle.length) {
 		$dlesToggle.on("click", function (event) {
 			event.preventDefault();
-			$dlesList.fadeToggle(180);
+			const shouldHide = $dlesList.is(":visible");
+			$dlesList.toggleClass("dles-hidden", shouldHide);
+			$dlesList.toggleClass("dles-visible", !shouldHide);
 		});
 	}
 

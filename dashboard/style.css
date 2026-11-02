@@ -68,6 +68,12 @@ body {
 #links-div > ul#dles-list {
     display: none;
 }
+#links-div > ul#dles-list.dles-hidden {
+    display: none;
+}
+#links-div > ul#dles-list.dles-visible {
+    display: flex;
+}
 
 #ettv-panel {
     max-width: 800px;
