@@ -65,7 +65,7 @@ body {
     display: block;
     margin: auto;
 }
-#dles-list {
+#links-div > ul#dles-list {
     display: none;
 }
 
@@ -654,7 +654,7 @@ body {
         max-width: 475px;
     }
     
-    #dles-list {
+    #links-div > ul#dles-list {
         display: flex;
     }
 

@@ -345,22 +345,13 @@ $(document).ready(function () {
 			$(link.target).append(li);
 		}
 	}
-
+	// DLES
 	const $dlesToggle = $("#dles-toggle");
 	const $dlesList = $("#dles-list");
-	const dlesStateKey = "dashboard-dles-open";
 	if ($dlesToggle.length) {
-		const isDlesOpen = localStorage.getItem(dlesStateKey) === "true";
-		if (isDlesOpen) {
-			$dlesList.show();
-		} else {
-			$dlesList.hide();
-		}
 		$dlesToggle.on("click", function (event) {
 			event.preventDefault();
-			const shouldOpen = !$dlesList.is(":visible");
 			$dlesList.fadeToggle(180);
-			localStorage.setItem(dlesStateKey, String(shouldOpen));
 		});
 	}
 
