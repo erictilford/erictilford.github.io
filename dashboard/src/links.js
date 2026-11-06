@@ -286,13 +286,6 @@ const links = [
         "private" : false
     },
     {
-        "title" : "KH Golf",
-        "url" : "https://kindahardgolf.com/",
-        "icon" : `<i class="fa-solid ${iconSize} fa-flag" style="color:#e84537"></i>`,
-        "target" : "#dles-list",
-        "private" : false
-    },
-    {
         "title" : "Thrice",
         "url" : "https://thrice.geekswhodrink.com/",
         "icon" : `<i class="fa-solid ${iconSize} fa-dice-three" style="color:#e9ebee"></i>`,
@@ -352,6 +345,13 @@ const links = [
         "title" : "puttsies",
         "url" : "https://puttsies.dev/",
         "icon" : `<i class="fa-solid ${iconSize} fa-golf-ball-tee" style="color:#e9ebee"></i>`,
+        "target" : "#dles-list",
+        "private" : false
+    },
+    {
+        "title" : "Kinda Hard Golf",
+        "url" : "https://kindahardgolf.com/",
+        "icon" : `<i class="fa-solid ${iconSize} fa-flag" style="color:#e84537"></i>`,
         "target" : "#dles-list",
         "private" : false
     },
